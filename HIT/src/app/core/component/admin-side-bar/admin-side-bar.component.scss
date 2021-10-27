@@ -1,0 +1,99 @@
+
+.sidebar-box {
+    position: fixed;
+    z-index: 99;
+    background: #fff;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #1d232d;
+    .sidebar-top-layout{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 67px;
+        background-color: #1d232d;
+        .icon{
+            width: 41px;
+            height: 30px;
+            margin-left: 16px;
+        }
+
+    }
+}
+.login{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    padding: 16px;
+    font-family: "Poppins-Light";
+    font-size: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .logo{
+        margin-right: 11px;
+        img{
+            width: 18px;
+        }
+    }
+}
+
+.sidebar_layout {
+    p{
+        margin-left: 16px;
+        font-size: 2.0rem;
+        font-family: Poppins-Light-Italic;
+    }
+    ul{
+        list-style: none;
+        margin-left: -22px !important;
+        li{
+            padding: 11px 0px;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins-Light';
+            font-size: 1.2rem;
+            color: #9495ab;
+            .logo{
+                margin-right: 11px;
+                img{
+                    width: 18px;
+                }
+            }
+        }
+    }
+}
+img {
+    border-style: none;
+    width: 100%;
+    height: 100% !important;
+    object-fit: contain;
+} 
+a {
+    background-color: transparent;
+    color: inherit;
+    display: contents;
+    text-decoration: none;
+}
+.active{
+    font-family: Poppins-Medium;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    &::before{
+        content: "";
+        background-color: #0DB983;
+        width: 100%;
+        height: 5px;
+        bottom: -5px;
+        left: 0px;
+        border-top-left-radius: 2px;
+        position: absolute;
+        border-top-right-radius: 2px;
+    }
+}
+

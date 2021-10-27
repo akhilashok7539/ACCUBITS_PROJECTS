@@ -1,0 +1,25 @@
+.filter_layout{
+    position: absolute;
+    padding: 10px;
+    background-color: white;
+    box-shadow: -1px -2px 31px -17px rgb(0 0 0 / 75%);
+    z-index: 1000;
+    top: 40px;
+    .filter_detail_layout{
+    width: 150px;
+    height: 139px;
+    overflow: auto;
+    .filter_detail{
+        display: flex;
+        align-items: center;
+        padding: 2px 4px;
+            p{
+                margin: 6px;
+            }
+    }
+}
+.button_layout{
+    margin-top: 18px;
+    position: relative;
+}
+}

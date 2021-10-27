@@ -1,0 +1,312 @@
+<div class="tab_date_selection" *ngIf="competition_detail.type === 2">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigDate" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem class="competition_match_selection_btn" *ngFor='let item of rounds ;let i =index' [ngClass]="{'is_active_date': date_index === item.name }" (click)='onSelectDate(item,i)'>
+            <div class="competition_date">
+                <p> Round {{item.name}} </p>
+                <p [ngClass]="{'active_hoverss': i === current_joined_index && i !== date_index}"></p>
+                <p>{{item.startDate | date:'dd MMM'}} - {{item.endDate | date:'dd MMM y'}}</p>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+    <!-- <div #myDiv (click)="slickModal.slickGoTo(count_round)">
+    </div> -->
+
+
+</div>
+
+<div class="no-records" *ngIf="error">{{error}}</div>
+<section class="competition_club_layout" *ngIf="!error">
+    <div class="match_detail_layout">
+        <div class="match_Detail_1">
+            <!-- <div class="time_layout" *ngIf="!todayDate">
+                <div class="competition_option_view_btn counts ml_0 timer timer_layout_color">
+                    <p><countdown *ngIf="!resendEnable" [config]="{ leftTime: newCounter, format: 'hh',notify: [ 1 ] }"></countdown></p>
+                </div>
+                :
+                <div class="competition_option_view_btn counts timer timer_layout_color">
+                    <p><countdown *ngIf="!resendEnable" [config]="{ leftTime: newCounter, format: 'mm',notify: [ 1 ] }"></countdown></p>
+                 </div>
+                :
+                <div class="competition_option_view_btn counts timer timer_layout_color">
+                    <p><countdown *ngIf="!resendEnable" [config]="{ leftTime: newCounter, format: 'ss',notify: [ 1 ] }"></countdown></p>
+                 </div>
+            </div>
+            <div class="time_layout" *ngIf="todayDate">
+                <div class="competition_option_view_btn date ml_0 timer_layout_color">
+                    <p>{{todayDate | date:'M/d/y'}}</p>
+                </div>
+            </div> -->
+            <ng-container *ngIf="counterHour < 1440 && counter > 0 ; else elseTemplate">
+                <p class="betting_details">{{'betting.bettingClosesOn' | translate}}</p>
+                <div class="time_layout cham_layout">
+                    <div class="competition_option_view_btn counts ml_0 timer timer_layout_color">
+                        <countdown *ngIf="!resendEnable" (event)="notifyTimer($event)" [config]="{ leftTime: counter, format: 'HH',notify: [ 1,1 ] }"></countdown>
+                    </div>
+                    :
+                    <div class="competition_option_view_btn counts timer timer_layout_color">
+                        <countdown *ngIf="!resendEnable" [config]="{ leftTime: counter, format: 'mm',notify: [ 1 ] }"></countdown>
+                    </div>
+                    :
+                    <div class="competition_option_view_btn counts timer timer_layout_color">
+                        <countdown *ngIf="!resendEnable" [config]="{ leftTime: counter, format: 'ss',notify: [ 1 ] }"></countdown>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <p class="betting_details" *ngIf='counterHour >= 0'>{{'matches.closesIn' | translate}}</p>
+                <p class="betting_details" *ngIf='counter < 0'>{{'matches.predictionClosed'| translate}}</p>
+                <div class="time_layout">
+                    <div class="competition_option_view_btn date ml_0 timer_layout_color">
+                        <!-- {{counterHour}} -->
+                        <ng-container *ngIf="counterHour>=0; else elseTemplate">
+                            <p>{{current_match_date | date:'dd-MM-yyyy' }}</p>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <p>{{current_match_date | date:'dd-MM-yyyy'}}</p>
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="match_Detail_1 ml_43" *ngIf="details && current_joined_index === date_index && competition_detail.isPlayer === 1">
+            <p class="betting_details">{{'createCompetition.preditedMatch' | translate}}</p>
+            <div class="time_layout">
+                <div class="competition_option_view_btn match ml_0 timer_layout_color">
+                    <p>{{details.count || 0 | number:'2.0'}}/{{details.totalPredictions | number:'2.0'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="submitall">
+            <!-- <button class="btn submitalls" [disabled]="disbaleSubmitAll()" (click)="onSubmitall()" >Submit All </button> -->
+
+            <button class="btn submit hides" [disabled]="disbaleSubmitAll()" (click)="onSubmitall()">{{'tabs.submitall' | translate}} </button>
+        </div>
+    </div>
+    <div class="beting_layout_" *ngFor='let item of predictions;let j=index'>
+        <div class="match_overview_layout">
+            <div class="competition_option_view_btn week date mt_15">
+                <p class="dates">{{item.newdate | date:'EEEE, d MMMM , y'}}</p>
+            </div>
+            <div class="competition_option_view_btn matches mt_15">
+                <p class="dates">{{item.array.length | number:'2.0'}} {{'matches.match' | translate}}</p>
+            </div>
+        </div>
+        <table class="table_spacing">
+            <tr class="mobile_hid">
+                <th width='12%'>{{'competitionTag.matches' | translate}}</th>
+                <th width='12%'>{{'betting.teamA' | translate}}*</th>
+                <th width='12%'>{{'betting.teamB' | translate}}*</th>
+                <th width='19%'>{{'createCompetition.championplayer' | translate}} </th>
+                <!-- <th width='16%'>{{'betting.pointBoost' | translate}}</th> -->
+                <th width='16%' *ngIf="details.totalPredictions > 4">{{'betting.pointBoost' | translate}} <span class="info_span" #tooltip="matTooltip" matTooltip="{{'tooltip.text' | translate}}"><img src="/assets/images/information.svg"></span></th>
+                <th width='10%'>League</th>
+                <!-- <th width='8%'></th> -->
+                <th width='8%'></th>
+
+                <!-- {{'betting.action' | translate}}* -->
+                <th width='8%'></th>
+            </tr>
+            <tr *ngFor="let data of item.array;let z=index">
+                <td width='12%' class="td_first-child" [ngClass]="{'td_first-child_active':data.active,'td_active':data.active}">
+                    <span class="mobile_view">Matches</span>
+
+                    <div class="player_detail">
+                        <div class="weeercvw">
+                            <div class="competition_card_image weeercvw1">
+                                <div class="club_avatar" [matTooltip]="data.match.homeTeam.name">
+                                    <ng-container *ngIf="data.match.homeTeam.logo; else elseTemplate">
+                                        <img [src]="(data.match.homeTeam.logo?envurl +'/v1/image?url=' + data.match.homeTeam.logo:'/assets/images/club.png')" />
+                                    </ng-container>
+                                    <ng-template #elseTemplate>
+                                        {{data.match.homeTeam.name | slice:0:1}}
+                                    </ng-template>
+                                </div>
+                            </div>
+                            <div class="home_avatar_layout weeercvw4">
+                                <div class="home_avatar">
+                                </div>
+                            </div>
+                            <div class="weeercvw2">{{data.match.homeTeam.name}}</div>
+                        </div>
+
+                        <div class="cross">
+                            <div class="verses">
+                                x
+                            </div>
+                        </div>
+                        <div class="weeercvw">
+
+                            <div class="competition_card_image weeercvw1">
+                                <div class="club_avatar" [matTooltip]="data.match.awayTeam.name">
+                                    <ng-container *ngIf="data.match.awayTeam.logo; else elseAwayTemplate">
+                                        <img [src]="(data.match.awayTeam.logo?envurl +'/v1/image?url=' + data.match.awayTeam.logo:'/assets/images/club.png')" />
+                                    </ng-container>
+                                    <ng-template #elseAwayTemplate>
+                                        {{data.match.awayTeam.name | slice:0:1}}
+                                    </ng-template>
+                                </div>
+                            </div>
+                            <div class="weeercvw2">{{data.match.awayTeam.name}}</div>
+
+                        </div>
+
+                    </div>
+                </td>
+                <td width='12%' [ngClass]="{'td_active':data.active}" class="chage">
+                    <!-- <span  class="mobile_view">{{'betting.teamA' | translate}}*</span> -->
+
+                    <input type="tel" pattern=[0-9] class="compName " autocomplete="off" *ngIf='!disableinputbasedonDate(predictions[0].array[0],item)' id="h-score-{{j}}{{z}}" name="h-score-{{j}}{{z}}" (focus)="onFocusEvent(j,z)" (blur)="onBlurMethod(j,z)" [ngModel]="data.homeScore"
+                        (ngModelChange)="data.homeScore=$event" maxlength="2" placeholder="--" [disabled]="data.status > 0 || current_joined_index !== date_index " class="form-control inpt_1" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 ) ||event.charCode == 8 ||event.charCode == 0 ||event.charCode == 127"
+                    />
+                    <input type="tel" pattern=[0-9] class="compName " autocomplete="off" *ngIf='disableinputbasedonDate(predictions[0].array[0],item)' id="h-score-{{j}}{{z}}" name="h-score-{{j}}{{z}}" (focus)="onFocusEvent(j,z)" (blur)="onBlurMethod(j,z)" [ngModel]="data.homeScore"
+                        (ngModelChange)="data.homeScore=$event" maxlength="2" placeholder="--" disabled class="form-control inpt_1" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 ) ||event.charCode == 8 ||event.charCode == 0 ||event.charCode == 127"
+                    />
+
+                </td>
+                <td width='12%' [ngClass]="{'td_active':data.active}" class="chage">
+                    <!-- <span  class="mobile_view">{{'betting.teamB' | translate}}*</span> -->
+
+                    <input type="tel" pattern=[0-9] class="compName " autocomplete="off" *ngIf='!disableinputbasedonDate(predictions[0].array[0],item)' id="a-score-{{j}}{{z}}" name="a-score-{{j}}{{z}}" (focus)="onFocusEvent(j,z)" (blur)="onBlurMethod(j,z)" [(ngModel)]="data.awayScore"
+                        (ngModelChange)="data.awayScore=$event" maxlength="2" placeholder="--" [disabled]="data.status > 0 || current_joined_index !== date_index" class="form-control inpt_1" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 ) ||event.charCode == 8 ||event.charCode == 0 ||event.charCode == 127"
+                    />
+                    <input type="tel" pattern=[0-9] class="compName " autocomplete="off" *ngIf='disableinputbasedonDate(predictions[0].array[0],item)' id="a-score-{{j}}{{z}}" name="a-score-{{j}}{{z}}" (focus)="onFocusEvent(j,z)" (blur)="onBlurMethod(j,z)" [(ngModel)]="data.awayScore"
+                        (ngModelChange)="data.awayScore=$event" maxlength="2" placeholder="--" disabled class="form-control inpt_1" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 ) ||event.charCode == 8 ||event.charCode == 0 ||event.charCode == 127"
+                    />
+                </td>
+
+
+                <td width='19%' class="relative" [ngClass]="{'td_active':data.active}">
+
+                    <span class="mobile_view">{{'createCompetition.championplayer' | translate}}</span>
+
+                    <div class="display-lbl inpt_2" *ngIf='data.status > 0 || disableinputbasedonDate(predictions[0].array[0],item) || current_joined_index !== date_index'>
+                        <div class="star_avatar" [ngClass]="{'star_avatar_champ':competition_detail.type === 2}"></div>
+                        <span *ngIf="!data.match.homeTeam.player_name && !data.match.awayTeam.player_name">--</span>
+                        <span *ngIf="data.match.homeTeam.player_name || data.match.awayTeam.player_name">
+                        {{data.match.homeTeam?.player_name}}
+                    <span *ngIf="data.match.homeTeam.player_name || data.match.awayTeam.player_name">  </span> {{data.match.awayTeam?.player_name}}
+                        </span>
+                    </div>
+                    <!-- *ngIf="data.status > 0" -->
+                    <div *ngIf="data.status === 0">
+                        <div class="close_avatar" style="
+                    z-index: 1;
+                    margin-top: 16px;" (click)="removeSelectPlayer(z,j)" *ngIf="data.match.homeTeam.player_name || data.match.awayTeam.player_name"></div>
+
+                    </div>
+                    <div class="display-lbl inpt_2" *ngIf='data.status !==1 && !disableinputbasedonDate(predictions[0].array[0],item) && current_joined_index === date_index' (click)="popupOpen(j,z,data.match.homeTeam.id,data.match.awayTeam.id,data.match.homeTeam?.player_name,data.match.awayTeam?.player_name)">
+                        <div class="star_avatar" [ngClass]="{'star_avatar_champ':competition_detail.type === 2}"></div>
+                        <span *ngIf="!data.match.homeTeam.player_name && !data.match.awayTeam.player_name">--</span>
+                        <span *ngIf="data.match.homeTeam.player_name || data.match.awayTeam.player_name">
+                        {{data?.match?.homeTeam?.player_name}}
+                    <span *ngIf="data.match.homeTeam.player_name || data.match.awayTeam.player_name">  </span> {{data?.match?.awayTeam?.player_name}}
+                        </span>
+                    </div>
+                    <div class="closepop" *ngIf="data.overlayOpen" (click)="closePopup()">
+                        <span class="material-icons">
+                        close
+                        </span>
+                    </div>
+                    <div class="input_layout " [ngClass]="{'full-overlay-open':data.overlayOpen}">
+                        <!-- <input type="text" placeholder="--" class="form-control pl_33" /> -->
+                        <div class="full-overlay">
+                            <div class="title_layout">
+                                <p>{{'profileMenu.select1player' | translate}}</p>
+                            </div>
+                            <div class="team_layout">
+                                <div class="team" [title]="data.match.homeTeam.name" [ngClass]="{'active':tab==1}" (click)="tab=1">
+                                    <img class="imgcard" [src]="( envurl +'/v1/image?url=' + data.match.homeTeam.logo)" />
+                                    <p> {{data?.match?.homeTeam?.name}} </p>
+                                </div>
+                                <div class="versus_avatar">
+                                </div>
+                                <div class="team" [title]="data.match.awayTeam.name" [ngClass]="{'active':tab==2}" (click)="tab=2">
+                                    <img class="imgcard" [src]="( envurl +'/v1/image?url=' + data.match.awayTeam.logo)" />
+                                    <p>{{data?.match?.awayTeam?.name}} </p>
+                                </div>
+                            </div>
+                            <div class="team-outer" [ngClass]="{'show':tab==1}">
+                                <div class="team_player_layout" *ngFor="let newItem1 of homePlayers;let a=index" [ngClass]="{'active':selectHomePlayer==newItem1.id}" (click)="selectPlayers('1',newItem1.id,newItem1.name,z,j)">
+                                    <div class="index">
+                                        <span>{{a+1}}.</span>
+                                    </div>
+                                    <div class="player_name">{{newItem1?.name}}</div>
+                                    <div class="position">{{newItem1?.position}}</div>
+                                </div>
+                            </div>
+                            <div class="team-outer" [ngClass]="{'show':tab==2}">
+                                <div class="team_player_layout" *ngFor="let newItem of awayPlayers;let b=index" [ngClass]="{'active':selectAwayPlayer==newItem.id}" (click)="selectPlayers('2',newItem.id,newItem.name,z,j)">
+                                    <div class="index">
+                                        <span>{{b+1}}.</span>
+                                    </div>
+                                    <div class="player_name">{{newItem?.name}}</div>
+                                    <div class="position">{{newItem?.position}}</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </td>
+                <td class="point_layout_view  pl_0" width='16%' [ngClass]="{'td_active':data.active}" *ngIf="details.totalPredictions > 4">
+                    <span class="mobile_view">{{'betting.pointBoost' | translate}}</span>
+
+                    <div *ngIf='competition_detail.type === 1' class="pointboost_mob">
+                        <div class="point_layout" *ngIf="data.status === 0 && details.totalPredictions > 9" (click)="selectPont('1.5',j,z)" [ngClass]="{'point_layout_active':data.multiple === '1.5'}">1.5 X</div>
+                        <div class="point_layout" *ngIf="data.status === 0 && details.totalPredictions > 4" (click)="selectPont('2.0',j,z)" [ngClass]="{'point_layout_active':data.multiple === '2.0'}">2 X</div>
+
+                        <div class="point_layout" *ngIf="data.status > 0 && details.totalPredictions > 9" [ngClass]="{'point_layout_active':data.multiple=='1.5'}">1.5 X</div>
+                        <div class="point_layout" *ngIf="data.status > 0 && details.totalPredictions > 4" [ngClass]="{'point_layout_active':data.multiple=='2.0'}">2 X</div>
+                    </div>
+                    <div *ngIf='competition_detail.type === 2' class="pointboost_mob">
+                        <div class="point_layout" *ngIf="data.status === 0 && details.totalPredictions > 9" (click)="selectPont('1.5',j,z)" [ngClass]="{'point_layout_active_champ':data.multiple === '1.5'}">1.5 X</div>
+                        <div class="point_layout" *ngIf="data.status === 0 && details.totalPredictions > 4" (click)="selectPont('2.0',j,z)" [ngClass]="{'point_layout_active_champ':data.multiple === '2.0'}">2 X</div>
+
+                        <div class="point_layout" *ngIf="data.status > 0 && details.totalPredictions > 9" [ngClass]="{'point_layout_active_champ':data.multiple=='1.5'}">1.5 X</div>
+                        <div class="point_layout" *ngIf="data.status > 0 && details.totalPredictions > 4" [ngClass]="{'point_layout_active_champ':data.multiple=='2.0'}">2 X</div>
+                    </div>
+                </td>
+                <td width='10%' class="chage pl_0_1" [ngClass]="{'td_active':data.active}">
+                    <!-- <div class="tick_layout" [ngClass]="{'valid':data.homeScore !== null && data.awayScore !== null && data.homeScore !== '' && data.awayScore !== ''}">
+                    &#10003;
+                </div> -->
+                    <span class="mobile_view">League</span>
+
+                    <p class="dates">{{data?.match?.league?.name}}</p>
+                    <!-- <div class="competition_option_view_btn overview ml_0 flt_rgt" >
+                   
+                </div> -->
+                </td>
+                <td width='8%' class="chage pl_0_1" [ngClass]="{'td_active':data.active}">
+                    <span class="mobile_view"></span>
+
+                    <div class="tick_layout" [ngClass]="{'valid':data.homeScore !== null && data.awayScore !== null && data.homeScore !== '' && data.awayScore !== ''}">
+                        &#10003;
+                    </div>
+
+                </td>
+                <!-- <td width='8%'  [ngClass]="{'td_active':data.active}" class="paddig_td chage">
+                <div class="competition_option_view_btn overview ml_0 flt_rgt" (click)="onSelectCompetition(data)">
+                    <p class="dates">{{'betting.overview' | translate}}</p>
+                </div>
+            </td> -->
+                <td width='8%' class=" chageeditMobile td_last-child paddig_td" [ngClass]="{'td_last-child_active':data.active,'td_active':data.active}">
+                    <!-- <div class="competition_option_view_btn overview ml_0" *ngIf="data.status > 0" [disabled]="disableinputbasedonDate(predictions[0].array[0])" (click)="editPrediction(data,j,z)">
+                    <div class="edit_view"></div>
+                    <p class="dates">Edit</p>
+                </div> -->
+                    <button class="btn submit overview edit_btn" *ngIf="data.status > 0" (click)="editPrediction(data,j,z)" [disabled]="disableinputbasedonDate(predictions[0].array[0],item)">
+                    <div class="edit_view"></div>
+                    <p class="dates">{{'createCompetition.edit' | translate}}</p>
+                </button>
+
+                    <button class="btn submit" *ngIf="data.status === 0" [disabled]="data.homeScore === null || data.homeScore === '' || data.awayScore === null || data.awayScore === ''" (click)="submitPrediction(data.homeScore,data.awayScore,data.multiple,data.match.homeTeam.player_id,data.match.awayTeam.player_id,data.guid,j,z)">{{'betting.submit' | translate}} </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <button class="btn-mobile" [disabled]="disbaleSubmitAll()" (click)="onSubmitall()">Submit All</button>
+
+</section>

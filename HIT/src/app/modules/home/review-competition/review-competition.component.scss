@@ -1,0 +1,208 @@
+.create_competition_outer{
+    padding: 5vh 25rem;
+}
+.choose_game_details{
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .edit_username{
+        margin: 0;
+        font-family: Poppins-SemiBold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            background-color: transparent;
+            color: white;
+            border: 0px solid;
+            border-bottom: 1px solid;
+            outline: none;
+        }
+        .edt_user_icon{
+            width: 30px;
+            height: 30px;
+            background-color: #b1b1b14d;
+            border-radius: 50%;
+            margin-left: 1rem;
+            background-image: url(/assets/images/edit.svg);
+            background-size: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .saveUname{
+            background-image: url(/assets/images/check.svg);
+        }
+    }
+    p{
+        font-family: Poppins-Light;
+        font-style: italic;
+        color: #ffffff87;
+        margin-top: 1vh;
+        font-size: 1.2rem;
+    }
+    .button_wrap{
+        display: flex;
+        justify-content: center;
+        button{
+            margin: 3rem 1rem;
+            margin-bottom: 0;
+        }
+    }
+}
+.friends_list_wrap{
+    margin-top: 3vh;
+    .list_wrap{
+        p{
+            margin: 0;
+            font-family: Poppins-Light;
+            span{
+                padding: 1px 10px;
+                background-color: #FEBB2E;
+                border-radius: 4px;
+                margin-left: 1rem;
+            }
+        }
+        .invite_list{
+            display: flex;
+            margin-top: 5vh;
+            section{    
+                flex-grow: 1;
+                align-items: flex-end;
+                display: flex;
+                padding: 2rem 3rem;
+                padding-bottom: 0rem;
+                background-color:#272C37;
+                border-radius: 1rem;
+                overflow-x: scroll;
+            }
+            .inv_add{
+                padding: 2rem 3rem;
+                background-color: #272C37;
+                border-radius: 1rem;
+                position: relative;
+                height: 100px !important;
+            }
+            .inv_blk{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 2vw;
+                position: relative;
+                min-width: 6rem;
+                padding-bottom: 2rem;
+                height: 75px;
+                text-overflow: ellipsis !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                .add_friend_btn{
+                    height: 3rem;
+                    width: 3rem;
+                    border: 1px dashed;
+                    border-radius: 5px;
+                    text-align: center;
+                    line-height: 3rem;
+                    cursor: pointer;
+                }
+                .friend_profile{
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 50%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: #4d5561
+                }
+                span{
+                    font-size: 1rem;
+                    font-family: Poppins-Light;
+                    margin-top: 1rem;
+                }
+                .remove_friend{
+                    position: absolute;
+                    bottom: 2px;
+                    background-color: #0db983;
+                    padding: 5px 0px;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                    font-family: Poppins-Light;
+                    cursor: pointer;
+                    display: none;
+                    width: 70px;
+                    text-align: center;
+                }
+            }
+            .inv_blk:hover .remove_friend{
+                display: block;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .create_competition_outer{
+        padding: 5vh 10rem !important;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .create_competition_outer{
+        padding: 5vh 5rem !important;
+    }
+}
+
+
+
+.gradient_loader{
+    background: rgb(13,185,131) !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .anim_button span {
+        display: none;
+    }
+    .choose_game_details {
+        padding: 2rem 0rem;
+    }
+    .competition_block_header {
+        text-align: center;
+        margin-top: 13px;
+    }
+    .competition_block_header p {
+        font-size: 1.9rem;
+        margin: 0px 0px 7px 0px;
+
+    }
+    .choose_game_details section div {
+        width: 48% !important;
+        margin-top: 14px !important;
+        min-width: auto;
+    }
+    .common_wrap {
+        padding: 0vh 4%;
+    }
+    .choose_game_details section {
+        flex-wrap: wrap;  
+        margin-top: 0px !important;
+    }
+    .create_competition_outer{
+        padding: 3rem 1.8rem !important;
+        margin-bottom: 56px;
+        margin-top: 20px;
+    }
+.fee_details {
+    display: block;
+}
+.competition_breadcrumb{
+    display: none;
+}
+.btn {
+    color: var(--color-btn-text);
+    padding: 6px 6px !important;
+    margin: 5rem 0.7rem !important;
+    border-radius: 0.6rem;
+    outline: none;
+    cursor: pointer;
+    height: 3.5rem;
+}
+}

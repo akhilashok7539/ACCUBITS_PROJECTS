@@ -1,0 +1,261 @@
+.about_wrap{
+    background-color: #1F2531;
+    border-radius: 10px;
+    padding: 4rem 3rem;
+    section{
+        span{
+            font-size: 1.4rem;
+            color: rgb(255 255 255 / 30%);
+        }
+        p{
+            font-size: 1.8rem;
+            font-family: Poppins-Medium;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        .add_name{
+            color: #3eb983;
+            cursor: pointer;
+        }
+        .edit_wrap{
+            display: flex;
+            align-items: center;
+            div{
+                width: 1.5rem;
+                height: 1.5rem;
+                background-image: url(/assets/images/edit_number.svg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: 1rem;
+                cursor: pointer;
+            }
+            .delete{
+                background-image: url(/assets/images/delete_about.svg);
+            }
+        }
+        form{
+            width: 40%;
+            margin-top: 1rem;
+            .form-btn{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+input[type=radio]:after {
+    height: 19px;
+    content: " ";
+    background-color: #3eb983;
+    display: inline-block;
+    visibility: visible;
+    width: 17px;
+    border-radius: 3px;
+}
+input[type=radio]:checked:after {
+    content: "✔";
+    padding-left: 2px;
+    font-size: 17px;
+}
+
+.knowmore{
+    font-size: 9px;
+    padding: 3px;
+    margin-left: 4px;
+}
+.recurrence{
+    width: 124px !important;
+}
+.c-btn {
+   
+    background-color: #373e4a;
+    padding: 0px 20px;
+    text-align: center;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+    margin: 1px 0px 0px 0px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.form-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+
+}
+.btn {
+    height: 3.5rem;
+}
+.ml_21{
+    margin-left: 20px;
+}
+@media only screen and (max-width: 1660px){
+    .about_wrap{
+        section{
+            span{
+                // font-size: 1.2rem;
+                font-size: 1.4rem;
+    color: white;
+    padding: 2px;
+    line-height: 19px;
+    margin-top: -1px;
+    margin-left: 4px;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+            form{
+                width: 50%;
+                .btn{
+                    height: 3.5rem !important;
+                }
+            }
+        }
+    }
+}
+.tests{
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+.detai{
+    font-family: Poppins-Medium;
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+}
+.title{
+    font-size: 1.5rem;
+    display: flex;
+}
+.edit_cion{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(/assets/images/edit_number.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+@media only screen and (max-width: 800px){
+    .about_wrap {
+        background-color: #1F2531;
+        border-radius: 10px;
+        padding: 1.6rem 1.6rem;
+    }
+    .about_wrap  section:nth-child(2) {
+        margin: 2rem 0rem;
+    }
+
+}
+.lay_de{
+    border: 1px solid #434852;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 31px;
+}
+.lay{
+    display: flex;
+    align-items: center;
+}
+.di_wit{
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+}
+.di_wit1{
+    width: 32%;
+    text-align: left;
+    padding: 10px;
+}
+.ourt_lay{
+    margin-top: 14px;
+}
+
+input[type=checkbox] {
+    width: 15px;
+    height: 22px;
+    font-size: 18px;
+    margin-right: 9px;
+  }
+  input[type=checkbox]:after {
+    height: 19px;
+    content: " ";
+    background-color: #3eb983;
+    display: inline-block;
+    visibility: visible;
+    width: 17px;
+    border-radius: 3px;
+  }
+  input[type=checkbox]:checked:after {
+    content: "\2714";
+    /* this is a checkmark symbol */
+  }
+  .active_chec{
+    opacity: 0.3;
+  }
+  // .lds-spinner {
+  //   color: official;
+  //   display: inline-block;
+  //   position: relative;
+  //   width: 20px;
+  //   height: 20px;
+  // }
+  // .lds-spinner div {
+  //   transform-origin: 24px 9px;
+  //   animation: lds-spinner 1.2s linear infinite;
+  // }
+  .dqwd{
+    display: flex;
+    float: right;
+    align-items: center;
+  }
+  .texts{
+    margin-left: 9px;
+    font-size: 1.4rem;
+    color: #3eb983;
+    font-weight: 700;
+    margin-top: -2px;
+    cursor: pointer;
+  }
+  .ions{
+    width: 25px;
+    height: 25px;
+    background-image: url(/assets/images/sync.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rotate {
+  animation: rotation 2s;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.linear {
+  animation-timing-function: linear;
+}
+.infinite {
+  animation-iteration-count: infinite;
+}
+@media only screen and (max-width: 600px) {
+    .check {
+        font-size: 12px !important;
+    }
+}
+
+.selfExclude{
+    font-size: 1.4rem !important;
+    color: white !important;
+    margin-left: 9px !important;
+}

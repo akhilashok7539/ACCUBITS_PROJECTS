@@ -1,0 +1,188 @@
+.competition_outer{
+    margin-top: 164px;
+    .back_button{
+        position: fixed;
+        top: 130px;
+        left: 7%;
+        background-image: url(/assets/images/back_arrow.svg);
+        background-color: #ffffff30;
+        backdrop-filter: blur(11px);
+        padding: 2px 10px 2px 30px;
+        border-radius: 6px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: 5px 0px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .competition_block_header{
+        position: relative;
+        .title{
+            font-family: Helvetica65;
+            font-size: 3rem ;
+        }
+        .host_detail{
+            .heading_1{
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 1.6rem;
+                font-family: Poppins-Light;
+            }
+        }
+        .tile{
+            content: "";
+            width: 222px;
+            height: 33px;
+            position: absolute;
+            top: 2px;
+            left: calc(50% - 325px);
+            opacity: 0.1;
+            background-image: url(/assets/images/card-title.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    } 
+    
+}
+
+.competition_detail{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    .competition_detail_card{
+        padding: 1vh 5vh;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+    .competition_detail_badge{
+        width: 25px;
+        margin-left: 20px;
+        height: 25px;
+        background-color:#FEBB2E;  
+        border-radius: 5px;
+        display: table;
+        text-align: center;
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+    }
+}
+.isactives{
+    border-bottom: 3px solid #0DB983 !important;  
+    color: white !important;
+    font-weight: bold;
+} 
+.tile{
+    content: "";
+    width: 144px;
+    height: 33px;
+    position: absolute;
+    top: 2px;
+    left: calc(50% - 72px);
+    opacity: 0.1;
+    background-image: url(/assets/images/card-title.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1600px) {
+.heading{
+    margin-top: 11px;
+    font-size: 1.4rem !important;
+    font-family: Poppins-Light;
+}
+.heading_1{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    font-family: Poppins-Light;
+}
+
+    .title{
+        font-family: 'Spantaran';
+        font-size: 2.2rem !important;
+    }
+    .tile{
+        content: "";
+        width: 144px;
+        height: 33px;
+        position: absolute;
+        top: -2px !important;
+        left: calc(50% - 258px) !important;
+        opacity: 0.1;
+        background-image: url(/assets/images/card-title.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .heading{
+        margin-top: 11px;
+        font-size: 1.4rem !important;
+        font-family: Poppins-Light;
+    }
+    .tile{
+        content: "";
+        width: 144px;
+        height: 33px;
+        position: absolute;
+        top: -2px !important;
+        left: calc(50% - 258px) !important;
+        opacity: 0.1;
+        background-image: url(/assets/images/card-title.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .heading_1{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.2rem;
+        font-family: Poppins-Light;
+    }
+    .title{
+        font-family: 'Spantaran';
+        font-size: 2.2rem !important;
+    }
+    }
+    .mobile_hidden{
+        display: initial !important;
+    }
+    .display_hidden{
+        display: none !important;
+    }
+    @media only screen and (max-width: 800px) {
+        .competition_detail{
+            margin-top: 0px !important;
+        }
+        .competition_outer{
+            margin-top: 0px !important;
+        }
+        .competition_block_header{
+            display: none !important;
+        }
+        .display_hidden{
+            display: initial !important;
+        }
+        .mobile_hidden{
+            display: none !important;
+        }
+        .competition_detail{
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            .competition_detail_card{
+                padding: 1vh 3vh !important;
+                color: rgba(255, 255, 255, 0.5);
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                cursor: pointer;
+            }  
+    }
+}

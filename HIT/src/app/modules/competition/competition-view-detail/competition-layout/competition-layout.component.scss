@@ -1,0 +1,102 @@
+.competition_detail {
+    margin-top: 35px;
+    display: flex;
+    .competition_detail_card {
+        padding: 1vh 5vh;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+    .competition_detail_badge {
+        width: 31px;
+        margin-left: 20px;
+        height: 31px;
+        background-color: #FEBB2E;
+        border-radius: 5px;
+        display: table;
+        text-align: center;
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.4rem;
+        }
+    }
+    .com_badge {
+        background-color: #FE6140 !important;
+    }
+}
+
+.isactives {
+    border-bottom: 4px solid #0DB983 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 1px;
+}
+
+.heading {
+    width: 100% !important;
+}
+
+@media only screen and (max-width: 1600px) {
+    .heading {
+        font-size: 1.4rem !important;
+        font-family: Poppins-Light;
+    }
+    .competition_detail_badge {
+        width: 25px !important;
+        margin-left: 20px;
+        height: 25px !important;
+        background-color: #FEBB2E;
+        border-radius: 5px;
+        display: table;
+        text-align: center;
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.2rem !important;
+        }
+    }
+}
+
+.display_hiddens {
+    display: none !important;
+}
+
+.mobile_hiddens {
+    display: table !important
+}
+
+@media only screen and (max-width: 800px) {
+    .competition_detail .competition_detail_card {
+        // padding: 1vh 2vh !important;
+        // overflow: hidden !important;
+        padding: 14px;
+        overflow: hidden !important;
+        margin-right: 10px;
+        border: 1px solid;
+        border-radius: 36px;
+        .heading {
+            font-size: 1.3rem !important;
+        }
+    }
+    .isactives {
+        border: 2px solid #0DB983 !important;
+        color: white !important;
+        font-weight: bold;
+    }
+    .common_wraps {
+        padding: 0% 4% 2% 4% !important;
+    }
+    .display_hiddens {
+        display: initial !important;
+    }
+    .mobile_hiddens {
+        display: none !important
+    }
+    .competition_breadcrumb {
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th >IP Address</th>
+            <th >Time</th>
+            <th >Log Type</th> 
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of userActivityDetails | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}">
+                <td  class="td_first">
+                    {{item.ipAddress}}
+                </td>
+                <td >
+                    {{item.logTime | date:'dd MMM yyyy hh:mm a'}}
+                </td>
+                <td >
+                    {{item.type==1?"Login":"Logout"}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="no_data_found" *ngIf='userActivityDetails.length === 0'>
+        <img src="/assets/images/noData.svg">
+        <p>No Competions available !!</p>
+    </div>
+</section>
+
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

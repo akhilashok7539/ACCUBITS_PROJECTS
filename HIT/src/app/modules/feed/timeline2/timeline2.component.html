@@ -1,0 +1,99 @@
+<div class="single-timeline">
+    <div class="dot-container" (appClickOutside)="closeTypeDropdown($event)" (click)="showPostOptions()" *ngIf="timelineData?.isProfile">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <section *ngIf="showOption">
+            <div (click)="deletePost(timelineData,index)">Delete</div>
+        </section>
+    </div>
+    <div class="single-head ">
+        <div class="head-icon" [ngStyle]="{'background-image': timelineData.user.image?'url(' + timelineData.user.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+        <div class="head-txt ">
+            <div class="h-txt">{{timelineData?.user?.username}}</div>
+            <p>{{timelineData?.createdAt | date:'dd MMM, y'}} {{'feeds.at' | translate}} {{timelineData?.createdAt | date:'h:mm a'}} <img src="../../../../assets/images/glob.png"></p>
+        </div>
+    </div>
+    <div class="mt_0" [ngClass]="{'text-only': postType=='text-post'}">{{timelineData?.text}}</div>
+    <ng-container *ngIf="timelineData?.feedType=='url-shared-post'">
+        <div class="player_backgound">
+            <img [src]="(timelineData?.urlData?.thumbnailUrl)" />
+        </div>
+        <div class="timeline-post no_radius">
+            <div class="post_layer">
+                <div class="post-h1">{{timelineData?.urlData?.providerName}}</div>
+                <div class="post-h2">{{timelineData?.urlData?.title}}</div>
+            </div>
+         <div class="button_wrap">
+             <a [attr.href]="timelineData?.url" target="_blank">
+             <button class="btn btn_transparent">View</button>
+             </a>
+         </div>
+        </div>
+    </ng-container>
+    <div class="timeline-response">
+        <div class="t-res" [ngClass]="{'actLike': timelineData.isLiked!=0}" (click)="likePost(timelineData,index)"><span>{{timelineData.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span></div>
+        <div class="t-res" (click)="toggleComment(timelineData)"><span>{{timelineData.totalComment | shortNumber}} {{'feeds.comments' | translate}}</span></div>
+    </div>
+    <div class="comment_section" *ngIf="showComment">  
+        <!-- (scroll)="onScroll($event,timelineData)" -->
+        <section class="list_comment" >
+            <div class="comment_block" *ngFor="let item of listComment;let i=index">
+                <div class="comment_user_pic" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                </div>
+                <div class="comment_text">
+                    <p><span>{{item.user.username}}</span><br/> {{item.text}}</p>
+                    <p>
+                       <span> {{item?.createdAt | date:'dd MMM, y'}} at {{item?.createdAt | date:'h:mm a'}} </span>
+                       <span>{{item?.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span>
+                       <span (click)="addReply(i)">Reply</span>
+                       <span [ngClass]="{'actLikeComment': item.isLiked!=0}" (click)="addCommentLike(item,i)"></span>
+                    </p>
+                    <section class="add_comment reply_comment_box" *ngIf="item?.addReply">
+                      <div class="reply_label">Reply to {{item.user.username}}</div>
+                      <div class="comment_profile_pic" [ngStyle]="{'background-image': userProfile.image?'url(' + userProfile.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                      <div class="comment_text">
+                          <input type="text" placeholder="{{'feeds.AddComment' | translate}}" 
+                          [(ngModel)]="replyContent" (input)='onChangeReply()'
+                          (keyup.enter)="addReplyContent(timelineData,item.id,i)">
+                          <div class="send_button" *ngIf="showReplyButton">
+                              <span (click)="addReplyContent(timelineData,item.id,i)">Reply</span>
+                          </div>
+                      </div>
+                    </section>
+
+                    <div *ngIf="item.reply.length>0" class="replys_count" (click)="showReply(i)">{{item.reply.length}} Replie{{item.reply.length>1?'s':''}}</div>
+                      <ng-container *ngIf="item?.showReply">
+                          <div class="comment_reply_block" *ngFor="let item of item.reply;let ix=index">
+                              <div class="comment_user_pic" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                              </div>
+                              <div class="comment_text">
+                                  <p><span>{{item.user.username}}</span><br/>{{item.text}}</p>
+                                  <p>
+                                      <span> {{item?.createdAt | date:'dd MMM, y'}} at {{item?.createdAt | date:'h:mm a'}} </span>
+                                      <span>{{item?.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span>
+                                      <span></span>
+                                      <span [ngClass]="{'actLikeComment': item.isLiked!=0}" (click)="addReplyLike(item,i,ix)"></span>
+                                  </p>
+                              </div>
+                            </div>
+                      </ng-container>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="add_comment">
+          <div class="comment_profile_pic" [ngStyle]="{'background-image': userProfile.image?'url(' + userProfile.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+          <div class="comment_text">
+              <input type="text" placeholder="{{'feeds.AddComment' | translate}}" 
+              [(ngModel)]="shareContent" (input)='onChange()'
+              (keyup.enter)="addComment(timelineData,index)">
+              <div class="send_button" *ngIf="show_post">
+                  <span (click)="addComment(timelineData,index)">Post</span>
+              </div>
+          </div>
+          <div class="comment_close" (click)="closeComment()"></div>
+        </section>
+    </div>
+ </div>

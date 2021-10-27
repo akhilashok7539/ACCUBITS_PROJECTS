@@ -1,0 +1,222 @@
+#cont{
+      background: -webkit-linear-gradient(left top, #a8a8a8 0%, #1d232d 100%);
+      border-radius: 1000px;
+      padding: 10px;
+      box-sizing: inherit !important;
+      width: 116px;
+      height: 117px;
+      margin: 0 auto;
+  }
+
+  #box{
+      border-radius: 100px;
+      top: -1%;
+      left: -1%;
+      width: 102%;
+      height: 102%;
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .team_1{
+    border-style: none;
+    width: 62%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    height: 62%;
+  }
+
+  .match_layout{
+    text-align: center;
+    padding-top: 80px;
+}
+.title1{
+    margin: 22px 0 8px 0px;
+    font-family: Poppins-SemiBold;
+    font-size: 3rem;
+}
+.title2{
+    font-size: 1.2rem;
+    font-family: Poppins-Light;
+}
+.competition_outer_slide{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    align-items: center;
+    .competition_slide{
+    position: relative;
+    background-color: #2d303b;
+    padding: 2vh 2.1vh;
+    margin: 10px;
+    min-width: 153px;
+    border-radius: 6px;
+    height: 79px;
+    .competition_heading{
+        padding-right: 2vh;
+        font-size: 1.8rem;
+        font-weight: 500 !important;
+    }
+    .competition_label{
+        font-family: 'Poppins-Light-Italic';
+        margin-top: 13px;
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .competition_border{
+        position: absolute;
+        width: 2px;
+        height: 30px;
+        border: 1px solid #FEBB2E;
+        background-color: #FEBB2E;
+        top: 30%;
+        left: 0%;
+    }
+    .competition_borders{
+      position: absolute;
+      width: 2px;
+      height: 30px;
+      border: 1px solid #FE6140;
+      background-color: #FE6140;
+      top: 30%;
+      left: 0%;
+  }
+    }
+
+}
+.profile_layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  .single-head{
+    display: flex;
+    margin-left: 62px;
+    width: 230px;
+    .head-icon{
+        padding-right: 10px;
+        img{
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+        }
+    }
+
+    .head-txt{
+        width: calc(100% - 66px);
+        input{
+            margin-top: 2px;
+            margin-left: 10px;
+            width: 100%;
+            &:focus{
+                background-color: rgba(255, 255, 255, 0.15) !important;
+            }
+        }
+
+        .h-txt{
+            font-family: Poppins-Medium;
+            font-size: 1.6rem;
+            margin-top: 5px;
+            span{
+                font-family: Poppins-Regular;
+                font-size: 1.4rem;
+                opacity: 0.5;
+            }
+        }
+        p{
+            font-family: Poppins-Regular;
+            font-size: 1.4rem;
+            opacity: 0.5;
+            margin-top: 6px;
+            padding: 0px;
+            img{
+                width: 10px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+}
+
+@media only screen and (max-width: 1600px) {
+    #cont {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .title1{
+        font-size: 2.5rem !important;
+    }
+    .title2 {
+        font-size: 1.1rem !important;
+    }
+    .competition_slide {
+        min-width: 120px !important;
+        height: 72px !important;
+        padding: 1.5vh 1.8vh !important;
+    }
+    .competition_heading{
+        font-size: 1.4rem !important;
+    }
+    .competition_label{
+        font-size: 1.2rem !important;
+    }
+    .single-head{
+        width: 167px !important;
+        .head-icon{
+            img{
+                width: 38px !important;
+                height: 38px !important;
+            }
+        }
+    
+        .head-txt{
+    
+            .h-txt{
+                font-size: 1.4rem !important;
+                span{
+                    font-size: 1.2rem !important;
+                }
+            }
+            p{
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
+}
+.display_hidden{
+    display: none;
+}  
+.mobile_hidden{
+    display: block !important;
+}
+@media only screen and (max-width: 800px){
+    .competition_outer_slide .competition_slide{
+        width: 41% !important;
+    }
+    .display_hidden{
+        display: initial;
+    }  
+    .title1{
+        font-size: 2.0rem !important;
+        margin-top: 11px;
+    }
+    .common_wraps {
+        padding: 0% 4% 2% 4%;
+    }
+    #cont {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .mobile_hidden{
+        display: none !important;
+    }
+    .match_layout {
+        text-align: center;
+        padding-top: 32px;
+    }
+}

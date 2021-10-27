@@ -1,0 +1,11 @@
+<div class="filter_layout" (appClickOutside)="closeFIlterDropdown($event)">
+    <div class="filter_detail_layout">
+    <div class="filter_detail" *ngFor='let dataFilter of filterArrayDetail'>
+        <input type="checkbox" [(ngModel)]="dataFilter.status" name="" id="">
+        <p class="font_medium">{{dataFilter.name}}</p>
+    </div>
+    </div>
+    <div class="button_layout">
+        <button class="btn btn-height btn-primary btn-full btn_padding" (click)="onSubmitFIlterClick()">Apply</button>
+    </div>
+</div>

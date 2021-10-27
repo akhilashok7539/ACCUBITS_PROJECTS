@@ -1,0 +1,47 @@
+<div class="cancel_overlay"></div>
+<div class="popup_out review_pop common_popup">
+    <div class="common_pop_head review_pop_head">
+        <div class="close_common" (click)="closePopup('1')"></div>
+        <p>{{'createCompetition.ReviewYourCompetition' | translate}}</p>
+    </div>
+    <div class="review_base">
+        <p>{{competitionName}}@{{userName}}</p>
+        <span>ID : {{competitionId.competitionId}}</span> | 
+        
+        <span *ngIf="competitionType === '1'">{{'review.onetime' | translate}} </span>
+        <span *ngIf="competitionType === '2'">{{'review.championship' | translate}} </span>
+
+    </div>
+    <div class="review_row" [ngClass]="{'championship':competitionType==2}">
+        <section>
+            <p>{{gameDays}}</p>
+            <span>{{'competitionTag.days' | translate}}</span>
+        </section>
+        <section>
+            <p>{{clubData?.numberOfMatches}}</p>
+            <span>{{'competitionTag.matches' | translate}}</span>
+        </section>
+        <!-- <section>
+            <p>{{clubData?.numberOfClubs}}</p>
+            <span>{{'competitionTag.clubs' | translate}}</span>
+        </section> -->
+        <section>
+            <p>{{friendsCount.length}}</p>
+            <span>{{'createCompetition.InvitedPeople' | translate}}</span>
+        </section>
+        <section>
+            <p>{{matchPrivacy==1?"Public":"Private"}}</p>
+            <span>{{'competitionTag.privacy' | translate}}</span>
+        </section>
+        <section>
+            <p>{{price*clubData?.numberOfMatches | number : '1.2-2'}}</p>
+            <span>{{'competitionTag.entryfee' | translate}}</span>
+        </section>
+    </div>
+
+    <div class="button_create">
+        <button class="btn btn-primary" (click)="createChampionship('2')">
+            {{'competitionTag.createNow' | translate}} <span>>>></span>
+        </button>
+    </div>
+</div>

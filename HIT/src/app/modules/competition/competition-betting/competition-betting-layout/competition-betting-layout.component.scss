@@ -1,0 +1,77 @@
+.competition_detail {
+    margin-top: 100px;
+    display: flex;
+    justify-content: left;
+    .competition_detail_card {
+        padding: 1vh 5vh;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+    .competition_detail_badge {
+        width: 25px;
+        margin-left: 20px;
+        height: 25px;
+        background-color: #FEBB2E;
+        border-radius: 5px;
+        display: table;
+        text-align: center;
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.isactives {
+    border-bottom: 3px solid #0DB983 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.common_wraps {
+    padding-bottom: 30px;
+    min-height: 200px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .heading {
+        margin-top: 11px;
+        font-size: 1.4rem !important;
+        font-family: Poppins-Light;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .common_wraps {
+        padding: 0% 1% 2% 1% !important;
+        // padding: 0% 4% 2% 4% !important;
+        margin-top: -75px !important;
+    }
+    .competition_detail .competition_detail_card {
+        // padding: 1vh 2vh !important;
+        // overflow: hidden !important;
+        padding: 9px !important;
+        margin-right: 10px;
+        border: 1px solid;
+        border-radius: 36px;
+        .heading {
+            font-size: 1.3rem !important;
+        }
+    }
+    .isactives {
+        border: 2px solid #0DB983 !important;
+        color: white !important;
+        font-weight: bold;
+    }
+    .competition_detail_card {
+        padding: 2px 7px !important;
+    }
+    .heading {
+        margin-top: 0px !important;
+        font-size: 1.2rem !important;
+    }
+}

@@ -1,0 +1,45 @@
+<div class="header_layout" *ngIf='loadPage'>
+  <div class="hamburger">
+    <div class="hamburger_icon" (click)="onHamburgerClick()"></div>
+  </div>
+  <div class="search_layout" *ngIf='headerDetail.showSearch'>
+    <div class="search_logo"></div>
+    <div class="search_input">
+      <input type="text" [placeholder]="searchPlaceholder">
+    </div>
+  </div>
+  <div class="search_layout" *ngIf='headerDetail.title'>
+    <span class="title1" (click)="onNavigation()">{{headerDetail.titleDetailFirst}}</span>
+    <span class="right_arrow"></span>
+    <span class="title2">{{headerDetail.titleDetailSecound}}</span>
+  </div>
+  <div class="left_bar">
+    <div class="file_layout"  *ngIf='headerDetail.bundleUpload'>
+      <button  class="outline_btn outline_btn-full outline_btn-height btn-primary" >
+        <div class="icon bulk_icon_upload"></div>
+      </button>
+    </div>
+    <div class="add_spacing"  *ngIf='headerDetail.bundleUpload'></div>
+    <div class="csv_layout" *ngIf='!headerDetail.removeButtonAndFileUploadIcon'>
+      <button  class="outline_btn outline_btn-full outline_btn-height btn-primary" (click)='onUploadCSV()' >
+        <div class="icon icon_upload"></div>
+      </button>
+      <div class="download">
+        <button  class="outline_btn outline_btn-full outline_btn-height btn-primary" >
+          <div class="icon"></div>
+        </button>
+      </div>
+    </div>
+    <div class="button_layout" *ngIf='!headerDetail.removeButtonAndFileUploadIcon'>
+      <button  class="btn btn-full btn-height btn-primary" (click)="onCreate()" >
+        <div class="btn_plus_icon"></div> {{headerDetail.buttonTitle}}
+      </button>
+    </div>
+    <div class="notification_layout">
+      <div class="notification_icon">
+  
+      </div>
+    </div>
+  </div>
+</div>
+<app-csv-file-upload *ngIf='showCSVFileUploadpopup' (onCancel)='onUploadCSV()'></app-csv-file-upload>

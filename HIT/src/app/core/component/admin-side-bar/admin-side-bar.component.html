@@ -1,0 +1,65 @@
+<div class="sidebar-box">
+    <div class="sidebar-top-layout">
+        <div class="icon">
+            <img src="/assets/images/logo.png" alt="Logo_login">
+          </div>
+    </div>
+    <div class="sidebar_layout">
+        <ul>
+            <li >
+              <a [routerLink]="['/admin/layout/dashboard']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                <div class="logo">
+                    <img src="/assets/images/home-2.svg" alt="Logo_login">
+                </div>
+                Dashboard 
+              </a>
+            </li>
+            <li *ngIf="adminType==2 || adminType ==3">
+              <a [routerLink]="['/admin/layout/sub-admin']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                <div class="logo">
+                    <img src="/assets/images/trophy.svg" alt="Logo_login">
+                  </div>
+                Sub Admin 
+              </a>  
+             </li>
+             <li *ngIf="adminType == 2 || adminType == 3 || adminType == 4"> 
+              <a [routerLink]="['/admin/layout/user-management']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                <div class="logo">
+                    <img src="/assets/images/home-2.svg" alt="Logo_login">
+                  </div>
+               Users
+              </a>
+            </li>
+            <li >
+              <a [routerLink]="['/admin/layout/competition-management']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">  
+               <div class="logo">
+                 <img src="/assets/images/team.svg" alt="Logo_login">
+               </div>
+                Competition 
+              </a>
+            </li>
+            <li *ngIf="adminType == 2 || adminType == 3 || adminType == 4"> 
+              <a [routerLink]="['/admin/layout/transactions']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+              <div class="logo">
+                <img src="/assets/images/team.svg" alt="Logo_login">
+              </div>
+              Transactions 
+            </a>
+          </li>
+        <li *ngIf="adminType == 2 || adminType == 3 || adminType == 4"> 
+          <a [routerLink]="['/admin/layout/suspicious-management']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <div class="logo">
+             <img src="/assets/images/team.svg" alt="Logo_login">
+           </div>
+           Suspicious
+         </a>
+      </li>
+        </ul>
+    </div>
+    <div class="login" (click)="logout()">
+      <div class="logo">
+          <img src="/assets/images/logout-circle-line.svg" alt="Logo_login">
+        </div>
+      Logout 
+  </div>
+</div>

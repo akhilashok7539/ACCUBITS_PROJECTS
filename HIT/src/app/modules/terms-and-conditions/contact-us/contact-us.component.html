@@ -1,0 +1,45 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header [fixed]='fixed'></app-header>
+            <div class="contact_us_wrap">
+                <section>
+                    <form [formGroup]="contactUsForm">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" formControlName="name" placeholder="" class="form-control"
+                            [ngClass]="{'is-invalid':!contactUsForm.controls.name.valid && contactUsForm.controls.name.touched}"/>
+                        </div> 
+
+                        <div class="form-group">
+                            <label class="form-label">Email ID</label>
+                            <input type="text" formControlName="email" placeholder="" class="form-control"
+                            [ngClass]="{'is-invalid':!contactUsForm.controls.email.valid && contactUsForm.controls.email.touched}"/>
+                        </div> 
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" maxlength="15"
+                            appInputNumber [config]="{isNegative:false,isDecimal:false}"
+                            formControlName="phone" placeholder="" class="form-control" 
+                            [ngClass]="{'is-invalid':!contactUsForm.controls.phone.valid && contactUsForm.controls.phone.touched}" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control text_area" name="notes"  formControlName="message" rows="6" 
+                            placeholder=""
+                            [ngClass]="{'is-invalid':!contactUsForm.controls.message.valid && contactUsForm.controls.message.touched}"></textarea>
+                            
+                        </div> 
+                        
+                        <div class="form-btn">
+                            <button class="btn btn-primary anim_button" (click)="submitDetails()" [disabled]="contactUsForm.invalid">Send
+                                <span>>>></span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+    </section> 
+</div>
+<app-footer></app-footer>

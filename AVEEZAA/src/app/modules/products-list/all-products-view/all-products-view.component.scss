@@ -1,0 +1,89 @@
+.product_view_layout{
+    .product_view_heading{
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+        position: relative;
+        .product_view_title{
+            font-weight: 500;
+            color: #181818;
+        }
+        .product_view_inactive{
+            display: flex;
+            align-items: center;
+            margin-left: 45px;
+            span{
+                margin-left: 4px;
+                font-weight: 300;
+            }
+        }
+        .dropdown{
+            height: 32px;
+            padding: 0px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 1px solid #272833 !important;
+            border-radius: 5px;
+            position: absolute;
+            right: 0px;
+           .down_arrow{
+                background-image: url(/assets/images/arrow-drop-down.svg);
+                background-repeat: no-repeat;
+                background-position: center right;
+                cursor: pointer;
+                background-size: cover;
+                width: 24px;
+                height: 6px;
+                display: block;
+                margin-top: 2px;
+            }
+        }
+    }
+    .search_layout{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 19px;
+        position: relative;
+        .search_logo{
+            width: 15px;
+            height: 15px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(/assets/images/search_logo.svg);
+            position: absolute;
+            left: 36px;
+        }
+        .search_input{
+            padding-left: 10px;
+            input{
+                font-size: 1.2rem;
+                color: black;
+                padding: 6px 4px;
+                padding-left: 27px;
+                border: 1px solid #eeeeee;
+                width: 257px;
+                height: 35px;
+            }
+            input:focus, textarea:focus, select:focus{
+                outline: none;
+            }
+            ::placeholder {
+                color: #d4d4d4;
+                opacity: 1;
+              }
+        }
+    }
+}
+
+::ng-deep .mat-menu-content {
+    padding: 0px !important;
+    }
+::ng-deep .mat-menu-item {
+    height: 42px !important;
+    line-height: 42px !important;
+    padding: 0px 12px !important;
+    font-size: 12px !important;
+    }

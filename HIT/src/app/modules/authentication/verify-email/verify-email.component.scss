@@ -1,0 +1,67 @@
+.back_btn{
+    margin-bottom: 8vh;
+}
+.otp_outer{
+   p:nth-child(1){
+       font-size: 2.6rem;
+       margin-bottom: 3vh;
+       font-family: Poppins-Medium;
+   }
+   p:nth-child(2){
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    font-family: Poppins-Light;
+    span{
+        font-family: Poppins-Medium;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+   }
+   .otp_input_sec{
+        margin: 2rem 0vh;
+        text-align: center;
+   }
+   .resend{
+       margin-top: 3vh;
+       text-align: center;
+       button{
+        font-family: Poppins-Medium; 
+        padding: 0;
+        margin-bottom: 0px;
+        background-color: transparent;
+        border: 0px solid;
+        margin-right: 2rem;
+        text-decoration: underline;
+       }
+       label{
+        font-family: Poppins-Light; 
+        font-size: 14px;
+       }
+   }
+}
+@media only screen and (max-width: 1600px) {
+    .otp_outer{
+        p:nth-child(1){
+            font-size: 2rem;
+        }
+        p:nth-child(2){
+         font-size: 1.2rem;
+        }
+    }
+}
+
+.count-down{
+    font-family: Poppins-Light !important;
+}
+.submitbutton{
+    width: 80%;
+    padding: 0;
+}
+.form-btn,.title,.countdown{
+    text-align: center;
+}
+.notes{
+    margin: 15px 30px;
+    display: block;
+}

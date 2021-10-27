@@ -1,0 +1,112 @@
+.btn {
+    background-color: var(--color-primary);
+    color: var(--color-btn-text);
+    padding: .6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+    border-radius: .4rem;
+    cursor: pointer;
+    outline: none !important;
+    font-size: 1.3rem;
+    height: 42px;
+    &-full {
+        width: 100%;
+    };
+    &-height {
+        height: 32px !important;
+    }
+}
+.outline_btn{
+    background-color: white;
+    color: #666666;
+    padding: .6rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: .4rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-full {
+        width: 100%;
+    }
+    &-height {
+        height: 32px !important;
+    }
+}
+.btn_plus_icon{
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(/assets/images/add.svg);
+}
+.back_arrow_btn{
+    background-color: var(--color-border);
+    background-image: url(/assets/images/arrow-left-line.svg);
+    padding: .6rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: .3rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    height: 25px;
+    width: 25px;
+    &-full {
+        width: 100%;
+    }
+}
+
+button:disabled,
+button[disabled]{
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+.float_right{
+float: right;
+}
+.btn_center{
+    margin: 0 auto;
+}
+.btn_padding{
+padding-left: 20px;
+padding-right: 20px;
+}
+@media only screen and (max-width: 500px) {
+    .btn {
+        background-color: var(--color-primary);
+        color: var(--color-btn-text);
+        padding: .6rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+        border-radius: .4rem;
+        cursor: pointer;
+        font-size: 1.3rem;
+        position: fixed;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px !important;
+        bottom: 25px;
+        right: 12px;
+    }
+    
+}
+
+.button:active {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-size: 100%;
+    transition: background 0s;
+  }
+  

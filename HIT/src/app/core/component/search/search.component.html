@@ -1,0 +1,54 @@
+<div class="global_search_outer">
+    <div class="global_search_header">
+            <div class="global_search_nav">
+                <span>{{'search.head' | translate}}</span>
+                <div class="close" (click)="onClose()">
+                </div>
+            </div>
+            <div class="global_search_input">
+                <input type="text" 
+                appDebounce
+                [delay]='700'
+                autofocus
+                placeholder="{{'search.searchHere' | translate}}"
+                (ngModelChange)="getSearchResult.next($event)"
+                (keypress)="checkTab($event)"
+                [(ngModel)]="searchValue" />
+            </div>
+            <section>
+                <div class="search_filter" [ngClass]="{'actFilter':filterType==item.id}" *ngFor="let item of filterArray" (click)="setCompetitionFilter(item.id)">{{item.name}}</div>
+            </section>
+    </div>
+    <div class="search_result_out">
+        <div class="count">{{'search.searchResult' | translate}} ( {{searchLength}} )</div>
+        <section class="global_search_wrap">
+            <ng-container *ngFor="let item of searchResults;let ix=index">
+                <div class="global_search_block" *ngIf="item?.cardType=='competitions' && filterType==1" (click)="onSelect(item)">
+                    <div>{{item?.name}}</div>
+                    <!-- <div [ngClass]="{'championship': item?.type==2}">{{item?.type==1?'One Time':'Championship'}}</div> -->
+
+                    <div [ngClass]="{'championship': item?.type==2}" *ngIf="item?.type === 1">{{'mode.onetime' | translate}}</div>
+                    <div [ngClass]="{'championship': item?.type==2}" *ngIf="item?.type === 2">{{'mode.champion' | translate}}</div>
+                    <div>{{item?.numberOfMatches}} {{'competitionTag.matches' | translate}}</div>
+                    <div>ID : {{item?.competitionId}}</div>
+                    <div>{{item.startDate | date: 'mediumDate'}} - {{item.endDate | date: 'mediumDate'}}</div>
+                    <div>{{'sortFilter.SortByPrize' | translate}}: <span>{{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}</span></div>
+                </div> 
+                <div class="profile_search_block" *ngIf="item?.cardType=='players' && filterType==2" (click)="onSelectPlayer(item)">
+                    <div class="user_pic" [ngStyle]="{'background-image': item.image?'url('+ item.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+                    <div class="search_ser_name">
+                        <span>{{item.username}}</span>
+                        <ng-container *ngIf="item.isloggedInUser==0">
+                            <div class="frnd_ico" *ngIf="item.isFriend==0 && item.isRequested==0"  (click)="sendRequest(item, $event,ix)"></div>
+                            <div class="frnd_ico request_ico" (click)="alreadySent($event)" *ngIf="item.isFriend==0 && item.isRequested==1"></div>
+                            <div class="frnd_ico friend_ico" *ngIf="item.isFriend==1"></div>
+                        </ng-container>
+                    </div>
+                    <p>Friends : {{item.friends}}</p>
+                    <p>Hosted : {{item.hostedCompetitions}} competitions</p>
+                </div>
+            </ng-container>
+        </section>
+    </div>
+    
+</div>

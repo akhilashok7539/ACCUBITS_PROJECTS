@@ -1,0 +1,93 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='20%'>Transaction</th>
+            <th width='15%'>Status</th>
+            <th width='20%'>Transaction ID</th>
+            <th width='20%'>Transaction On</th> 
+            <th width='20%'>Payment</th> 
+
+            <th width='10%'>Credit</th>
+            <th width='10%'>Debit</th>
+            <th width='15%'>Wallet Balance</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of userTransactionDetails | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}">
+                <td width='20%'>
+                    <ng-container [ngSwitch]="item.purpose"> 
+                        <span *ngSwitchCase="1">Wallet Topup</span>
+                        <span *ngSwitchCase="2">Prize won</span>
+                        <span *ngSwitchCase="3">Competition Fee</span>
+                        <span *ngSwitchCase="4">Redeem</span>
+                        <span *ngSwitchCase="5">Refund</span>
+                        <span *ngSwitchDefault>--</span>
+                    </ng-container>
+                </td>
+                <td width=15%>
+                    <ng-container [ngSwitch]="item.status"> 
+                        <span *ngSwitchCase="1">Created</span>
+                        <span *ngSwitchCase="2">Initiated</span>
+                        <span *ngSwitchCase="3">Pending</span>
+                        <span *ngSwitchCase="4">Completed</span>
+                        <span *ngSwitchCase="5">Cancelled</span>
+                        <span *ngSwitchCase="6">Expired</span>
+                        <span *ngSwitchCase="7">Under Review</span>
+                        <span *ngSwitchCase="8">Rejected</span>
+                        <span *ngSwitchCase="9">Delivered</span>
+                        <span *ngSwitchCase="10">On Hold</span>
+                        <span *ngSwitchDefault>--</span>
+                    </ng-container>
+                </td>
+                <td width='20%'>
+                    {{item.transactionId}}
+                </td>
+                <td width='20%'>
+                    {{item.paidAt | date:'dd MMM yyyy hh:mm a'}}
+                </td>
+                <td  width='20%'>
+                    <div *ngIf="item.paymentMethod != null">
+                        <ng-container [ngSwitch]="item.paymentMethod"> 
+                            <span *ngSwitchCase="AL">Airtel Money</span>
+                            <span *ngSwitchCase="NB">Net Banking India</span>
+                            <span *ngSwitchCase="PH">PhonePe</span>
+                            <span *ngSwitchCase="UI">UPI</span>
+                            <span *ngSwitchCase="WL">eWallet</span>
+                          
+                            <span *ngSwitchDefault>--</span>
+                        </ng-container>
+                    </div>
+                    
+                    <p *ngIf="item.paymentMethod === null">--</p>
+                </td>
+                <td width='10%'>
+                    <ng-container *ngIf="item.type==1; else elseTemplate">
+                        + {{item.amount * currencyDetails?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        0
+                    </ng-template>
+                </td>
+                <td width='10%'>
+                    <ng-container *ngIf="item.type==2; else elseTemplate">
+                        - {{item.amount * currencyDetails?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        0
+                    </ng-template>
+                </td>
+                <td width='15%'>
+                    {{item.finalBalance}} {{currencyDetails.conversionCurrency}}
+                </td>
+            </tr> 
+        </tbody>
+       
+    </table>
+    <div class="no_data_found" *ngIf='userTransactionDetails.length === 0'>
+        <img src="/assets/images/noData.svg">
+        <p>No Transactions Available !!</p>
+    </div>
+</section>
+
+ <section class="paginator_admin" *ngIf="total>10">
+        <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>  

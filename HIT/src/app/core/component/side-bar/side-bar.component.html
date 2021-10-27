@@ -1,0 +1,206 @@
+<div class="sidebar-backdrop" (click)='oncheck=!oncheck'></div>
+<div class="sidebar-box" [@slide_in_out] (appClickOutside)="closesidebar($event)" *ngIf='!loggedIn'>
+  <div class="sidebar-top-layout">
+    <div class="icon">
+      <img src="/assets/images/logo.png" alt="Logo_login">
+    </div>
+  </div>
+  <div class="sidebar_layout">
+    <p>Hello, Sign In</p>
+    <ul>
+      <li (click)="onHome()">
+        <div class="logo">
+          <img src="/assets/images/home-2.svg" alt="Logo_login">
+        </div>
+        Home
+      </li>
+      <li (click)="onCompetetion()">
+        <div class="logo">
+          <img src="/assets/images/trophy.svg" alt="Logo_login">
+        </div>
+        {{'header.competitions' | translate}}
+      </li>
+      <li (click)="onViewDetails()">
+        <div class="logo">
+          <img src="/assets/images/download.png" alt="Logo_login">
+        </div>
+        {{'competitionTag.more' | translate}}
+      </li>
+      
+      <div class="languageSelector" (appClickOutside)="showLanguageListFalse()">
+        <div class="logo">
+          <img src="/assets/images/download.png" alt="Logo_login">
+        </div>
+        <span style="    position: absolute;
+        margin-top: -29px;
+        margin-left: 36px;" (click)="showLanguageList()">{{currentLang=='en'?"English":currentLang=='por'?"Português":"Spanish"}}</span>
+        <section *ngIf="showLanguage">
+          <p (click)="selectLanguage(item)" *ngFor="let item of languageService.supportLanguages">
+              {{item=='en'?"English":item=='por'?"Português":"Spanish"}}
+          </p>
+         </section>
+    </div>
+
+      <!-- hide on 8/07/2021 -->
+      <!-- <li (click)="onteam()"> 
+                 <div class="logo">
+                    <img src="/assets/images/team.svg" alt="Logo_login">
+                  </div>
+                Team 
+             </li> -->
+    </ul>
+  </div>
+  <!-- <div class="foot-menu foot_log">
+    <div class="f-menu">
+      <ul>
+        <li [routerLink]="['/rules/account']"><span>{{'footer.your_account' | translate}}</span></li>
+        <li [routerLink]="['/rules/responsible-player']"><span>Responsible Gaming</span></li>
+        <li [routerLink]="['/rules/privacy-policy']"><span>{{'footer.privacy' | translate}}</span></li>
+        <li [routerLink]="['/rules/terms-of-use']"><span>{{'footer.terms' | translate}}</span></li>
+        <li [routerLink]="['/rules/how-to-join']"><span>Want to be a host ?</span></li>
+        <li [routerLink]="['/rules/about-us']"><span>About Us</span></li>
+        <li [routerLink]="['/rules/contact-us']" *ngIf='loggedIn'><span>{{'footer.contact' | translate}}</span></li>
+        <li [routerLink]="['/rules/help']"><span>{{'footer.help' | translate}}</span></li>
+        <li [routerLink]="['/rules/game-rules']"><span>Game Rules</span></li>
+        <li [routerLink]="['/rules/joining-competion']"><span>{{'footer.join_compeition' | translate}}</span></li>
+        <li [routerLink]="['/rules/creative-competion']"><span>{{'footer.create_compeition' | translate}}</span></li>
+        <li [routerLink]="['/rules/deposits']"><span>{{'footer.deposits' | translate}}</span></li>
+        <li [routerLink]="['/rules/withdrawals']"><span>{{'footer.withdrawal' | translate}}</span></li>
+        <li [routerLink]="['/rules/identityVerfication']"><span>{{'footer.verification' | translate}}</span></li>
+        <li [routerLink]="['/rules/faq']"><span>{{'footer.faq' | translate}}</span></li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="login" (click)="onLogin()">
+    <div class="logo">
+      <img src="/assets/images/login-circle-line.svg" alt="Logo_login">
+    </div>
+    Login
+  </div>
+</div>
+<div class="sidebar-box1" [@slide_in_out] (appClickOutside)="closesidebar($event)" *ngIf='loggedIn'>
+  <div class="user_profile">
+    <ng-container *ngIf="loggedIn">
+      <div class="user_name">
+        <div class="profile-icon"
+          [ngStyle]="{'background-image': profile?.image?'url('+ profile?.image +')' : 'url(/assets/images/user.jpg)'}">
+        </div>
+        <section>
+          <p [routerLink]="['/feed/profile']">{{userName}}</p>
+          <span (click)="feed()">{{'feeds.viewProfile' | translate}}</span>
+        </section>
+      </div>
+    </ng-container>
+  </div>
+  <div class="frnd_detail">
+    <div class="detail">
+      {{'profileMenu.Friends' | translate}}: {{userProfile.friendsCount}}
+    </div>
+    <div class="detail">
+      {{'header.wallet' | translate}} : {{userProfile?.walletBalance * userProfile?.conversionRate | number:'1.2-2'}} {{userProfile.currency}}
+    </div>
+    
+  </div>
+  <div class="sidebar_layout">
+    <ul>
+      <li (click)="onHome()">
+        <a [routerLink]="['/']" [routerLinkActive]="['active']" (click)="setDocTitle( 'Home' )"
+          [routerLinkActiveOptions]="{exact: true}">
+
+          <div class="logo">
+            <img src="/assets/images/home-2.svg" alt="Logo_login">
+          </div>
+          Home
+        </a>
+      </li>
+      <li (click)="onCompetetion()">
+        <a [routerLink]="['/competition/landing']" (click)="setDocTitle( 'Competition' )"
+          [routerLinkActive]="['active']">
+          <div class="logo">
+            <img src="/assets/images/trophy.svg" alt="Logo_login">
+          </div>
+          {{'header.competitions' | translate}}
+        </a>
+      </li>
+      <!-- hide on 8/07/2021 -->
+
+      <!-- <li (click)="onteam()"> 
+          <a [routerLink]="['/teams']" (click)="setDocTitle( 'Teams' )" [routerLinkActive]="['active']">
+             <div class="logo">
+                <img src="/assets/images/team.svg" alt="Logo_login">
+              </div>
+            Team 
+            </a>
+         </li> -->
+      <li (click)="onFeed()">
+        <a (click)="setDocTitle( 'Feed' )" [routerLink]="['/feed']" [routerLinkActive]="['active']">
+          <div class="logo">
+            <img src="/assets/images/booklet-line.svg" alt="Logo_login">
+          </div>
+          {{'header.feed' | translate}}
+        </a>
+      </li>
+      <li (click)="onWallet()">
+        <a (click)="setDocTitle( 'Wallet' )" [routerLink]="['/wallet']" [routerLinkActive]="['active']">
+          <div class="logo">
+            <img src="/assets/images/wallet-line.svg" alt="Logo_login">
+          </div>
+          {{'header.wallet' | translate}}
+        </a>
+      </li>
+      <li (click)="onMessage()">
+        <div class="logo">
+          <img src="/assets/images/message-3-line.svg" alt="Logo_login">
+        </div>
+        {{'competitionTag.msg' | translate}}
+      </li>
+      <li (click)="onViewDetails()">
+        <div class="logo">
+          <img src="/assets/images/download.png" alt="Logo_login">
+        </div>
+        {{'competitionTag.more' | translate}}
+      </li>
+      <div class="languageSelector" (appClickOutside)="showLanguageListFalse()">
+        <div class="logo">
+          <img src="/assets/images/download.png" alt="Logo_login">
+        </div>
+        <span style="    position: absolute;
+        margin-top: -29px;
+        margin-left: 36px;" (click)="showLanguageList()">Translate : {{currentLang=='en'?"English":currentLang=='por'?"Português":"Spanish"}}</span>
+        <section *ngIf="showLanguage" class="dropdownlist">
+          <p (click)="selectLanguage(item)" *ngFor="let item of languageService.supportLanguages">
+              {{item=='en'?"English":item=='por'?"Português":"Spanish"}}
+          </p>
+         </section>
+    </div>
+    </ul>
+  </div>
+  <!-- <div class="foot-menu">
+    <div class="f-menu">
+      <ul>
+        <li [routerLink]="['/rules/account']"><span>{{'footer.your_account' | translate}}</span></li>
+        <li [routerLink]="['/rules/responsible-player']"><span>Responsible Gaming</span></li>
+        <li [routerLink]="['/rules/privacy-policy']"><span>{{'footer.privacy' | translate}}</span></li>
+        <li [routerLink]="['/rules/terms-of-use']"><span>{{'footer.terms' | translate}}</span></li>
+        <li [routerLink]="['/rules/how-to-join']"><span>Want to be a host ?</span></li>
+        <li [routerLink]="['/rules/about-us']"><span>About Us</span></li>
+        <li [routerLink]="['/rules/contact-us']" *ngIf='loggedIn'><span>{{'footer.contact' | translate}}</span></li>
+        <li [routerLink]="['/rules/help']"><span>{{'footer.help' | translate}}</span></li>
+        <li [routerLink]="['/rules/game-rules']"><span>Game Rules</span></li>
+        <li [routerLink]="['/rules/joining-competion']"><span>{{'footer.join_compeition' | translate}}</span></li>
+        <li [routerLink]="['/rules/creative-competion']"><span>{{'footer.create_compeition' | translate}}</span></li>
+        <li [routerLink]="['/rules/deposits']"><span>{{'footer.deposits' | translate}}</span></li>
+        <li [routerLink]="['/rules/withdrawals']"><span>{{'footer.withdrawal' | translate}}</span></li>
+        <li [routerLink]="['/rules/identityVerfication']"><span>{{'footer.verification' | translate}}</span></li>
+        <li [routerLink]="['/rules/faq']"><span>{{'footer.faq' | translate}}</span></li>
+      </ul>
+    </div>
+  </div> -->
+
+  <div class="login" (click)="logout()">
+    <div class="logo">
+      <img src="/assets/images/logout-circle-line.svg" alt="Logo_login">
+    </div>
+    Logout
+  </div>
+</div>

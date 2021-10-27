@@ -1,0 +1,32 @@
+<section class="all_friends_wrap">
+    <ng-container *ngFor="let item of followFriendsList?.rows">
+        <div class="all_friends_list">
+            <div class="user_details">
+                <ng-container *ngIf="item?.user?.image; else elseTemplate">
+                    <div class="profile_icon" [style.background]="'url(' + item?.user?.image + ')'"></div>  
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="profile_icon"></div>
+                </ng-template>
+                <div (click)="onViewProfile(item)" class="username">{{item.user.username}}
+                    <p>{{item.user.friendsCount}} Friends</p>
+                </div>
+            </div>
+            <div class="mutual_friends">
+                <section>
+                    <ng-container *ngFor="let user of item.user?.mutalFriends?.friends | slice:0:3">
+                        <div [ngStyle]="{'background-image': user.image?'url(' + user.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                    </ng-container>
+                </section>
+                <span *ngIf="item.user.mutalFriends.count != '0'">{{item.user?.mutalFriends?.count}} Mutual Friends</span>
+            </div>
+            <div class="accept_action">
+                <input type="button" (click)="followAction(1,item)" value="{{'feeds.accept' | translate}}">
+                <input type="button" (click)="followAction(2,item)" value="{{'feeds.reject' | translate}}">
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="followFriendsList?.rows.length==0">
+        <p>No friends requests to show</p>
+    </ng-container>
+</section>

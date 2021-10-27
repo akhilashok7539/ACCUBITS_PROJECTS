@@ -1,0 +1,214 @@
+.competition_layout{
+    position: relative;
+    padding: 0vh 5vh 3vh 5vh;
+    border-radius: 12px;
+    margin: 4vh 0vh;
+    width: 100%;
+    background-color:#191f2b;
+    height: 100%;
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th {
+        color:white;
+        text-align:left;
+        padding: 13px;
+        font-size: 1.4rem;
+        font-family: Poppins-Light;
+        font-weight: 100;
+    }
+     td {
+        text-align:left;
+        background-color: #151b27;
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        padding: 1vh 2vh;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #272d37;
+        border-top: 1px solid #272d37;
+        color: white;
+        font-family: Poppins-Light;
+        font-weight: 100;
+        .name{
+            font-size: 1.4rem;
+        }
+
+    }
+    .td_first{
+        border-left: 1px solid #272d37;
+        border-radius: 10px 0px 0px 10px;
+    }
+    .td_last{
+        border-right: 1px solid #272d37;
+        border-radius: 0px 10px 10px 0px;
+
+    }
+    .table_spacing {
+        border-collapse:separate;
+        border-spacing:0px 27px;
+    }
+}
+.player_detail{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    p{
+        padding-left: 16px;
+
+    }
+    .earned_coin{
+      color: #0DB983;
+      font-weight: bold !important;
+      font-size: 1.6rem;
+      font-family: 'Poppins-Medium';
+    }
+    .competition_card_image{
+        width: 38px;
+        height: 39px;
+        border: 4px solid 292E38;
+        border-radius: 50%;
+        .client_avatar{
+            background-color: #32363e;
+            background-image: url(/assets/images/user.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+.competition_option_view_btn{
+    cursor: pointer;
+    width: 131px;
+    background-color: #3b414d;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    p{
+        font-size: 1.4rem;
+        margin: 8px 20px !important;
+         // display: table-cell;
+        // vertical-align: middle;
+    }
+    }
+
+.competition_option_view_add{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border-radius: 4px;
+    width: 37px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #212733;
+    height: 35px;
+}
+.follow_icon{ 
+    background-image: url(/assets/images/follow_icon.svg);
+    background-size: cover;
+    background-position: center;
+    width: 23px;
+    height: 23px;
+}
+.request_icon{ 
+    background-image: url(/assets/images/request.png);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+.follow_add{
+    background-image: url(/assets/images/follow_add.png); 
+    background-size: cover;
+    background-position: center;
+    width: 23px;
+    height: 23px;
+}
+.pa_0{
+    padding: 0px !important;
+}
+@media only screen and (max-width: 1600px) {
+    th {
+        color:white;
+        text-align:left;
+        padding: 13px;
+        font-size: 1.2rem;
+    }
+    .name{
+        font-size: 1.2rem !important;
+    }
+    .competition_option_view_btn{
+      height: 100% !important;
+        p{
+            font-size: 1.2rem;
+            margin: 8px 20px !important;        }
+        }
+        .competition_option_view_add{
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+
+            .follow_icon{
+                width: 15px;
+                height: 15px;
+            }
+            .follow_add{ 
+                width: 15px;
+                height: 15px;
+            }
+        }
+        .competition_card_image{
+            width: 30px !important;
+            height: 30px !important;
+        }
+        .earned_coin{
+            font-size: 1.4rem !important;
+        }
+        .competition_option_view_btn{
+            p{
+                font-size: 1.2rem;
+            }
+        }
+
+}
+
+.active_user{
+    color: #FEBB2E  !important;
+}
+.active_user_background{
+    background-color: #24252A !important;
+}
+
+@media only screen and (max-width: 1400px) {
+    .earned_coin{
+        font-size: 1.4rem !important;
+    }
+    th {
+        font-size: 1.2rem;
+    }
+    .name{
+        font-size: 1.2rem !important;
+    }
+    .competition_option_view_btn{
+        p{
+            font-size: 1.2rem;
+        }
+    }
+}
+.no_data{
+    padding-top: 5vh;
+    text-align: center;
+}
+.ht{
+  height: 50px !important;
+}
+.font_style{
+  font-style: italic !important
+}

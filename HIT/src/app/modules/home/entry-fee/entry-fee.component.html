@@ -1,0 +1,106 @@
+<section class="create_competition_out common_wrap">
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <!-- <section [routerLink]="['/choose-competition']" class="home_leg">{{'header.home' | translate}}</section> -->
+            <section [routerLink]="['/']" class="home_leg">{{'header.home' | translate}}</section>
+            <section [routerLink]="['/create-competition']">{{'header.createCompetition' | translate}}</section>
+            <section (click)="backTogame()">{{'breadcumbs.chooseagame' | translate}}</section>
+            <section>{{'competitionTag.entryfee' | translate}}</section>
+        </div>
+        <div class="sec">
+            <section (click)="showSwapPopup()">{{'createCompetition.swapType' | translate}}
+            </section>
+        </div>
+    </div>
+    <div class="create_competition_outer">
+        <div class="gradient_loader"></div>
+        <div class="go_to_previous" (click)="backTogame()"><img src="/assets/images/back.svg" /> {{'profileMenu.back' | translate}}</div>
+        <div class="competition_block_header">
+            <p>{{'createCompetition.entryFeeForComp' | translate}}</p>
+            <span>{{'createCompetition.moreAboutFee' | translate}}<a (click)="howItWorks()" class="know_more">{{'profileMenu.howitworks' | translate}}</a></span>
+        </div>
+        <div class="choose_game_details">
+            <!-- <p>{{competitionName}}@{{userName}}</p> -->
+            <div class="edit_username">
+                <ng-container *ngIf="editName">
+                    <input type="text" (ngModelChange)="setName($event)" (keypress)="omit_special_char($event)" autoSizeInput (blur)="resetName($event)" maxlength="50" [ngModel]="competitionName">
+                </ng-container>
+                <ng-container *ngIf="!editName">
+                    {{competitionName}}
+                </ng-container>
+                <!-- {{matchType==2?season:''}} -->
+                @{{userName}} 
+                <ng-container *ngIf="competitionType!=2">
+                    <div *ngIf="!saveEditedName" class="edt_user_icon" (click)="editUserName()"></div>
+                    <div *ngIf="saveEditedName" class="edt_user_icon saveUname" (click)="saveUserName()"></div>
+                </ng-container>
+            </div>
+            <p>ID : {{competitionId.competitionId}}</p>
+
+            <section [ngClass]="{'championship':competitionType==2}">
+                <div>
+                    <span>{{noOfDays?.length | number:'2.0'}}</span>
+                    <span>{{'competitionTag.days' | translate}}</span>
+                </div>
+                <div>
+                    <span>{{clubData?.numberOfMatches | number:'2.0'}}</span>
+                    <span>{{'competitionTag.matches' | translate}}</span>
+                </div>
+                <!-- <div>
+                    <span>{{clubData?.numberOfClubs | number:'2.0'}}</span>
+                    <span>{{'competitionTag.clubs' | translate}}</span>
+                </div> -->
+                <div>
+                    <span *ngIf="matchType === '1'">{{'mode.onetime' | translate}}</span>
+                    <span *ngIf="matchType === '2'">{{'mode.champion' | translate}}</span>
+
+                    <span>{{'competitionTag.mode' | translate}}</span>
+                </div>
+                <div>
+                    <!-- <span>{{matchPrivacy==1?"Public":"Private"}}</span> -->
+                    <span *ngIf="matchPrivacy === '1'">{{'mode.public' | translate}}</span>
+                    <span *ngIf="matchPrivacy === '2'">{{'mode.private' | translate}}</span>
+                    <span>{{'competitionTag.privacy' | translate}}</span>
+                </div>
+                <div>
+                    <span>{{friendsCount.length | number:'2.0'}}</span>
+                    <span>{{'createCompetition.FriendsInvited' | translate}}</span>
+                </div>
+            </section>
+        </div>
+        <div class="fee_details">
+            <!-- appTwoDigitDecimaNumber appInputNumber  -->
+            <!-- [config]="{isNegative:false,isDecimal:true}"  -->
+
+            <section>
+                <div class="form-group">
+                    <label class="form-label">{{'createCompetition.pricePerMatch' | translate}}</label>
+                    <input [autofocus]="true" type="number" 
+                    maxlength="15" 
+                    minlength="0" 
+                    step="0.01" 
+                    placeholder="{{'competition.enterprice' | translate}}" [(ngModel)]="price" 
+                    (keyup)="setPrice($event)"  
+                    (keypress)="checkZero($event)"
+                    class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">{{'createCompetition.totalPrice' | translate}}</label>
+                    <input type="text" [disabled]="true" readonly [value]="totalPrice" class="form-control" />
+                </div>
+                <!-- <div class="form-group">
+                    <label class="form-label">Total BrasE Token</label>
+                    <input type="text"[disabled]="true"  readonly class="form-control" />
+                </div> -->
+            </section>
+            <button type="submit" [disabled]="notNumber" (click)="checkout()" class="btn btn-primary anim_button">
+                {{'createCompetition.continue' | translate}} <span>>>></span>
+            </button>
+        </div>
+        <label class="min_price" [ngClass]="{'championshipMin':competitionType==2}">{{'createCompetition.minpricepermatch' | translate}} {{clubData?.minCostPerMatch}} {{clubData?.minCostCurrency}}</label> <br>
+        <label class="min_price" *ngIf="notNumber" [ngClass]="{'championshipMin':competitionType==2}">{{'competition.validnumber' | translate}}</label>
+    </div>
+</section>
+<app-cancel-popup *ngIf="showCancelPop" [popupData]=cancelPopData (selectedAction)=cancelEvent($event)></app-cancel-popup>
+
+<app-footer></app-footer>

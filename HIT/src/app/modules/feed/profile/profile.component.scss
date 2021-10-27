@@ -1,0 +1,477 @@
+@import '../home/home.component.scss';
+
+.profile_wrap{
+    .profile_banner{
+        // padding: 7rem 3% 4rem 4%;
+        padding-top: 15rem;
+        background-color: #242c3b4a;
+        background-position: center;
+        background-size: cover;
+        transition: height 0.2s;
+        position: relative;
+        .change_cover{
+            position: absolute;
+            right: 10rem;
+            top: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: rgb(0 0 0 / 35%);
+            cursor: pointer;
+        }
+        .back_cover{
+            overflow: hidden;
+            position: absolute;
+            display: flex;
+            width: 102px;
+            left: 4%;
+            top: 2rem;
+            background-color: rgb(0 0 0 / 35%);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            align-items: center;
+            cursor: pointer;
+            input{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+            }
+        }
+        .profile_name_wrap{
+            display: flex;
+            align-items: center;       
+            padding-left: 4%;
+            margin-bottom: -3rem;
+            .profile_pic{
+                width: 10rem;
+                height: 10rem;
+                cursor: pointer;
+                background-image: url(/assets/images/user.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 4rem;
+                .change_btn{
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    position: absolute;
+                    right: 0px;
+                    border-radius: 50%;
+                    background-color: white;
+                    bottom: 0;
+                    background-image: url(/assets/images/cam_ico.svg);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat
+                }
+            }
+        }
+        .profile_desc_wrap{
+            .profile_desc_sec{
+                display: flex;
+                align-items: center;
+                background-color: rgb(16 22 34 / 55%);
+                padding: 3rem 3% 1rem 16rem;
+                .profile_tags{
+                    padding: 3px 16px;
+                    border-right: 1px solid;
+                    font-family: Poppins-Light;
+                    span{
+                        font-family: Poppins-Medium;
+                        padding-left: 3px;
+                    }
+                }
+                .real_name{
+                    font-size: 1.6rem;
+                    font-family: Poppins-Regular !important;
+                    border-right: 0px solid;
+                    margin-right: 5rem;
+                }
+                .insta_icon_tag{
+                    width: 20px;
+                    height: 20px;
+                    background-image: url(/assets/images/instagram-logo.svg);
+                    padding: 0;
+                    background-size: 60%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    cursor: pointer;
+                    border-right: 0px solid;
+                    background-color: #ffffff5c;
+                    border-radius: 4px;
+                    margin-right: 1rem;
+                }
+                .insta_name{
+                    padding-left: 1px;
+                }
+            }
+        }
+        
+        section{
+            font-size: 5.6rem;
+            font-family: 'Helvetica65';
+            position: relative;
+            z-index: 1;
+            div{
+                position: absolute;
+                height: 80%;
+                width: 120%;
+                left: -10%;
+                background-color: rgb(0 0 0 / 35%);
+                z-index: -1;
+                transform: skewX(-30deg);
+                top: 14%;
+            }
+        }
+        
+    }
+    
+    .feed-outer{
+        .feed-timeline{
+            min-height: calc(97vh - 330px);
+        }
+        .feed-side{
+            position: absolute;
+            top: 0 !important;
+            height: calc(97vh - 330px);
+            overflow: hidden;
+          
+            .profile-menu{
+                margin-top: 0% !important;
+            }
+            .side-contain{
+                overflow: auto;
+                height: auto;
+            }
+        }
+        .re-side{
+            right: -3% !important;
+        }
+        .feed-side:hover{
+            overflow-y: auto;
+        }
+        .feed-side:nth-child(1){
+            left: -2% !important;
+        }
+        .feed-side:nth-child(3){
+            right: 0% !important;
+        }
+        // .re-side:nth-child(1){
+        //     right: 0% !important;
+        // }
+    } 
+}
+.profile_tabs{
+    display: flex;
+    div{
+        margin-right: 5rem;
+        padding-bottom: 5rem;
+        position: relative;
+        cursor: pointer;
+    }
+    .active::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 4rem;
+        background-color: #0db983;
+    }
+}
+.suggetionsfriends{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #363b48;
+    background-image: url('/assets/images/follow_add.png');
+    background-position: center;
+    background-size: 45%;
+    background-repeat: no-repeat;
+}
+.fixedWrap{
+    .feed-outer{
+        .feed-side{
+            position: fixed;
+            height: calc(97vh - 100px);
+            top: 100px !important;
+            right: 5% !important;
+        }
+        .feed-side:nth-child(1){
+            left: 7% !important;
+        }
+        .feed-side:nth-child(3){
+            right: 7% !important;
+        }
+    } 
+}
+.rqest-cont{
+    height: 30%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.position_change{
+    position: relative;
+}
+.change_cover .add-expand {
+    right: 0;
+    top: 12px;
+}
+@media only screen and (max-width: 1660px){
+    .profile_wrap{
+        .profile_banner{
+            .profile_name_wrap{
+                .profile_pic{
+                    width: 8rem;
+                    height: 8rem;
+                    .change_btn{
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+            .profile_desc_wrap{
+                .profile_desc_sec{
+                    .real_name{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+            section{
+                font-size: 4.6rem;
+            }
+        } 
+    }
+}
+.back_arrow{
+    background-image: url(/assets/images/back_arrow.svg);
+    background-color: transparent;
+    background-position: left;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background-size: 100%;
+    height: 8px;
+    width: 20px;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1440px){
+    .profile_wrap{
+        .profile_banner{
+            .change_cover{
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            .back_cover{
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                width: 75px;
+            }
+            .profile_name_wrap{
+                .profile_pic{
+                    width: 6rem;
+                    height: 6rem;
+                    .change_btn{
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+                section{
+                    font-size: 3.6rem;
+                }
+            }
+        } 
+    }
+    .feed-outer{
+        .feed-side:nth-child(1){
+            left: -4% !important;
+        }
+        .feed-side:nth-child(3){
+            right: -4% !important;
+        }
+    } 
+    .fixedWrap{
+        .feed-outer{
+            .feed-side{
+                position: fixed;
+                height: calc(97vh - 100px);
+            }
+            .feed-side:nth-child(1){
+                left: 4% !important;
+            }
+            .feed-side:nth-child(3){
+                right: 4% !important;
+            }
+        } 
+    }
+
+}
+
+@media only screen and (max-width: 800px){
+.feed-side{
+    display: none !important;
+}
+.feed-timeline{
+    width: 100% !important;
+    margin-top: 20px !important;
+    padding: 0px !important;
+    margin-left: 0px !important;
+}
+.re-side{
+    display: none !important;
+}
+.profile_tabs div {
+    padding-bottom: 2.2rem !important;
+}
+.profile_tabs .active::after {
+    bottom: 1rem !important
+}
+.change_cover{
+    display: none !important;
+}
+.back_cover{
+    display: none !important;
+}
+.profile_wrap .profile_banner .profile_name_wrap section {
+    font-size: 2.8rem;
+}
+.profile_wrap .profile_banner .profile_name_wrap .profile_pic {
+    width: 5rem;
+    height: 5rem;
+}
+.profile_wrap .profile_banner {
+    height: 148px;
+}
+.feed-outer {
+    position: relative;
+    margin: 1.5% 4% 0px;
+    padding-bottom: 2%;
+    width: 92%;
+    height: 100%;
+}
+.check{
+    margin-bottom: 7px !important;
+    margin-top: 14px !important;
+    font-size: 19px;
+    font-family: "Helvetica65";
+
+}
+}
+
+@media only screen and (max-width: 800px){
+    .profile_wrap  .profile_banner {
+        display: none;
+    }
+}
+.add-friend{
+    background: #3eb983;
+    border: none;
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+}
+@media only screen and (min-width: 900px)
+{
+    .hide {
+    display: none !important;
+   
+}
+.mobile-view{
+    display: none !important;
+
+}
+}
+@media only screen and (max-width: 800px)
+{
+    .hide{
+      display: initial;
+}
+.mobile-view{
+    display: initial;
+
+}
+.profile_banner_mobile{
+    padding-top: 15rem;
+    background-color: #242c3b4a;
+    background-position: center;
+    background-size: cover;
+    transition: height 0.2s;
+    position: relative;
+    .change_cover{
+        position: absolute;
+        right: 0rem;
+        top: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        display: inline !important;
+    }
+}
+
+.mobile_profile_name_wrap{
+    display: flex;
+    align-items: center;       
+    padding-left: 4%;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    .mobile_profile_pic{
+        width: 10rem;
+        height: 10rem;
+        cursor: pointer;
+        background-image: url(/assets/images/user.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        position: relative;
+        // margin-right: 4rem;
+        .change_btn{
+            width: 2.8rem;
+            height: 2.8rem;
+            position: absolute;
+            right: 0px;
+            border-radius: 50%;
+            background-color: white;
+            bottom: 0;
+            background-image: url(/assets/images/cam_ico.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat
+        }
+        
+    }
+    
+
+}
+.mobile_profile_desc_sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(16 22 34 / 55%);
+    // padding: 3rem 3% 1rem 16rem;
+    display: flex;
+    text-align: center;
+    line-height: 26px;
+    .mobile_profile_tags{
+        padding: 0px;
+        // border-right: 1px solid;
+        font-family: Poppins-Light;
+        span{
+            font-family: Poppins-Medium;
+            padding-left: 3px;
+        }
+    }
+   
+}
+}
+
+

@@ -1,0 +1,84 @@
+<section class="create_competition_out common_wrap">
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <!-- <section [routerLink]="['/choose-competition']" class="home_leg">{{'header.home' | translate}}</section> -->
+            <section [routerLink]="['/']" class="home_leg">{{'header.home' | translate}}</section>
+           
+            <section [routerLink]="['/create-competition']">{{'header.createCompetition' | translate}}</section>
+            <section (click)="backTogame()">{{'breadcumbs.chooseagame' | translate}}</section>
+            <section [routerLink]="['/entry-fee']">{{'competitionTag.entryfee' | translate}}</section>
+            <section>{{'breadcumbs.review' | translate}}</section>
+        </div>
+        <div class="sec">
+            <section (click)="showSwapPopup()">{{'createCompetition.swapType' | translate}}
+            </section>
+        </div>
+    </div>
+    <div class="create_competition_outer">
+        <div class="gradient_loader"></div>
+        <div class="go_to_previous" [routerLink]="['/entry-fee']"><img src="/assets/images/back.svg" /> Back</div>
+        <div class="competition_block_header">
+            <p>{{'createCompetition.ReviewYourCompetition' | translate}}</p>
+            <span>{{'createCompetition.yourLastStep' | translate}}</span>
+        </div>
+        <div class="choose_game_details">
+            <div class="edit_username">
+                <ng-container *ngIf="editName">
+                    <input type="text" (ngModelChange)="setName($event)" (keypress)="omit_special_char($event)" autoSizeInput (blur)="resetName($event)" maxlength="50" [ngModel]="competitionName">
+                </ng-container>
+                <ng-container *ngIf="!editName">
+                    {{competitionName}}
+                </ng-container>
+                @{{userName}} 
+                <ng-container *ngIf="competitionType!=2">
+                    <div *ngIf="!saveEditedName" class="edt_user_icon" (click)="editUserName()"></div>
+                    <div *ngIf="saveEditedName" class="edt_user_icon saveUname" (click)="saveUserName()"></div>
+                </ng-container>
+            </div>
+            <p>ID : {{competitionCodes.competitionId}}</p>
+            <section class="button_wrap">
+                <button class="btn btn_transparent" (click)="showCancelPopup()">{{'profileMenu.cancel' | translate}}
+                </button>
+                <button class="btn anim_button" (click)="createCompetition()">{{'createCompetition.createCompetiotion' | translate}}
+                    <span>>>></span>
+                </button>
+                <button class="btn btn_transparent" (click)="reviewCompetition()">{{'createCompetition.review' | translate}}
+                </button>
+            </section>
+        </div>
+
+        <div class="friends_list_wrap">
+            <section class="list_wrap">
+                <p>{{'createCompetition.invitedList' | translate}}
+                    <span>{{this.friendsList.length}}</span></p>
+
+                    <section class="invite_list">
+                        <div class="inv_blk inv_add" (click)="inviteFriendsPop()">
+                            <div class="add_friend_btn">+</div>
+                            <span>{{'createCompetition.inviteMore' | translate}}</span>
+                        </div>
+                        <section>
+                            <div class="inv_blk" *ngFor="let item of friendsList">
+                                <div class="friend_profile" [ngStyle]="{'background-image': item.image?'url(' + item.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                                <span>{{item.username}}</span>
+                                <div class="remove_friend" (click)="removeFriend(item)">
+                                    Remove
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+            </section>
+
+            <!-- <section class="list_wrap">
+
+            </section> -->
+        </div>
+    </div>
+</section>
+
+<app-cancel-popup *ngIf="showCancelPop" [popupData]=cancelPopData (selectedAction)=cancelEvent($event)></app-cancel-popup>
+
+<app-review-popup *ngIf="reviewPop" (reviewAction)=reviewPopupAction($event)></app-review-popup>
+
+<app-invite-friends-pop *ngIf="invitePop " (selectedAction)=closeInviteFriensPop()></app-invite-friends-pop>
+<app-footer></app-footer>

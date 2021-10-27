@@ -1,0 +1,93 @@
+<!-- <ng-container *ngFor="let item of gamesData"> -->
+<div class="competition_card_layout">
+    <div class="block_cont competition_detail_layout">
+        <div class="dot"></div>
+        <div class="card-title"><b>{{item.head?item.head[0]:'--'}}</b><span>@ {{item.head?item.head[1]:'--'}} </span></div>
+        <div class="card-tag" [ngClass]="{'championship':item.type==2}">{{item.type==1?'One Time':item.type==2?'Championship':'--'}}</div>
+        <!-- <div class="details">ID : {{item.competitionId}}</div> -->
+    </div>
+    <div class="block_cont competition_option_view_btn border_none">
+        <p>{{item.numberOfMatches}} {{'competition.matches' | translate}}</p>
+    </div>
+    <div class="block_cont competition_option_view_btn border_none">
+        <ng-container *ngIf="item.status; else elseTemplate">
+            <p *ngIf="item.status==1">{{item.startDate | date: 'mediumDate'}} - {{item.endDate | date: 'mediumDate'}}</p>
+            <p *ngIf="item.status!=1" style="color: #e65a5a;">Completed</p>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <p>{{item.startDate | date: 'mediumDate'}} - {{item.endDate | date: 'mediumDate'}}</p>
+        </ng-template>
+    </div>
+    <div class="block_cont competition_option_view_btn border_none earned_point">
+        <span *ngIf="getcompetionId(item.competitionId) === true">
+        <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === true">
+           <p> {{'sortFilter.SortByPrize' | translate}} :  100 BRL</p>
+        </span>
+        <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === false">
+        <p>{{'sortFilter.SortByPrize' | translate}}: {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}
+        </p>
+        </span>
+        </span>
+        <span *ngIf="getcompetionId(item.competitionId) === false">
+        <p>{{'sortFilter.SortByPrize' | translate}}: {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}</p>
+           
+       </span>
+    </div>
+    <div class="block_cont viewers">
+        <ng-container *ngIf="item?.competitionPlayers?.length>0">
+            <div class="card-view" [ngStyle]="{'background-image': item?.competitionPlayers[0]?.user.image?'url('+ item?.competitionPlayers[0]?.user.image +')' : 'url(/assets/images/user.jpg)'}" (click)="showPlayers(item)"></div>
+            <div class="card-nbr" (click)="showPlayers(item)" *ngIf="item?.competitionPlayers?.length>1">
+                <span>+</span> {{item?.competitionPlayers?.length - 1 || 0}}
+            </div>
+        </ng-container>
+    </div>
+    <div class="block_cont outer_flex" *ngIf="joined">
+        <ng-container *ngIf="item.status; else elseTemplate">
+            <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null && item.status==1'>
+                <p class="btn_name pl-16">{{'filter.share' | translate}}</p>
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null'>
+                <p class="btn_name pl-16">{{'filter.share' | translate}}</p>
+            </div>
+        </ng-template>
+
+        <!-- <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null'>
+                <p class="btn_name pl-16" >Share</p>
+            </div> -->
+        <div class="competition_option_view_btn view_btn ml_10" (click)="onExistingplayerNAvigate(item)">
+            <p class="btn_name pl-16">{{'filter.result' | translate}}</p>
+        </div>
+    </div>
+    <div class="block_cont outer_flex" *ngIf="!joined">
+        <ng-container *ngIf="item.status; else elseTemplate">
+            <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null && item.status==1'>
+                <p class="btn_name pl-16">{{'filter.share' | translate}}</p>
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null'>
+                <p class="btn_name pl-16">{{'filter.share' | translate}}</p>
+            </div>
+        </ng-template>
+        <!-- <div class="competition_option_view_btn view_btns ml_10" (click)="shareToFeed(item)" *ngIf='is_login!== null'>
+                <p class="btn_name pl-16" >Share</p>
+            </div> -->
+        <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.isPlayer === 0 && item.type === 1' (click)="viewGame(item)">
+            <p class="btn_name pl-16"> {{'filter.view' | translate}}</p>
+        </div>
+        <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.isPlayer === 1 && item.type === 1' (click)="onExistingplayerNAvigate(item)">
+            <p class="btn_name pl-16">{{'filter.result' | translate}}</p>
+        </div>
+        <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.joinedRounds.length === 0 && item.type === 2' (click)="viewGame(item)">
+            <p class="btn_name pl-16">{{'filter.view' | translate}}</p>
+        </div>
+        <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.joinedRounds.length !== 0 && item.type === 2' (click)="onExistingplayerNAvigate(item)">
+            <p class="btn_name pl-16">{{'filter.result' | translate}}</p>
+        </div>
+    </div>
+</div>
+<!-- </ng-container> -->
+
+<app-competition-players-pop (onClosePop)=closePop() *ngIf="showUser" [userData]=selectedUsers></app-competition-players-pop>

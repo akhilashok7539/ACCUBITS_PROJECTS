@@ -1,0 +1,40 @@
+.str_payment_wrap{
+    width: 490px;
+    background-color:#1d232d;
+    padding: 2rem;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    p{
+        text-align: center;
+        margin-bottom: 3rem;
+        span{
+            font-weight: bold;
+            color: #0db983;
+        }
+    }
+    .form-control{
+        margin-bottom: 2rem;
+    }
+    .strp_button_wrap{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        div{
+            cursor: pointer;
+            border: 1px solid;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            min-width: 100px;
+            justify-content: center;
+        }
+    }
+}
+.ElementsApp .InputElement{
+    color: white !important;
+}

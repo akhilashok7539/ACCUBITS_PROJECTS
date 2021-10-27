@@ -1,0 +1,164 @@
+.create_competition_outer{
+    padding: 5vh 25rem;
+}
+.choose_game_details{
+    padding: 4rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .edit_username{
+        margin: 0;
+        font-family: Poppins-SemiBold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            background-color: transparent;
+            color: white;
+            border: 0px solid;
+            border-bottom: 1px solid;
+            outline: none;
+        }
+        .edt_user_icon{
+            width: 30px;
+            height: 30px;
+            background-color: #b1b1b14d;
+            border-radius: 50%;
+            margin-left: 1rem;
+            background-image: url(/assets/images/edit.svg);
+            background-size: 60%;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .saveUname{
+            background-image: url(/assets/images/check.svg);
+        }
+    }
+    p{
+        font-family: Poppins-Light;
+        font-style: italic;
+        color: #ffffff87;
+        margin-top: 1vh;
+        font-size: 1.2rem;
+    }
+    section{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5vh;
+        div{
+            background-color: #222733;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 3rem;
+            border-radius: 5px;
+            position: relative;
+            min-width: 13rem;
+            span:nth-child(2){
+                font-size: 1.2rem;
+                font-family: Poppins-Light;
+                font-style: italic;
+                color: #ffffff5c;
+                margin-top: 0.875rem;
+            }
+        }
+        div::before{
+            content: '';
+            position: absolute;
+            height: 40%;
+            width: 3px;
+            top: 30%;
+            left: 0;
+            background-color: #FEBB2E;
+        }
+    }
+    .championship{
+        div::before{
+            background-color: #FE6140;
+        }
+    }
+}
+.fee_details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vh;
+    align-items: center;
+    section{
+        display: flex;
+        .form-group{
+            margin-right: 2vw;
+        }
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .create_competition_outer{
+        padding: 5vh 10rem !important;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .create_competition_outer{
+        padding: 5vh 5rem !important;
+    }
+    .choose_game_details{
+        section{
+            div{
+                padding: 1rem 2rem !important;
+            }
+        }
+    }
+}
+
+.gradient_loader{
+    background: rgb(13,185,131) !important;
+    background: linear-gradient(90deg, rgba(13,185,131,1) 0%, rgba(35,194,144,0.26096376050420167) 87%) !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .choose_game_details {
+        padding: 2rem 0rem;
+    }
+    .competition_block_header {
+        text-align: center;
+        margin-top: 13px;
+    }
+    .competition_block_header p {
+        font-size: 1.9rem;
+        margin: 0px 0px 7px 0px;
+
+    }
+    .choose_game_details section div {
+        width: 48% !important;
+        margin-top: 14px !important;
+        min-width: auto;
+    }
+    .common_wrap {
+        padding: 0vh 4%;
+    }
+    .choose_game_details section {
+        flex-wrap: wrap;  
+        margin-top: 0px !important;
+    }
+    .create_competition_outer{
+        padding: 3rem 1.8rem !important;
+        margin-bottom: 56px;
+        margin-top: 20px;
+    }
+.fee_details {
+    display: block;
+    margin-bottom: 10px;
+}
+.competition_breadcrumb{
+    display: none;
+}
+}
+.min_price{
+    font-family: Poppins-Light;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #FEBB2E;
+}
+.championshipMin{
+    color: #fe6140;
+}

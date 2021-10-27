@@ -1,0 +1,31 @@
+<div class="notification-backdrop" (click)='oncheck=!oncheck'></div>
+<div class="notification-box" (appClickOutside)="closeNotification($event)">
+    <div class="notification-top-layout">
+        <div  class="header_buttons" [ngClass]="{'has':notification.length>0}"></div>
+        <div class="icon" (click)='unSelect()'></div>
+    </div>
+    <p class="title">{{'notification.header' | translate}}</p>   
+    <section class="type_outer">
+        <div [ngClass]="{'active': notifType=='all'}" (click)="filterNotification('all')">{{'notification.all' | translate}}</div>
+        <div [ngClass]="{'active': notifType=='unread'}" (click)="filterNotification('unread')">{{'notification.unread' | translate}}</div>
+    </section>
+    <section class="notifications_list" (scroll)="onScroll($event)">
+        <ng-container *ngFor="let item of notification">
+            <div class="notif_block" (click)="onSelectCompetition(item)" [ngStyle]="{'background-color':getUnreadColot(item.status)}" *ngIf="item.type!=6&&item.type!=9">
+                <!-- <span class="notification"></span> -->
+                <!-- <img class="unread" src="./assets/images/reddot.png" alt="" *ngIf="item.status === false"> -->
+                <p>{{item?.text}}</p>
+                <p>{{item?.competition?.name}} | {{item?.competition?.type==1?'One Time':'Championship'}}</p>
+                <div class="arr_block"></div>
+            </div>
+            <div class="notif_block" (click)="viewProfile(item)" *ngIf="item.type==6 || item.type==9">
+                <section>
+                    <div class="notif_img" [ngStyle]="{'background-image': item?.triggeredUser?.image?'url('+ item?.triggeredUser?.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+                    <span>{{item.text}} </span>
+                </section>
+                <div class="arr_block"></div>
+            </div>
+        </ng-container>
+        <p *ngIf="notification?.length<1">No new notifications to show</p>
+    </section>
+</div>

@@ -1,0 +1,63 @@
+<div class="product_view_layout">
+    <div class="product_view_heading">
+        <div class="product_view_title font_large">
+            Branches
+        </div>
+        <div class="product_view_inactive">
+
+        </div>
+        <!-- <div class="dropdown"> -->
+            <!-- <span class="font_medium">Vitoria</span> -->
+            <!-- <div class="down_arrow"></div> -->
+            <select  class="dropdown" name="" id="">
+                <option value="">Vitoria</option>
+            </select>
+        <!-- </div> -->
+    </div>
+    <div>
+        <table class="sortable">
+            <thead>
+                <tr>
+                    <th width='5%'> 
+                        <input type="checkbox">
+                    </th>
+                    <th width='15%'> Code
+                    </th>
+                    <th width='25%'>Branch
+                    </th>
+                    <th width='25%'>Branch Manager
+                        
+                    </th>
+                    <th width='35%'>Region
+                      
+                    </th>
+                    
+                    <th width='5%'>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let product of test_data'>
+                    <td width='5%'>
+                        <input type="checkbox">
+
+                    </td>
+                    <td width='15%' data-column="Product Code">{{product.code}}</td>
+                    <td width='30%' data-column="Discription">{{product.name}}</td>
+                    <td width='10%' data-column="Category">{{product.category}}</td>
+                    <td width='10%' data-column="UOM">{{product.uom}}</td>
+                    <td width='5%'>
+                        <span class="more_option_dot" [matMenuTriggerFor]="menu"></span>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item class="font_medium">Update</button>
+                            <button mat-menu-item class="font_medium">Delete</button>
+                        </mat-menu>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <app-table-pagination-footer></app-table-pagination-footer>
+
+    </div>
+</div>

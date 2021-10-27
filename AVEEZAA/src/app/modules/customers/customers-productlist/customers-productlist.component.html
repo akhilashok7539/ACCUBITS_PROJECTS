@@ -1,0 +1,44 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="inner-addon left-addon">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control" placeholder="Search Products" />
+            </div>
+        </div>
+        <div class="col-sm-6 offset-2">
+            <button class="btn-group">Link Product List</button>
+
+            <button class="btn-group">Generate & Share</button>
+
+
+            <button class="btn-group">Generate</button>
+
+
+        </div>
+    </div>
+    <table class="sortable">
+        <thead>
+            <tr>
+                <th class="text-center" width='25%'>
+                  Product List Name
+                </th>
+                <th width='75%'>Description
+                    <span class="sort"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of test_data">
+              <td class="text-center" width='25%' (click)="onClickText(s)">
+                {{s.productName}}
+              </td>
+              <td  width='75%'>{{s.description}}</td>
+              </tr>
+        </tbody>
+
+    </table>
+    <app-table-pagination-footer></app-table-pagination-footer>
+
+</div>

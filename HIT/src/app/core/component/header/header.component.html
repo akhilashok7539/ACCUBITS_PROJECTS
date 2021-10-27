@@ -1,0 +1,91 @@
+<header id='hjh' [ngClass]="{'fix':fixed}">
+    <section class="menu">
+        <!-- <img class="ham_menu" alt="menu_icon" src="/assets/images/ham_ico.svg" /> -->
+        <img class="logo" [routerLink]="['/']" alt="logo" src="/assets/images/w-logo.png" />
+        <div class="head-date">
+            <div class="lbl">{{'header.Today' | translate}}</div>
+            <div class="lbl">{{today | date:'dd MMM yyyy'}}</div>
+        </div>
+        <div class="head-date" *ngIf="this.loggedIn">
+            <div class="lbl">{{'header.wallet' | translate}}</div>
+            <div class="lbl">{{profile?.currency}} {{profile?.walletBalance * profile?.conversionRate | number:'1.2-2'}}</div>
+        </div>
+        <!-- <div class="head-date" *ngIf="this.loggedIn">
+            <div class="lbl">Self Exclude Type</div>
+            <div class="lbl" *ngIf="profile?.selfExcludeType != null">{{profile?.selfExcludeType}}</div>
+            <div class="lbl" *ngIf="profile?.selfExcludeType === null">Disabled</div>
+
+        </div> -->
+        <ul class="nav_bar">
+            <a [routerLink]="['/']" [routerLinkActive]="['active']" (click)="setDocTitle( 'Home' )" [routerLinkActiveOptions]="{exact: true}">{{'header.home' | translate}}</a>
+            <a [routerLink]="['/competition/landing']" (click)="setDocTitle( 'Competition' )" [routerLinkActive]="['active']">{{'header.competitions' | translate}}</a>
+            
+            <!-- HIDE FOR SOFT LAUCH -->
+            <!-- <a [routerLink]="['/teams']" (click)="setDocTitle( 'Teams' )" [routerLinkActive]="['active']">{{'header.teams' | translate}}</a> -->
+             <!-- HIDE FOR SOFT LAUCH -->
+            <a *ngIf="this.loggedIn" (click)="setDocTitle( 'Feed' )" [routerLink]="['/feed']" [routerLinkActive]="['active']">{{'header.feed' | translate}}</a>
+            <a *ngIf="this.loggedIn" (click)="setDocTitle( 'Wallet' )"  [routerLink]="['/wallet']" [routerLinkActive]="['active']">{{'header.wallet' | translate}}</a>
+        </ul>
+
+        
+    </section>
+    <div class="hamburger" (click)='close=!close'> </div>
+    <img class="logo-mobile" [routerLink]="['/']" alt="logo" src="/assets/images/w-logo.png" />
+
+</header>  
+<!-- {{ message | async | json }} -->
+<app-side-bar (close_notfct)="onclose()" [loggedIn]='loggedIn' [avatar]='avatar' [userName]='userName'  [profile]='profile' *ngIf='close'></app-side-bar>
+<section class="profile">
+    <div class="languageSelector" (appClickOutside)="showLanguageListFalse()">
+        <span (click)="showLanguageList()">{{currentLang=='en'?"English":currentLang=='por'?"Português":"Spanish"}}</span>
+        <section *ngIf="showLanguage">
+            <p (click)="selectLanguage(item)" *ngFor="let item of languageService.supportLanguages">
+                {{item=='en'?"English":item=='por'?"Português":"Spanish"}}
+            </p>
+        </section>
+    </div>
+   
+   <a class="sign-button weda " routerLink="/user" *ngIf="!this.loggedIn">{{'login.signIn' | translate}}</a>
+   <a class="sign-button wedxaws " routerLink="/user" *ngIf="!this.loggedIn" (click)="signUp()">{{'login.signUp' | translate}}</a>
+    <div class="add_comp_btn header_buttons btn" *ngIf="this.loggedIn" (click)="addCompetition()">
+        {{'header.createCompetition' | translate}}
+    </div>
+    <div class="header_buttons notification" [ngClass]="{'has':profile?.notificationCount>0}" (click)="openNotification()" *ngIf="this.loggedIn">
+    </div>
+    <div class="header_buttons search" *ngIf="this.loggedIn" (click)="onSearch()">
+    </div>
+    <ng-container *ngIf="!this.loggedIn">
+        <a class="sign-btn sign-in" (click)="redirectToSignIn()">{{'login.signIn' | translate}}</a>
+        <a class="sign-btn" (click)="signUp()"> {{'login.signUp' | translate}}</a>
+    </ng-container>
+    <ng-container *ngIf="this.loggedIn">
+        <div class="user_name">
+            <ng-container *ngIf="profile?.image; else elseTemplate">
+                <section class="user_avatar" [routerLink]="['/feed/profile']">
+                    <img [src]="(profile?.image)" />
+                </section>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <section class="user_avatar" [routerLink]="['/feed/profile']">{{avatar}}
+                </section>  
+            </ng-template>
+            <section>
+                <p [routerLink]="['/feed/profile']">{{profile?.username}}</p>
+                <span (click)="logout()">{{'header.logout' | translate}} ></span>
+            </section>
+        </div>
+    </ng-container>
+    <!-- <div class="full-overlay" *ngIf="expand" (click)="expand=false">
+            <div class="add-expand">
+                    <div class="expand-head">Create Now !!!</div>
+                    <ul>
+                        <li (click)="addCompetition()"><div class="a-icon"></div>Create Competition</li>
+                        <li><div class="a-icon"></div>Write Post</li>
+                    </ul>
+                </div>
+    </div> -->
+</section>
+<app-notification (close_notfct)=close_notfct($event) (addMore)=moreNotification($event) (filterItem)=filterNotification($event) [notification]='notificationData' *ngIf='notification'></app-notification>
+<app-search (close)=close_search() *ngIf='search'></app-search>
+<app-message-box *ngIf="this.loggedIn"></app-message-box>
+<app-buttom-fotter *ngIf="check()" ></app-buttom-fotter>

@@ -1,0 +1,47 @@
+.admin_login_wrap{
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/images/layout_inner.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .login_wrap{
+        .login_split_container{
+            width: 40%;
+            margin: 0 auto !important;
+            position: relative;
+        }
+        .login_split_container::before{
+            content: '';
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            left: calc(50% - 2.5rem);
+            top: -6rem;
+            background-image: url(/assets/images/logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    
+}
+.imgeye{
+    width: 65%;
+    margin-top: 2px;
+}
+
+.focusInputImage{
+    position: relative;
+    input{
+        background-image: url('/assets/images/view.svg');
+    }
+    input:focus{
+        background-image: url('/assets/images/eye_open_green.svg');
+    }
+}
+.show-password{
+    input{
+        background-image: url('/assets/images/visibility.svg');
+    }
+}

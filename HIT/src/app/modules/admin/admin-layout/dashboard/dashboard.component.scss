@@ -1,0 +1,45 @@
+.admin_block_header{
+    margin-bottom: 3rem;
+}
+.dashboard_grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dashboard_block{
+        padding: 2rem;
+        width: 16%;
+        border-radius: 6px;
+        p{
+            font-size: 1.6rem;
+            font-family: Poppins-SemiBold;
+        }
+    }
+    .dashboard_block:nth-child(1){
+        background-color: #5AA454;
+    }
+    .dashboard_block:nth-child(2){
+        background-color: #E44D25;
+    }
+    .dashboard_block:nth-child(3){
+        background-color: #0a3d62;
+    }
+    .dashboard_block:nth-child(4){
+        background-color: #34495e;
+    }
+    .dashboard_block:nth-child(5){
+        background-color: #3c6382;
+    }
+    .dashboard_block:nth-child(6){
+        background-color: #60a3bc;
+    }
+}
+::ng-deep .ngx-charts { 
+    text{
+        fill: #fff!important; 
+    }
+}
+.chart-wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}

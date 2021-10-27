@@ -1,0 +1,230 @@
+<div class="wallet_outer">
+    <section class="wallet_head">
+        <p>{{'wallet.head' | translate}}</p>
+        <p><img src="/assets/images/star.svg" style="width: 20px;margin-right: 10px;"> {{userProfile?.walletBalance * userProfile?.conversionRate | number:'1.2-2'}} {{userProfile?.currency}}</p>
+        <div class="redeem_btn" (click)="redeemMoney()">{{'wallet.redeem' | translate}}</div>
+    </section>
+    <section class="add_tokens">
+        <p class="add_tokens_head">
+            <br>
+            <span>{{'feeds.addmoney' | translate}}</span>
+        </p>
+        <div class="add_tokens_panel">
+            <section *ngFor="let item of dumArrCoin">
+                <div class="amount_wrap">
+                    <div class="coin"></div>
+                    <p><span>{{'wallet.amount' | translate}}</span><br> {{userProfile?.currency}} {{item * userProfile?.conversionRate | number:'1.0-0'}}</p>
+                </div>
+                <button class="btn" (click)="addAmounts(item,'static')">{{'wallet.addNow' | translate}}</button>
+            </section>
+            <section class="input_data">
+                <div class="amount_wrap">
+                    <div class="coin"></div>
+                    <p><span>{{'wallet.amount' | translate}}</span></p>
+                </div>
+                <input appInputNumber appTwoDigitDecimaNumber [config]="{isNegative:false,isDecimal:true}" [(ngModel)]="price" (input)="setPrice($event.target.value)" type="text" placeholder="Amount" class="form-control">
+                <button class="btn" (click)="addAmounts(price,'dynamic')">{{'wallet.addNow' | translate}}</button>
+            </section>
+        </div>
+    </section>
+
+    <section class="all_transactions">
+        <div class="transactions_wrap">
+            <p class="add_tokens_head">
+                {{'wallet.transactions' | translate}}<br>
+                <span>{{'wallet.transDesc' | translate}}</span>
+            </p>
+            <div class="btn form-btn " (click)="showFilter=!showFilter">{{'wallet.filter' | translate}}
+                <span class="badgess" *ngIf='filter !== null'></span>
+            </div>
+            <div class="from_to_out" *ngIf="showFilter" (appClickOutside)="closeTypeDropdown($event)">
+                <div class="split_row">
+                    <label>{{'wallet.daterange' | translate}}</label>
+                    <section>
+                        <div class="form-group date-form">
+                            <input readonly matInput [(ngModel)]="filterFromDate" [min]="minDate" [max]="todayDate" (click)="pickerFrom.open()" placeholder="{{'wallet.fromdate' | translate}}" #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event)" [matDatepicker]="pickerFrom"
+                                class="form-control text_co" />
+                            <mat-datepicker #pickerFrom></mat-datepicker>
+                        </div>
+                        <div class="form-group date-form">
+                            <input readonly matInput [(ngModel)]="filterToDate" [min]="filterFromDate" [max]="todayDate" (click)="pickerTo.open()" placeholder="{{'wallet.todate' | translate}}" #searchFromInput name="toDate" (dateChange)="toDateChanged($event)" [matDatepicker]="pickerTo"
+                                class="form-control text_co" />
+                            <mat-datepicker #pickerTo></mat-datepicker>
+                        </div>
+                    </section>
+                </div>
+                <div class="selection_type">
+                    <label>{{'wallet.transactionType' | translate}}</label>
+                    <section>
+                        <div class="form-group">
+                            <input readonly class="form-control" [(ngModel)]="filterTransactionType" (click)="showTypeList()" (appClickOutside)="closeDropdown($event)" placeholder="{{'wallet.type' | translate}}" />
+                        </div>
+
+                        <div class="transactionList" [ngClass]="{'actList': showFilterType}">
+                            <div (click)="selectTypeFilter(item)" *ngFor="let item of filterArray">{{item?.type}}</div>
+                            <!-- <div>Prize Amount</div>
+                            <div>Competition Fee</div>
+                            <div>Redeem</div>
+                            <div>Refund</div> -->
+                        </div>
+                    </section>
+                </div>
+                <div class="button_wrap">
+                    <button class="btn btn_transparent" (click)="cancelFilter()">{{'wallet.clear' | translate}}</button>
+                    <button class="btn btn-primary" (click)="createFilter()">{{'wallet.applyfilter' | translate}}</button>
+                </div>
+            </div>
+        </div>
+
+        <ng-container *ngIf="transactionArray.length!=0; else elseTemplate">
+            <div class="transaction_table_wrap mobile_hid">
+                <div class="transactiotable_row transaction_head mobile_hid">
+                    <div>{{'wallet.tranId' | translate}}</div>
+                    <div>{{'wallet.tranType' | translate}}</div>
+                    <div>{{'wallet.time' | translate}}</div>
+                    <div>Status</div>
+                    <div>{{'transactions.Payment' | translate}}</div>
+                    <div>{{'wallet.credit' | translate}}</div>
+                    <div>{{'wallet.debit' | translate}}</div>
+                    <div>{{'wallet.balance' | translate}}</div>
+                    <div>Net Position</div>
+                </div>
+                <div class="transactiotable_row transaction_body" *ngFor="let item of transactionArray">
+                    <div class="mobile_hid">{{item?.transactionId}}</div>
+                    <div *ngIf="item.purpose!=1 && item.purpose!=4">{{item?.competition?.name}} <br><span> ID : {{item?.competition?.competitionId}}</span></div>
+                    <div *ngIf="item.purpose==1">{{'transactions.wallettoipup' | translate}}</div>
+                    <div *ngIf="item.purpose==4">Pay out</div>
+                    <div>{{item.paidAt | date:'hh:mm a'}}, {{item.paidAt | date:'d MMM'}}, {{item.paidAt | date:'yyyy'}}</div>
+                    <div class="mobile_hid">
+                        <ng-container [ngSwitch]="item.status">
+                            <span *ngSwitchCase="1">Created</span>
+                            <span *ngSwitchCase="2">Initiated</span>
+                            <span *ngSwitchCase="3">Pending</span>
+                            <span *ngSwitchCase="4">{{'transactions.completed' | translate}}</span>
+                            <span *ngSwitchCase="5">Cancelled</span>
+                            <span *ngSwitchCase="6">Expired</span>
+                            <span *ngSwitchCase="7">Under Review</span>
+                            <span *ngSwitchCase="8">Rejected</span>
+                            <span *ngSwitchCase="9">Delivered</span>
+                            <span *ngSwitchCase="10">On Hold</span>
+                            <span *ngSwitchDefault>--</span>
+                        </ng-container>
+                    </div>
+                    <div class="mobile_hid">
+                        <!-- <p>{{getpaymentById(item.paymentMethod).name}}</p>
+                        <p *ngIf="item.paymentMethod === null">--</p> -->
+                        <p *ngFor="let s of paymentTypeList">
+                            <span *ngIf="s.id === item.paymentMethod">{{s.value}}</span>
+                        </p>
+                        <span *ngIf="item.paymentMethod === null">--</span>
+                        <!-- <ng-container> 
+                                <span *ngIf="item.paymentMethod === 'AL'">Airtel Money</span>
+                                <span *ngIf="item.paymentMethod === 'NB'">Net Banking India</span>
+                                <span *ngIf="item.paymentMethod === 'PH'">PhonePe</span>
+                                <span *ngIf="item.paymentMethod === 'UI'">UPI</span>
+                                <span *ngIf="item.paymentMethod === 'WL'">eWallet</span>
+                                <span *ngIf="item.paymentMethod === null">--</span>
+                              
+                            </ng-container> -->
+
+
+                    </div>
+
+                    <div class="w_cl">
+                        <ng-container *ngIf="item.type==1; else elseTemplate">
+                            + {{item.amount * userProfile?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            0
+                        </ng-template>
+                    </div>
+
+
+                    <div class="l_cl">
+                        <ng-container *ngIf="item.type==2; else elseTemplate">
+                            - {{item.amount * userProfile?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            0
+                        </ng-template>
+                    </div>
+                    <div>
+                        <ng-container *ngIf="item.finalBalance; else elseTemplate">
+                            {{item.finalBalance * userProfile?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            0 {{item.currency}}
+                        </ng-template>
+                    </div>
+                    <!-- <div class="d_pl">{{item?.netPosition?item.netPosition:'--'}}</div> -->
+                    <div class="d_pl">{{ item.netPosition * currencyDetails?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}</div>
+                </div>
+
+                <div class="loadMoreButton" (click)="loadMoreData()" *ngIf="total>limit">
+                    {{'feeds.LoadMore' | translate}}
+                </div>
+            </div>
+            <div class="transaction_table_wrap displyss_hid">
+                <div class="transactiotable_row transaction_body" *ngFor="let item of transactionArray">
+                    <!-- *ngIf="item.purpose!=1 && item.purpose!=4" -->
+                    <div class="div_01">
+                        <p class="pasd" *ngIf="item.purpose!=1 && item.purpose!=4">
+                            {{item?.competition?.name}}
+                        </p>
+                        <p *ngIf="item.purpose==1">Wallet Top-Up</p>
+                        <p *ngIf="item.purpose==4">Pay out</p>
+
+                        <p class="pasd1"> {{item.paidAt | date:'hh:mm a'}}, {{item.paidAt | date:'d MMM'}}, {{item.paidAt | date:'yyyy'}}</p>
+                    </div>
+                    <div class="div_02">
+                        <ng-container *ngIf="item.type==1; else elseTemplate">
+                            <div class="gren_box">
+                                <span class="w_cl">
+                                    Credit
+                                </span>
+                            </div>
+
+                        </ng-container>
+                        <ng-template class="label_color" #elseTemplate>
+                            <div class="gren_box">
+                                <span class="l_cl">
+                                    Loss
+                                </span>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="div_03">
+                        <ng-container *ngIf="item.type==1">
+                            <span class="w_cl">
+                                + {{item.amount * userProfile?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                            </span>
+                        </ng-container>
+                        <ng-container *ngIf="item.type==2">
+                            <span class="l_cl">
+                                - {{item.amount * userProfile?.conversionRate | number:'1.2-2'}} {{currencyDetails.conversionCurrency}}
+                            </span>
+                        </ng-container>
+
+                    </div>
+                </div>
+
+                <div class="loadMoreButton" (click)="loadMoreData()" *ngIf="total>limit">
+                    {{'feeds.LoadMore' | translate}}
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="no_data_found">
+                <img src="/assets/images/noData.svg">
+                <p> {{'wallet.notransactionfound' | translate}}</p>
+            </div>
+
+        </ng-template>
+    </section>
+</div>
+
+<app-redeem-popup *ngIf="showRedeem" (close_redeem)="onclose()"></app-redeem-popup>
+<app-redeem-confirm-popup *ngIf="addKyc" [kycStatus]="userProfile.kycStatus" (selectedAction)=redeemPopAction($event)></app-redeem-confirm-popup>
+<app-view-notice *ngIf="viewNotice" (close_notice)="oncloseNotice()"></app-view-notice>
+
+<app-redeem-pop-up-confirmation *ngIf="addmoneypopup" [conversionRate]='conversionRate' (close_notice)="oncloseNoticepop()"></app-redeem-pop-up-confirmation>

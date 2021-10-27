@@ -1,0 +1,67 @@
+<section class="login_wrap">
+    <div class="login_split_container">
+        <p class="hidden_mobile center">{{'login.signIn' | translate}}</p>
+        <p class="hidden_mobile center">{{'login.signInHead' | translate}}</p>
+        <!-- <div class="icon hidden_desktop">
+            <img src="/assets/images/logo.png" alt="Logo_login">
+          </div> -->
+          <p class="hidden_desktop hidden_title">Login to your account</p>
+          <section class="social_media_login">
+            <!-- <p>{{'login.orSigninWith' | translate}}</p> -->
+            <section class="social_buttons">
+                
+                <div (click)="googleAuthentication()">
+                  <img class="google" src="/assets/images/google_icon.svg" alt="">
+                    {{'login.signInWithGoogle' | translate}}</div>
+               
+            </section>
+            <div class="or">  or</div>
+            <section class="social_buttons">
+                <div (click)="facebookAuthentication()" class=" fb_login">
+                    <img class="fb" src="/assets/images/facebook_icon.svg" alt="">
+                    {{'login.Facebook' | translate}}</div>
+            </section>
+           
+        </section>
+        <div class="or">  or</div>
+        <form [formGroup]="loginForm">
+
+            <div class="form-group">
+                <label class="form-label">{{'login.userEmail' | translate}}</label>
+                <input type="text" formControlName="username" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'login.password' | translate}}</label>
+                <section class="focusInputImage" [ngClass]="{'show-password':passwordShow}">
+                    <input type="{{type}}" formControlName="password" class="form-control" />
+                    <div class="showHideClick" (click)="showPassword()"></div>
+                </section>
+                <div class="forgot_password">
+                    <label [routerLink]="['/user/forgot-password']">{{'login.forgotPassword' | translate}}</label>
+                </div>
+            </div>
+
+            <div class="form-btn center">
+            
+                <button class="btn btn-primary anim_button submitbutton" (click)="login()" [disabled]="loginForm.invalid">{{'login.login' | translate}}
+                    <span>>>></span>
+                </button>
+            </div>
+        </form>
+
+        <!-- <section class="social_media_login">
+            <p>{{'login.orSigninWith' | translate}}</p>
+            <section class="social_buttons">
+                <div (click)="googleAuthentication()">{{'login.signInWithGoogle' | translate}}</div>
+                <div class="fb_login" (click)="facebookAuthentication()">{{'login.Facebook' | translate}}</div>
+            </section>
+        </section> -->
+    </div>    
+    <div class="login_split_container">
+        <section>
+            <p>{{'login.notARegUser' | translate}}</p>
+            <a [routerLink]="['/user/sign-up']">{{'login.signUp' | translate}} </a>
+        </section>
+    </div>
+
+</section>

@@ -1,0 +1,73 @@
+<div class="cancel_overlay"></div>
+<div class="popup_out">
+    <div class="common_pop_head review_pop_head">
+        <div class="close_common" (click)="closeRedeem()"></div>
+        <p>Submit your details to proceed</p>
+    </div>
+    <div class="redeem_form_wrap">
+        <!-- <div>{{redeemForm.value | json}}</div> -->
+        <form [formGroup]="redeemForm">
+            <ng-container *ngFor="let item of dynamicFormArray;let ix=index">
+                <div class="redeem_out" *ngIf="item.type!='bankCode' && !item.isSelect">
+                    <label>{{item.value.description?item.value.description:item.value.label}} <sup>*</sup></label>
+
+                    <ng-container *ngIf="item.type=='amount'; else elseTemplate">
+                        <input type="text" [formControlName]="item.type" appInputNumber appTwoDigitDecimaNumber [config]="{isNegative:false,isDecimal:true}" class="form-control">
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <input type="text" [formControlName]="item.type" (keypress)="checkValidation($event,item)" class="form-control">
+                    </ng-template>
+                </div>
+                <div class="redeem_out" *ngIf="item.type=='bankCode'" (appClickOutside)="closeLeagueDropdown($event)">
+                    <label>{{item.value.description?item.value.description:item.value.label}} <sup>*</sup></label>
+
+                    <div class="form-control dummy_field" (click)="leagueDropdown()">
+                        {{bankName}}
+                        <input type="text" readonly [formControlName]="item.type">
+                    </div>
+                    <div class="league_drop" *ngIf="showBanks">
+                        <input type="text" placeholder="Search Banks" [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}">
+                        <div class="drop_wrap">
+                            <div class="league_out" (click)="selectBank(ix,item,list)" *ngFor="let list of listedBanks | search : filterText">
+                                <span>{{list.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="redeem_out" *ngIf="item.type!='bankCode' && item.isSelect" (appClickOutside)="closeDropdown($event,ix)">
+                    <label>{{item.value.description?item.value.description:item.value.label}} <sup>*</sup></label>
+                    <div class="form-control dummy_field" (click)="showOption(ix,item,null )">
+                        <ng-container *ngIf="item.type=='documentType'; else elseTemplate">
+                            {{redeemForm.value[item.type]}}
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            {{item.selectedValue?item.selectedValue:''}}
+                        </ng-template>
+                        <input type="text" readonly [formControlName]="item.type" [ngModel]=redeemForm.value[item.type]>
+                        <!-- <i class="fa fa-chevron-down"></i> -->
+                        <!-- <img src="./assets/images/chevron-down-solid" alt=""> -->
+                        <!-- <span class="down-icon"></span> -->
+
+                        <span class="down-icon">&#x25BC;</span>
+                    </div>
+
+                    <div class="league_drop" *ngIf="!item.hidePop">
+                        <div class="drop_wrap">
+                            <div class="league_out" (click)="showOption(ix,item,type)" *ngFor="let type of item.value.in | search : filterText">
+                                <span>{{item.value.config?item.value.config[type]:type}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-container>
+            <div class="button_wrap">
+                <button class="btn btn_transparent" (click)="closeRedeem()">{{'feeds.cancel' | translate}}
+                </button>
+                <button type="submit" class="btn" (click)="submitRedeem()" [disabled]="redeemForm.invalid">{{'createCompetition.doItNow' | translate}}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

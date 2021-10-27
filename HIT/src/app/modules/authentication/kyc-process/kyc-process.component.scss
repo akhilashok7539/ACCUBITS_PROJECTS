@@ -1,0 +1,53 @@
+.kyc_wrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .kyc_card{
+        width: 70%;
+        background-color: rgba(17, 22, 41, 0.5);
+        padding: 3rem 6rem;
+        border-radius: 8px;
+        p:nth-child(1){
+            font-size: 3rem;
+            font-family: Poppins-Medium;
+            color: #0DB983;
+            margin-bottom: 1.5rem;
+        }
+        p:nth-child(2){
+            font-size: 1.8rem;
+            font-family: Poppins-Light;
+            margin-top: 0;
+            margin-bottom: 5vh;
+        }
+        .kyc_button{
+            button:nth-child(1){
+                margin-right: 2rem;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1600px) {
+    .kyc_wrap{
+        .kycHead{
+            font-size: 2rem;;
+        }
+        .kyc_card{
+            width: 80%;
+            p:nth-child(1){
+                font-size: 1.8rem;
+            }
+            p:nth-child(2){
+                font-size: 1.4rem;
+            }
+            .kyc_button{
+                button:nth-child(1){
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,208 @@
+<div class="footer">
+    <div class="foot">
+        <div class="f-logo">
+            <div class="small-logo"></div>
+            <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+
+            <div class="logo-txt">
+                <!-- <div class="lbl">{{'footer.download' | translate}}</div>
+                <div class="txt">{{'footer.desc' | translate}}</div> -->
+            </div>
+            <div class="img">
+                <!-- <a href=“https://verification.curacao-egaming.com/validateview.aspx?domain=hit-game.com” target=“_blank”> -->
+                <img class="imglicesnce" (click)="openLogo()" src="https://verification.curacao-egaming.com/validate.ashx?domain=hit-game.com" style="    width: 65px;" alt="" width="100" />
+                <!-- </a> -->
+            </div>
+            <div class="lic_image">
+                <img src="/assets/images/StatsPerform_Logo.png" style="width: 108px;">
+            </div>
+
+            <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+
+            <!-- <a class="sign-btn sign-in " routerLink="/user" *ngIf="!loggedIn">Sign In</a> -->
+        </div>
+        <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+        <!-- <div class="a-logo">
+            <div class="play"></div>
+            <div class="play"></div>
+        </div> -->
+        <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+    </div>
+    <div class="foot-menu  footer_bottom">
+
+        <div class="f-mga" (click)="opengambling()">
+            <img src="./assets/images/gambling.png" class="gambling">
+        </div>
+        <!-- 
+        <div class="f-mga" (click)="openMga()">
+            <img src="https://www.bet365.com/sports-assets/sports/FooterModule/assets/MGA.svg">
+        </div> -->
+
+        <div class="f-age">
+            <img src="/assets/images/age.svg">
+        </div>
+        <div class="f-share">
+            <a href="https://www.facebook.com/hitgamebr" target="_blank">
+                <div class="share-icon fb"></div>
+            </a>
+            <a href="https://www.instagram.com/hitgamebr/" target="_blank">
+                <div class="share-icon insta"></div>
+            </a>
+            <a href="https://www.youtube.com/channel/UCkL2EblFRIRhze8e1IIdRxg" target="_blank">
+                <div class="share-icon youtube"></div>
+            </a>
+            <a href="https://twitter.com/hitgamebr" target="_blank">
+                <div class="share-icon twitter"></div>
+            </a>
+            <a href="https://www.tiktok.com/@hitgamebr_d=secCgYIASAHKAESMgowbEdGCkkgWpYuuHN8MyKQKODNFVUFV2QbNL%2BvlZ7Tqd0lnCTqupvpgSTaNBSUEFwRGgA%3D&language=en&sec_uid=MS4wLjABAAAAXjFOiDx5-bJUfvJPdyTCM-9SSy3IYNytT_VcIiWgrE00w8BM8OkSLq3LniRt0q7D&sec_user_id=MS4wLjABAAAAXjFOiDx5-bJUfvJPdyTCM-9SSy3IYNytT_VcIiWgrE00w8BM8OkSLq3LniRt0q7D&share_author_id=6945166382360675333&share_link_id=F24A2A40-B7E9-4686-B597-4950A8CEF19B&tt_from=whatsapp&u_code=dhl36c90fgec10&user_id=6945166382360675333&utm_campaign=client_share&utm_medium=ios&utm_source=whatsapp&source=h5_m"
+                target="_blank">
+                <div class="share-icon tiktok"></div>
+            </a>
+        </div>
+
+    </div>
+    <div class="bottomaddress">
+        <span class="address">{{'footer.address' | translate}}</span>
+    </div>
+    <div class="foot-menu hiden">
+        <div class="f-menu">
+            <ul *ngIf="getlang() ==='en'">
+                <li><span class="tilte">{{'footer.about_hit' | translate}}</span></li>
+                <li><span><a href="https://blog.hit-game.com/about-us/" target="_blank">{{'footer.about' | translate}}</a> </span></li>
+                <li> </li>
+            </ul>
+            <ul *ngIf="getlang() ==='por'">
+                <li><span class="tilte">{{'footer.about_hit' | translate}}</span></li>
+                <li><span><a href="https://blog.hit-game.com/about-us/portuguese/" target="_blank">{{'footer.about' | translate}}</a> </span></li>
+                <li> </li>
+            </ul>
+            <ul *ngIf="getlang() ==='es'">
+                <li><span class="tilte">{{'footer.about_hit' | translate}}</span></li>
+                <li><span><a href="https://blog.hit-game.com/about-us/spanish/" target="_blank">{{'footer.about' | translate}}</a> </span></li>
+                <li> </li>
+            </ul>
+        </div>
+        <div class="f-menu">
+            <ul *ngIf="getlang() ==='en'">
+                <li><span class="tilte">{{'footer.help' | translate}}</span></li>
+                <li><span><a href="https://blog.hit-game.com/account/" >{{'footer.your_account' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/creative-competitions/"  target="_blank">{{'footer.create_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/joining-competitions/" target="_blank">{{'footer.join_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/game-rules/" target="_blank">{{'footer.game_rule' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/deposits/" target="_blank">{{'footer.deposits' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/withdrawals/" target="_blank">{{'footer.withdrawal' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/identity-verification/" target="_blank">{{'footer.verification' | translate}}</a></span></li>
+
+                <li><span><a href="https://blog.hit-game.com/faqs/" target="_blank">{{'footer.faq' | translate}}</a></span></li>
+                <li routerLink="/rules/contact-us"><span>{{'footer.contact' | translate}}</span></li>
+                <li> </li>
+            </ul>
+            <ul *ngIf="getlang() ==='por'">
+                <li><span class="tilte">{{'footer.help' | translate}} </span></li>
+                <li><span><a href="https://blog.hit-game.com/account/portuguese/" >{{'footer.your_account' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/creative-competitions/portuguese/"  target="_blank">{{'footer.create_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/joining-competitions/portuguese/" target="_blank">{{'footer.join_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/game-rules/portuguese/" target="_blank">{{'footer.game_rule' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/deposits/portuguese/" target="_blank">{{'footer.deposits' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/withdrawals/portuguese/" target="_blank">{{'footer.withdrawal' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/identity-verification/portuguese/" target="_blank">{{'footer.verification' | translate}}</a></span></li>
+
+                <li><span><a href="https://blog.hit-game.com/faqs/portuguese/" target="_blank">{{'footer.faq' | translate}}</a></span></li>
+                <li routerLink="/rules/contact-us"><span>{{'footer.contact' | translate}}</span></li>
+                <li> </li>
+            </ul>
+            <ul *ngIf="getlang() ==='es'">
+                <li><span class="tilte">{{'footer.help' | translate}} </span></li>
+                <li><span><a href="https://blog.hit-game.com/account/spanish/" >{{'footer.your_account' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/creative-competitions/spanish/"  target="_blank">{{'footer.create_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/joining-competitions/spanish/" target="_blank">{{'footer.join_compeition' | translate}}</a> </span></li>
+                <li><span><a href="https://blog.hit-game.com/game-rules/spanish/" target="_blank">{{'footer.game_rule' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/deposits/spanish/" target="_blank">{{'footer.deposits' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/withdrawals/spanish/" target="_blank">{{'footer.withdrawal' | translate}}</a></span></li>
+                <li><span><a href="https://blog.hit-game.com/identity-verification/spanish/" target="_blank">{{'footer.verification' | translate}}</a></span></li>
+
+                <li><span><a href="https://blog.hit-game.com/faqs/" target="_blank">{{'footer.faq' | translate}}</a></span></li>
+                <li routerLink="/rules/contact-us"><span>{{'footer.contact' | translate}}</span></li>
+                <li> </li>
+            </ul>
+        </div>
+        <div class="f-menu">
+            <ul *ngIf="getlang() ==='en'">
+                <li><span class="tilte">{{'footer.termpolicy' | translate}}</span></li>
+                <li><span> <a href="https://blog.hit-game.com/privacy-policy/" target="_blank">{{'footer.kycandpolicyandpersonaldata' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/terms-of-use/" target="_blank">{{'footer.terms' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/dispute-resolution/" target="_blank">{{'footer.dispute' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/anti-money-laundering/" target="_blank">{{'footer.anti-money' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/fairness-rng/" target="_blank">{{'footer.fairness' | translate}}</a></span></li>
+                <!-- <li ><span> <a href="https://blog.hit-game.com/personal-data/" target="_blank">{{'footer.personalData' | translate}}</a></span></li> -->
+                <li><span> <a href="https://blog.hit-game.com/accounts-payouts-bonuses/" target="_blank">{{'footer.Accounts_Bonuses' | translate}}</a></span></li>
+
+
+
+            </ul>
+            <ul *ngIf="getlang() ==='por'">
+                <li><span class="tilte">{{'footer.termpolicy' | translate}}</span></li>
+                <li><span> <a href="https://blog.hit-game.com/privacy-policy/portuguese/" target="_blank">{{'footer.kycandpolicyandpersonaldata' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/terms-of-use/portuguese/" target="_blank">{{'footer.terms' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/dispute-resolution/portuguese/" target="_blank">{{'footer.dispute' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/anti-money-laundering/portuguese/" target="_blank">{{'footer.anti-money' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/fairness-rng/portuguese/" target="_blank">{{'footer.fairness' | translate}}</a></span></li>
+                <!-- <li ><span> <a href="https://blog.hit-game.com/personal-data/portuguese/" target="_blank">{{'footer.personalData' | translate}}</a></span></li> -->
+                <li><span> <a href="https://blog.hit-game.com/accounts-payouts-bonuses/portuguese/" target="_blank">{{'footer.Accounts_Bonuses' | translate}}</a></span></li>
+
+
+
+            </ul>
+            <ul *ngIf="getlang() ==='es'">
+                <li><span class="tilte">{{'footer.termpolicy' | translate}}</span></li>
+                <li><span> <a href="https://blog.hit-game.com/privacy-policy/spanish/" target="_blank">{{'footer.kycandpolicyandpersonaldata' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/terms-of-use/spanish/" target="_blank">{{'footer.terms' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/dispute-resolution/spanish/" target="_blank">{{'footer.dispute' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/anti-money-laundering/spanish/" target="_blank">{{'footer.anti-money' | translate}}</a></span></li>
+                <li><span> <a href="https://blog.hit-game.com/fairness-rng/spanish/" target="_blank">{{'footer.fairness' | translate}}</a></span></li>
+                <!-- <li ><span> <a href="https://blog.hit-game.com/personal-data/spanish/" target="_blank">{{'footer.personalData' | translate}}</a></span></li> -->
+                <li><span> <a href="https://blog.hit-game.com/accounts-payouts-bonuses/spanish/" target="_blank">{{'footer.Accounts_Bonuses' | translate}}</a></span></li>
+
+
+
+            </ul>
+        </div>
+        <div class="f-menu" *ngIf="getlang() ==='en'">
+            <ul>
+                <li><span class="tilte">{{'footer.responsiblegame' | translate}}</span></li>
+
+                <li><span><a href="https://blog.hit-game.com/responsible-gaming/" target="_blank"> {{'footer.responsiblegame' | translate}}</a></span></li>
+                <!-- <li><span class="address">{{'footer.responsiblegame1' | translate}} <a [routerLink]="['/rules/responsible-player']">{{'footer.responsiblegame' | translate}}</a> {{'footer.responsiblegame2' | translate}}  </span> </li> -->
+                <li><span><a href="https://blog.hit-game.com/self-exclusion/" target="_blank"> {{'footer.selfexlusion' | translate}}</a> </span></li>
+
+            </ul>
+        </div>
+        <div class="f-menu" *ngIf="getlang() ==='por'">
+            <ul>
+                <li><span class="tilte">{{'footer.responsiblegame' | translate}}</span></li>
+
+                <li><span><a href="https://blog.hit-game.com/responsible-gaming/portuguese/" target="_blank"> {{'footer.responsiblegame' | translate}}</a></span></li>
+                <!-- <li><span class="address">{{'footer.responsiblegame1' | translate}} <a [routerLink]="['/rules/responsible-player']">{{'footer.responsiblegame' | translate}}</a> {{'footer.responsiblegame2' | translate}}  </span> </li> -->
+                <li><span><a href="https://blog.hit-game.com/self-exclusion/portuguese/" target="_blank"> {{'footer.selfexlusion' | translate}}</a> </span></li>
+
+            </ul>
+        </div>
+        <div class="f-menu" *ngIf="getlang() ==='es'">
+            <ul>
+                <li><span class="tilte">{{'footer.responsiblegame' | translate}}</span></li>
+
+                <li><span><a href="https://blog.hit-game.com/responsible-gaming/spanish/" target="_blank"> {{'footer.responsiblegame' | translate}}</a></span></li>
+                <!-- <li><span class="address">{{'footer.responsiblegame1' | translate}} <a [routerLink]="['/rules/responsible-player']">{{'footer.responsiblegame' | translate}}</a> {{'footer.responsiblegame2' | translate}}  </span> </li> -->
+                <li><span><a href="https://blog.hit-game.com/self-exclusion/spanish/" target="_blank"> {{'footer.selfexlusion' | translate}}</a> </span></li>
+
+            </ul>
+        </div>
+        <div class="f-menu">
+            <ul>
+                <li><span class="tilte">{{'footer.addresshead' | translate}}</span></li>
+                <!-- <li ><span class="address">P2P Entertainment Ltd, registration number C97400, 97 Windsor Street, Sliema SLM 1853, Malta, is licensed and regulated by the Malta Gaming Authority (MGA), license number XXXXXXX, on XX XXXX, 2021</span></li> -->
+                <li> <span class="address">{{'footer.address' | translate}}</span> </li>
+            </ul>
+        </div>
+    </div>
+</div>

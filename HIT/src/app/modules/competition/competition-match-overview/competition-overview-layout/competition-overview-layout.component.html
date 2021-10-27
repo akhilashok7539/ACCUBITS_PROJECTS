@@ -1,0 +1,24 @@
+<div *ngIf='!loading && !loading1'>
+    <app-competition-match-overview-details *ngIf='!view_overview' [match_id]='match_id' [competition_detail]='competition_detail' [gu_id]='gu_id'></app-competition-match-overview-details>
+<app-competition-current-match [match_overview_detail]='match_overview_detail'></app-competition-current-match>
+<section  class="common_wraps">
+    <div class="competition_detail">
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Overview'}" (click)="onClick('Overview')">
+            <div class="heading">
+                <div *ngIf="isactive === 'Overview'" class="tab_icon"></div>
+                Overview
+            </div>
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Lineups'}"  (click)="onClick('Lineups')">
+            <div class="heading">
+                <div *ngIf="isactive === 'Lineups'" class="tab_icon"></div>
+                Lineups
+            </div>
+        </div>
+    </div>
+    <app-competition-match-overview-card [match_overview_detail]='match_overview_detail' *ngIf="isactive === 'Overview'"></app-competition-match-overview-card>
+    <app-competition-match-played-card *ngIf="view_match_played.length>0 && isactive === 'Overview'" [view_match_played]='view_match_played' ></app-competition-match-played-card>
+    <app-competiton-match-lineup [match_id]='match_id' [match_overview_detail]='match_overview_detail' *ngIf="isactive === 'Lineups'"></app-competiton-match-lineup>
+</section>
+</div>
+<app-footer></app-footer>

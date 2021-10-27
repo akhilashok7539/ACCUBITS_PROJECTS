@@ -1,0 +1,537 @@
+<section class="login_wrap">
+    <div class="login_split_container">
+        <p *ngIf="!socialMediaAuth">{{'login.signUp' | translate}}</p>
+        <p>{{'login.submitBasic' | translate}}</p>
+        <form [formGroup]="userDetailsForm">
+            <div class="form-group" [ngClass]="{'userExistCheck':userVerified}">
+                <label class="form-label">{{'login.username' | translate}}</label>
+                <input type="text" formControlName="username" onkeypress="if (this.value.length > 24) return false;" placeholder="{{'login.username' | translate}}" class="form-control" appDebounce [delay]='700' [(ngModel)]="username" (getValue)="getUserName($event)"
+                    [ngClass]="{'is-invalid':!userDetailsForm.controls.username.valid && userDetailsForm.controls.username.touched}" />
+                <label class="form-error-message" *ngIf="userNameLength || userDetailsForm.controls.username.invalid && userDetailsForm.controls.username.touched">{{userError}}</label>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">{{'forms.firstname' | translate}}</label>
+                <input type="text" formControlName="firstName" placeholder="First Name" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.firstName.valid && userDetailsForm.controls.firstName.touched}" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">{{'forms.lastname' | translate}}</label>
+                <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.lastName.valid && userDetailsForm.controls.lastName.touched}" />
+            </div>
+            <ng-container *ngIf="isFbLogin">
+                <div class="form-group" [ngClass]="{'userExistCheck':emailVerified}">
+                    <label class="form-label">{{'login.emailId' | translate}}</label>
+                    <input type="text" formControlName="email" placeholder="{{'login.emailId' | translate}}" class="form-control" appDebounce [delay]='700' [(ngModel)]="email" (getValue)="getEmail($event)" />
+                    <label class="form-error-message" *ngIf="emaiLength">{{emailError}}</label>
+                </div>
+            </ng-container>
+            <div class="form-group">
+                <label class="form-label">{{'login.PhoneNumber' | translate}}</label>
+                <input type="tel" ng2TelInput (countryChange)="getNumber($event)" maxlength="15" appInputNumber [config]="{isNegative:false,isDecimal:false}" appDebounce [delay]='700' (getValue)="getPhoneNumber($event)" [ng2TelInputOptions]="{initialCountry: country}"
+                    formControlName="mobileNumber" placeholder="" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.mobileNumber.valid && userDetailsForm.controls.mobileNumber.touched}" />
+                <label class="form-error-message" *ngIf="phoneLength">{{phoneError}}</label>
+            </div>
+
+            <!-- disabled for soft launch********** -->
+            <div class="form-group" (appClickOutside)="closeCurrencyDropdown($event)">
+                <label class="form-label">{{'forms.currency' | translate}}</label>
+                <input type="text" formControlName="currency" placeholder="{{'forms.searchcountry' | translate}}" class="form-control" (focus)="searchCurrencyDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.currency.valid && userDetailsForm.controls.currency.touched}"
+                    [(ngModel)]="filterText" />
+                <ng-container *ngIf="currencyDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of currencyListSorted | search : filterText" (click)="selectOption(3,item)">{{item.currency}} - {{item.countryName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+
+            <!-- <div class="form-group">
+                <label class="form-label">Date Of Birth</label>
+                <input readonly formControlName="dob" matInput (click)="pickerFrom.open()" placeholder="Select Date" (dateChange)="getDob($event)" name="fromDate" [matDatepicker]="pickerFrom" class="form-control" />
+                <mat-datepicker #pickerFrom></mat-datepicker>
+                <label class="form-error-message" *ngIf="showDobError">You must be 18 years old or above</label>
+                
+          
+            </div> -->
+            <div class="about_wrap" style="background: none;">
+                <section>
+                    <div>
+                        <div class="title">
+                            <!-- <input type="checkbox"   [(ngModel)]='depositLimit.enable' [ngModelOptions]="{standalone: true}" > -->
+                            {{'forms.dob' | translate}}
+                        </div>
+                        <div class="lay-dob">
+                            <div class="di_wit">
+                                <!-- <div class="tests">DD</div> -->
+                                <input type="number" placeholder="DD" (input)="dateinput($event)" onkeypress="if (this.value.length > 1) return false;" class="form-control" maxlength="2" [(ngModel)]='date' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}">
+                                <!-- <select [(ngModel)]='date' [ngModelOptions]="{standalone: true}">
+                                    <option value="1">1</option>
+
+                                </select> -->
+                                <span class="is-invalid-error" *ngIf="validDateerror">Invalid Date</span>
+                            </div>
+                            <div class="di_wit">
+                                <!-- <div class="tests">MM</div> -->
+
+                                <input type="number" placeholder="MM" (input)="monthinput($event)" class="form-control" onkeypress="if (this.value.length > 1) return false;" maxlength="2" [(ngModel)]='month' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}">
+                                <span class="is-invalid-error" *ngIf="validmonthError">Invalid Month</span>
+
+                            </div>
+                            <div class="di_wit">
+                                <!-- <div class="tests">YYYY</div> -->
+                                <input type="number" placeholder="YYYY" class="form-control" onkeypress="if (this.value.length > 3) return false;" maxlength="4" [(ngModel)]='year' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}" (input)="onSearchChange($event.target.value)">
+                                <span class="is-invalid-error" *ngIf="validyearError">Invalid Year</span>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <label class="form-error-message" *ngIf="showDobError">You must be 18 years old or above</label>
+                </section>
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.address1' | translate}}</label>
+                <input type="text" formControlName="addressLine1" placeholder="Address line 1" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.addressLine1.valid && userDetailsForm.controls.addressLine1.touched}" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">{{'forms.address2' | translate}}</label>
+                <input type="text" formControlName="addressLine2" placeholder="Address line 2" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.addressLine2.valid && userDetailsForm.controls.addressLine2.touched}" />
+            </div>
+            <div class="form-group" (appClickOutside)="closecountryDropdown($event)">
+                <label class="form-label">{{'forms.country' | translate}}</label>
+                <input type="text" formControlName="country" placeholder="{{'forms.searchcountry' | translate}}" autocomplete="off" class="form-control" (focus)="searchcountryDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.country.valid && userDetailsForm.controls.country.touched}"
+                    [(ngModel)]="filtercountry" />
+                <ng-container *ngIf="countryDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of countryList | search : filtercountry" (click)="selectOption(0,item)"> {{item.countryName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group" (appClickOutside)="closeDstateDropdown($event)">
+                <label class="form-label">{{'forms.state' | translate}}</label>
+                <input type="text" formControlName="state" placeholder="{{'forms.searcgstate' | translate}}" autocomplete="off" class="form-control" (focus)="searchstateDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.state.valid && userDetailsForm.controls.state.touched}"
+                    [(ngModel)]="filterstate" />
+                <ng-container *ngIf="stateDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of stateList | search : filterstate" (click)="selectOption(1,item)"> {{item.stateName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group" (appClickOutside)="closecityDropdown($event)">
+                <label class="form-label">{{'forms.city' | translate}}</label>
+                <input type="text" formControlName="city" placeholder="{{'forms.searchcity' | translate}}" autocomplete="off" class="form-control" (focus)="searchcityDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.city.valid && userDetailsForm.controls.city.touched}"
+                    [(ngModel)]="filtercity" />
+                <ng-container *ngIf="cityDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of cityList | search : filtercity" (click)="selectOption(2,item)"> {{item.cityName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.zipcode' | translate}}</label>
+                <input type="text" formControlName="zipCode" class="form-control" (focus)="searchcityDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.zipCode.valid && userDetailsForm.controls.zipCode.touched}" />
+            </div>
+
+            <div class="form-group" (appClickOutside)="closelangDropDown($event)">
+                <label class="form-label">Choose Default Language</label>
+                <!-- <input type="text" formControlName="language" placeholder="Enter Language"  autocomplete="off" class="form-control" (focus)="searchlanguageDrop()"
+                [ngClass]="{'is-invalid':!userDetailsForm.controls.language.valid && userDetailsForm.controls.language.touched}" [(ngModel)]="languagename" />
+                <ng-container *ngIf="langDropdown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of langList" (click)="selectLang(item)"> {{item.name}}</li>
+                    </ul>
+                </ng-container> -->
+                <select class="form-control" formControlName="language">
+                    <option selected disabled value=""> Select Language</option>
+
+                    <option *ngFor="let item of langList" [value]="item.id">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="about_wrap">
+                <section>
+                    <div>
+                        <div class="title">
+                            <input type="checkbox" [(ngModel)]='depositLimit.enable' [ngModelOptions]="{standalone: true}"> {{'forms.depositelimit' | translate}}
+
+                        </div>
+                        <div class="lay" [ngClass]="{'active_chec': !depositLimit.enable}">
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.amount' | translate}}</div>
+                                <input type="number" maxlength="15" [disabled]='!depositLimit.enable' [(ngModel)]='depositLimit.amount' [ngModelOptions]="{standalone: true}" class="form-control" />
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.recurrence' | translate}}</div>
+
+                                <select (click)="selectValues()" class="c-btn" [disabled]='!depositLimit.enable' [(ngModel)]="depositLimit.recurrence" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.duration' | translate}}</div>
+                                <input readonly matInput [min]="todayDate" (click)="pickerFrom3.open()" placeholder="{{'forms.durationtodate' | translate}}" [disabled]='!depositLimit.enable' #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event,0)" [matDatepicker]="pickerFrom3"
+                                    class="form-control text_co" />
+                                <mat-datepicker #pickerFrom3></mat-datepicker>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourt_lay">
+                        <div class="title">
+                            <input type="checkbox" [(ngModel)]='betLimit.enable' [ngModelOptions]="{standalone: true}"> {{'forms.betlimit' | translate}}
+                        </div>
+                        <div class="lay" [ngClass]="{'active_chec': !betLimit.enable}">
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.amount' | translate}}</div>
+
+                                <input type="number" maxlength="15" [disabled]='!betLimit.enable' [(ngModel)]='betLimit.amount' [ngModelOptions]="{standalone: true}" class="form-control" />
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.recurrence' | translate}}</div>
+
+                                <select class="c-btn" [disabled]='!betLimit.enable' [(ngModel)]="betLimit.recurrence" [ngModelOptions]="{standalone: true}">
+                                    <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                                </select>
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.duration' | translate}}</div>
+
+                                <input readonly matInput [disabled]='!betLimit.enable' [min]="todayDate" (click)="pickerFrom4.open()" placeholder="{{'forms.durationtodate' | translate}}" #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event,1)" [matDatepicker]="pickerFrom4"
+                                    class="form-control text_co" />
+                                <mat-datepicker #pickerFrom4></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <div class="form-group terms_out">
+                <input type="checkbox" formControlName="terms"> <span>{{'login.iAgree' | translate}} <label (click)="showTermsnewtab()">{{'login.t&c' | translate}}</label> & <label (click)="showPrivacynewtab()">{{'login.privacyPolicy' | translate}}</label></span>
+
+            </div>
+            <div class="form-group terms_out">
+                <input type="checkbox" formControlName="optInEmail" (change)="subscribemail($event)"> <span>{{'login.subscribeemail' | translate}} </span>
+
+
+            </div>
+
+            <div class="form-btn">
+                <button class="btn btn-primary anim_button" (click)="submitDetails()" [disabled]="userDetailsForm.invalid">{{'login.continue' | translate}}
+                    <span>>>></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<ng-container *ngIf="showTerms">
+    <app-terms-of-use-pop (closeTermsPopup)="showTermsPop()"></app-terms-of-use-pop>
+    <div class="cancel_overlay" (click)="showTermsPop()"></div>
+</ng-container>
+
+<ng-container *ngIf="showPrivacy">
+    <app-privacy-pop (closePrivacyPopup)="showPrivacyPop()"></app-privacy-pop>
+    <div class="cancel_overlay" (click)="showPrivacyPop()"></div>
+</ng-container>
+
+
+<div class="md-stepper-horizontal orange" style="margin-top: 56px;
+margin-bottom: -34px;" *ngIf="mobileview && !welcomescreen">
+    <div class="md-step " [ngClass]="{'active':activepage === 1}">
+        <div class="md-step-circle"><span>1</span></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+    </div>
+    <div class="md-step " [ngClass]="{'active':activepage === 2}">
+        <div class="md-step-circle"><span>2</span></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+    </div>
+    <div class="md-step " [ngClass]="{'active':activepage === 3}">
+        <div class="md-step-circle"><span>3</span></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+    </div>
+    <div class="md-step" [ngClass]="{'active':activepage === 4}">
+        <div class="md-step-circle"><span>4</span></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+    </div>
+    <div class="md-step" [ngClass]="{'active':activepage === 5}">
+        <div class="md-step-circle"><span>5</span></div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+    </div>
+</div>
+
+<section class="login_wrap_mobile">
+    <div class="login_split_container" *ngIf="activepage === 2 && !welcomescreen">
+        <p>{{'forms.aboutYou' | translate}}</p>
+        <p>{{'forms.aboutusparagraph' | translate}}</p>
+        <form [formGroup]="userDetailsForm">
+            <div class="form-group" [ngClass]="{'userExistCheck':userVerified}">
+                <label class="form-label">{{'login.username' | translate}}</label>
+                <input type="text" formControlName="username" onkeypress="if (this.value.length > 24) return false;" placeholder="{{'login.username' | translate}}" class="form-control" appDebounce [delay]='700' [(ngModel)]="username" (getValue)="getUserName($event)"
+                    [ngClass]="{'is-invalid':!userDetailsForm.controls.username.valid && userDetailsForm.controls.username.touched}" />
+                <label class="form-error-message" *ngIf="userNameLength">{{userError}}</label>
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.fullname' | translate}}</label>
+                <input type="text" formControlName="firstName" placeholder="{{'forms.fullname' | translate}}" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.firstName.valid && userDetailsForm.controls.firstName.touched}" />
+            </div>
+            <ng-container *ngIf="isFbLogin">
+                <div class="form-group" [ngClass]="{'userExistCheck':emailVerified}">
+                    <label class="form-label">{{'login.emailId' | translate}}</label>
+                    <input type="text" formControlName="email" placeholder="{{'login.emailId' | translate}}" class="form-control" appDebounce [delay]='700' [(ngModel)]="email" (getValue)="getEmail($event)" />
+                    <label class="form-error-message" *ngIf="emaiLength">{{emailError}}</label>
+                </div>
+            </ng-container>
+            <div class="about_wraps" style="background: none;">
+                <section>
+                    <div>
+                        <div class="title">
+                            <!-- <input type="checkbox"   [(ngModel)]='depositLimit.enable' [ngModelOptions]="{standalone: true}" > -->
+                            {{'forms.dob' | translate}}
+                        </div>
+                        <div class="lay-dob">
+                            <div class="di_wit">
+                                <!-- <div class="tests">DD</div> -->
+                                <input type="number" placeholder="DD" (input)="dateinput($event)" onkeypress="if (this.value.length > 1) return false;" class="form-control" maxlength="2" [(ngModel)]='date' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}">
+                                <!-- <select [(ngModel)]='date' [ngModelOptions]="{standalone: true}">
+                                    <option value="1">1</option>
+
+                                </select> -->
+                                <span class="is-invalid-error" *ngIf="validDateerror">Invalid Date</span>
+                            </div>
+                            <div class="di_wit">
+                                <!-- <div class="tests">MM</div> -->
+
+                                <input type="number" placeholder="MM" (input)="monthinput($event)" class="form-control" onkeypress="if (this.value.length > 1) return false;" maxlength="2" [(ngModel)]='month' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}">
+                                <span class="is-invalid-error" *ngIf="validmonthError">Invalid Month</span>
+
+                            </div>
+                            <div class="di_wit">
+                                <!-- <div class="tests">YYYY</div> -->
+                                <input type="number" placeholder="YYYY" class="form-control" onkeypress="if (this.value.length > 3) return false;" maxlength="4" [(ngModel)]='year' (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}" (input)="onSearchChange($event.target.value)">
+                                <span class="is-invalid-error" *ngIf="validyearError">Invalid Year</span>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <label class="form-error-message" *ngIf="showDobError">You must be 18 years old or above</label>
+                </section>
+            </div>
+            <div class="form-group terms_out">
+                <input type="checkbox" formControlName="optInEmail" (change)="subscribemail($event)"> <span>{{'login.subscribeemail' | translate}} </span>
+            </div>
+            <div class="form-group terms_out">
+                <input type="checkbox" formControlName="terms"> <span>{{'login.iAgree' | translate}} <label (click)="showTermsnewtab()">{{'login.t&c' | translate}}</label> & <label (click)="showPrivacynewtab()">{{'login.privacyPolicy' | translate}}</label></span>
+            </div>
+        </form>
+    </div>
+    <!-- second page  -->
+    <div class="login_split_container" *ngIf="activepage === 3 && !welcomescreen">
+        <p>{{'forms.somemoreinfo' | translate}}</p>
+        <p>{{'forms.aboutusparagraph' | translate}}</p>
+        <form [formGroup]="userDetailsForm">
+            <div class="form-group" (appClickOutside)="closecountryDropdown($event)">
+                <label class="form-label">{{'forms.country' | translate}}</label>
+                <input type="text" formControlName="country" placeholder="{{'forms.searchcountry' | translate}}" autocomplete="off" class="form-control" (input)="searchcountryDrop()" [(ngModel)]="filtercountry" />
+                <ng-container *ngIf="countryDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of countryList | search : filtercountry" (click)="selectOption(0,item)"> {{item.countryName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group" (appClickOutside)="closelangDropDown($event)">
+                <label class="form-label">Choose Preferred Language</label>
+                <select class="form-control" formControlName="language">
+                    <option selected disabled value=""> Select Language</option>
+                    <option *ngFor="let item of langList" [value]="item.id">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="form-group" (appClickOutside)="closeCurrencyDropdown($event)">
+                <label class="form-label">{{'forms.currency' | translate}}</label>
+                <input type="text" formControlName="currency" placeholder="{{'forms.searchcountry' | translate}}" class="form-control" (input)="searchCurrencyDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.currency.valid && userDetailsForm.controls.currency.touched}"
+                    [(ngModel)]="filterText" />
+                <ng-container *ngIf="currencyDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of currencyListSorted | search : filterText" (click)="selectOption(3,item)">{{item.currency}} - {{item.countryName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'login.PhoneNumber' | translate}}</label>
+                <input type="tel" ng2TelInput (countryChange)="getNumber($event)" maxlength="15" appInputNumber [config]="{isNegative:false,isDecimal:false}" appDebounce [delay]='700' (getValue)="getPhoneNumber($event)" [ng2TelInputOptions]="{initialCountry: country}"
+                    formControlName="mobileNumber" placeholder="" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.mobileNumber.valid && userDetailsForm.controls.mobileNumber.touched}" />
+                <label class="form-error-message" *ngIf="phoneLength">{{phoneError}}</label>
+            </div>
+        </form>
+    </div>
+    <!-- third page  -->
+    <div class="login_split_container" *ngIf="activepage === 4 && !welcomescreen">
+
+        <p>{{'forms.addressinfo' | translate}}</p>
+        <p>{{'forms.aboutusparagraph' | translate}}</p>
+        <form [formGroup]="userDetailsForm">
+            <div class="form-group" (appClickOutside)="closeDstateDropdown($event)">
+                <label class="form-label">{{'forms.state' | translate}}</label>
+                <input type="text" formControlName="state" placeholder="{{'forms.searcgstate' | translate}}" autocomplete="off" class="form-control" (input)="searchstateDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.state.valid && userDetailsForm.controls.state.touched}"
+                    [(ngModel)]="filterstate" />
+                <ng-container *ngIf="stateDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of stateList | search : filterstate" (click)="selectOption(1,item)"> {{item.stateName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group" (appClickOutside)="closecityDropdown($event)">
+                <label class="form-label">{{'forms.city' | translate}}</label>
+                <input type="text" formControlName="city" placeholder="{{'forms.searchcity' | translate}}" autocomplete="off" class="form-control" (input)="searchcityDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.city.valid && userDetailsForm.controls.city.touched}"
+                    [(ngModel)]="filtercity" />
+                <ng-container *ngIf="cityDropDown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let item of cityList | search : filtercity" (click)="selectOption(2,item)"> {{item.cityName}}</li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.fulladdress' | translate}}</label>
+                <input type="text" formControlName="addressLine1" placeholder="{{'forms.fulladdress' | translate}}" class="form-control" [ngClass]="{'is-invalid':!userDetailsForm.controls.addressLine1.valid && userDetailsForm.controls.addressLine1.touched}" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.zipcode' | translate}}</label>
+                <input type="text" formControlName="zipCode" class="form-control" (focus)="searchcityDrop()" [ngClass]="{'is-invalid':!userDetailsForm.controls.zipCode.valid && userDetailsForm.controls.zipCode.touched}" />
+            </div>
+        </form>
+    </div>
+    <!-- 4th page  -->
+    <div class="login_split_container" *ngIf="activepage === 5 && !welcomescreen">
+        <p>Your Password</p>
+        <p> {{'forms.passowrdparagraph' | translate}}</p>
+        <form [formGroup]="userDetailsForm">
+            <div class="form-group">
+                <label class="form-label"> {{'forms.createyourpassword' | translate}}</label>
+                <mat-icon (click)="showpassword=!showpassword">{{showpassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <input type="{{showpassword ? 'text' :'password'}}" class="form-control" (input)="validatePassword($event)" formControlName="password" autocomplete="off" placeholder="" [ngClass]="{'is-invalid':!userDetailsForm.controls.password.valid && userDetailsForm.controls.password.touched}">
+            </div>
+            <div class="form-group terms_out" *ngFor="let data of Validations|keyvalue">
+                <input onclick="return false" type="checkbox" [checked]="data.value.value"> {{data.value.text}}
+            </div>
+            <div class="form-group">
+                <label class="form-label">{{'forms.renterpassword' | translate}}</label>
+                <mat-icon (click)="reshowpassword=!reshowpassword">{{reshowpassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <input type="{{reshowpassword ? 'text' :'password'}}" class="form-control" formControlName="reEnterPassword" autocomplete="off" placeholder="" [ngClass]="{'is-invalid':!userDetailsForm.controls.reEnterPassword.valid && userDetailsForm.controls.reEnterPassword.touched}">
+                <label class="form-label invalid-feedback" *ngIf="userDetailsForm.errors?.mismatch && (userDetailsForm.controls['reEnterPassword'].dirty || userDetailsForm.controls['reEnterPassword'].touched)">Passwords don't match.</label>
+            </div>
+
+
+        </form>
+    </div>
+    <!--5th page  -->
+    <div class="login_split_container welcomescreen" *ngIf="activepage === 6 && welcomescreen" style="margin-top: 30px;">
+        <p>{{'forms.welcometohit' | translate}}</p>
+        <p style="line-height: 21px;">{{'forms.paragraph1' | translate}}</p>
+        <P style="line-height: 21px;margin-bottom: 10px;">{{'forms.paragraph2' | translate}}</P>
+        <form [formGroup]="userDetailsForm">
+            <div class="about_wraps">
+                <section>
+                    <div>
+                        <label class="label">
+                            <div class="toggle">
+                              <input class="toggle-state" type="checkbox" (change)="changeSelection($event,'first')" [checked]='limit' />
+                              <div class="toggle-inner">
+                                 <div class="indicator"></div>
+                              </div>
+                              <div class="active-bg"></div>
+                            </div>
+                            <div class="label-text">{{'forms.idontwant' | translate}}</div>
+                        </label>
+                        <!-- <input type="checkbox" (change)="changeSelection($event,'first')" [checked]='limit'>{{'forms.idontwant' | translate}} -->
+
+                        <label class="label">
+                            <div class="toggle">
+                              <input class="toggle-state" type="checkbox" (change)="changeSelection($event,'second')" [checked]='nolimit' [(ngModel)]='depositLimit.enable' [ngModelOptions]="{standalone: true}">
+                              <div class="toggle-inner">
+                                 <div class="indicator"></div>
+                              </div>
+                              <div class="active-bg"></div>
+                            </div>
+                            <div class="label-text">{{'forms.depositelimit' | translate}}</div>
+                        </label>
+                        <!-- <input type="checkbox" (change)="changeSelection($event,'second')" [checked]='nolimit' [(ngModel)]='depositLimit.enable' [ngModelOptions]="{standalone: true}"> {{'forms.depositelimit' | translate}} -->
+                        <div class="lay" [ngClass]="{'active_chec': !depositLimit.enable}" *ngIf="depositLimit.enable">
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.amount' | translate}}</div>
+                                <input type="number" maxlength="15" [disabled]='!depositLimit.enable' [(ngModel)]='depositLimit.amount' [ngModelOptions]="{standalone: true}" class="form-control" />
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.recurrence' | translate}}</div>
+
+                                <select (click)="selectValues()" class="c-btn" [disabled]='!depositLimit.enable' [(ngModel)]="depositLimit.recurrence" [ngModelOptions]="{standalone: true}">
+                                <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                            </select>
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.duration' | translate}}</div>
+                                <input readonly matInput [min]="todayDate" (click)="pickerFrom3.open()" placeholder="{{'forms.durationtodate' | translate}}" [disabled]='!depositLimit.enable' #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event,0)" [matDatepicker]="pickerFrom3"
+                                    class="form-control text_co" />
+                                <mat-datepicker #pickerFrom3></mat-datepicker>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourt_lay">
+
+                        <div class="title">
+                            <label class="label">
+                                <div class="toggle">
+                                  <input class="toggle-state" type="checkbox" (change)="changeSelection($event,'third')" [checked]='notlimit' [(ngModel)]='betLimit.enable' [ngModelOptions]="{standalone: true}">
+                                  <div class="toggle-inner">
+                                     <div class="indicator"></div>
+                                  </div>
+                                  <div class="active-bg"></div>
+                                </div>
+                                <div class="label-text">{{'forms.betlimit' | translate}}</div>
+                            </label>
+                            <!-- <input type="checkbox" (change)="changeSelection($event,'third')" [checked]='notlimit' [(ngModel)]='betLimit.enable' [ngModelOptions]="{standalone: true}"> {{'forms.betlimit' | translate}} -->
+                        </div>
+                        <div class="lay" [ngClass]="{'active_chec': !betLimit.enable}" *ngIf="betLimit.enable">
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.amount' | translate}}</div>
+
+                                <input type="number" maxlength="15" [disabled]='!betLimit.enable' [(ngModel)]='betLimit.amount' [ngModelOptions]="{standalone: true}" class="form-control" />
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.recurrence' | translate}}</div>
+
+                                <select class="c-btn" [disabled]='!betLimit.enable' [(ngModel)]="betLimit.recurrence" [ngModelOptions]="{standalone: true}">
+                                <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                            </select>
+                            </div>
+                            <div class="di_wit">
+                                <div class="tests"> {{'forms.duration' | translate}}</div>
+
+                                <input readonly matInput [disabled]='!betLimit.enable' [min]="todayDate" (click)="pickerFrom4.open()" placeholder="{{'forms.durationtodate' | translate}}" #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event,1)" [matDatepicker]="pickerFrom4"
+                                    class="form-control text_co" />
+                                <mat-datepicker #pickerFrom4></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+        </form>
+    </div>
+
+    <div class="form-btn" style="justify-content: center;">
+        <!-- <button style="width: 85%;" class="btn btn-primary anim_button" (click)="submitDetails()" [disabled]="userDetailsForm.invalid">{{'login.continue' | translate}}
+            <span>>>></span>
+        </button> -->
+        <button style="width: 85%;" class="btn btn-primary " *ngIf="activepage !=6 && !welcomescreen" (click)="next()">{{'forms.next' | translate}}</button>
+        <button style="width: 85%;" class="btn btn-primary " *ngIf="activepage ===6 && welcomescreen" (click)="next()"> {{'forms.accesshit' | translate}}</button>
+
+    </div>
+</section>

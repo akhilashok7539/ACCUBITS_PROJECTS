@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+    <!-- <div id="container">
+  
+      <ion-item (ionChange)="getdate($event)">
+          <ion-label>Schedule notification on</ion-label>
+          <ion-datetime displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+      <button (click)="scheduleNotification()">Schedule</button>
+  </div> -->
+    <ion-card>
+        <ion-item>
+            <ion-icon name="alarm-outline" slot="start"></ion-icon>
+            <ion-label>Notification Schedule</ion-label>
+
+        </ion-item>
+
+        <ion-card-content>
+            <ion-item (ionChange)="getdatetime($event)">
+                <ion-label>Date</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+
+            </ion-item>
+            <ion-item (ionChange)="getdate($event)">
+                <ion-label>Time</ion-label>
+                <ion-datetime displayFormat="HH:mm"></ion-datetime>
+            </ion-item>
+            <button (click)="scheduleNotification()">Schedule</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-item no-lines (click)="update()">
+        <ion-label> Mute Notification</ion-label>
+        <ion-toggle [(ngModel)]="notify"></ion-toggle>
+    </ion-item>
+    <button (click)="turnoffnotifications()">OFF NOTIFICATION</button>
+    <button (click)="turnONnotifications()">ON NOTIFICATION</button>
+
+</ion-content>

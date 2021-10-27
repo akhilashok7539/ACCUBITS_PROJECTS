@@ -1,0 +1,46 @@
+.from_to_out{
+    position: absolute;
+    top: calc(100% + 3px);
+    background-color: #e4e4e4;
+    right: 0;
+    border-radius: 7px;
+    padding: 1rem;
+    color: black !important;
+    z-index: 999;
+    .split_row{
+        section{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .form-group{
+                margin-right: 0rem;
+                &:not(:last-child){
+                    margin-right: 2rem;
+                }
+                input{
+                    width: 150px !important;
+                    background-color: #848484 !important;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.btn_transparent{
+    background-color: transparent;
+    border: 1px solid #7b7b7b;
+    color: #848484;
+}
+.back{
+    background-color: #848484 !important;
+    cursor: pointer;
+    width: 100%;
+}
+.dropdown_wrap li {
+    list-style: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,30 @@
+.contact_us_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section{
+        width: 30vw;
+        margin: 0 auto;
+        padding: 3rem;
+        background-color: #232c3e;
+        border-radius: 10px;
+        margin-top: 10vh;
+    }
+}
+
+@media only screen and (max-width: 800px)
+{
+    .contact_us_wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        section{
+            width: 94%;
+            margin: 0 auto;
+            padding: 3rem;
+            background-color: #232c3e;
+            border-radius: 10px;
+            margin-top: 1vh;
+        }
+    }
+}

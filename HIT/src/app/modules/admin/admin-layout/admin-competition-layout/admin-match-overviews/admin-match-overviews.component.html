@@ -1,0 +1,73 @@
+<div class="common_wraps">
+
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <section class="heading first_child btn_child_1" (click)="onClick()">
+                <div class="back_arrow">
+                </div> 
+                Back</section>
+            <section class="heading btn_child_2">ID: {{competition_detail?.competitionId}}</section>
+        </div>
+    </div>
+
+    <div class="competition_outer">
+        <div class="competition_block_header">
+            <p>{{competition_detail?.name}}</p>
+            <div class="host_Detail">
+                <div class="heading_1">{{'competitionTag.hostedBy' | translate}} : {{competition_detail?.user?.username}}</div>
+                <div class="heading_2"> | </div>
+                <div  class="heading_1">ID : {{competition_detail?.competitionId}} </div>
+            </div>
+        </div>
+
+        <div class="competition_outer_slide">
+            <div class="competition_slide child_1">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading">{{competition_days?.length || 0 | number:'2.0'}}</div>
+                <div class="competition_label">{{'competitionTag.duration' | translate}}</div>
+            </div>
+            <div class="competition_slide child_2">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading">{{competition_detail?.numberOfMatches || 0 | number:'2.0'}}</div>
+                <div class="competition_label">{{'competitionTag.matches' | translate}}</div>
+            </div>
+            <div class="competition_slide child_3">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading">{{competition_detail?.numberOfClubs || 0 | number:'2.0'}}</div>
+                <div class="competition_label">{{'competitionTag.clubs' | translate}}</div>
+            </div>
+            <div class="competition_slide child_4">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading">{{competition_detail?.totalPrizeInUSD * competition_detail?.conversionRate || 0 | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</div>
+                <div class="competition_label">{{'competitionTag.totalPrize' | translate}}</div>
+            </div>
+            <div class="competition_slide child_5">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading" *ngIf='competition_detail?.type === 1'>One time</div>
+                <div class="competition_heading" *ngIf='competition_detail?.type === 2'>Championship</div>
+                <div class="competition_label">{{'competitionTag.mode' | translate}}</div>
+            </div>
+            <div class="competition_slide child_6">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading" *ngIf='competition_detail?.privacy === 1'>Public</div>
+                <div class="competition_heading" *ngIf='competition_detail?.privacy === 2'>Private</div>
+                <div class="competition_label">{{'competitionTag.privacy' | translate}}</div>
+            </div>
+            <div class="competition_slide child_7">
+                <div class="competition_border"  *ngIf='competition_detail?.type === 1'></div>
+                <div class="competition_borders"  *ngIf='competition_detail?.type === 2'></div>
+                <div class="competition_heading">{{competition_detail?.activePlayers | number:'2.0'}}</div>
+                <div class="competition_label">{{'competitionTag.participantsJoined' | translate}}</div>
+            </div>
+        </div>  
+   
+
+
+    </div>
+</div>

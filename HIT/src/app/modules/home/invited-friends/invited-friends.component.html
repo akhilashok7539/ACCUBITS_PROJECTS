@@ -1,0 +1,22 @@
+<div class="cancel_overlay"></div>
+<div class="common_popup popup_out">
+    <div class="common_pop_head">
+        <div class="close_common" (click)="closePopup()"></div>
+        <p>{{'createCompetition.invitedList' | translate}} <br/>
+            <span>Total Invited ( {{selectedFriends?.length}} )</span></p>
+    </div>
+    <div class="common_pop_body">
+        <ng-container *ngIf="selectedFriends?.length!=0; else elseBlock">
+            <section *ngFor="let item of selectedFriends">
+                <div class="user_Detais">
+                    <div class="us_icon" [ngStyle]="{'background-image': item.image?'url(' + item.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                    <div class="name">{{item.userName}}</div>
+                </div>
+                <div class="actions">
+                    <div class="close" (click)="removeFriend(item)"></div>
+                </div>
+            </section>
+        </ng-container>
+        <ng-template #elseBlock>No friends selected</ng-template>
+    </div>
+</div>

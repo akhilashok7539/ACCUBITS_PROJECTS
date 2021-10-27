@@ -1,0 +1,38 @@
+<div id="section">
+    <section  class="layout_outer">
+        <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+        <ng-container *ngIf="getlang() ==='en'">
+            <div class="card" *ngFor="let footerArray of footerArray">
+            <div class="card-title">
+                <a href="{{footerArray.url}}">{{footerArray.Name}}</a>
+            </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="getlang() ==='por'">
+        <div class="card" *ngFor="let footerArray of footerArrayPor">
+            <div class="card-title">
+                <a href="{{footerArray.url}}">{{footerArray.Name}}</a>
+            </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="getlang() ==='es'">
+        <div class="card" *ngFor="let footerArray of footerArraySpa">
+            <div class="card-title">
+                <a href="{{footerArray.url}}">{{footerArray.Name}}</a>
+            </div>
+        </div>
+      </ng-container>
+    </section> 
+    <!-- <share-popup-button [theme]="'modern-dark'"
+    [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+    [show]="5"
+    [url]="'https://twitter.com/'"
+   ></share-popup-button> -->
+    <!-- <div class="socialShare">
+        <share-popup-button class="buttonclass" [theme]="'modern-dark'"
+            [include]="['facebook','messenger','whatsapp','email']" [show]="4" [size]="1" [url]=shareUrl
+            [autoSetMeta]="false" [image]="'https://hit-game.com/assets/images/banner1.png'"></share-popup-button>
+    </div> -->
+
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

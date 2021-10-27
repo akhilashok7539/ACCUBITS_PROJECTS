@@ -1,0 +1,66 @@
+<div class="authentication_outer">
+  <div class="auth_header">
+    <div class="logo_auth mobilelog">
+      <img src="/assets/images/logo.png" alt="Logo_login">
+    </div>
+    <section class="head_log_outer">
+      <div class="logo_auth hidden_mobile">
+        <img src="/assets/images/logo.png" alt="Logo_login">
+      </div>
+      <ul class="hidden_mobile">
+        <li (click)="onHome()">{{'header.home' | translate}}</li>
+        <li [routerLink]="['/competition/landing']">{{'header.competitions' | translate}}</li>
+        <!-- <li [routerLink]="['/teams']">{{'header.teams' | translate}}</li> -->
+        <!-- <li *ngIf="loggedIn" [routerLink]="['/feed']">Feed</li> -->
+      </ul>
+    </section>
+    <div class="hamburger" (click)='close=!close'> </div>
+    <app-side-bar (close_notfct)="onClose()" [loggedIn]='loggedIn' [avatar]='avatar' [userName]='userName'  [profile]='profile' *ngIf='close'></app-side-bar>
+    <div class="languageSelector" (click)="showLanguageList()">
+      <span>{{currentLang=='en'?"English":currentLang=='por'?"Português":"Spanish"}}</span>
+      <section *ngIf="showLanguage">
+          <p (click)="selectLanguage(item)" *ngFor="let item of languageService.supportLanguages">
+            {{item=='en'?"English":item=='por'?"Português":"Spanish"}}
+          </p>
+      </section>
+    </div>
+  </div> 
+  <section class="animation_panel">
+    <div class="anim_lines"></div>
+    <div class="anim_lines"></div>
+    <div class="dot_anim green"></div>
+    <div class="dot_anim orange"></div>
+    <div class="dot_anim yellow"></div>
+    <div class="slide_anim_outer">
+        <div class="slide_arrow arrow slide_1"></div>
+        <div class="slide_arrow arrow slide_2"></div>
+        <div class="slide_arrow arrow slide_3"></div>
+    </div>
+    <div class="parallax-container">
+      <ng-container *ngFor="let item of parallax_item">
+        <ng-container [ngSwitch]="item.size">
+          <ng-template ngSwitchCase="tiny">
+            <div parallaxItem [top]="item.top" [left]="item.left" [rotate]="item.rotate" [inversion]="item.inversion"
+              [opacity]="item.opacity" [movement]="item.movement">
+              <div class="paralax-cube round"></div>
+            </div>
+          </ng-template>
+          <ng-template ngSwitchCase="small">
+            <div parallaxItem [top]="item.top" [left]="item.left" [rotate]="item.rotate" [inversion]="item.inversion"
+              [opacity]="item.opacity" [movement]="item.movement">
+              <div class="paralax-cube player"></div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="authentication_title">
+      <span>{{'login.mainText' | translate}}</span>
+      <!-- <span>Join & Start</span><br>
+      <span>your prediction</span> -->
+    </div>
+  </section>
+  <section class="form_panel">
+    <router-outlet></router-outlet>
+  </section>
+</div>

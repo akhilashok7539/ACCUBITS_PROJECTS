@@ -1,0 +1,9 @@
+.layout_outers {
+    background-image: url(/assets/images//backgrd.png) !important;
+}
+
+@media only screen and (max-width: 500px) { 
+    section {
+        overflow: hidden !important;
+    }
+}

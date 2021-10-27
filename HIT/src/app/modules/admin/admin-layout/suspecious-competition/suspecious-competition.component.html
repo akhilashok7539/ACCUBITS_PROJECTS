@@ -1,0 +1,45 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='20%'>Competition Name</th>
+            <th width='15%'>Competition Id</th>
+            <th width='20%'>Reason</th>
+            <th width='10%'>Type</th>
+            <th width='15%'>Host</th>
+            <th width='10%'>Entry Cost</th>
+            <th width='10%'>Joined At</th>
+            
+        </tr>
+        <tbody>
+            <tr *ngFor="let data of allCompetition | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}; let i=index">
+                <td width='15%'>
+                    {{data.name}}
+                </td>
+                <td width='15%'>
+                    {{data.competitionId}}
+                </td>
+                <td width='20%'>{{data.flagReason}}</td>
+                <td width='10%'>
+                    {{data.type==1?"One Time":"Championship"}}
+                </td>
+                <td width='15%'>
+                    {{data.user.username}}
+                </td>
+                <td width='10%'>
+                    {{data.entryCostInUSD}} USD
+                </td>
+                <td width='15%'>
+                    {{data?.createdAt | date:'dd MMM, y'}}
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+    <div *ngIf='allCompetition.length === 0' class="no_data_found">
+        <img src="/assets/images/noData.svg">
+        <p>No transaction available !!</p>
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

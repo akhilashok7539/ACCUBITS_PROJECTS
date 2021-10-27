@@ -1,0 +1,20 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head">{{'rules.mainHead' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'rules.sec1.p' | translate}}</p>
+                    <p>{{'rules.sec1.p1' | translate}}</p>
+                    <p>{{'rules.sec1.p2' | translate}}</p>
+                    <p>{{'rules.sec1.p3' | translate}}</p>
+                    <p>{{'rules.sec1.p4' | translate}}</p>
+                    <p>{{'rules.sec1.p5' | translate}}</p>
+                    <p>{{'rules.sec1.p6' | translate}}</p>
+                    <p>{{'rules.sec1.p7' | translate}}</p>
+                    <p>{{'rules.sec1.p8' | translate}}</p>
+                </div>
+            </section>
+    </section> 
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

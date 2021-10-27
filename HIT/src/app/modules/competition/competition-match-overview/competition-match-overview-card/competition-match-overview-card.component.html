@@ -1,0 +1,113 @@
+<section >
+    <div class="competition_card_layout">
+        <div class="competition_card">
+            <div class="competition_heading_layout">
+                <p class="competition_heading">Match Overview</p>
+                <div class="border"></div>
+                <!-- <div class="c-btn"><img src="/assets/images/filter.png">Filter</div> -->
+            </div>
+            <div class="match_over_layout mt_78 borders">
+                <div class="match_name_logo">
+                    <div class="competition_card_image">
+                        <img class="team_1" [src]="( envurl +'/v1/image?url=' + match_overview_detail.homeTeam.logo)" />
+                    </div>
+                    <div class="match_name">
+                        {{match_overview_detail.homeTeam.name}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status">
+                    </div>
+                    <div class="match_heading">
+                        Total Win
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.wonByHomeTeam  | number:'2.0'}}/{{match_overview_detail.totalMatches  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status red">
+                    </div>
+                    <div class="match_heading">
+                        Total Draw
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.matchesDraw  | number:'2.0'}}/{{match_overview_detail.totalMatches  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status yellow">
+                    </div>
+                    <div class="match_heading">
+                        Total Goal
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.goalsByHomeTeam  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status grey">
+                    </div>
+                    <div class="match_heading">
+                        Highest Goal Count
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.maxGoalsHome  | number:'2.0'}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="match_over_layout stage_1">
+                <div class="match_name_logo">
+                    <div class="competition_card_image">
+                        <img class="team_2" [src]="(envurl +'/v1/image?url=' + match_overview_detail.awayTeam.logo)" />
+                    </div>
+                    <div class="match_name">
+                        {{match_overview_detail.awayTeam.name}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status">
+                    </div>
+                    <div class="match_heading">
+                        Total Win
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.wonByAwayTeam  | number:'2.0'}}/{{match_overview_detail.totalMatches  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status red">
+                    </div>
+                    <div class="match_heading">
+                        Total Draw
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.matchesDraw  | number:'2.0'}}/{{match_overview_detail.totalMatches  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status yellow">
+                    </div>
+                    <div class="match_heading">
+                        Total Goal
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.goalsByAwayTeam  | number:'2.0'}}
+                    </div>
+                </div>
+                <div class="match_detail_layout">
+                    <div class="match_status grey">
+                    </div>
+                    <div class="match_heading">
+                        Highest Goal Count
+                    </div>
+                    <div class="match_detail">
+                        {{match_overview_detail.maxGoalsAway  | number:'2.0'}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='15%'>User</th>
+            <th width='15%'>Registration Type</th>
+            <th width='20%'>Reason</th>
+            <th width='10%'>KYC Status</th>
+            <th width='15%'>Mobile Number</th>
+            <th width='15%'>Email Id</th> 
+            <th width='10%'>Wallet Balance</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of allUsers | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}; let i=index">
+                <td width='15%'>{{item?.userName}}</td>
+                <td width='15%'>
+                    <ng-container [ngSwitch]="item.registrationType"> 
+                        <span *ngSwitchCase="1">Normal</span>
+                        <span *ngSwitchCase="2">Google</span>
+                        <span *ngSwitchCase="3">Facebook</span>
+                        <span *ngSwitchDefault>--</span>
+                    </ng-container>
+                </td>
+                <td width='20%'>{{item?.flagReason}}</td>
+                <td width='10%'>
+                    <ng-container [ngSwitch]="item.kycStatus"> 
+                        <span *ngSwitchCase="0">Pending</span>
+                        <span *ngSwitchCase="1">Approved</span>
+                        <span *ngSwitchCase="2">Submitted</span>
+                        <span *ngSwitchCase="3">Rejected</span>
+                        <span *ngSwitchDefault>--</span>
+                    </ng-container>
+                </td>
+                <td width='15%'>{{item.mobileNumber}}</td>
+                <td width='15%'>{{item.email}}</td> 
+                <td width='10%'>{{item.hostedCompetitions}}</td>
+            </tr>
+        </tbody>
+       
+    </table>
+    <div *ngIf='allUsers.length === 0' class="no_data_found">
+        <img src="/assets/images/noData.svg">
+        <p>No transaction available !!</p>
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

@@ -1,0 +1,84 @@
+.about_wrap{
+    background-color: #1F2531;
+    border-radius: 10px;
+    padding: 4rem 3rem;
+    section{
+        margin-bottom: 4rem;
+        span{
+            font-size: 1.4rem;
+            color: rgb(255 255 255 / 30%);
+        }
+        p{
+            font-size: 1.8rem;
+            font-family: Poppins-Medium;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        .add_name{
+            color: #3eb983;
+            cursor: pointer;
+        }
+        .edit_wrap{
+            display: flex;
+            align-items: center;
+            div{
+                width: 1.5rem;
+                height: 1.5rem;
+                background-image: url(/assets/images/edit_number.svg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-left: 1rem;
+                cursor: pointer;
+            }
+            .delete{
+                background-image: url(/assets/images/delete_about.svg);
+            }
+        }
+        form{
+            width: 40%;
+            margin-top: 1rem;
+            .form-btn{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1660px){
+    .about_wrap{
+        section{
+            margin-bottom: 3rem;
+            span{
+                font-size: 1.2rem;
+            }
+            p{
+                font-size: 1.4rem;
+            }
+            form{
+                width: 50%;
+                .btn{
+                    height: 3.5rem !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .about_wrap {
+        background-color: #1F2531;
+        border-radius: 10px;
+        padding: 1.6rem 1.6rem;
+    }
+    .about_wrap  section:nth-child(2) {
+        margin: 2rem 0rem;
+    }
+
+}
+
+.about_wrap section .form-btn {
+    display: flex;
+    justify-content: space-between;
+}

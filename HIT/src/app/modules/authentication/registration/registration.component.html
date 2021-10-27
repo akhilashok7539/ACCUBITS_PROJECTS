@@ -1,0 +1,92 @@
+<section class="login_wrap">
+    <div class="login_split_container">
+        <p>{{'login.signUp' | translate}}</p>
+        <p>{{'login.signInHead' | translate}}</p>
+        <section class="social_media_login">
+            <!-- <p>{{'login.orSigninWith' | translate}}</p> -->
+            <section class="social_buttons">
+                
+                <div (click)="googleAuthentication()">
+                  <img class="google" src="/assets/images/google_icon.svg" alt="">
+                    {{'login.signInWithGoogle' | translate}}</div>
+               
+            </section>
+            <div class="or">  or</div>
+            <section class="social_buttons">
+                <div (click)="facebookAuthentication()" class=" fb_login">
+                    <img class="fb" src="/assets/images/facebook_icon.svg" alt="">
+                    {{'login.Facebook' | translate}}</div>
+            </section>
+           
+        </section>
+        <div class="or">  or</div>
+        <form [formGroup]="registrationForm">
+            <div class="form-group">
+                <section>
+                    <label class="form-label">{{'login.emailId' | translate}}</label>
+                    <input type="text" [(ngModel)]="userEmail" formControlName="email" placeholder="" class="form-control" />
+                    <!-- <input type="text" formControlName="email" placeholder="" class="form-control"
+                        [ngClass]="{'is-invalid':!registrationForm.controls.email.valid && registrationForm.controls.email.touched}" /> -->
+                </section>
+            </div>
+
+            <div class="form-btn">
+                <button (click)="register()" [disabled]="registrationForm.invalid" class="btn btn-primary anim_button submitbutton">
+                    {{'login.signUp' | translate}}
+                    <span>>>></span>
+                 </button>
+            </div>
+        </form>
+       
+    </div>
+    <div class="login_split_container">
+        <section>
+            <p>{{'login.alreadyRegitered' | translate}}</p>
+            <a [routerLink]="['/user']">{{'login.signIn' | translate}} </a>
+        </section>
+    </div>
+</section>
+
+<section class="login_wrap_mobile">
+    <div class="login_split_container">
+        <p>{{'login.signUp' | translate}}</p>
+        <p>{{'login.signInHead' | translate}}</p>
+        <section class="social_media_login">
+
+            <section class="social_buttons">
+                <!-- {{'login.signInWithGoogle' | translate}} 
+                {{'login.Facebook' | translate}}
+                -->
+                <div (click)="googleAuthentication()">Sign Up with Google</div>
+                <div>Or</div>
+                <div (click)="facebookAuthentication()" class="fb_login">Sign Up with Facebook </div>
+                <div>Or</div>
+            </section>
+        </section>
+        <!-- <p>{{'login.signInHead' | translate}}</p> -->
+        <form [formGroup]="registrationForm">
+            <div class="form-group">
+                <section>
+                    <label class="form-label"> {{'login.emailId' | translate}}</label>
+                    <input type="text" [(ngModel)]="userEmail" formControlName="email" placeholder="" class="form-control" />
+                    <!-- <input type="text" formControlName="email" placeholder="" class="form-control"
+                        [ngClass]="{'is-invalid':!registrationForm.controls.email.valid && registrationForm.controls.email.touched}" /> -->
+                </section>
+            </div>
+
+            <div class="form-btn">
+                <button (click)="register()" [disabled]="registrationForm.invalid" class="btn btn-primary anim_button submitbutton">
+                    {{'login.signUp' | translate}} 
+                    <span>>>></span>
+                </button>
+            </div>
+        </form>
+
+    </div>
+    <div class="login_split_container">
+        <section>
+            <p>{{'login.alreadyRegitered' | translate}}</p>
+            <a [routerLink]="['/user']">{{'login.signIn' | translate}} </a>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,79 @@
+.friends_wrap{
+    .friends_nav{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        font-size: 1.4rem;
+        margin: 0;
+        margin-bottom: 4rem;
+        li{
+            margin-right: 4rem;
+            cursor: pointer;
+        }
+        li.active{
+            font-family: Poppins-Bold;
+        }
+    }
+}
+@media only screen and (max-width: 1440px){
+    .friends_wrap{
+        .friends_nav{
+            font-size: 1.2rem;
+            justify-content: center;
+        }
+    }
+}
+.dis_hid{
+    display: flex;
+}
+.mob_hid{
+    display: none !important;
+}
+@media only screen and (max-width: 800px){
+    .friends_wrap{
+        margin-bottom: 80px;
+    }
+    .all_friends_wrap .all_friends_list {
+        background-color: #1e242f;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        width: 90%;
+        margin: 15px auto;
+    }
+    .dis_hid{
+        display: none !important;
+    }
+    .mob_hid{
+        display: flex !important;
+    }
+    .friends_wrap .friends_nav li {
+        margin-right: 3rem;
+        cursor: pointer;
+    }
+    .all_friends_wrap .all_friends_list {
+        background-color: #1e242f;
+        display: block;
+    }
+    .all_friends_wrap .all_friends_list .user_details {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .all_friends_wrap .all_friends_list .games_details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;
+    }
+    .all_friends_wrap .all_friends_list .actions {
+        display: flex;
+        align-items: center;
+        font-family: Poppins-Light;
+        justify-content: center;
+    }
+}

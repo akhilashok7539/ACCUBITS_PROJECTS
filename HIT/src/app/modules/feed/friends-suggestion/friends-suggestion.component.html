@@ -1,0 +1,32 @@
+<section class="all_friends_wrap">
+    <ng-container *ngFor="let item of suggestionList">
+        <div class="all_friends_list">
+            <div class="user_details">
+                <ng-container *ngIf="item?.image; else elseTemplate">
+                    <div class="profile_icon" [style.background]="'url(' + item?.image + ')'"></div>  
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="profile_icon"></div>
+                </ng-template>
+                <div (click)="onViewProfile(item)" class="username">{{item.username}}
+                    <!-- <p>{{item.user.friendsCount}} Friends</p> -->
+                </div>
+            </div>
+            <div class="mutual_friends">
+                <section>
+                    <ng-container *ngFor="let user of item?.mutalFriends?.friends | slice:0:3">
+                        <div [ngStyle]="{'background-image': user.image?'url(' + user.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                    </ng-container>
+                </section>
+                <span *ngIf="item?.mutalFriends?.count != '0'">{{item?.mutalFriends?.count}} Mutual Friends</span>
+            </div>
+            <div class="accept_action">
+                <input type="button" (click)="addfriend(item)" value="Add Friend">
+               
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="suggestionList.length==0">
+        <p>No friends requests to show</p>
+    </ng-container>
+</section>

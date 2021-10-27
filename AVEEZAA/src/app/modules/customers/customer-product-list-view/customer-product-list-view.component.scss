@@ -1,0 +1,133 @@
+// .container {
+//     padding-top: 38px;
+//     padding-bottom: 38px;
+// }
+// @media (min-width: 1200px) {
+//     .container {
+//         max-width: 1200px;
+//         margin-right: auto;
+//         margin-left: auto;
+//     }
+// }
+.fa-times{
+    margin-top: 12px;
+}
+h6 {
+    font-size: 20px;
+    margin-bottom: 41px;
+}
+.heading-contact {
+    font-size: 20px;
+    margin-top: 41px;
+}
+span {
+    color: red;
+}
+.submit {
+    float: right;
+    width: 38%;
+    border-radius: 10px;
+    background: #0ac678;
+    border: none;
+    padding: 14px;
+    margin-bottom: 15px;
+    color: white;
+}
+.input-checkbox {
+    margin-top: 21px;
+    margin-left: 14px;
+}
+label {
+    color: #606660;
+    margin-bottom: 3px;
+    margin-top: 12px;
+}
+p {
+    font-weight: bold;
+    font-size: 15px;
+}
+.button-group {
+    display: flex;
+    flex-direction: row;
+}
+.btn-requested {
+    background: #ffa5003b;
+    padding: 14px;
+    border-radius: 39px;
+    margin-left: 14px;
+    color: orange;
+    margin-right: 22px;
+    font-weight: bold;
+}
+.btn-available {
+    background: #a5fcacb2;
+    padding: 14px;
+    border-radius: 39px;
+    margin-left: 14px;
+    color: rgb(11 165 44 / 78%);
+    margin-right: 22px;
+    font-weight: bold;
+}
+.btn-danger {
+    background: #e7e7e7;
+    height: 31px;
+    border: none;
+    margin-top: 8px;
+}
+.btn-success {
+    background: #0ac678;
+    height: 31px;
+    margin-top: 8px;
+    border: none;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 0.6rem;
+    margin-top: 9px;
+    margin-bottom: 20px;
+    padding: 0.8rem 0.75rem;
+}
+hr {
+    border-top: 0px solid #ebebeb;
+}
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .fa {
+    left: 0px;
+}
+.right-addon .fa {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+.right-addon input {
+    padding-right: 30px;
+}
+
+.form-control {
+    outline: whitesmoke;
+}
+.btn-group {
+    padding: 9px;
+    background: white;
+    border: 1px solid orange;
+    color: orange;
+    float: right;
+    margin-left: 21px;
+    border-radius: 7px;
+}

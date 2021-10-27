@@ -1,0 +1,136 @@
+<div id="body" (appClickOutside)="closeNotification($event)">
+
+    <div id="chat-circle" class="btn btn-raised" [@fadeInOut] (click)="onselect()" *ngIf='icon'>
+        <div id="chat-overlay"></div>
+        <i class="material-icons">message</i>
+    </div>
+
+    <div class="chat-box" [@fadeInOut] *ngIf='box'>
+        <div class="chat-box-header">
+            <span><i (click)="onselect()" class="material-icons data_frd">keyboard_arrow_left</i></span>
+            <div class="user_details ">
+                <div class="profile_icon" [style.background]="'url(' + frnd_image + ')'">
+                    <div *ngIf="Online" class="change_btn_online">
+                    </div>
+                    <div *ngIf="!Online" class="change_btn_offline">
+                    </div>
+                </div>
+                <div class="align_name frnd_Detail">{{frnd_name}}
+                </div>
+
+            </div>
+            <span class="chat-box-toggle"><i (click)="onClose()" class="material-icons">close</i></span>
+        </div>
+        <div class="chat-box-body">
+            <div class="chat-box-overlay">
+            </div>
+            <div class="chat-logs" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+
+                <div class="messages" #chatDisplay>
+
+                    <div class="chats">
+                        <div class="left" *ngFor="let message of messages"
+                            [class.right]="loggedUserName === message.author">
+                            <ng-container *ngIf="message.body">
+                                <div>
+                                    <p class="qwd" *ngIf="message.check && !message.current_date">{{message.dateUpdated |
+                                        date: 'MMM d, y'}}</p>
+                                    <p class="qwd" *ngIf="message.check && message.current_date">Today </p>
+                                </div>
+                         
+
+                                <ng-container *ngIf="loggedUserName !== message.author">
+                                    <!-- [style.background]="'url(' + frnd_image + ')'" -->
+                                    <div class="profile_pic" ></div>
+                                </ng-container>
+                                <div class="msg-itm">
+                                    <div class="new_msg">
+                                        {{message.body}}
+                                    </div>
+                                    <p class="grey_text" >{{message.dateUpdated | date: 'h:mm a'}}</p>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div *ngIf="membersTyping.length">
+                        <span class="typing">{{whosTyping()}} is typing...</span>
+                    </div>
+                </div>
+
+            </div>
+            <!--chat-log -->
+        </div>
+        <div class="chat-input">
+            <form>
+                <!-- <emoji-mart title="Pick your emoji…" emoji="point_up"></emoji-mart> -->
+                <!-- <emoji-mart set="emojione"></emoji-mart> -->
+                <!-- <emoji-mart (emojiClick)="addEmoji($event)"></emoji-mart> -->
+                <!-- good -->
+                <emoji-mart (emojiSelect)="addEmoji($event)" *ngIf='emoji'
+                    [style]="{ position: 'absolute', bottom: '60px', right: '20px' }"></emoji-mart>
+                <!-- <emoji-mart
+  [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"
+></emoji-mart> -->
+                <span class="material-icons smile_emoji" (click)='emoji=!emoji'>
+                    tag_faces
+                </span>
+                <input type="text" id="chat-input"  placeholder="Send a message..."  #chatElement
+                    [(ngModel)]="chatMessage" [ngModelOptions]="{standalone: true}" focus />
+                <button type="submit" (click)="sendMessage()" class="chat-submit" id="chat-submit"><i
+                        class="material-icons">send</i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="chat-box" [@fadeInOut] *ngIf='frnds'> 
+        <div class="chat-box-header">
+            {{'login.friends' | translate}} ({{allFriendsData.length}})
+            <span class="material-icons chat-box-search-toggle " (click)="search=!search">
+                search
+            </span>
+            <span class="chat-box-toggle"><i (click)="onClose()" class="material-icons">close</i></span>
+        </div>
+        <div  class="global_search_header" *ngIf='search'>
+            <div  class="global_search_input"><input  type="text"
+                autofocus
+                placeholder="Search Here"
+                (input)="getSearchResult($event.target.value)"
+                (keypress)="checkTab($event)"
+                appDebounce
+                [delay]='700'
+                [(ngModel)]="searchValue" 
+                 autocomplete="off">
+            </div>
+        </div>
+        <div class="chat-box-body">
+            <div class="chat-box-overlay">
+            </div>
+            <div class="chat-logs">
+                <div class="all_friends_list" *ngFor="let data of allFriendsData" (click)="Message(data)">
+                    <div class="user_details">
+                        <div class="profile_icon" *ngIf='data?.friendInfo?.image !== null'
+                            [style.background]="'url(' + data?.friendInfo?.image + ')'">
+                            <div *ngIf="data.friendInfo.isOnline" class="change_btn_online">
+                            </div>
+                            <div *ngIf="!data.friendInfo.isOnline" class="change_btn_offline">
+                            </div>
+                        </div>
+                        <div class="profile_icon" *ngIf='data?.friendInfo?.image === null'>
+                            <div *ngIf="data.friendInfo.isOnline" class="change_btn_online">
+                            </div>
+                            <div *ngIf="!data.friendInfo.isOnline" class="change_btn_offline">
+                            </div>
+                        </div>
+                        <div class="align_name">{{data.friendInfo.username}}
+                        </div>
+                        <!-- <span *ngIf='data.unread_count' class="wdqwd">
+                            {{data.unread_count}} unread
+                        </span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

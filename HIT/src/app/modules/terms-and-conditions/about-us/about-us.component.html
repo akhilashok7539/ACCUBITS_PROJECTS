@@ -1,0 +1,28 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head">{{'aboutUs.mainHead' | translate}}</div>
+                <ul>
+                    <li class="rule-unorder-list">{{'aboutUs.orderlist.list1' | translate}}</li>
+                    <li class="rule-unorder-list">{{'aboutUs.orderlist.list2' | translate}}</li>
+                </ul>
+
+                <div class="rule-subHead">{{'aboutUs.subHead1' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'aboutUs.subHead1-sec1.p1' | translate}}</p>
+                    <p>{{'aboutUs.subHead1-sec1.p2' | translate}}</p>
+                    <p>{{'aboutUs.subHead1-sec1.p3' | translate}}</p>
+
+                </div>
+                <div class="rule-subHead2">{{'aboutUs.subHead2' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'aboutUs.subHead2-sec2.p1' | translate}}</p>
+                    <p>{{'aboutUs.subHead2-sec2.p2' | translate}}</p>
+                    <p>{{'aboutUs.subHead2-sec2.p3' | translate}}</p>
+
+                </div>
+            </section>
+    </section> 
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

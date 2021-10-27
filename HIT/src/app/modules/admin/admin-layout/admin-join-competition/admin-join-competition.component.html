@@ -1,0 +1,65 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='10%'>Competition Name</th>
+            <th width='10%'>Competition ID</th>
+            <th width='10%'>Type</th> 
+            <th width='10%'>Host</th>
+            <th width='10%'>Total Prize</th>
+            <th width='15%'>Created On</th>
+            <!-- <th width='10%'>Created Time</th> -->
+            <th width='15%'>Joined On</th>
+            <th width='10%'>Ended On</th>
+            <th width='10%'>{{'leaderboard.priceEarn' | translate}}</th>
+            <th width='10%' class="text-center"></th> 
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of joinedCompetitionList | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}">
+                <td width='10%'>
+                    {{item.name}}
+                </td>
+                <td width='10%'>
+                    {{item.competitionId}}
+                </td>
+                <td width='10%'>
+                    {{item.type==1?"Onetime":"Championship"}}
+                </td>
+                <td width='10%'>
+                    {{item.user?.username}}
+                </td>
+                <td width='10%'>
+                    {{item.totalPrizeInUSD}}
+                </td>
+                <td width='15%'>
+                    {{item.createdAt | date:'dd MMM yyyy'}} | {{item.createdAt | date:'h:mm a'}}
+                </td>
+                <!-- <td width='10%'>
+                    {{item.createdAt | date:'h:mm a'}}
+                </td> -->
+                <td width='15%'>
+                    {{item.joinedAt | date:'dd MMM yyyy'}} | {{item.joinedAt | date:'h:mm a'}}
+                </td>
+                <td width='10%'>
+                    {{item.endDate | date:'dd MMM yyyy'}}
+                </td>
+                <td width='10%'>
+                    {{item.prizeAmount}}
+                </td>
+                <td width='10%' class="text-right td_last">
+                    <div class="admn_view_btn" (click)='viewGame(item)'>
+                        <p>View</p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+
+    <div class="no_data_found" *ngIf='joinedCompetitionList.length === 0'>
+        <img src="/assets/images/noData.svg">
+        <p>No Competions available !!</p>
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

@@ -1,0 +1,515 @@
+.wallet_outer{
+    padding: 8rem 14rem 4rem 14rem;
+    .wallet_head{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        p:nth-child(1){
+            font-size: 1.6rem;
+            font-family: Poppins-Light-Italic;
+        }
+        p:nth-child(2){
+            font-size: 3rem;
+            font-family: Poppins-bold;
+            margin: 0rem;
+        }
+        .redeem_btn{
+            display: inline-block;
+            font-size: 1.4rem;
+            padding: 1rem 3.8rem;
+            border: 1px solid;
+            border-radius: 6px;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: all ease 0.5s;
+        }
+        .redeem_btn:hover{
+            background-color: #3eb983;
+            border: 1px solid #3eb983;
+            transition: all ease 0.5s;
+        }
+    }
+    .add_tokens{
+        margin-top: 6rem;
+        margin-bottom: 10rem;
+        .add_tokens_panel{           
+            display: flex;
+            justify-content: space-between;
+            section{
+                background-color: #1d232d;
+                padding: 3.1rem 2.8rem 2.1rem 2.8rem;
+                border-radius: 10px;
+                width: 14.5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                .amount_wrap{
+                    display: flex;
+                    margin-bottom: 3rem;
+                    align-items: center;
+                    p{
+                        font-size: 1.8rem;
+                        font-family: Poppins-Bold;
+                        padding-left: 2rem;
+                        span{
+                            font-size: 1.4rem;
+                            font-family: Poppins-Light-Italic;
+                            opacity: 0.6;
+                        }
+                    }
+                    .coin{
+                        width: 6.5rem;
+                        height: 6.5rem;
+                        background-color: rgb(255 255 255 / 5%);
+                        border-radius: 50%;
+                        background-image: url(/assets/images/coin.svg);
+                        background-size: 80%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+                .btn{
+                    height: 4rem !important;
+                    width: 100%;
+                    // margin-top: -30px;
+
+                }
+            }
+            .input_data{
+                .amount_wrap{
+                    margin-bottom: 1rem;
+                    .coin{
+                        width: 4rem;
+                        height: 4rem;
+                        background-size: 55%;
+                    }
+                }
+                input{
+                    height: 4rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+    .all_transactions{
+        margin-top: 6rem;
+        .transaction_table_wrap{
+            background-color: #191F2B;
+            padding: 3rem 1.5rem;
+            border-radius: 10px;
+            .transactiotable_row {
+                display: flex;
+                justify-content: space-between;
+                font-size: 1.2rem;
+                align-items: center;
+                div:nth-child(1){
+                    width: 15%;
+                }
+                div:nth-child(2){
+                    width: 20%;
+                    padding-right: 1rem;
+                    span{
+                        font-family: Poppins-Light-Italic;
+                        opacity: 0.45;
+                    }
+                }
+                div:nth-child(3){
+                    width: 15%;
+                }
+                div:nth-child(4){
+                    width: 10%;
+                }
+                div:nth-child(5){
+                    width: 10%;
+                }
+                div:nth-child(6){
+                    width: 10%;
+                }
+                div:nth-child(7){
+                    width: 10%;
+                }
+                div:nth-child(8){
+                    width: 10%;
+                }
+            }
+            .transaction_head{
+                font-family: Poppins-Light-Italic;
+                margin-bottom: 3rem;
+            }
+            .transaction_body{
+                border: 1px solid #272d37;
+                background-color: #151b27;
+                padding: 2rem 0rem;
+                border-radius: 10px;
+                margin-bottom: 2rem;
+                font-family: Poppins-Light !important;
+                div:nth-child(1){
+                   padding-left: 2rem;
+                }
+                div:nth-child(7),div:nth-child(6),div:nth-child(5){   
+                    font-family: Poppins-Regular !important;
+                 }
+            }
+        }
+    }
+    .transactions_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .add_tokens_head{
+            font-size: 2.4rem;
+            span{
+                font-size: 1.4rem;
+                font-family: Poppins-Light-Italic;
+                opacity: 0.45;
+                margin: 0;
+            }
+        }
+        .btn{
+            height: 4rem;
+            line-height: 4rem;
+            position: relative;  
+            display: flex;
+            align-items: center;
+            justify-content: space-around;         
+        }
+        .from_to_out{
+            position: absolute;
+            top: calc(100%);
+            background-color: #e4e4e4;
+            right: 0;
+            border-radius: 7px;
+            padding: 2rem;
+            color: black !important;
+            z-index: 1;
+            .split_row{
+                margin-top: 1rem;
+                section{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 1rem;
+                    .form-group{
+                        margin-right: 0rem;
+                        &:not(:last-child){
+                            margin-right: 2rem;
+                        }
+                        input{
+                            width: 150px !important;
+                            border:1px solid #848484 !important;
+                            cursor: pointer;
+                            background-image: url(/assets/images/calen_black.svg);
+                        }::placeholder { 
+                            color: #848484 !important;
+                        }
+                    }
+                }
+            }
+            .selection_type{
+                section{
+                    position: relative;
+                    margin-top: 1rem;
+                    .form-group{
+                        margin-bottom: .5rem !important;
+                        .form-control{
+                            border: 1px solid #848484 !important;
+                            background-color: transparent !important;
+                            color: black !important;
+                        }:focus{
+                            color: black !important;
+                            border: 1px solid #0db983 !important;
+                        }
+                        .form-control::placeholder { 
+                            color: #848484 !important;
+                        }
+                    }
+                    .transactionList{
+                        border: 1px solid #c1c1c1;
+                        border-radius: 6px;
+                        height: 0px;
+                        opacity: 0;
+                        div{
+                            padding: 1rem;
+                            cursor: pointer;
+                        }
+                    }
+                    .actList{
+                        height: auto;
+                        opacity: 1;
+                    }
+                }
+            }
+            .button_wrap{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 2rem;
+                .btn_transparent{
+                    border: 1px solid #636363;
+                    color: #636363 !important;
+                }
+            }
+        } 
+    }
+    
+}
+@media only screen and (max-width: 1690px) {
+    .wallet_outer{
+        padding: 5rem 10rem 4rem 10rem;
+    }
+    .wallet_head{
+        p:nth-child(2){
+            font-size: 1.4rem !important;
+        }
+        p:nth-child(2){
+            font-size: 2.5rem !important;
+        }
+    }
+    .add_tokens_head{
+        font-size: 2rem !important;
+        span{
+            font-size: 1.2rem !important;
+        }
+    }
+    .amount_wrap{
+        flex-direction: column !important;
+        p{
+            text-align: center !important;
+        }
+    }
+    .add_tokens_panel{           
+        section{
+            .amount_wrap{
+                margin-bottom: 2rem !important;
+                p{
+                    font-size: 1.6rem !important;
+                    padding-left: 1rem !important;
+                    span{
+                        font-size: 1.2rem !important;
+                    }
+                }
+                .coin{
+                    width: 5.5rem !important;
+                    height: 5.5rem !important;
+                }
+            }
+        }
+        .input_data{
+            .amount_wrap{
+                .coin{
+                    width: 4rem !important;
+                    height: 4rem !important;
+                    background-size: 55% !important;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1450px) {
+    .wallet_outer{
+        padding: 3rem 8rem 3rem 8rem;
+    }
+    .wallet_head{
+        p:nth-child(2){
+            font-size: 2.5rem;
+        }
+    }
+    .add_tokens_panel{           
+        section{
+            width: 15% !important;
+            padding: 2rem 2rem 2rem 2rem !important;
+            .amount_wrap{
+                margin-bottom: 1rem !important;
+                p{
+                    font-size: 1.4rem !important;
+                    padding-left: 1rem !important;
+                    span{
+                        font-size: 1.2rem !important;
+                    }
+                }
+                .coin{
+                    width: 4.5rem !important;
+                    height: 4.5rem !important;
+                    background-size: 60% !important;
+                }
+            }
+        }
+        .input_data{
+            .amount_wrap{
+                .coin{
+                    width: 3.5rem !important;
+                    height: 3.5rem !important;
+                    background-size: 55% !important;
+                }
+            }
+        }
+    }
+}
+
+
+.w_cl{
+    color: #0DB983;
+}
+.d_pl{
+    width: 6%;
+}
+.l_cl{
+    color: #C60C0C;
+}
+.displyss_hid{
+    display: none !important;
+}
+.pasd{
+    margin: 0px !important;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+}
+.pasd1{
+    margin: 3px 0px !important;
+    font-size: 1.1rem;
+    font-family: Poppins-Light-Italic;
+    opacity: 0.45;
+}
+.label_color{
+   color: #C60C0C !important;
+}
+@media only screen and (max-width: 800px) { 
+    .gren_box{
+        width: 75px !important;
+    height: 29px;
+    background-color: #101622;
+    border-radius: 4px;
+
+    }
+    .wallet_outer .all_transactions .transaction_table_wrap .transaction_body {
+        padding: 1rem 0rem !important;
+    }
+    .w_cl {
+        opacity: 1 !important;
+        font-weight: bolder;
+        font-size: 1.1rem;
+    }
+    .l_cl {
+        opacity: 1 !important;
+        font-weight: bolder;
+        font-size: 1.1rem;
+
+    }
+    .wallet_outer .all_transactions .transaction_table_wrap {
+         background-color: transparent;
+         padding: 0rem;
+    }
+    .displyss_hid{
+        display: block !important;
+    }
+    .mobile_hid{
+        display: none !important;
+    }
+    .add_tokens_panel{
+        overflow: scroll !important;
+    }
+    .wallet_outer .add_tokens {
+        margin-top: 3rem;
+        margin-bottom: -3rem;
+    }
+    .add_tokens_panel section {
+        width: 193px !important;
+        padding: 2rem !important;
+        margin: 0px 9px;
+    }
+    .add_tokens_head{
+        margin-bottom: 3.7rem !important;
+        font-size: 1.6rem !important;
+    }
+    .wallet_outer {
+        padding: 2rem;
+    }
+    .wallet_outer .wallet_head {
+        width: 108%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .transactiotable_row {
+        div{
+            text-align: center !important;
+            padding: 5px 0px !important;
+        }
+        .div_01{
+            width: 50% !important;
+            text-align: left!important;
+            padding-left: 14px !important;
+        }
+        .div_02{
+            width: 25% !important;
+            padding-right: 1rem;
+            span{
+                font-family: Poppins-Light-Italic;
+                opacity: 0.45;
+            }
+        }
+        .div_03{
+            width: 25% !important;
+            text-align: center !important;
+        }
+      
+    }
+
+}
+.text_co{
+    color: black !important;
+}
+.badgess{
+    width: 10px;
+    height: 10px;
+    font-size: 12px;
+    background-color: #fe6140;
+    border-radius: 50%;
+    align-items: center;
+    margin-left: 1px;
+    margin-top: -8px;
+}
+
+@media only screen and (max-width: 800px) {
+    .wallet_outer
+    {
+        .transactions_wrap{
+            .from_to_out{
+                width: -webkit-fill-available !important;
+            }
+        }
+    }
+    .date-form{
+        input
+        {
+            padding-right: 0px;
+        }
+    }
+    .wallet_outer 
+    {
+        .transactions_wrap{
+            .from_to_out{
+                .split_row{
+                    section{
+                        display: initial !important;     
+                        align-items: center !important;
+                        margin-top: 1rem !important;
+                        flex-direction: column !important;
+                        .form-group{
+                            input{
+                                width: 100% !important ;
+                                   margin-top: 12px;;
+                            }
+                            &:not(:last-child){
+                                margin-right: 0rem;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }   
+}
+ 

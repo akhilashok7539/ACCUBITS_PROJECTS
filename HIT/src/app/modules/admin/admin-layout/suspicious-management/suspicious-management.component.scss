@@ -1,0 +1,21 @@
+.susp_tabs{
+    display: flex;
+    background-color: #1d232d !important;
+    margin: 1rem 0rem;
+    margin-bottom: 2rem;
+    div{
+        padding: 1rem;
+        position: relative;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+    .active::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        background-color: #0DB983;
+        bottom: 0;
+    }
+}

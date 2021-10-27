@@ -1,0 +1,90 @@
+<section>
+    <div class="admin_block_header">
+        <section>
+            <p>User Management</p>
+        </section>
+        <div class="tes">
+            <input type="text" appDebounce
+            [delay]='700' [ngModel]="searchText"  
+            (getValue)="getData($event)" class="form-control" placeholder="Search Users">
+            <div class="c-btn" [matMenuTriggerFor]="menu"><img src='/assets/images/filter.png'>Filter</div>
+            <mat-menu class="cust_drp" #menu="matMenu">
+                <ng-container *ngFor="let item of userFilter">
+                    <button mat-menu-item class="font_medium" (click)="filterUser(item.status)">{{item.name}}</button>
+                </ng-container>
+                <!-- <button mat-menu-item class="font_medium">Activate</button> -->
+            </mat-menu>
+        </div>
+       
+    </div>
+</section>
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='5%'></th>
+            <th width='15%'>User Name</th>
+            <th width='20%'>E-mail</th>
+            <th width='10%'>Phone</th> 
+            <th width='10%'>Wallet</th>
+            <th width='10%'>Hosted Competition</th>
+            <th width='5%'>KYC Status</th>
+            <th width='10%'>Self excluded</th>
+            <th width='15%' class="text-center"></th> 
+        </tr>
+        <tbody>
+            <tr *ngFor="let data of userDetails | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}; let i=index" (click)='onSelectUser(data)'>
+                <td width='5%' class="td_first">
+                    <div class="head-icon"  [ngStyle]="{'background-image': data?.image?'url('+ data?.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+                </td>
+                <td width='15%'>
+                    {{data.userName}}
+                </td>
+                <td width='20%'>
+                    {{data.email}}
+                </td>
+                <td width='10%'>
+                    <div *ngIf='select_index !== i'>
+                        {{data.mobileNumber}}
+                    </div>
+                    <div *ngIf='submit && select_index === i'>
+                        <input class="compName"  id="a-score-{{j}}{{z}}" name="a-score-{{j}}{{z}}"  [(ngModel)]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event" maxlength="14" type="text"
+                        placeholder="--" class="form-control" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 ) ||event.charCode == 8 ||event.charCode == 0 ||event.charCode == 127"/>
+                    </div>
+                </td>
+                <td width='10%'>
+                    {{data.balance}} {{data.currency}}
+                </td>
+                <td width='10%'>
+                    {{data.hostedCompetitions}}
+                </td>
+                <td width='5%'>
+                    <ng-container [ngSwitch]="data.kycStatus"> 
+                        <span *ngSwitchCase="0">Pending</span>
+                        <span *ngSwitchCase="1">Approved</span>
+                        <span *ngSwitchCase="2">Submitted</span>
+                        <span *ngSwitchCase="3">Rejected</span>
+                        <span *ngSwitchDefault>--</span>
+                    </ng-container>
+                </td>
+                <td width='5%'>
+                    <ng-container [ngSwitch]="data.isSelfExcluded"> 
+                        <span *ngSwitchCase="0">No</span>
+                        <span *ngSwitchCase="1">Yes</span>
+                    </ng-container>
+                </td>
+                <td width='15%' class="text-right td_last">
+                    <div class="admin_act_btn adm_edit">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+    <div *ngIf='userDetails.length === 0' class="no_data_found">
+        <img src="/assets/images/noData.svg">
+        <p>No User available !!</p>
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

@@ -1,0 +1,74 @@
+<div class="cancel_overlay" (click)='onCancelClick()'></div>
+<div class="popup_out review_pop common_popup">
+    <div class="heading" *ngIf='!failUploadCSv'>
+        <div class="font_medium title">
+            Upload your attachment
+        </div>
+        <div class="font_small detail">
+            Upload your CSV file here
+        </div>
+        <div class="file_upload_layout">
+            <div class="drop-zone" fileDragDrop (filesChangeEmiter)="onFileChange($event)" *ngIf='files.length === 0'>
+                <div class="cloud_upload"></div>
+                <input type="file" name="file" id="file" accept=".csv" (change)="onFileChange($event.target.files)"
+                    multiple>
+                <label>Drag and drop here.</label>
+                <label>or</label>
+                <label for="file"><strong>Browser Files</strong></label>
+            </div>
+            <ng-container *ngIf='files.length > 0'>
+                <div class="row fileItem" *ngFor="let f of files; let ind = index">
+                    <div class="close_uploaded_file" (click)="openConfirmDialog(ind);"></div>
+                    <div class="col-sm-12 fileItemText">
+                        <span>{{f.name}}</span>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="font_small footer_detail">
+            Accepted CSV File type only
+        </div>
+        <div class="progress_layout" *ngIf='fileUploadProgress'>
+            <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+            <span [ngStyle]="{'left': progress + '%'}">{{progress}}%</span>
+          </div>
+        <button class="btn btn-height btn-primary float_right btn_padding" [disabled]='files.length === 0' (click)='onNext()'>Upload</button>
+    </div>
+    <div class="fail_layout" *ngIf='failUploadCSv'>
+        <div class="close_upload_outer">
+            <div class="close_upload"></div>
+        </div>
+        <div class="font_medium title">
+            CSV Upload Failed
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th width='20%'>Row Number
+                    </th>
+                    <th width='80%'>Issue
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let error of csvUploadErrorList'>
+                    <td width='20%' data-column="Row Number">{{error.row_number}}</td>
+                    <td width='80%' data-column="issue">
+                        <div class="border_error" *ngFor='let error_reason of error.row_error;let i = index'>
+                            <div>
+                                <span class="title_error">{{error_reason.column_name}}</span>
+                            </div>
+                            <div class="border_error error_alyout">
+                                <div>{{i+1}}:</div>
+                                <div class="ml_10">{{error_reason.error_msg}}</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-height btn-primary btn_center btn_padding " (click)='onUploadAgainclick()'>
+            Upload Again
+        </button>
+    </div>
+</div>

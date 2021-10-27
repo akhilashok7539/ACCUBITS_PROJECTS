@@ -1,0 +1,32 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head">{{'deposits.mainHead' | translate}}</div>
+                <ul>
+                    <li class="rule-unorder-list">{{'deposits.orderlist.list1' | translate}}</li>
+                    <li class="rule-unorder-list">{{'deposits.orderlist.list2' | translate}}</li>
+                </ul>
+
+                <div class="rule-subHead">{{'deposits.orderlist.list1' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'deposits.subheader1.p1' | translate}}</p>
+                    <p>{{'deposits.subheader1.p2' | translate}}</p>
+                    <p>{{'deposits.subheader1.p3' | translate}}</p>
+
+                </div>
+                <div class="rule-subHead2">{{'deposits.orderlist.list2' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'deposits.subheader2.p1' | translate}}</p>
+                  
+
+                </div>
+                <div class="rule-subHead2">{{'deposits.orderlist.list3' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'deposits.subheader3.p1' | translate}}</p>
+                   
+                </div>
+            </section>
+    </section> 
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

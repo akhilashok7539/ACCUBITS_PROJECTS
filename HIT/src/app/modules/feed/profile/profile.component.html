@@ -1,0 +1,228 @@
+<section class="profile_wrap" id="profile_out" [ngClass]="{'fixedWrap' : fixedProfile}">
+    <div #target class="profile_banner" [ngStyle]="{'background-image': 'url(' + userProfile?.coverImage + ')'}">
+        <div class="change_cover" *ngIf="ownProfile" (click)="openCover()" (appClickOutside)="closeCoverDialouge($event)">
+            <!-- <input type="file" id="file_cover" (change)="handleCoverInput($event.target.files)" accept="image/x-png,image/jpeg"> -->
+            {{'profileMenu.coverpic' | translate}}
+            <div class="position_change" *ngIf='cover'>
+                <app-update-remove-dailouge (closeDialouge)="closeCoverDialouge($event)" (onupload)="refreshProfile()" [class]='2'></app-update-remove-dailouge>
+            </div>
+        </div>
+        <div class="back_cover" (click)="onBack()">
+            <div class="back_arrow">
+            </div>
+            {{'profileMenu.back' | translate}}
+        </div>
+
+        <div class="profile_name_wrap">
+            <div class="profile_pic" (appClickOutside)="closeProfileDialouge($event)" [ngStyle]="{'background-image': userProfile?.image?'url('+ userProfile.image +')' : 'url(/assets/images/user.jpg)'}">
+                <div class="change_btn" *ngIf="ownProfile" (click)='openProfile()'>
+                    <div class="position_change" *ngIf='profile'>
+                        <app-update-remove-dailouge (closeDialouge)="closeCoverDialouge($event)" (onupload)="refreshProfile()" [class]='1'></app-update-remove-dailouge>
+                    </div>
+                </div>
+            </div>
+            <section class="check">
+                <div>
+                </div>
+                {{userProfile?.username}}
+            </section>
+        </div>
+        <div class="profile_desc_wrap mob_n">
+            <div class="profile_desc_sec">
+                <div class="profile_tags real_name" *ngIf="userProfile?.firstName">{{userProfile?.firstName}}</div>
+                <ng-container *ngIf="userProfile?.instagramUsername">
+                    <div class="profile_tags insta_icon_tag" (click)="goToInstaPage()"></div>
+                    <div class="profile_tags insta_name">{{userProfile?.instagramUsername}}</div>
+                </ng-container>
+                <div class="profile_tags">{{'profileMenu.Friends' | translate}} <span>{{userProfile?.friendsCount}}</span></div>
+                <div class="profile_tags">{{'profileMenu.Competitions' | translate}} <span>{{userProfile?.competitionsWon}}</span></div>
+                <div class="profile_tags">{{'profileMenu.Total' | translate}} <span>{{userProfile?.totalPointsEarned}}</span></div>
+                <div class="profile_tags">{{'feeds.hostedComp' | translate}} <span>{{userProfile?.hostedCompetitions}}</span></div>
+                <div class="profile_tags" *ngIf="!ownProfile">
+                    <button class="add-friend" (click)="addFriendRequest()" *ngIf="userProfile?.isFriend != 1">
+
+                        <span *ngIf="userProfile?.isRequested === 0"> {{'clubscard.addfriend' | translate}}</span>
+                        <span *ngIf="userProfile?.isRequested === 1"> {{'clubscard.requestSent' | translate}}</span>
+
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="feed-outer">
+        <div class="feed-side">
+            <ul class="profile-menu">
+                <li [ngClass]="{'active': selectedTab === 3}" (click)="selectTab(3)"><img src="/assets/images/users.png">{{'feeds.followers' | translate}}</li>
+                <li (click)="goToCompetition()"><img src="/assets/images/hosted.png">{{'feeds.hostedComp' | translate}}
+                </li>
+                <li (click)="goToJoined()" *ngIf="ownProfile"><img src="/assets/images/hosted.png">{{'feeds.joinedComp' | translate}}
+                </li>
+                <li (click)="goToHistory()" *ngIf="ownProfile"><img src="/assets/images/hosted.png">{{'feeds.compHistory' | translate}}
+                </li>
+                <li (click)="goToresponsiblegaming()"><img src="/assets/images/hosted.png">{{'responsibleGame.mainHead' | translate}}</li>
+                <!-- <li ><span><a href="https://blog.hit-game.com/responsible-gaming/" target="_blank"> <img src="/assets/images/hosted.png">{{'footer.responsiblegame' | translate}}</a></span></li> -->
+                <li (click)="selectTab(4)" *ngIf="ownProfile"><img src="/assets/images/hosted.png">{{'profileMenu.Settings' | translate}}</li>
+            </ul>
+        </div>
+        <div class="mobile-view">
+
+            <div class="mobile_profile_name_wrap">
+                <div class="mobile_profile_pic" [ngStyle]="{'background-image': userProfile?.image?'url('+ userProfile.image +')' : 'url(/assets/images/user.jpg)'}">
+                    <!-- <div class="change_btn"  (click)='openProfileMobile()'>
+                        <div class="position_change" *ngIf='profile'>
+                            <app-update-remove-dailouge 
+                                (onupload)="refreshProfile()" [class]='1'></app-update-remove-dailouge>
+                        </div>
+                    </div> -->
+                </div>
+                <section class="check">
+                    <div>
+                    </div>
+                    {{userProfile?.username}}
+                </section>
+            </div>
+        </div>
+        <div class="mobile-view">
+            <div class="mobile_profile_desc_sec">
+                <!-- <div class="mobile_profile_tags real_name" *ngIf="userProfile?.firstName">{{userProfile?.firstName}}</div> -->
+                <!-- <ng-container *ngIf="userProfile?.instagramUsername">
+                    <div class="profile_tags insta_icon_tag" (click)="goToInstaPage()"></div>
+                    <div class="profile_tags insta_name">{{userProfile?.instagramUsername}}</div>
+                </ng-container> -->
+                <!-- <div class="mobile_profile_tags">Friends <span>{{userProfile?.friendsCount}}</span></div> -->
+                <div class="mobile_profile_tags">{{'profileMenu.Competitions' | translate}} <span>{{userProfile?.competitionsWon}}</span></div>
+                <div class="mobile_profile_tags">{{'profileMenu.Total' | translate}} <span>{{userProfile?.totalPointsEarned}}</span></div>
+                <div class="mobile_profile_tags">{{'feeds.hostedComp' | translate}} <span>{{userProfile?.hostedCompetitions}}</span>
+                </div>
+                <!-- <div class="mobile_profile_tags" *ngIf="!ownProfile">
+                    <button class="add-friend" (click)="addFriendRequest()" *ngIf="userProfile.isFriend != 1">
+                   
+                <span *ngIf="userProfile.isRequested === 0"> Add Friend</span>
+                <span *ngIf="userProfile.isRequested === 1"> Request Sent</span>
+
+                </button></div> -->
+
+            </div>
+        </div>
+
+
+        <div class="feed-timeline">
+            <div class="profile_tabs">
+                <div [ngClass]="{'active': selectedTab === 1}" (click)="selectTab(1)">{{'profileMenu.Timeline' | translate}}</div>
+                <ng-container *ngIf="ownProfile">
+                    <div [ngClass]="{'active': selectedTab === 2}" (click)="selectTab(2)">{{'profileMenu.About' | translate}}</div>
+                </ng-container>
+                <div [ngClass]="{'active': selectedTab === 3}" (click)="selectTab(3)">{{'profileMenu.Friends' | translate}}</div>
+                <ng-container *ngIf="ownProfile">
+                    <div [ngClass]="{'active': selectedTab === 4}" (click)="selectTab(4)">{{'profileMenu.Settings' | translate}}</div>
+                </ng-container>
+                <!-- <ng-container *ngIf="!ownProfile" class="hide">
+                    <div [ngClass]="{'active': selectedTab === 5}" (click)="selectTab(5)">Profile</div>
+                </ng-container> -->
+            </div>
+            <section *ngIf="selectedTab==1">
+                <ng-container *ngIf="profileTimeLineData.length!=0; else elseTemplate">
+                    <ng-container *ngFor="let item of profileTimeLineData;let i=index">
+                        <app-timeline (deleteFeed)=deletePost($event) (reload)=updateLike($event) (addCommentCount)=updateComment($event) (updateCommentCount)=updateCommentCountIn($event) *ngIf="item?.feedType=='post'" [timelineData]=item [index]=i></app-timeline>
+                        <app-timeline2 (deleteFeed)=deletePost($event) (reload)=updateLike($event) (addCommentCount)=updateComment($event) (updateCommentCount)=updateCommentCountIn($event) *ngIf="item?.feedType=='url-shared-post'|| item?.feedType=='text-post'" [timelineData]=item
+                            [index]=i></app-timeline2>
+                    </ng-container>
+                </ng-container>
+                <ng-container>
+                    <div class="loadMoreButton" (click)="loadMoreData()" *ngIf="profileTimeLineData.length ===0;">
+                        {{'feeds.LoadMore' | translate}}
+                    </div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="no_data_found">
+                        <img src="/assets/images/noData.svg">
+                        <p>{{'feeds.nothing' | translate}}</p>
+                    </div>
+                </ng-template>
+            </section>
+            <section *ngIf="selectedTab==2">
+                <app-about></app-about>
+            </section>
+            <section *ngIf="selectedTab==3">
+                <app-friends></app-friends>
+            </section>
+            <section *ngIf="selectedTab==4">
+                <app-settings></app-settings>
+            </section>
+        </div>
+
+        <div class="feed-side re-side">
+            <div class="side-title" *ngIf="requests.length">Follow Requests</div>
+            <div class="side-contain reqst-cont" *ngIf="requests.length">
+                <div class='request-div' *ngFor="let item of requests | slice:0:1">
+                    <div class="profile-detail request-detail">
+                        <div class="profile-icon" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                        </div>
+                        <div class="profile-name">
+                            <div class="profile-nam" [ngClass]="{'show-nam':item.user?.mutalFriends?.count==0}">
+                                {{item.user.username}}</div>
+                            <div class="profile-lbl" *ngIf="item.user?.mutalFriends?.count">
+                                <div class="user-pics">
+                                    <ng-container *ngFor="let user of item.user?.mutalFriends?.friends | slice:0:3">
+                                        <div class="pic" [ngStyle]="{'background-image': user.image?'url(' + user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                                        </div>
+                                    </ng-container>
+                                </div>
+                                <span>{{item.user?.mutalFriends?.count}} Mutual Friends</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <input type="button" (click)="submitRequest(item.user.guid,2)" class="cancel-btn" value="Reject">
+                        <input type="button" (click)="submitRequest(item.user.guid,1)" class="submit-btn" value="Accept">
+                    </div>
+                </div>
+            </div>
+            <div class="see-btn" *ngIf="requests.length>1" (click)="selectTab(3)">See All</div>
+            <!-- <div class="see-btn" *ngIf="requestMore" (click)="nextListRequest()">See All</div> -->
+            <div class="side-title">{{'walletwidraw.friends' | translate}}</div>
+            <div class="side-contain club-cont" *ngIf="friendsSuggetionList.length">
+                <div class="profile-detail club-detail" *ngFor="let item of friendsSuggetionList | slice:0:3">
+                    <div class="suggetionsfriends" (click)="sentFriendReuest(item)"></div>
+                    <!-- <div *ngIf="!item.image" class="profile-icon"></div>
+                    <img *ngIf="item.image" [src]="( envurl +'/v1/image?url=' + item.image)" /> -->
+                    <div class="profile-icon" [ngStyle]="{'background-image': item.image?'url(' +envurl +'/v1/image?url='+item.image + ')' : 'url(/assets/images/user.jpg)'}">
+                    </div>
+                    <div class="profile-name">
+                        <div class="profile-nam">{{item.username}}</div>
+                        <div class="profile-lbl">Mutal Friends
+                            <div class="l-tag">{{item.mutalFriends.count}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- *ngIf="clubs.length>3" -->
+            <!-- <div class="see-btn"  [routerLink]="['/teams']">{{'feeds.seeAll' | translate}}</div> -->
+            <div class="see-btn" *ngIf="friendsSuggetionList.length>3" (click)="selectTab(3)">See All</div>
+
+            <!-- <div class="side-title" *ngIf="clubs.length">Clubs</div>
+            <div class="side-contain club-cont" *ngIf="clubs.length">
+                <div class="profile-detail club-detail" *ngFor="let item of clubs | slice:0:3">
+                    <div class="before" (click)="pageLikeUnlike(item.teamId,item.isLiked)"
+                        [ngClass]="{'like':item.isLiked}"></div>
+                    <div *ngIf="!item.image" class="profile-icon"></div>
+                    <img *ngIf="item.image" [src]="( envurl +'/v1/image?url=' + item.image)" />
+                    <div class="profile-icon"
+                        [ngStyle]="{'background-image': item.image?'url(' +envurl +'/v1/image?url='+item.image + ')' : 'url(/assets/images/user.jpg)'}">
+                    </div>
+                    <div class="profile-name">
+                        <div class="profile-nam">{{item.name}}</div>
+                        <div class="profile-lbl">{{'feeds.clubpage' | translate}} <div class="l-tag">{{item.totalLike |
+                                shortNumber}} Like{{item.totalLike>1?'s':''}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="see-btn" *ngIf="clubs.length>3" [routerLink]="['/teams']">{{'feeds.seeAll' | translate}}</div> -->
+        </div>
+
+    </div>
+</section>
+<!-- <app-footer></app-footer> -->

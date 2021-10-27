@@ -1,0 +1,21 @@
+<header id='hjh' [ngClass]="{'fix':fixed}">
+    <!-- <section class="menu">
+        <img class="logo" alt="logo" src="/assets/images/w-logo.png" />
+        <ul class="nav_bar">
+            <li [routerLink]="['/admin/layout/user-management']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">User</li>
+            <li [routerLink]="['/admin/layout/competition-management']" [routerLinkActive]="['active']">Competition</li>
+        </ul>
+    </section> -->
+    <section class="profile">
+        <ng-container>
+            <div class="user_name">
+                <section class="user_avatar">
+                </section>
+                <section>
+                    <p>{{userName}}</p>
+                    <span (click)="logout()">Logout ></span>
+                </section>
+            </div>
+        </ng-container>
+    </section>
+</header>

@@ -1,0 +1,17 @@
+<div class="cancel_overlay"></div>
+<div class="popup_out">
+    <div class="pop_head" (click)="closePop()">
+    </div>  
+    <div class="popup_search">
+        <input type="text" (input)="getUsers($event.target.value)" placeholder="{{'createCompetition.SearchFriends'| translate}}">
+    </div>
+    <div class="fr_popup_list">
+        <div class="friends_row" [ngClass]="{'active': item.isSelected}" *ngFor="let item of usersList" (click)="inviteUser(item)">
+            <div class="search_info">
+                <div class="invitees_icon" [ngStyle]="{'background-image': item.image?'url(' + item.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                <span>{{item.username}}</span>
+            </div>
+            <div class="selected_block"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="cancel_overlay">
+
+</div>
+<div class="popup_out">
+    <div class="common_pop_head review_pop_head">
+        <div class="close_common" (click)="oncloseNotice()"></div>
+        <p> {{'deposit.mainHead' | translate}}
+        </p>
+    </div>
+    <!-- {{this.redeemForm.value |json}} -->
+    <div class="redeem_form_wrap">
+        <form [formGroup]="redeemForm">
+
+            <ng-container>
+                <div class="redeem_out">
+                    <label> {{'deposit.firstName' | translate}}<sup>*</sup></label>
+
+                    <ng-container>
+                        <input type="text" formControlName="firstName" class="form-control" maxlength="128" [ngClass]="{'is-invalid':!redeemForm.controls.firstName.valid && redeemForm.controls.firstName.touched}">
+                    </ng-container>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.lastName' | translate}}<sup>*</sup></label>
+
+                    <ng-container>
+                        <input type="text" formControlName="lastName" [ngClass]="{'is-invalid':!redeemForm.controls.lastName.valid && redeemForm.controls.lastName.touched}" maxlength="128" class="form-control">
+                    </ng-container>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.phoneNumber' | translate}}<sup>*</sup></label>
+                    <ng-container>
+                        <input type="text" maxlength="32" formControlName="phone" class="form-control">
+                    </ng-container>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.address' | translate}}<sup>*</sup></label>
+
+                    <ng-container>
+                        <input type="text" maxlength="255" class="form-control" formControlName="address">
+                    </ng-container>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.state' | translate}}<sup>*</sup></label>
+                    <select class="form-control" formControlName="state" (change)="getCityLocation()">
+                        <option value="" disabled> Choose a state</option>
+                        <option  *ngFor="let item of this.stateList" value="{{item.stateCode}}">{{item.stateName}}</option>
+                    </select>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.city' | translate}}<sup>*</sup></label>
+                    <select class="form-control" formControlName="city">
+                        <option value="" disabled> Choose a city</option>
+                        <option  *ngFor="let item of cityList" value="{{item.cityName}}">{{item.cityName}}</option>
+                    </select>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.amount' | translate}}<sup>*</sup></label>
+
+                    <ng-container>
+                        <input type="text" formControlName="amount" class="form-control">
+                    </ng-container>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.currency' | translate}}<sup>*</sup></label>
+
+                    <ng-container>
+                        <input type="text" value="{{responsearray['currency']}}" disabled class="form-control">
+                    </ng-container>
+
+                </div>
+
+                <div class="redeem_out">
+                    <label>{{'deposit.paymentMethods' | translate}}<sup>*</sup></label>
+                    <select class="form-control" formControlName="paymentMethodCode">
+                        <option value="" disabled> {{'deposit.chooseapaymentmethods' | translate}}</option>
+                        <option  *ngFor="let item of responsearray.paymentMethods" value="{{item.code}}">{{item.name}}</option>
+                    </select>
+
+                </div>
+
+                <div class="redeem_out">
+                    <label>{{'deposit.documentType' | translate}}<sup>*</sup></label>
+                    <select class="form-control" formControlName="documentType">
+                        <option value="" disabled> {{'deposit.chooseadocumenttype' | translate}}</option>
+                        <option  *ngFor="let item of responsearray.fields.documentId.rules" value="{{item.documentType}}">{{item.documentType}}</option>
+                    </select>
+
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.documentID' | translate}} <sup>*</sup></label>
+                    <ng-container>
+                        <input type="text" formControlName="documentId" class="form-control">
+                    </ng-container>
+                </div>
+                <div class="redeem_out">
+                    <label>{{'deposit.zipCode' | translate}}  <sup>*</sup></label>
+                    <ng-container>
+                        <input type="text" formControlName="zipCode" maxlength="16" class="form-control">
+                    </ng-container>
+                </div>
+
+
+            </ng-container>
+            <div class="button_wrap">
+                <button class="btn btn_transparent" (click)="oncloseNotice()">{{'feeds.cancel' | translate}}
+                </button>
+                <button type="submit" class="btn" (click)="submit()" [disabled]="!redeemForm.valid">{{'createCompetition.doItNow' | translate}}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,531 @@
+<div class="home-layout">
+    <div class="home-banner">
+        <div class="banner-txt">
+            <div class="h1">{{'homePage.mainHead' | translate}}</div>
+            <!-- <div class="h2">your prediction.</div> -->
+            <p>{{'homePage.subHead' | translate}}</p>
+            <div class="slide_anim_outer round">
+                <div class="slide_arrow arrow slide_1"></div>
+                <div class="slide_arrow arrow slide_2"></div>
+                <div class="slide_arrow arrow slide_3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="competion-container">
+        <div class="competion-head">
+            <div class="c-left">
+                <div class="c-title mobile_hidden">{{'homePage.trendingHead' | translate}}
+                    <div class="c-noti">
+                        {{liveCount}}</div>
+                </div>
+                <div class="c-lbl mobile_hidden">{{'homePage.trendingSubHead' | translate}}</div>
+                <div class="c-title display_hidden">{{'homePage.trendingHead' | translate}} </div>
+            </div>
+            <div class="c-right">
+                <div class="c-btn" (click)="goToAllCompetition()">{{'homePage.viewall' | translate}}</div>
+                <div class="c-btn" (click)="onSelecttype()" (appClickOutside)="closeDropdown($event)">{{gettypevalue()}}
+                    <div class="down-ic"></div>
+                </div>
+                <div class="custm-drop" *ngIf="typeDrop">
+                    <ul>
+                        <li (click)="liveCompetitionList(0)">{{'filter.all' | translate}}</li>
+                        <li (click)="liveCompetitionList(1)">{{'filter.onetime' | translate}}</li>
+                        <li (click)="liveCompetitionList(2)">{{'filter.championship' | translate}}</li>
+                    </ul>
+                </div>
+                <div class="custm-drop filter-drop" *ngIf="liveFilter">
+                    <div class="filter-hd">Filter By:</div>
+                    <ul>
+                        <li>{{'filter.onetime' | translate}}
+                            <div class="select_game" [ngClass]="{'select_active':oneTime}" (click)="oneTime=!oneTime"></div>
+                        </li>
+                        <li>{{'filter.championship' | translate}}
+                            <div class="select_game" [ngClass]="{'select_active':champian}" (click)="champian=!champian"></div>
+                        </li>
+                    </ul>
+                    <div class="filter-bt" (click)="liveFilter=false">Done</div>
+                </div>
+            </div>
+        </div>
+        <div class="competion">
+            <ng-container *ngIf="liveList.length>0; else elseTemplate">
+                <ngx-slick-carousel class="carousel" #slickModal1="slick-carousel" [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                    <div ngxSlickItem *ngFor="let item of liveList;let i = index" class="slide">
+                        <div class="card">
+                            <div class="card-title"><b>{{item.head['0']}}</b><br />@ {{item.head['1']}}</div>
+                            <div class="card-tag">
+                                <div class="tag" *ngIf="item.type==1">{{'filter.onetime' | translate}}</div>
+                                <div class="tag red" *ngIf="item.type==2">{{'filter.championship' | translate}}</div>
+                                <div class="tag mobile_hidden"><b>ID</b> :
+                                    <div class="id">{{item.competitionId}}</div>
+                                </div>
+                            </div>
+                            <div class="card-icon">
+                                <!-- <img src="./assets/images/"> -->
+                                <img [src]="( '/assets/images/random/' + item.randomImage)" />
+                                <div class="card-lay">
+                                    <div class="c-day"><b>{{item.numberOfDays.length}}</b> {{'competitionTag.days' | translate}}
+                                    </div>
+                                    <div class="c-day"><b>{{item.numberOfMatches}}</b> {{'competitionTag.matches' | translate}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progess_bar_layout mobile_hidden" *ngIf="item.type==2">
+                                <p>{{'competitionTag.round' | translate}}</p>
+                                <div class="bar_layout">
+                                    <div class="bar_inner" [ngStyle]="{'width': ((item.upcomingRound/item.season.totalRound)*100)+'%'}">
+                                        <div class="label">
+                                            {{item.upcomingRound?item.upcomingRound:"0"}}/{{item.season.totalRound}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date-box" [ngClass]="{'champ':item.type==2}">
+                                <!-- {{item.counter}} -->
+                                <!-- {{item.counterHour}},{{item.counter}} -->
+                                <!-- {{item.startDate | date:'MM/dd/yyyy hh:mm:s'}},{{item.counterHour}} <br> -->
+                                <ng-container *ngIf="item?.counterHour < 1440 && item?.counter>0 ; else elseTemplate">
+                                    <div class="d-box">
+                                        <countdown *ngIf="!resendEnable" (event)="notifyTimer($event,i)" [config]="{ leftTime: item.counter, format: 'HH',notify: [ 1,1 ] }">
+                                        </countdown>
+                                    </div>
+                                    <div class="d-dot">:</div>
+                                    <div class="d-box">
+                                        <countdown *ngIf="!resendEnable" [config]="{ leftTime: item.counter, format: 'mm',notify: [ 1 ] }">
+                                        </countdown>
+                                    </div>
+                                    <div class="d-dot">:</div>
+                                    <div class="d-box">
+                                        <countdown *ngIf="!resendEnable" [config]="{ leftTime: item.counter, format: 'ss',notify: [ 1 ] }">
+                                        </countdown>
+                                    </div>
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <ng-container *ngIf="item.type==1; else elseTemplate">
+                                        <div class="d-box d-full">{{item.startDate | timeAgo}} </div>
+                                    </ng-container>
+                                    <ng-template #elseTemplate>
+                                        <div class="d-box d-full">
+                                            {{!item.nextRoundStartDate?'--':item.nextRoundStartDate | timeAgo}}</div>
+                                    </ng-template>
+                                </ng-template>
+
+                            </div>
+
+                            <div class="coast" [ngClass]="{'champ1':item.type==2}">{{'competitionTag.entryFee' | translate}} : <span>{{item.entryCostInUSD * item.conversionRate | number:'1.2-2'}}
+                                    {{item.conversionCurrency}}</span></div>
+                            <div class="prize" [ngClass]="{'opacity':item.prize==0}">
+
+                                <!-- {{'competitionTag.totalPrize' | translate}} : {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}} {{'competitionTag.extension' | translate}}</div> -->
+
+                                <span *ngIf="getcompetionId(item.competitionId) === true"> 
+                                    <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === true">{{'competitionTag.totalPrize' | translate}} :  100 BRL</span>
+                                <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === false"> {{'competitionTag.totalPrize' | translate}} : {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}}
+                                        {{item.conversionCurrency}} {{'competitionTag.extension' | translate}}</span>
+
+                                </span>
+
+                                <span *ngIf="getcompetionId(item.competitionId) === false">
+                               
+                                {{'competitionTag.totalPrize' | translate}} : {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}}
+                                {{item.conversionCurrency}} {{'competitionTag.extension' | translate}}
+                                </span>
+
+                            </div>
+
+                            <!-- <div class="prize">Total Prize : {{item.prize}} BST</div> -->
+                            <div class="viewers v-list" [ngClass]="{'champ2':item.type==2}">
+                                <div class="card-view" [ngStyle]="{'background-image': item?.competitionPlayers[0]?.user.image?'url('+ item?.competitionPlayers[0]?.user.image +')' : 'url(/assets/images/user.jpg)'}" *ngIf="item.competitionPlayers.length>0"></div>
+                                <div class="card-nbr" *ngIf="item.totalPlayerCount>1">
+                                    <span>+</span> {{item.totalPlayerCount-1}}
+                                </div>
+                                <p *ngIf="item.competitionPlayers.length==0">{{'breadcumbs.nousers' | translate}}</p>
+                            </div>
+                            <div class="card-hover">
+                                <div class="hover-btn" *ngIf='item.isPlayer === 0 && item.joinedRounds.length === 0' (click)='onSelectCompetition(item)'>{{'competitionTag.view' | translate}}</div>
+                                <div class="hover-btn" *ngIf='item.isPlayer === 0 && item.joinedRounds.length > 0' (click)='onAlreadyJoinCompetition(item)'>Bet Overview</div>
+                                <div class="hover-btn" *ngIf='item.isPlayer === 0' (click)='onJoinCompetition(item)'>
+                                    {{'competitionTag.join' | translate}} @ {{item.entryCostInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}</div>
+                                <div class="hover-btn" *ngIf='item.isPlayer === 1' (click)='onAlreadyJoinCompetition(item)'>{{'betting.makeabettext' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="no_data_found">
+                    <img src="/assets/images/noTrending.png">
+                    <p>{{'wallet.nodatafound' | translate}}!</p>
+                    <p>If you want to be a host <a [routerLink]="['/choose-competition']">Click Here</a></p>
+                </div>
+            </ng-template>
+
+
+
+        </div>
+        <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+        <!-- <div class="competion-head"> 
+            <div class="c-left">
+                <div class="c-title mobile_hidden">Teams</div>
+                <div class="c-lbl mobile_hidden">View and filter all teams</div> 
+                <div class="c-title display_hidden">TEAM & CLUB </div>
+            </div>
+            <div class="c-right">
+                <div class="c-btn" (click)="popTeams=!popTeams"  (appClickOutside)="closeDropdownTeams($event)">{{popular}} <div class="down-ic ml_11"></div></div>
+                <div class="custm-drop pop-drop" *ngIf="popTeams">
+                    <ul>
+                        <li (click)="listTeamsClubs()">Popular Teams</li>
+                        <li *ngFor="let item of leagueList" (click)="listTeamsClubs(item)">{{item.name}}</li>
+                    </ul>
+                </div> 
+            </div>
+        </div> -->
+
+        <!-- <div class="competion competion-club">
+                <ngx-slick-carousel class="carousel" 
+                #slickModal2="slick-carousel" 
+                [config]="slideConfig" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <div ngxSlickItem *ngFor="let item of teamsClubs ;let i = index" class="slide">
+                            <div class="card">                                    
+                                    <div class="card-play club-card hover_active" (click)="onSelectCompetitionTeam(item)">
+                                        <div class="teams"> 
+                                            <div class="c-team">
+                                                <div class="t-icon">
+                                                    <img *ngIf="item.logo1" [src]="( envurl +'/v1/image?url=' + item.logo1)" />
+                                                    <div *ngIf="!item.logo1" class="avatar">{{item.name1.substring(0,2)}}</div>
+                                                </div>
+                                                <div class="card-title card-tle">{{item.name1}}</div>
+                                             
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="new-gam display_hidden">
+                                        <div class="g-icon">
+                                            <img [src]="( envurl +'/v1/image?url=' + item.logo1)" />
+                                        </div>
+                                        {{item.name1}}</div>
+                                    <div class="mid-card hover_active" *ngIf="!item.upcomingMatch.message" (click)="onSelectCompetitionTeam(item)">
+                                        <div class="sml-txt">Upcoming match</div>
+                                        <div class="sml-txt">X</div>
+                                        <div class="new-gam">
+                                            <div class="g-icon">
+                                                <img [src]="( envurl +'/v1/image?url=' + item.logo2)" />
+                                            </div>
+                                            {{item.name2}}</div>
+                                        <div class="sml-txt">{{item.upcomingMatch?.matchTime | date:'d MMMM y'}}</div>
+                                    </div>
+                                    <div class="no-up" *ngIf="item.upcomingMatch.message">{{item.upcomingMatch.message}}</div>
+                                    
+                                    <div class="viewers club-viewrs">
+                                        <div>
+                                            <div class="like" *ngIf='!item.isLikedPage' (click)="pageLikeUnlike(item.teamId,i)"><div class="like-icon"></div>Like</div>  
+                                            <div class="like like_div" *ngIf='item.isLikedPage' ><span class="like_main material-icons">
+                                                favorite_border
+                                                </span>Liked</div>  
+                                        </div>
+                                        <div class="like-view" *ngIf="item.totalLike!=0">
+                                         
+                                            <div class="card-nbr">{{item.totalLike}}</div>
+                                            <div class="lik-lbl">Like{{item.totalLike>1?'s':''}}</div> 
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                    </div>
+                </ngx-slick-carousel>
+                <div #myDiv (click)="slickModal2.slickGoTo(0)">
+                </div>
+            </div> -->
+        <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+    </div>
+
+
+    <div class="competion-container">
+        <div class="competion-head">
+            <div class="c-left">
+                <div class="c-title mobile_hidden">{{'hitofficial.header' | translate}}
+                    <div class="c-noti">
+                        {{hitofficialcount}}</div>
+                </div>
+                <div class="c-lbl mobile_hidden">{{'hitofficial.paragraph' | translate}}</div>
+                <div class="c-title display_hidden">{{'hitofficial.header' | translate}} </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="competion">
+        <ng-container *ngIf="hitofficallist.length>0; else elseTemplate">
+            <ngx-slick-carousel class="carousel" #slickModal4="slick-carousel" [config]="slideConfig4" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let item of hitofficallist;let i = index" class="slide">
+                    <div class="card">
+                        <div class="card-title"><b>{{item.head['0']}}</b><br />@ {{item.head['1']}}</div>
+                        <div class="card-tag">
+                            <div class="tag" *ngIf="item.type==1">{{'filter.onetime' | translate}}</div>
+                            <div class="tag red" *ngIf="item.type==2">{{'filter.championship' | translate}}</div>
+                            <div class="tag mobile_hidden"><b>ID</b> :
+                                <div class="id">{{item.competitionId}}</div>
+                            </div>
+                        </div>
+                        <div class="card-icon">
+
+                            <img [src]="( '/assets/images/random/' + item.randomImage)" />
+                            <div class="card-lay">
+                                <div class="c-day"><b>{{item.numberOfDays.length}}</b> {{'competitionTag.days' | translate}}
+                                </div>
+                                <div class="c-day"><b>{{item.numberOfMatches}}</b> {{'competitionTag.matches' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progess_bar_layout mobile_hidden" *ngIf="item.type==2">
+                            <p>{{'competitionTag.round' | translate}}</p>
+                            <div class="bar_layout">
+                                <div class="bar_inner" [ngStyle]="{'width': ((item.upcomingRound/item.season.totalRound)*100)+'%'}">
+                                    <div class="label">
+                                        {{item.upcomingRound?item.upcomingRound:"0"}}/{{item.season.totalRound}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date-box" [ngClass]="{'champ':item.type==2}">
+
+                            <ng-container *ngIf="item?.counterHour < 1440 && item?.counter>0 ; else elseTemplate">
+                                <div class="d-box">
+                                    <countdown *ngIf="!resendEnable" (event)="notifyTimer($event,i)" [config]="{ leftTime: item.counter, format: 'HH',notify: [ 1,1 ] }">
+                                    </countdown>
+                                </div>
+                                <div class="d-dot">:</div>
+                                <div class="d-box">
+                                    <countdown *ngIf="!resendEnable" [config]="{ leftTime: item.counter, format: 'mm',notify: [ 1 ] }">
+                                    </countdown>
+                                </div>
+                                <div class="d-dot">:</div>
+                                <div class="d-box">
+                                    <countdown *ngIf="!resendEnable" [config]="{ leftTime: item.counter, format: 'ss',notify: [ 1 ] }">
+                                    </countdown>
+                                </div>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <ng-container *ngIf="item.type==1; else elseTemplate">
+                                    <div class="d-box d-full">{{item.startDate | timeAgo}} </div>
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <div class="d-box d-full">
+                                        {{!item.nextRoundStartDate?'--':item.nextRoundStartDate | timeAgo}}</div>
+                                </ng-template>
+                            </ng-template>
+
+                        </div>
+
+                        <div class="coast" [ngClass]="{'champ1':item.type==2}">{{'competitionTag.entryFee' | translate}} : <span>{{item.entryCostInUSD * item.conversionRate | number:'1.2-2'}}
+                                    {{item.conversionCurrency}}</span></div>
+                        <div class="prize" [ngClass]="{'opacity':item.prize==0}">
+
+                            <span *ngIf="getcompetionId(item.competitionId) === true"> 
+                                    <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === true">{{'competitionTag.totalPrize' | translate}} :  100 BRL</span>
+                            <span *ngIf="getcheckvaluelessthan(item.totalPrizeInUSD) === false"> {{'competitionTag.totalPrize' | translate}} : {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}}
+                                        {{item.conversionCurrency}} {{'competitionTag.extension' | translate}}</span>
+
+                            </span>
+
+                            <span *ngIf="getcompetionId(item.competitionId) === false">
+                               
+                                {{'competitionTag.totalPrize' | translate}} : {{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}}
+                                {{item.conversionCurrency}} {{'competitionTag.extension' | translate}}
+                                </span>
+                        </div>
+                        <div class="viewers v-list" [ngClass]="{'champ2':item.type==2}">
+                            <div class="card-view" [ngStyle]="{'background-image': item?.competitionPlayers[0]?.user.image?'url('+ item?.competitionPlayers[0]?.user.image +')' : 'url(/assets/images/user.jpg)'}" *ngIf="item.competitionPlayers.length>0"></div>
+                            <div class="card-nbr" *ngIf="item.totalPlayerCount>1">
+                                <span>+</span> {{item.totalPlayerCount-1}}
+                            </div>
+                            <p *ngIf="item.competitionPlayers.length==0">{{'breadcumbs.nousers' | translate}}</p>
+                        </div>
+                        <div class="card-hover">
+                            <div class="hover-btn" *ngIf='item.isPlayer === 0 && item.joinedRounds.length === 0' (click)='onSelectCompetition(item)'>{{'competitionTag.view' | translate}}</div>
+                            <div class="hover-btn" *ngIf='item.isPlayer === 0 && item.joinedRounds.length > 0' (click)='onAlreadyJoinCompetition(item)'>Bet Overview</div>
+                            <div class="hover-btn" *ngIf='item.isPlayer === 0' (click)='onJoinCompetition(item)'>
+                                {{'competitionTag.join' | translate}} @ {{item.entryCostInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}</div>
+                            <div class="hover-btn" *ngIf='item.isPlayer === 1' (click)='onAlreadyJoinCompetition(item)'>{{'betting.makeabettext' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="no_data_found">
+                <img src="/assets/images/noTrending.png">
+                <p>{{'wallet.nodatafound' | translate}}!</p>
+                <p>If you want to be a host <a [routerLink]="['/choose-competition']">Click Here</a></p>
+            </div>
+        </ng-template>
+
+
+
+
+    </div>
+    <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+    <!-- <div class="competion-head"> 
+            <div class="c-left">
+                <div class="c-title mobile_hidden">Teams</div>
+                <div class="c-lbl mobile_hidden">View and filter all teams</div> 
+                <div class="c-title display_hidden">TEAM & CLUB </div>
+            </div>
+            <div class="c-right">
+                <div class="c-btn" (click)="popTeams=!popTeams"  (appClickOutside)="closeDropdownTeams($event)">{{popular}} <div class="down-ic ml_11"></div></div>
+                <div class="custm-drop pop-drop" *ngIf="popTeams">
+                    <ul>
+                        <li (click)="listTeamsClubs()">Popular Teams</li>
+                        <li *ngFor="let item of leagueList" (click)="listTeamsClubs(item)">{{item.name}}</li>
+                    </ul>
+                </div> 
+            </div>
+        </div> -->
+
+    <!-- <div class="competion competion-club">
+                <ngx-slick-carousel class="carousel" 
+                #slickModal2="slick-carousel" 
+                [config]="slideConfig" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <div ngxSlickItem *ngFor="let item of teamsClubs ;let i = index" class="slide">
+                            <div class="card">                                    
+                                    <div class="card-play club-card hover_active" (click)="onSelectCompetitionTeam(item)">
+                                        <div class="teams"> 
+                                            <div class="c-team">
+                                                <div class="t-icon">
+                                                    <img *ngIf="item.logo1" [src]="( envurl +'/v1/image?url=' + item.logo1)" />
+                                                    <div *ngIf="!item.logo1" class="avatar">{{item.name1.substring(0,2)}}</div>
+                                                </div>
+                                                <div class="card-title card-tle">{{item.name1}}</div>
+                                             
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    <div class="new-gam display_hidden">
+                                        <div class="g-icon">
+                                            <img [src]="( envurl +'/v1/image?url=' + item.logo1)" />
+                                        </div>
+                                        {{item.name1}}</div>
+                                    <div class="mid-card hover_active" *ngIf="!item.upcomingMatch.message" (click)="onSelectCompetitionTeam(item)">
+                                        <div class="sml-txt">Upcoming match</div>
+                                        <div class="sml-txt">X</div>
+                                        <div class="new-gam">
+                                            <div class="g-icon">
+                                                <img [src]="( envurl +'/v1/image?url=' + item.logo2)" />
+                                            </div>
+                                            {{item.name2}}</div>
+                                        <div class="sml-txt">{{item.upcomingMatch?.matchTime | date:'d MMMM y'}}</div>
+                                    </div>
+                                    <div class="no-up" *ngIf="item.upcomingMatch.message">{{item.upcomingMatch.message}}</div>
+                                    
+                                    <div class="viewers club-viewrs">
+                                        <div>
+                                            <div class="like" *ngIf='!item.isLikedPage' (click)="pageLikeUnlike(item.teamId,i)"><div class="like-icon"></div>Like</div>  
+                                            <div class="like like_div" *ngIf='item.isLikedPage' ><span class="like_main material-icons">
+                                                favorite_border
+                                                </span>Liked</div>  
+                                        </div>
+                                        <div class="like-view" *ngIf="item.totalLike!=0">
+                                         
+                                            <div class="card-nbr">{{item.totalLike}}</div>
+                                            <div class="lik-lbl">Like{{item.totalLike>1?'s':''}}</div> 
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                    </div>
+                </ngx-slick-carousel>
+                <div #myDiv (click)="slickModal2.slickGoTo(0)">
+                </div>
+            </div> -->
+    <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+    <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+    <!-- <div class="social-container">
+     
+        <div class="foot-head">{{'inviteDesc.head' | translate}}</div>
+        <div class="foot-sml">{{'inviteDesc.desc' | translate}}</div>
+        <ul>
+       
+            <li>
+                <img src="/assets/images/fb.png"><p>Facebook</p>
+                <share-button button="facebook"></share-button>
+            </li>
+            <li>
+                <img src="/assets/images/watsup.png"><p>Whatsapp</p>
+                <share-button button="whatsapp"></share-button>
+            </li>
+        </ul>
+        <div class="competion-head status-head" *ngIf="statusList.length">
+                <div class="c-left">
+                    <div class="c-title mobile_hidden">{{'yourNews.head' | translate}} <div class="c-status"></div></div>
+                    <div class="c-lbl mobile_hidden">Displayed all Winning Streaks</div>  
+                     <div class="c-title display_hidden">STATS </div>
+                </div>
+                <div class="c-right" (click)="goToCompetitionHistory()">
+                         <div class="c-btn-border">View History</div>
+                </div>
+        </div>
+    </div>  -->
+    <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+
+    <div class="status-container" *ngIf="statusList.length">
+        <div class="cards-contain">
+            <ngx-slick-carousel class="carousel" #slickModal3="slick-carousel" [config]="slideConfig2" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let item of statusList" class="slide">
+                    <div class="cards">
+                        <div class="card-block">
+                            <div class="status-card">
+                                <div class="score-tag"></div>
+                                <div class="tim">{{item.total}} PTS</div>
+                                <div class="card-play">
+                                    <div class="team">
+                                        <div class="c-team">
+                                            <div class="t-icon" *ngIf="item.match.homeTeam.logo">
+                                                <img [src]="( envurl +'/v1/image?url=' + item.match.homeTeam.logo)" />
+                                            </div>
+                                            <div class="t-icon team-logo-name" *ngIf="!item.match.homeTeam.logo">
+                                                {{item.match.homeTeam.name | slice:0:1}}
+                                            </div>
+                                            <div class="team-name">{{item.match.homeTeam.name}}</div>
+                                        </div>
+                                        <div class="sts">{{item.match.homeTotalScore}} - {{item.match.awayTotalScore}}
+                                        </div>
+                                        <div class="c-team">
+                                            <div class="t-icon" *ngIf="item.match.awayTeam.logo">
+                                                <img [src]="( envurl +'/v1/image?url=' + item.match.awayTeam.logo)" />
+                                            </div>
+                                            <div class="t-icon team-logo-name" *ngIf="!item.match.awayTeam.logo">
+                                                {{item.match.awayTeam.name | slice:0:1}}
+                                            </div>
+                                            <div class="team-name">{{item.match.awayTeam.name}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="predict-lbl">{{'yourNews.prediction' | translate}}</div>
+                                <div class="predict-tag" [ngClass]="{'red-tag':item.homeScore !== item.match.homeTotalScore,'green-tag':item.match.awayTotalScore === item.awayScore,'equal-tag':item.homeScore==item.awayScore}">
+                                    {{item.homeScore}} - {{item.awayScore}}</div>
+                                <div class="card_hover" (click)="onBettingScreen(item)">{{'yourNews.view' | translate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+
+
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+<app-competition-betting-popup *ngIf='betting_popup' (onClose)="onClose($event)" [competition_detail]='competition_detail'></app-competition-betting-popup>

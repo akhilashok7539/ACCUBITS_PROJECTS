@@ -1,0 +1,310 @@
+<div class="about_wrap">
+
+    <section *ngIf='loading'>
+        <div>
+            <div class="title">
+                <input type="checkbox" [(ngModel)]='settingDetail[0].enable' (input)="onchangeStatu($event,'0')">
+                {{'forms.depositelimit' | translate}}
+                <div class="edit_cion" (click)="showDepositeEdit()" *ngIf="settingDetail[0].enable"></div>
+                <div class="knowmore"><a routerLink="/rules/responsible-player">{{'createCompetition.knowMore' | translate}}?</a> </div>
+            </div>
+            <div class="lay" [ngClass]="{'active_chec': !settingDetail[0].enable}">
+                <div class="di_wit1">
+                    <div class="tests">                {{'forms.amount' | translate}}
+                    </div>
+                    <input type="number" maxlength="15" *ngIf='settingDetail[0]?.edit' (input)="onchange_amount('0')"
+                        [(ngModel)]="settingDetail[0].amount" class="form-control" />
+                    <div class="detai" *ngIf='!settingDetail[0]?.edit'>{{settingDetail[0]?.amount | number:'1.2-2'}} {{conversionCurrency}}
+                    </div>
+                </div>
+                <div class="di_wit1">
+                    <div class="tests"> {{'forms.recurrence' | translate}}</div>
+                    <!-- <div class="c-btn" [matMenuTriggerFor]="menu"></div>
+                    <mat-menu class="cust_drp" #menu="matMenu" >
+                        <ng-container *ngFor="let item of userFilter">
+                            <button mat-menu-item class="font_medium" >{{item.name}}</button>
+                        </ng-container>
+                    </mat-menu> -->
+                    <select (click)="selectValues()" *ngIf="settingDetail[0]?.edit;" class="c-btn recurrence"
+                        [(ngModel)]="settingDetail[0].recurrence">
+                        <option selected disabled value="null">{{'forms.ChooseRecurrance' | translate}}</option>
+                        <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                    <div class="detai" *ngIf='!settingDetail[0]?.edit'>
+                        {{getrecurencename(settingDetail[0].recurrence).name}}
+                    </div>
+                </div>
+                <div class="di_wit1">
+                    <div class="tests">{{'forms.duration' | translate}}</div>
+                    <ng-container *ngIf="settingDetail[0]?.edit; else elseTemplateDuration">
+                        <input readonly matInput [min]="todayDate" (input)="onchange('0')"
+                            [(ngModel)]="settingDetail[0].endDate" (click)="pickerDurationFrom.open()"
+                            placeholder="To Date" #searchFromInput name="betDate"
+                            (dateChange)="fromDateChanged($event,0,'endDate')" [matDatepicker]="pickerDurationFrom"
+                            class="form-control text_co" />
+
+                        <mat-datepicker #pickerDurationFrom></mat-datepicker>
+                    </ng-container>
+                    <ng-template #elseTemplateDuration>
+                        <div class="detai">{{settingDetail[0]?.endDate |date:'MMM d, y'}}</div>
+                    </ng-template>
+                </div>
+
+
+                <div class="di_wit1">
+                    <div class="dqwd" *ngIf='settingDetail[0]?.userSettingSchedules.length !== 0'>
+                        <div class="ions rotate linear infinite"></div>
+                        <div class="texts" (click)="settingDetail[0].schdl =! settingDetail[0].schdl">Sync</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lay lay_de" *ngIf='settingDetail[0].schdl'>
+                <div class="di_wit1" *ngIf='settingDetail[0]?.userSettingSchedules[0].amount !== null'>
+                    <div class="tests">  {{'forms.amount' | translate}}</div>
+                    <div class="detai">{{settingDetail[0]?.userSettingSchedules[0].amount * conversionRate |
+                        number:'1.2-2'}} {{conversionCurrency}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[0]?.userSettingSchedules[0].endDate !== null'>
+                    <div class="tests">Duration</div>
+                    <div class="detai">{{settingDetail[0]?.userSettingSchedules[0].endDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[0]?.userSettingSchedules[0].scheduledOn'>
+                    <div class="tests">Scheduled Time</div>
+                    <div class="detai">{{settingDetail[0]?.userSettingSchedules[0].scheduledOn |date:'MMM d, y, h:mm
+                        a'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[0]?.userSettingSchedules[0].enable !== null'>
+                    <div class="tests">Enable</div>
+
+                    <div class="detai" *ngIf="settingDetail[0]?.userSettingSchedules[0].enable == true">Yes</div>
+                    <div class="detai" *ngIf="settingDetail[0]?.userSettingSchedules[0].enable != true">No</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[0]?.userSettingSchedules[0].recurrence !== null'>
+                    <div class="tests"> {{'forms.recurrence' | translate}}</div>
+                    <div class="detai">{{getrecurencename(settingDetail[0].userSettingSchedules[0].recurrence).name}}
+                        <p *ngIf="settingDetail[0]?.recurrence === null">Total</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ourt_lay">
+            <div class="title">
+                <input type="checkbox" [(ngModel)]='settingDetail[1].enable' (input)="onchangeStatu($event,'1')">
+                {{'forms.betlimit' | translate}}
+                
+                <div class="edit_cion" (click)="showBetEdit()" *ngIf="settingDetail[1].enable"></div>
+                <div class="knowmore"><a routerLink="/rules/responsible-player">{{'createCompetition.knowMore' | translate}}?</a> </div>
+
+            </div>
+            <div class="lay" [ngClass]="{'active_chec': !settingDetail[1].enable}">
+                <div class="di_wit1">
+                    <div class="tests">                {{'forms.amount' | translate}}  </div>
+                    <input type="number" maxlength="15" *ngIf='settingDetail[1]?.edit' (input)="onchange_amount('1')"
+                        [(ngModel)]="settingDetail[1].amount" class="form-control" />
+                    <div class="detai" *ngIf='!settingDetail[1]?.edit'>{{settingDetail[1]?.amount | number:'1.2-2'}} {{conversionCurrency}}
+                    </div>
+                </div>
+                <div class="di_wit1">
+                    <div class="tests"> {{'forms.recurrence' | translate}} </div>
+                    <!-- <div class="c-btn" [matMenuTriggerFor]="menu"></div>
+                    <mat-menu class="cust_drp" #menu="matMenu" >
+                        <ng-container *ngFor="let item of userFilter">
+                            <button mat-menu-item class="font_medium" >{{item.name}}</button>
+                        </ng-container>
+                    </mat-menu> -->
+                    <select (click)="selectValues()" *ngIf="settingDetail[1]?.edit;" class="c-btn recurrence"
+                        [(ngModel)]="settingDetail[1].recurrence">
+                        <option selected disabled value="null">{{'forms.ChooseRecurrance' | translate}}</option>
+                        <option *ngFor="let item of userFilter" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                    <div class="detai" *ngIf='!settingDetail[1]?.edit'>
+                          {{getrecurencename(settingDetail[1].recurrence).name}}
+                          <p *ngIf="settingDetail[1]?.recurrence === null">Total</p>
+                    </div>
+                </div>
+                <div class="di_wit1">
+                    <div class="tests">{{'forms.duration' | translate}}</div>
+                    <ng-container *ngIf="settingDetail[1]?.edit; else elseTemplateBet">
+                        <input readonly matInput [(ngModel)]="settingDetail[1].endDate" (click)="pickerBetFrom.open()"
+                            [min]="todayDate" placeholder="To Date" #searchFromInput1 name="durationExclude"
+                            (dateChange)="fromDateChanged($event,1,'endDate')" [matDatepicker]="pickerBetFrom"
+                            class="form-control text_co" />
+                        <mat-datepicker #pickerBetFrom></mat-datepicker>
+                    </ng-container>
+                    <ng-template #elseTemplateBet>
+                        <div class="detai">{{settingDetail[1]?.endDate |date:'MMM d, y'}}</div>
+                    </ng-template>
+                </div>
+                <div class="di_wit1">
+                    <div class="dqwd" *ngIf='settingDetail[1]?.userSettingSchedules.length !== 0'>
+                        <div class="ions rotate linear infinite"></div>
+                        <div class="texts" (click)="settingDetail[1].schdl =! settingDetail[1].schdl">Sync</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lay lay_de" *ngIf='settingDetail[1]?.schdl'>
+                <div class="di_wit1" *ngIf='settingDetail[1]?.userSettingSchedules[0].amount !== null'>
+                    <div class="tests">{{'forms.amount' | translate}}</div>
+                    <div class="detai">{{settingDetail[1]?.userSettingSchedules[0].amount * conversionRate | number:'1.2-2'}} {{conversionCurrency}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[1]?.userSettingSchedules[0].endDate !== null'>
+                    <div class="tests">{{'forms.duration' | translate}}</div>
+                    <div class="detai">{{settingDetail[1]?.userSettingSchedules[0].endDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[1]?.userSettingSchedules[0].scheduledOn'>
+                    <div class="tests">Scheduled Time</div>
+                    <div class="detai">{{settingDetail[1]?.userSettingSchedules[0].scheduledOn |date:'MMM d, y, h:mm
+                        a'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[1]?.userSettingSchedules[0].enable !== null'>
+                    <div class="tests">Enable</div>
+                    <div class="detai" *ngIf="settingDetail[1]?.userSettingSchedules[0].enable == true">Yes</div>
+                    <div class="detai" *ngIf="settingDetail[1]?.userSettingSchedules[0].enable != true">No</div>
+
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[1]?.userSettingSchedules[0].recurrence !== null'>
+                    <div class="tests">{{'forms.recurrence' | translate}}</div>
+                    <div class="detai">{{getrecurencename(settingDetail[1].userSettingSchedules[0].recurrence).name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ourt_lay">
+            <div class="title check">
+                <input type="radio" [checked]="disabled" (change)="disable($event)">
+                &nbsp;
+                <span class="selfExclude">{{'forms.unselectselfexclude' | translate}}</span>
+            
+                &nbsp;
+                <input type="radio" [checked]="!disabled" (change)="enable($event)">
+                &nbsp;
+                <span class="selfExclude">{{'forms.selctedSelfexlcude' | translate}}</span>
+                
+                <!-- <div class="di_wit1" *ngIf="disabled">
+                    <div class="dqwd" *ngIf='settingDetail[2]?.userSettingSchedules.length !== 0'>
+                        <div class="ions rotate linear infinite"></div>
+                        <div class="texts" (click)="settingDetail[2].schdl =! settingDetail[2].schdl">Sync</div>
+                    </div>
+                </div> -->
+            </div>
+          
+            <!-- <div class="lay lay_de" *ngIf='settingDetail[2]?.schdl'>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].startDate !== null'>
+                    <div class="tests">To</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].startDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].endDate !== null'>
+                    <div class="tests">From</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].endDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].scheduledOn'>
+                    <div class="tests">Scheduled Time</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].scheduledOn |date:'MMM d, y, h:mm
+                        a'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].enable !== null'>
+                    <div class="tests">Enable</div>
+                    <div class="detai" *ngIf="settingDetail[2]?.userSettingSchedules[0].enable == true">Yes</div>
+                    <div class="detai" *ngIf="settingDetail[2]?.userSettingSchedules[0].enable != true">No</div>
+                </div>
+            </div> -->
+           
+        </div>
+
+
+        <div class="ourt_lay" *ngIf="!disabled">
+            <div class="title">
+                <!-- <input type="checkbox" [(ngModel)]='checked' (click)="checkedIndefiniteself($event)">
+                Indefinite  Self Exclude -->
+                <!-- <div class="edit_cion"></div>(click)="checkedIndefiniteself()" -->
+
+
+                <input type="checkbox" [(ngModel)]='settingDetail[2].IndefiniteSelfExclude' (input)="onchangeStatu('2')"
+                    (change)="checkedIndefiniteself($event)">
+
+                    {{'forms.indefinite' | translate}}
+                <!-- <div class="edit_cion" (click)="showDefiniteExcludeEdit()" *ngIf="settingDetail[3].enable"></div> -->
+                <div class="knowmore"><a routerLink="/rules/responsible-player">{{'createCompetition.knowMore' | translate}}?</a> </div>
+
+
+            </div>
+            <div class="ourt_lay">
+                <div class="title">
+                    <input type="checkbox" [(ngModel)]='!settingDetail[2].IndefiniteSelfExclude'
+                        (input)="onchangeStatu('2')" (change)="checkeddefiniteself($event)">
+
+                        {{'forms.definite' | translate}}
+                    <div class="edit_cion" (click)="showSelfExcludeEdit()" *ngIf="settingDetail[2].enable"></div>
+                    <div class="knowmore"><a routerLink="/rules/responsible-player">{{'createCompetition.knowMore' | translate}}?</a> </div>
+
+
+                </div>
+            </div>
+            <div class="lay" [ngClass]="{'active_chec': !settingDetail[2].enable}">
+                <div class="di_wit1">
+                    <div class="tests">{{'forms.from' | translate}}</div>
+                    <ng-container *ngIf="settingDetail[2]?.edit; else elseTemplateExcludefrom">
+                        <input readonly matInput [(ngModel)]="settingDetail[2].startDate" [min]="todayDate"
+                            (click)="pickerSelfFrom.open()" placeholder="From Date" #searchFromInput2
+                            name="fromDateExclude" (dateChange)="fromDateChanged($event,2,'startDate')"
+                            [matDatepicker]="pickerSelfFrom" class="form-control text_co" />
+                        <mat-datepicker #pickerSelfFrom></mat-datepicker>
+                    </ng-container>
+                    <ng-template #elseTemplateExcludefrom>
+                        <div class="detai" *ngIf="settingDetail[2].startDate != null">{{settingDetail[2]?.startDate |date:'MMM d, y'}}</div>
+                        <div class="detai"  *ngIf="settingDetail[2].startDate === null"></div>
+                    </ng-template>
+                </div>
+                <div class="di_wit1">
+                    <div class="tests">{{'forms.to' | translate}}</div>
+                    <ng-container *ngIf="settingDetail[2]?.edit; else elseTemplateExcludeTo">
+                        <input readonly matInput [(ngModel)]="settingDetail[2].endDate" [min]="todayDate"
+                            (click)="pickerSelfTo.open()" placeholder="To Date" [min]="settingDetail[2].startDate"
+                            #searchFromInput3 name="toDateExclude" (dateChange)="fromDateChanged($event,2,'endDate')"
+                            [matDatepicker]="pickerSelfTo" class="form-control text_co" />
+                        <mat-datepicker #pickerSelfTo></mat-datepicker>
+                    </ng-container>
+                    <ng-template #elseTemplateExcludeTo>
+                        <div class="detai" *ngIf="settingDetail[2].endDate != null">{{settingDetail[2]?.endDate |date:'MMM d, y'}}</div>
+                        <div class="detai"  *ngIf="settingDetail[2].endDate === null"></div>
+
+                    </ng-template>
+                </div>
+                <div class="di_wit1">
+                    <div class="dqwd" *ngIf='settingDetail[2]?.userSettingSchedules.length !== 0'>
+                        <div class="ions rotate linear infinite"></div>
+                        <div class="texts" (click)="settingDetail[2].schdl =! settingDetail[2].schdl">Sync</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lay lay_de" *ngIf='settingDetail[2]?.schdl'>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].startDate !== null'>
+                    <div class="tests">{{'forms.to' | translate}}</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].startDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].endDate !== null'>
+                    <div class="tests">{{'forms.from' | translate}}</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].endDate |date:'MMM d, y'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].scheduledOn'>
+                    <div class="tests">Scheduled Time</div>
+                    <div class="detai">{{settingDetail[2]?.userSettingSchedules[0].scheduledOn |date:'MMM d, y, h:mm
+                        a'}}</div>
+                </div>
+                <div class="di_wit1" *ngIf='settingDetail[2]?.userSettingSchedules[0].enable !== null'>
+                    <div class="tests">Enable</div>
+                    <div class="detai" *ngIf="settingDetail[2]?.userSettingSchedules[0].enable == true">Yes</div>
+                    <div class="detai" *ngIf="settingDetail[2]?.userSettingSchedules[0].enable != true">No</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-btn" *ngIf='onEdit'>
+            <button class="btn btn_transparent" (click)="settingDetails()">{{'forms.Cancel' | translate}}
+            </button>
+            <button class="btn btn-primary ml_21" (click)="submitDetails()">{{'forms.Save' | translate}}
+            </button>
+        </div>
+    </section>
+</div>

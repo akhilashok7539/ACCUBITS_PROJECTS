@@ -1,0 +1,111 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header  *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head_group">
+                    <section (click)="switchMode('oneTime')" [ngClass]="{'oneAct': type=='oneTime'}">{{'howTo.typeOne' | translate}}</section>
+                    <section (click)="switchMode('championship')" [ngClass]="{'chaAct': type=='championship'}">{{'howTo.typeChamp' | translate}}</section>
+                </div>
+                <ng-container *ngIf="type=='oneTime'; else elseTemplate">
+                    <div class="steps_wrap">
+                        <section>
+                            <div class="img">
+                                <img src="/assets/images/step1.svg" class="mobile_hide">
+                            </div>
+                            <div class="content right_out">
+                                <div class="step_no step_left">1</div>
+                                <p>{{'howTo.step1Head' | translate}}</p>
+                                <label>{{'howTo.step1' | translate}}</label>
+                            </div>
+                        </section>
+    
+                        <section>
+                            <div class="content">
+                                <div class="step_no step_right">2</div>
+                                <p>{{'howTo.step2Head' | translate}}</p>
+                                <label>{{'howTo.step2' | translate}}</label>
+                            </div>
+                            <div class="img">
+                                <img src="/assets/images/step2.svg"  class="mobile_hide">
+                            </div>
+                        </section>
+    
+                        <section>
+                            
+                            <div class="img">
+                                <img src="/assets/images/step3.svg"  class="mobile_hide">
+                            </div>
+                            <div class="content">
+                                <div class="step_no step_left">3</div>
+                                <p>{{'howTo.step3Head' | translate}}</p>
+                                <label>{{'howTo.step3' | translate}}</label>
+                            </div>
+                        </section>
+    
+                        <section>
+                            
+                            <div class="content">
+                                <div class="step_no step_right">4</div>
+                                <p>{{'howTo.step4Head' | translate}}</p>
+                                <label>{{'howTo.step4' | translate}} <br> {{'howTo.step4Imp' | translate}}</label>
+                            </div>
+                            <div class="img">
+                                <img src="/assets/images/step4.svg"  class="mobile_hide">
+                            </div>
+                        </section>
+                    </div> 
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="steps_wrap">
+                        <section>
+                            <div class="img">
+                                <img src="/assets/images/step1.svg"  class="mobile_hide">
+                            </div>
+                            <div class="content">
+                                <div class="step_no step_left">1</div>
+                                <p>{{'howTo.step1HeadChamp' | translate}}</p>
+                                <label>{{'howTo.step1Champ' | translate}}</label>
+                            </div>
+                        </section>
+    
+                        <section>
+                            <div class="content">
+                                <div class="step_no step_right">2</div>
+                                <p>{{'howTo.step2HeadChamp' | translate}}</p>
+                                <label>{{'howTo.step2Champ' | translate}}</label>
+                            </div>
+                            <div class="img">
+                                <img src="/assets/images/step2.svg"  class="mobile_hide">
+                            </div>
+                        </section>
+    
+                        <section>    
+                            <div class="img">
+                                <img src="/assets/images/step3.svg"  class="mobile_hide">
+                            </div>
+                            <div class="content">
+                                <div class="step_no step_left">3</div>
+                                <p>{{'howTo.step4Head' | translate}}</p>
+                                <label>{{'howTo.step4' | translate}} <br> {{'howTo.step4Imp' | translate}}</label>
+                            </div>
+                        </section>
+    
+                        <section>
+                            
+                            <div class="content">
+                                <div class="step_no step_right">4</div>
+                                <p>{{'howTo.step4HeadChamp' | translate}}</p>
+                                <label>{{'howTo.step4Champ' | translate}} <br> {{'howTo.step4ImpChamp' | translate}}</label>
+                            </div>
+                            <div class="img">
+                                <img src="/assets/images/step4.svg"  class="mobile_hide">
+                            </div>
+                        </section>
+                    </div>
+                </ng-template>
+
+            </section>
+    </section> 
+</div>
+
+<app-footer *ngIf="isWeb"></app-footer>

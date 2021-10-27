@@ -1,0 +1,139 @@
+<section>
+    <div class="back_layout" >
+        <div (click)=onback()>Users</div>
+        <div class="arrow">></div>
+        <div>{{user?.username}}</div>
+    </div>
+    <div class="user_layouts">
+        <div class="user_layout">
+        <div class="user_logo_lay">
+            <div class="head-icon"  [ngStyle]="{'background-image': user?.image?'url('+ user.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+            <div class="dataqw">
+                <div class="username"> {{user?.username}}</div>
+                <div class="emails">{{user?.email}}</div>
+            </div>
+        </div>
+
+        <div class="block_status">
+            <p>KYC : 
+                <ng-container [ngSwitch]="user?.kycStatus"> 
+                    <span *ngSwitchCase="0">Pending</span>
+                    <span *ngSwitchCase="1">Approved</span>
+                    <span *ngSwitchCase="2">Submitted</span>
+                    <span *ngSwitchCase="3">Rejected</span>
+                    <span *ngSwitchDefault>--</span>
+                </ng-container>
+            </p>
+            <div *ngIf="adminType == 2 || adminType == 3  ">
+                <ng-container *ngIf="user?.status==1">
+                    <button class="btn btn_transparent" (click)="blockUnblockUser()">Block</button>
+                </ng-container>
+                <ng-container *ngIf="user?.status==2">
+                    <button class="btn btn_transparent" (click)="blockUnblockUser()">Unblock</button>
+                </ng-container>
+                <ng-container *ngIf="user?.status==3">
+                    <button class="btn btn_transparent" (click)="blockUnblockUser()">UnLock</button>
+                </ng-container>
+            </div>
+           
+
+        </div>
+    </div>
+        <div class="user_layout">
+            <div class="user_personal_detail">
+                <div class="users_layout mt_20">
+                    <div class="tille">Name :</div>
+                    <div class="detai"> {{user?.fullName}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Address :</div>
+                    <div class="detai"> {{user?.fullAddress}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">D.O.B:</div>
+                    <div class="detai"> {{user?.dob}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Phone No.:</div>
+                    <div class="detai"> {{user?.mobileNumber}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">City:</div>
+                    <div class="detai"> {{user?.city}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">State:</div>
+                    <div class="detai"> {{user?.state}}</div>
+                </div>
+                
+                <div class="users_layout mt_20">
+                    <div class="tille">Country:</div>
+                    <div class="detai"> {{user?.country}}</div>
+                </div>
+            </div>
+            <div class="user_personal_detail">
+                <div class="users_layout mt_20">
+                    <div class="tille">Open Betting :</div>
+                    <div class="detai"> {{user?.openBets}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Total Betting :</div>
+                    <div class="detai"> {{user?.totalBets}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Total Winning Amount:</div>
+                    <div class="detai"> {{user?.totalWiningAmount}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Winnig Bets:</div>
+                    <div class="detai"> {{user?.winningBets}}</div>
+                </div>
+                <div class="users_layout mt_20">
+                    <div class="tille">Wallet Balance:</div>
+                    <div class="detai"> {{user?.walletBalance}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user_layout_detail">
+        <div class="competition_detail">
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '0'}" (click)="onClick('0')">
+                <div class="heading">
+                    User Activity
+                </div>
+            </div>
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '1'}"  (click)="onClick('1')">
+                <div class="heading">
+                    Joined Competition
+                </div>
+            </div>
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '2'}"  (click)="onClick('2')">
+                <div class="heading">
+                    Transactions History
+                </div>
+            </div>
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '3'}"  (click)="onClick('3')">
+                <div class="heading">
+                    Fund Report
+                </div>
+            </div>
+            <!-- <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '4'}"  (click)="onClick('4')">
+                <div class="heading">
+                    wallet Balance & Current wallet
+                </div>
+            </div> -->
+            <!-- <div class="competition_detail_card" [ngClass]="{'isactives': isactive === '5'}"  (click)="onClick('5')">
+                <div class="heading">
+                    FInancial Info
+                </div>
+            </div> -->
+        </div>
+        </div>
+
+</section>
+<app-admin-user-activity *ngIf="isactive === '0'"></app-admin-user-activity>
+<app-admin-join-competition *ngIf="isactive === '1'"></app-admin-join-competition>
+<app-admin-transaction-history *ngIf="isactive === '2'"></app-admin-transaction-history>
+<app-admin-fund-report *ngIf="isactive === '3'"></app-admin-fund-report>
+<app-admin-wallet-balce *ngIf="isactive === '4'"></app-admin-wallet-balce>
+<app-admin-financial-info *ngIf="isactive === '5'"></app-admin-financial-info>

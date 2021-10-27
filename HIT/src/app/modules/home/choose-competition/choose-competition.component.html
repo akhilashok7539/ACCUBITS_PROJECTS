@@ -1,0 +1,31 @@
+<div class="competition_flow_wrap">
+    <div class="choose_wrap">
+      <div class="competition_block_header cardGame_outer">
+        <p>{{'createCompetition.chooseMode' | translate}}</p>
+        <span>{{'createCompetition.modeDiff' | translate}} <br>
+          {{'createCompetition.modeDiff2' | translate}} 
+          <a [routerLink]="['/rules/how-to-join']" target="_blank" class="know_more">{{'createCompetition.knowMore' | translate}}</a></span>
+      </div>
+      <div class="competitions_block">
+        <section (click)="goToCreateCompetition('1')">
+          <div class="championship-legend"></div>
+          <div class="arrow_anim_out">
+            <div class="card_arrow slide_1"></div>
+            <div class="card_arrow slide_2"></div>
+            <div class="card_arrow slide_3"></div>
+          </div>
+          <p>{{'createCompetition.oneTime' | translate}}</p>
+        </section>
+        <section (click)="goToCreateCompetition('2')">
+          <div class="championship-legend champion"></div>
+          <div class="arrow_anim_out">
+            <div class="card_arrow slide_1"></div>
+            <div class="card_arrow slide_2"></div>
+            <div class="card_arrow slide_3"></div>
+          </div>
+          <p>{{'createCompetition.championship' | translate}}</p>
+        </section>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>

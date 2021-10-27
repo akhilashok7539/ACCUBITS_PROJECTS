@@ -1,0 +1,39 @@
+.column {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    background: #52aa52;
+    padding: 12px;
+    width: 36%;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+ion-icon {
+    display: inline;
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}

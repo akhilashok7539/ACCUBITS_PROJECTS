@@ -1,0 +1,477 @@
+.competition_layout{
+    position: relative;
+    padding: 3vh 5vh;
+    border-radius: 12px;
+    margin: 4vh 0vh;
+    width: 100%;
+    background-color:#1b212c;
+    height: 100%;
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th {
+        color:#70737a;
+        text-align:left;
+        padding: 13px;
+        font-size: 1.4rem;
+        font-family: Poppins-Light;
+        font-weight: 100;
+    }
+    td {
+        text-align: left;
+        background-color: #171d28;
+        border-top: 1px solid #272d37;
+        cursor: pointer;
+        border-bottom: 1px solid #272d37;
+        padding: 1vh 2vh;
+        font-size: 1.4rem;
+        color: white;
+        font-family: "Poppins-Light";
+        font-weight: 100;
+
+    }
+    .td_first-child{
+        border-left: 1px solid #272d37 ;
+        border-radius: 10px 0px 0px 10px ;
+    }
+    .td_last-child{
+        border-right: 1px solid #272d37;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .table_spacing {
+        border-collapse:separate;
+        border-spacing:0px 27px;
+        tr{
+            th:nth-child(2){
+                text-align: left;
+            }
+        }
+    }
+}
+.player_detail{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    p{
+        padding-left: 16px;
+        text-transform: capitalize;
+
+    }
+
+    .competition_card_image{
+        width: 38px;
+        height: 39px;
+        border: 4px solid 292E38;
+        border-radius: 50%;
+        .client_avatar{
+            background-color: #32363e;
+            background-image: url(/assets/images/user.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .client_avatar_text{
+            background-color: #32363e;
+            text-align: center;
+            font-size: 13px;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            text-transform: uppercase;
+            padding-top: 10px;
+        }
+    }
+}
+.earned_coin{
+  font-weight: bold !important;
+  font-size: 1.3rem;
+}
+.earned_col{
+    color: #0DB983;
+}
+.competition_option_view_btn{
+     width: 131px;
+     height: 35px;
+    cursor: pointer;
+    background-color: #3e444f !important;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 1.2rem;
+        margin: 8px !important;
+        // display: table-cell;
+        // vertical-align: middle;
+    }
+    }
+    ::ng-deep .slick-track {
+        margin-left: 0px !important;
+    }
+.competition_option_view_add{
+    cursor: pointer;
+    position: relative;
+    padding: 0.2vh 0vh;
+    border-radius: 4px;
+    width: 35px;
+    margin-left: 13px;
+    text-align: center;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: #292E38;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    height: 35px;
+}
+.follow_icon{
+    background-image: url(/assets/images/follow_add.png);
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 22px;
+}
+.request_icon{ 
+    background-image: url(/assets/images/request.png);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+.follow_add{
+    background-image: url(/assets/images/follow_icon.svg);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+
+.pa_0{
+    padding: 0px !important;
+}
+.point_layout{
+    border: 1px solid #272d37 !important;
+    color: white !important;
+    border: 1px solid #36435b;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 39px;
+    width: 39px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    justify-content: center;
+    text-align: center;
+}
+.tab_date_selection{
+    position: relative;
+    margin: 4vh 0vh;
+    width: 100%;
+    background-color: #151c27;
+}
+.competition_match_selection_btn{
+    width: 180px;
+    height: 100%;
+    border: 10px;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    .competition_date{
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 29px;
+        color:rgba(255, 255, 255, 0.5);
+        p{
+            margin: 5px !important;
+            letter-spacing: 0.6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    }
+    ::ng-deep .carousel:focus {
+        outline: none !important;
+     }
+     .competition_match_selection_btn:focus {
+        outline: none !important;
+     }
+    ngx-slick-carousel::ng-deep{
+        .slick-prev{
+            background-image: url(/assets/images/left-btn.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 20px;
+            left: -35px;
+            &::before{
+                content: none;
+            }
+        }
+        .slick-next{
+            background-image: url(/assets/images/right-btn.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 20px;
+            right: -35px;
+            &::before{
+                content: none;
+            }
+        }
+    }
+    .is_active_date{
+        background-color:#0DB983 !important;
+        color: #ffffff !important;
+        p{
+            color: white;
+        }
+}
+.pd_25{
+  padding-left: 25px;
+}
+.display_view{
+    display: flex;
+    justify-content: left !important;
+    align-items: center;
+}
+.point_arrow{
+    background-image: url(/assets/images/betting-arrow.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #181e29;
+    width: 50px;
+    height: 24px;
+}
+.arrow-disable{
+    background-image: url(/assets/images/betting-disable.png);
+    background-size: cover;
+    background-position: center;
+        width: 19px;
+    height: 18px;
+    margin-left: 5px;
+}
+.arrow-enable{
+    background-image: url(/assets/images/betting-enable.png);
+    background-size: cover;
+    background-position: center;
+        width: 19px;
+    height: 18px;
+    margin-left: 5px;
+}
+@media only screen and (max-width: 1600px) {
+    .competition_option_view_btn{
+        width: 107px;
+        height: 28px;
+        p{
+            font-size: 1.2rem;
+            margin: 8px !important;
+        }
+        }
+        .competition_option_view_add{
+            border-radius: 4px;
+            width: 30px;
+            background-color: #292E38;
+            height: 30px;
+
+            .follow_icon{
+                width: 15px;
+                height: 16px;
+            }
+        }
+        .competition_card_image{
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+}
+
+.active_user{
+    color: #FEBB2E  !important;
+}
+.active_user_background{
+    background-color: #24252A !important;
+}
+.crown_card_image{
+    width: 26px;
+    height: 24px;
+    border-radius: 50%;
+    width: 15px;
+    top: -5px;
+    position: absolute;
+    height: 15px;
+    border-radius: 50%;
+    left: 32px;
+    .crown{
+        background-image: url(/assets/images/crown.svg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+.overall_back{
+    background-color: #151c27;
+    color: #82868c !important;
+}
+.check{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+  }
+
+.display_hiddens{
+    display: none !important;
+}
+.mobile_hiddens{
+    display: table-row !important 
+}
+.display_views{
+    display: none !important;
+}
+
+.qfwq{
+    position: relative;
+}
+.overall{
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 277px;
+    height: 75px;
+    border: 2px solid #0db983 !important
+    //  background-color: #151c27;;
+}
+@media only screen and (max-width: 2000px) { 
+    .overall{
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        width: 231px;
+        height: 73px;
+    }
+}
+@media only screen and (max-width: 1300px) { 
+    .overall{
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        width: 253px;
+        height: 73px;
+    }
+}
+@media only screen and (max-width: 950px) { 
+    .overall{
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        width: 182px;
+        height: 73px;
+    }
+}
+
+@media only screen and (max-width: 800px) { 
+    .competition_layout{
+        padding: 3vh 0vh;
+        margin-bottom: 72px;
+    }
+    .player_detail .competition_card_image .client_avatar_text {
+        font-size: 9px;
+        padding-top: 6px;
+    }
+    .player_detail p {
+        font-size: 1.1rem;
+        width: 15vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .competition_card_image {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .earned_coin {
+        font-size: 1.1rem;
+    }
+    .mobile_hid{
+        display: none !important;
+    }
+    .display_views{
+        display: flex !important;
+    }
+    .flex{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important
+    }
+    .competition_option_view_btn{
+        width: 114px;
+    }
+    table {
+        padding: 11px;
+    }
+    .display_hiddens{
+        display: initial !important;
+    }
+    .mobile_hiddens{
+        display: none !important 
+    }
+    .flex{
+        display: flex !important;
+        justify-content: center;
+        padding-bottom: 16px !important;
+    }
+    .competition_layout .table_spacing {
+        border-collapse: separate;
+        border-spacing: 0px 10px;
+    }
+    td{
+        width: 0% !important;
+        font-size: 1.1rem;
+    }
+    td{
+        padding: 0px !important;
+        text-align: center !important;
+        border: none !important;
+        border-radius: 0% !important;
+    }
+    .player_detail{
+        padding-left: 9px;
+    }
+    
+    .td_first-child{
+        border: none !important;
+        border-radius: 0% !important; 
+        font-size: 1.1rem !important;
+        padding-left: 13px !important;
+    }
+    .competition_date{
+        margin-left: 0px !important;
+    }
+    .td_first-child{
+        border-left: none !important; 
+         border-radius: 0px !important;
+    }
+    .competition_date {
+        font-size: 1.2rem !important;
+    }
+    .display_view {
+        display: flex;
+        justify-content: center !important;
+    }
+    .player_detail {
+        display: flex;
+        align-items: center !important;
+    }
+}

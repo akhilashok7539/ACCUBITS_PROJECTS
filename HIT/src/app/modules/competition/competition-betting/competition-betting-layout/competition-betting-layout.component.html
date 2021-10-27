@@ -1,0 +1,50 @@
+<div *ngIf='!loading'>
+    <app-competition-betting-overview [competition_detail]='competition_detail' [disable_button]='disable_button' (competition)="oncompetition($event)" (scrollDown)="scrollDown($event)"></app-competition-betting-overview>
+
+<section  class="common_wraps">
+    <div class="competition_detail">
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'player'}" (click)="onClick('player')">
+            <div class="heading">
+                {{'betting.bettingOverview' | translate}}
+            </div>
+            <!-- <span class="competition_detail_badge">
+               <p>01</p>
+            </span> -->
+        </div>
+           <!-- HIDE FOR SOFT LAUCH -->
+        <!-- <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Clubs'}"  (click)="onClick('Clubs')">
+            <div class="heading">
+                {{'competitionTag.clubs' | translate}}
+            </div>
+            <span class="competition_detail_badge">
+                <p>01</p>
+             </span>
+        </div> -->
+           <!-- HIDE FOR SOFT LAUCH -->
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Matches'}"  (click)="onClick('Matches')">
+            <div class="heading">
+                {{'tabs.Leaderboard' | translate}}
+            </div>
+            <!-- <span class="competition_detail_badge">
+                <p>01</p>
+             </span> -->
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'result'}"  (click)="onClick('result')">
+            <div class="heading">
+                {{'tabs.Results' | translate}}
+            </div>
+            <!-- <span class="competition_detail_badge">
+                <p>01</p>
+             </span> -->
+        </div>
+    </div>
+    <app-competition-betting-overview-view [enable_competition]='enable_competition' [competition_detail]='competition_detail' (disable_button)='Disable_Button($event)' *ngIf="isactive === 'player'"></app-competition-betting-overview-view>
+
+    <app-competition-betting-club-view [competition_detail]='competition_detail' *ngIf="isactive === 'Clubs'"></app-competition-betting-club-view>
+ 
+    <app-competition-betting-leaderboard-view [competition_detail]='competition_detail' *ngIf="isactive === 'Matches'"></app-competition-betting-leaderboard-view>
+    <app-competition-betting-result-view [competition_detail]='competition_detail'  *ngIf="isactive === 'result'"></app-competition-betting-result-view>
+</section>
+
+</div>
+<app-footer></app-footer>

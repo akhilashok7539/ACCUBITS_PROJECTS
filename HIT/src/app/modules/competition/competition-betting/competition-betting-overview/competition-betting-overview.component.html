@@ -1,0 +1,119 @@
+<div class="common_wraps">
+
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <section class="heading first_child btn_child_1" (click)="onView()">
+                <div class="back_arrow">
+                </div>
+                {{getlangForTitle()}}</section>
+            <section class="heading btn_child_2">ID: {{competition_detail.competitionId}}</section>
+            <section class="heading btn_child_3">{{'header.activePlayer'| translate}}</section>
+        </div>
+    </div>
+    <div class="socialShare">
+        <share-buttons [theme]="'default'" [include]="['facebook','messenger','whatsapp','twitter']" [show]="4" [size]="-1" [url]=shareUrl [autoSetMeta]="false" [image]="'https://hit-game.com/assets/images/banner1.png'"></share-buttons>
+    </div>
+
+    <div class="competition_outer">
+        <div class="competition_block_header">
+            <p>{{competition_detail.name}}</p>
+            <div class="host_Detail">
+                <div class="heading_1">{{'competitionTag.hostedBy' | translate}} : {{competition_detail?.user.username}}</div>
+                <div class="heading_2"> | </div>
+                <div class="heading_1">ID : {{competition_detail?.competitionId}} </div>
+                <div class="heading_2"> | </div>
+                <div class="heading_1">Created on {{info?.joinedDate | date:'d MMM, y'}} </div>
+            </div>
+        </div>
+        <div class="progess_bar_layout">
+            <p *ngIf='competition_detail.type === 1'>{{'competitionTag.matches' | translate}}</p>
+            <p *ngIf='competition_detail.type === 2'>Rounds</p>
+            <div class="bar_layout" *ngIf='competition_detail.type === 1'>
+                <div class="bar_inner" [ngStyle]="{'width': ((info.completedMatches/info.totalMatches)*100)+'%'}">
+                    <div class="label">
+                        {{info.completedMatches}}/{{info.totalMatches}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar_layout" *ngIf='competition_detail.type === 2'>
+                <div class="bar_inner" [ngClass]="{'bar_inner_comp': competition_detail.type === 2}" [ngStyle]="{'width': ((competition_detail.upcomingRound/competition_detail.season.totalRound)*100)+'%'}">
+                    <div class="label">
+                        {{competition_detail.upcomingRound}}/{{competition_detail.season.totalRound}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="competition_outer_slide">
+            <div class="competition_slide child_1">
+                <div class="competition_border" [ngClass]="{'competition_border_comp': competition_detail.type === 2}"></div>
+                <div class="competition_heading" *ngIf="competition_detail.type != 2">{{'filter.onetime' | translate}}</div>
+                <div class="competition_heading" *ngIf="competition_detail.type === 2">{{'filter.championship' | translate}}</div>
+                <div class="competition_label">{{'competitionTag.Type' | translate}}</div>
+            </div>
+            <div class="competition_slide child_2">
+                <div class="competition_border" [ngClass]="{'competition_border_comp': competition_detail.type === 2}"></div>
+                <div class="competition_heading">{{info.entryCostInUSD * competition_detail?.conversionRate | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</div>
+                <div class="competition_label">{{'competitionTag.entryfee' | translate}}</div>
+            </div>
+            <div class="competition_slide child_3">
+                <div class="competition_border" [ngClass]="{'competition_border_comp': competition_detail.type === 2}"></div>
+                <div class="competition_heading" *ngIf="getcheckFucntionid(competition_detail?.competitionId) === true">
+                    <span *ngIf="getlessthanOrEqual(info?.totalPrizeInUSD) === true"> 100 BRL</span>
+                    <span *ngIf="getlessthanOrEqual(info?.totalPrizeInUSD) === false"> {{info.totalPrizeInUSD * competition_detail?.conversionRate | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</span>
+
+                </div>
+
+                <div class="competition_heading" *ngIf="getcheckFucntionid(competition_detail?.competitionId) === false">
+                    <span> {{info.totalPrizeInUSD * competition_detail?.conversionRate | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</span>
+
+                </div>
+
+
+                <div class="competition_label">{{'competitionTag.winningPrize' | translate}}</div>
+            </div>
+            <div class="competition_slide child_4">
+                <div class="competition_border" [ngClass]="{'competition_border_comp': competition_detail.type === 2}"></div>
+                <div class="competition_heading">{{info.resultsGenerated}}</div>
+                <div class="competition_label">{{'competitionTag.ResultGenerated' | translate}}</div>
+            </div>
+            <div class="competition_slide child_5">
+                <div class="competition_border" [ngClass]="{'competition_border_comp': competition_detail.type === 2}"></div>
+                <div class="competition_heading">{{info.totalPoints}}</div>
+                <div class="competition_label">{{'competitionTag.PointsEarned' | translate}} </div>
+            </div>
+        </div>
+        <div class="competition_bottom_layer" *ngIf='competition_detail.status === 1'>
+            <!-- <div class="header_buttons notification">
+                </div> -->
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 1 && competition_detail.isPlayer === 1 && competition_detail.type === 2' (click)='scrollToElement()'>{{'betting.makeBet' | translate}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 0 && competition_detail.isPlayer === 1 && competition_detail.type === 2' (click)='scrollToElement()'>{{'betting.makeBet' | translate}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 0 && competition_detail.isPlayer === 0 ' (click)='onNavigate()'>{{'forms.join' | translate}} {{competition_detail?.entryCostInUSD * competition_detail?.conversionRate | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 1 && competition_detail.isPlayer === 0 && competition_detail.type === 2' (click)='onNavigate()'>{{'forms.join' | translate}} {{competition_detail?.entryCostInUSD * competition_detail?.conversionRate | number:'1.2-2' }} {{competition_detail?.conversionCurrency}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 1 && competition_detail.isPlayer === 0 && competition_detail.type === 1' disabled>{{'competition.BettingExpired'| translate}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 1 && competition_detail.isPlayer === 1 && competition_detail.type === 1' disabled>{{'competition.BettingExpired'| translate}}</button>
+            <button class="btn btn_width" *ngIf='competition_detail.isStarted === 0 && competition_detail.isPlayer === 1 && competition_detail.type === 1' (click)='scrollToElement()'>{{'betting.makeBet' | translate}}</button>
+
+            <!-- <div class="header_buttons back">
+                </div> -->
+        </div>
+        <div class="competition_bottom_layer" *ngIf='competition_detail.status === 2'>
+            <div class="header_buttons notification">
+            </div>
+            <button class="btn btn_width" disabled>{{'competition.BettingExpired'| translate}}
+            </button>
+            <div class="header_buttons back">
+            </div>
+        </div>
+        <div class="competition_bottom_layer" *ngIf='competition_detail.status === 3'>
+            <div class="header_buttons notification">
+            </div>
+            <button class="btn btn_width" disabled>Betting Cancelled
+        </button>
+            <div class="header_buttons back">
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-betting-popup *ngIf='betting_popup' (competition)="oncompetition($event)" (onClose)="onClose($event)" [competition_detail]='competition_detail'></app-betting-popup>

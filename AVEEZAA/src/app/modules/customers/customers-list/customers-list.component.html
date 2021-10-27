@@ -1,0 +1,93 @@
+<div class="product_view_layout">
+    <div class="product_view_heading">
+        <div class="product_view_title font_large">
+            Customers
+        </div>
+        <div class="product_view_inactive">
+            <input type="checkbox" name="" id="">
+            <span class="font_medium">
+                inacttive
+            </span>
+        </div>
+        <div class="dropdown">
+            <span class="font_medium">Bulk Generate & Share</span>
+            <!-- <div class="down_arrow"></div> -->
+        </div>
+    </div>
+    <div>
+        <table class="sortable">
+            <thead>
+              <tr>
+                <th class="text-center" width='5%'>
+                    <input type="checkbox" name="" id="" (click)='onSelectall()'>
+                </th>
+                <th width='15%'>Customer Name
+                    <span class="sort"></span>
+                </th>
+                <th width='15%' >Bussiness Name
+                    <span class="sort"></span>
+                </th>
+                <th width='10%' >Branch 
+                    <span class="sort_filter" (click)='onFilterClick(1)'></span>
+                    <app-table-filter-option [filterArrayDetail]='categoryFilter' (onSubmitFIlter)='onFilterApply($event)' (onCancel)="onCancelFIlter()" *ngIf='onFilter === 1'></app-table-filter-option>
+                </th>
+                <th width='20%' >Estimating Software
+                    <span class="sort_filter"(click)='onFilterClick(2)'></span>
+                    <app-table-filter-option [filterArrayDetail]='uomFilter' (onSubmitFIlter)='onFilterApply($event)' (onCancel)="onCancelFIlter()" *ngIf='onFilter === 2'></app-table-filter-option>
+                </th>
+                <th width='15%'>State
+                    <span class="sort"></span>
+                </th>
+                <th width='15%'>Shared Date
+                    <span class="sort"></span>
+                </th>
+                <th width='25%'>Status
+                    <span class="sort_filter"(click)='onFilterClick(2)'></span>
+                    <app-table-filter-option [filterArrayDetail]='uomFilter' (onSubmitFIlter)='onFilterApply($event)' (onCancel)="onCancelFIlter()" *ngIf='onFilter === 2'></app-table-filter-option>
+
+                </th>
+                <th width='15%'>Action
+                   
+                </th>
+                <th width='5%'>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let product of test_data'>
+                <td class="text-center" width='5%'>
+                    <input type="checkbox" name="" id="" [checked]=product.checked>
+                </td>
+                <td width='15%' data-column="Product Code" (click)='onCustomerClick()'>{{product.customerName}}</td>
+                <td width='15%'data-column="Discription">{{product.name}}</td>
+                <td width='10%' data-column="Category">{{product.category}}</td>
+                <td width='20%' data-column="UOM">{{product.uom}}</td>
+                <td width='15%' data-column="Unit Cost">{{product.cost}}</td>
+
+                <td width='15%' data-column="shared Date">{{product.sharedDate}}</td>
+                <td width='20%' data-column="Status">{{product.status}}</td>
+                <td width='25%' data-column="Action">
+                 
+                    <div class="container">
+                        <button class="btn btn-danger">   <i class="fas fa-times"></i></button>
+                        &nbsp;
+                        <button class="btn btn-success">  <i class="fas fa-check"></i></button>
+                
+                      </div>
+                </td>
+
+                <td width='5%'>
+                    <span class="more_option_dot" [matMenuTriggerFor]="menu"></span>
+                     <mat-menu #menu="matMenu">
+                <button mat-menu-item class="font_medium">Update</button>
+                <button mat-menu-item class="font_medium">Delete</button>
+                </mat-menu>
+                </td>
+              </tr> 
+              
+            </tbody>
+          </table>
+          <app-table-pagination-footer></app-table-pagination-footer>
+        
+    </div>
+</div>

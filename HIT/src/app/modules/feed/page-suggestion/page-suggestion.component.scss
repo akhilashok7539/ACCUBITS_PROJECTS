@@ -1,0 +1,67 @@
+@import '../timeline/timeline.component.scss';
+.head-txt{
+    span{
+        color: #0db983;
+    }
+}
+.like_wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    section:nth-child(1){
+        width: 60%;
+    }
+    .mutual_wrap{
+        display: flex;
+        align-items: center;
+        .mutual_ico{
+            display: flex;
+            margin-right: 1rem;
+            .ico{
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-position:center ;
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:nth-child(2){
+                    margin-left: -10px;
+                }
+                &:nth-child(3){
+                    margin-left: -10px;
+                }
+            }
+        }
+        span{
+            font-family: Poppins-Light-Italic;
+            font-size: 1.4rem;
+            opacity: 0.5;
+        }
+    }
+    .like_btn_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        div{
+            padding: 0.5rem 2rem;
+            border-radius: 4px;
+            transition: all ease 0.5s;
+            cursor: pointer;
+        }
+        div:nth-child(1){
+            border: 1px solid white;
+            margin-right: 2rem;
+        }
+        div:nth-child(2){
+            background-color: #363c48;
+            border: 1px solid  #363c48;
+        }
+        div:hover{
+            background-color: #0DB983;
+            border: 1px solid  #0DB983;
+            transition: all ease 0.5s;
+        }
+    }
+
+}

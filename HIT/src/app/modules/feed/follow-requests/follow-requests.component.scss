@@ -1,0 +1,122 @@
+@import '../all-friends/all-friends.component.scss';
+
+
+.mutual_friends{
+    font-size: 1.4rem;
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        div{
+            height: 3.2rem;
+            width: 3.2rem;
+            border-radius: 50%;
+            background-image: url(../../../../assets/images/user.jpg);
+            background-size: contain;
+        }
+        div:nth-child(2){
+            margin-left: -15px;
+        }
+        div:nth-child(3){
+            margin-left:  -15px;
+        }
+    }
+    span{
+        font-family: Poppins-Light;
+        margin: 0;
+        opacity: 0.3;
+    }
+}
+
+.accept_action{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    input{
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 6px;
+        width: 45%;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+    }
+    input:nth-child(1){
+        background-color: #0DB983;
+        border: 1px solid #0DB983;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    .mutual_friends{
+        // font-size: 1.2rem;
+        font-size: 1.2rem;
+     
+        section{
+            div{
+                width: 2rem;
+                height: 2rem;
+               
+            }
+        }
+    }
+    .accept_action{
+        width: 30%;
+        input{
+            padding: 6px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+
+    .mutual_friends{
+        text-align: center;
+        margin: 14px 2px;
+    }
+    .accept_action {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .all_friends_wrap {
+        .all_friends_list{
+        background-color: #1e242f;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+
+    }
+    
+    .all_friends_wrap{
+        .all_friends_list {
+            .user_details{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .profile_icon{
+                    width: 3rem;
+    height: 3rem;
+    margin-right: 0rem;
+                }
+            }
+           }
+       }
+
+    }
+
+   .username{
+        width: 10rem !important;
+        font-family: Poppins-Light !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        cursor: pointer !important;
+    }

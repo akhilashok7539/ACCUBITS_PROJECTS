@@ -1,0 +1,73 @@
+<section class="competition_club_layout">
+    <ngx-slick-carousel class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem class="competition_club_card" *ngFor='let data of club_details;let i = index' >
+        <div class="competition_club_detail">
+            <section class="competition_card_detail">
+                <ng-container *ngIf="data.logo; else elseTemplate">
+                    <div class="competition_card_image">
+                        <img class="client_avatar" [src]="(data.logo?envurl +'/v1/image?url=' + data.logo:'/assets/images/club.png')" />
+                    </div>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="competition_card_image name">
+                        {{data.name | slice:0:1}}
+                    </div>
+                </ng-template>
+                <div class="competition_card_name">
+                    <p class="heading">
+                        {{data.name}}
+                    </p>
+                    <div class="competition_club_details">
+                        <!-- <div class="competition_club_heading">
+                            ({{data.league.shortName}})
+                        </div> -->
+                        <div class="competition_club_league">
+                            {{data.league.name}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <section class="competition_card_detail">
+                    <div class="competition_card_imagew">
+                    </div>
+                <div class="competition_club_match_detail">
+                    <div class="competition_club_game ml_0">
+                        <div class="competition_detail_badge">
+                            <p>{{data.gamesCount || 0 | number:'2.0' }}</p>
+                        </div>
+                         <div class="competition_detail">
+                            {{'clubscard.games' | translate}}
+                         </div>
+                    </div>
+                    <div class="competition_club_game">
+                        <div class="competition_detail_badge">
+                            <p>{{data.goalsCount  || 0 | number:'2.0'}}</p>
+                        </div>
+                         <div class="competition_detail">
+
+                            {{'clubscard.goal' | translate}}
+                         </div>
+                    </div>
+                    <div class="competition_club_game">
+                        <!-- <div class="competition_detail_badge">
+                            <p>{{data.championshipCount || 0 | number:'2.0' }}</p>
+                        </div>
+                         <div class="competition_detail">
+                            {{'clubscard.championship' | translate}}
+                         </div> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- <div class="card_hover" (click)='onSelectCompetition(data)'>
+                    View Club
+        </div> -->
+    </div>
+</ngx-slick-carousel>
+</section>

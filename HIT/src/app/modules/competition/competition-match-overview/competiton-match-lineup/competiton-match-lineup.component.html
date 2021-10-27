@@ -1,0 +1,70 @@
+<section >
+    <div class="competition_card_layout">
+        <div class="competition_card">
+                <div class="lineup_layout">
+                        <div class="button_layout" >
+                            <div class="button_arrow" (click)="onNext()">
+                                &lt;
+                            </div>
+                        </div>
+                        <div class="lineup_info_layout">
+                            <div class="card_image" *ngIf="team_logo">
+                                <img class="club_avatar"  [src]="( envurl +'/v1/image?url=' + team_logo)" />
+                           
+                            </div>
+                            <div class="competition_card_image" *ngIf="!team_logo">
+                                <div class="client_avatar client-name" >
+                                  {{team_name | slice:0:1}}
+                                </div>
+                            </div>
+
+                            <div class="lineup_heading">
+                                {{team_name}}
+                            </div>
+                        </div>
+                        <div class="button_layout" >
+                            <div class="button_arrow" (click)="onNext()">
+                                &gt;
+                            </div>
+                        </div>
+                </div>
+                <div class="squad_layout">
+
+                  <div class="squad_card" *ngFor = 'let item of data'>
+                      <div class="single-head ">
+                          <div class="head-icon">
+                            <!-- <img  src="/assets/images/user.jpg"> -->
+                            <!-- <img *ngIf="item.photo" [src]="(envurl +'/v1/image?url=' + item.photo)">
+                            <div *ngIf="!item.photo" class="client_avatar client-name">
+                                {{item.name | slice:0:1}}
+                              </div> -->
+                              <div class="competition_card_image">
+                                <div class="client_avatar client-name" *ngIf="!item.photo">
+                                  {{item.name | slice:0:1}}
+                                </div>
+                                <img class="client_avatar" *ngIf="item.photo"  [src]="(envurl +'/v1/image?url=' + item.photo)"/> 
+                            </div>
+                          </div>
+                          <div class="head-txt ">
+                              <div class="h-txt">{{item.name}} </div>
+                              <p>{{item.position}} </p>
+                          </div>
+                        </div>
+                        <div class="table_layout">
+                          <p>Nationality </p>
+                          <div class="h-txt">{{item.country}}</div>
+                        </div>
+                        <div class="table_layout" style="display: none;">
+                          <p>Appearances </p>
+                          <div class="h-txt">{{item.number}}</div>
+                        </div>
+                        <div class="table_layout" style="display: none;">
+                          <p>Goals </p>
+                          <div class="h-txt">3</div>
+                        </div>
+                  </div>
+              
+              </div>     
+               </div>
+    </div>
+</section>

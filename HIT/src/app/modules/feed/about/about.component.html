@@ -1,0 +1,110 @@
+<div class="about_wrap">
+    <section>
+        <span>{{'about.Username' | translate}}</span>
+        <p>{{userProfile?.username}}</p>
+    </section>
+    <section>
+        <span>{{'about.Email' | translate}}</span>
+        <p>{{userProfile?.email}}</p>
+    </section>
+    <section>
+        <div class="edit_wrap">
+            <span>{{'about.Instagram' | translate}}</span>
+            <div *ngIf="userProfile?.instagramUsername" class="delete" (click)="removeInstagram()"></div>
+        </div>
+        <ng-container *ngIf="userProfile?.instagramUsername; else elseTemplate">
+            <p>{{userProfile?.instagramUsername}}</p>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <p class="add_name" (click)="addInsta()">{{'about.Add' | translate}}</p>
+        </ng-template>
+    </section>
+    <section>
+        <div class="edit_wrap">
+            <span>{{'about.Name' | translate}}</span>
+            <!-- <div *ngIf="userProfile.fullName" (click)="showEditName()"></div> -->
+        </div>
+        <ng-container >
+            <!-- *ngIf="hasFullName; " else elseFullName -->
+            <p  *ngIf="getlang() ==='en'">{{userProfile.fullName || 'Will be Updated....'}}</p>
+            <p  *ngIf="getlang() ==='por'">{{userProfile.fullName || 'Will be Updated....'}}</p>
+
+        </ng-container>
+        <!-- <ng-template #elseFullName>
+            <p class="add_name" *ngIf="!userProfile.fullName" (click)="addRealName()">Add Name +</p>
+            <form [formGroup]="userFullNameForm" *ngIf="showNameField"> 
+                <div class="form-group">
+                    <input type="text" 
+                    
+                    [(ngModel)]="fullName"
+                    formControlName="fullName"  
+                    maxlength="50" placeholder="" 
+                    class="form-control" />
+                </div>
+                <div class="form-btn">
+                    <button class="btn btn_transparent" (click)="cancelRealName()">Cancel
+                    </button>
+                    <button class="btn btn-primary" (click)="updateName()" [disabled]="userFullNameForm.invalid">Save
+                    </button>
+                </div>
+            </form>
+        </ng-template> -->
+    </section>
+    
+    <section>
+        <div class="edit_wrap">
+            <span>{{'about.Phone' | translate}} </span>
+            <div (click)="showEdit()"></div>
+        </div>
+        <ng-container *ngIf="!editProfile; else elseCountry">
+            <p>{{userProfile?.countryCode}} {{userProfile?.mobileNumber}}</p>
+        </ng-container>
+        <ng-template #elseCountry>
+            <form [formGroup]="userDetailsForm">
+                <div class="form-group">
+                    <input type="text" ng2TelInput (countryChange)="getNumber($event)" maxlength="15"
+                    [(ngModel)]="phoneNumber"
+                    [ng2TelInputOptions]="{initialCountry: country}" formControlName="mobileNumber" class="form-control" 
+                    />
+                </div>
+                <div class="form-btn">
+                    <button class="btn btn_transparent" (click)="showEdit()">{{'about.cancel' | translate}} 
+                    </button>
+                    <button class="btn btn-primary" (click)="submitDetails()" [disabled]="userDetailsForm.invalid">{{'forms.Save' | translate}} 
+                    </button>
+                </div>
+            </form>
+        </ng-template>
+
+    </section>
+    <section>
+        <div class="edit_wrap">
+            <span>{{'about.Default' | translate}} </span>
+            <div (click)="showEditLang()"></div>
+        </div>
+        <ng-container *ngIf="!editLang;else elseLang ">
+            <p *ngIf="language === 1"> English </p>
+            <p *ngIf="language === 2"> Português </p>
+            <p *ngIf="language === 3"> Spanish </p>
+
+        </ng-container>
+        <ng-template #elseLang>
+            
+                <div class="form-group" style="margin-top: 12px;">
+                    <select class="form-control" id="" [(ngModel)]="selectedLanguage">
+                        <option selected disabled value=""> Select Language</option>
+
+                        <option *ngFor="let item of langList" [value]="item.id">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="form-btn">
+                    <button class="btn btn_transparent" (click)="showEditLangcancel()">{{'about.cancel' | translate}} 
+                    </button>
+                    <button class="btn btn-primary" (click)="submitDetailsform()" [disabled]="selectedLanguage==''">{{'forms.Save' | translate}} 
+                    </button>
+                </div>
+         
+        </ng-template>
+
+    </section>
+</div>

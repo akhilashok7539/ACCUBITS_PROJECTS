@@ -1,0 +1,99 @@
+.review_pop{
+    padding: 5rem 6rem;
+    .review_pop_head{
+        position: relative;
+        padding: 0;
+        background-color: white;
+        border-radius: 0px;
+        p{
+            font-family: Poppins-Bold;
+            font-size: 1.9rem;
+            color: black;
+            margin-bottom: 5rem;
+        }
+        .close_common{
+            top: -90px;
+        }
+    }
+    .review_base{
+        margin-bottom: 3rem;
+        p{
+            font-family: Poppins-Medium;
+            font-size: 1.6rem;
+        }
+        span{
+            font-size: 1.4rem;
+        }
+    }
+    .review_row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        section{
+            background-color: #e3e3e3;
+            width: 15rem;
+            text-align: left;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            position: relative;
+            margin: 1rem;
+            p{
+                margin: 0;
+                font-family: Poppins-Bold;
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+            span{
+                font-size: 1.4rem;
+                font-family: Poppins-Light;
+                font-style: italic;
+            }
+        }
+        section::before{
+            content: '';
+            position: absolute;
+            height: 40%;
+            width: 3px;
+            top: 30%;
+            left: 0;
+            background-color: #FEBB2E;
+        }
+    }
+    .championship{
+        section::before{
+            background-color: #FE6140;
+        }
+    }
+    .button_create{
+        margin-top: 3rem;
+    }
+}
+.popup_out{
+    width: 635px;
+}
+@media only screen and (max-width: 800px) {
+    .review_pop .review_base p {
+        font-family: Poppins-Medium;
+        font-size: 1.6rem;
+        overflow-wrap: break-word;
+    }
+    .popup_out{
+        width: 90%;
+    }
+    .review_pop {
+        padding: 1rem 1rem;
+    }
+    .review_pop .review_row section {
+        background-color: #e3e3e3;
+        width: 42%;
+    }
+    .review_pop .review_pop_head .close_common {
+        top: -56px;
+    }
+    .review_pop .review_pop_head p {
+        margin-bottom: -1rem;
+    }
+    .review_pop .button_create {
+        margin-top: 1rem;
+    }
+}

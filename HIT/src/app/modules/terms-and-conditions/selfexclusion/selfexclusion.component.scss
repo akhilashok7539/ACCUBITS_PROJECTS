@@ -1,0 +1,113 @@
+.card{
+    height: 100%;
+    background-color: rgb(54 65 81 / 49%);
+    text-align: center;
+    padding: 13px;
+    border-radius: 11px;
+    position: relative;
+    margin-left: 39px;
+    margin-right: 21px;
+    margin-top: 10px;
+}
+.socialShare{
+    position: fixed;
+    left: 0;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    background-image: url('/assets/images/refresh_icon.svg') !important; 
+    align-items: center;
+    z-index: 99;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // .sb-wrapper {
+    //     background: #3eb983 !important;
+    //     width: 37px !important;
+    //     border-radius: 8px !important;
+    // }
+    // ::ng-deep {
+    //     .sb-group{
+    //         flex-direction: column;
+    //         background: #3eb983 !important;
+    //         width: 37px !important;
+    //         border-radius: 8px !important;
+    //     }
+    // }
+}
+::ng-deep share-buttons-popup share-buttons{
+    margin-top: 0px !important;
+    .sb-overlay{
+        width: 274px  !important; 
+    }
+}
+::ng-deep share-buttons-popup {
+ 
+    .sb-overlay{
+        display: flex  !important;
+        flex-direction: column  !important;
+        max-height: 100%  !important; 
+        max-width: 100% !important;
+        padding: 1em !important;
+        position: relative !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+.sb-default{
+    
+    // share button wrapper
+    .sb-wrapper {
+      // You can get default button color using the CSS variable
+      background-color: #3eb983 !important;
+      // Content wrapper
+      .sb-content {
+        // Icon wrapper
+        .sb-icon {
+
+        }
+        // Text wrapper
+        .sb-text {
+        }
+      }
+  
+      // For conditional styles
+      // E.g. Apply when icon, text are shown
+      &.sb-show-icon.sb-show-text {
+         // Icon wrapper
+        .sb-icon {
+        }
+        // Text wrapper
+        .sb-text {
+        }
+      }
+    }
+  }
+// .buttonclass{
+//     background: #3eb983 !important;
+//     width: 37px !important;
+//     border-radius: 8px !important;
+// }
+
+.card-title{
+    font-family: 'Poppins-Light';
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    overflow: hidden;
+    // font-size: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    a{
+        text-decoration: none;
+
+    }
+}
+.layout_outer{
+    padding-bottom: 43px;
+}

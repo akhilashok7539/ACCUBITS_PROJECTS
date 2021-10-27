@@ -1,0 +1,142 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head">{{'yourAccount.mainHead' | translate}}</div>
+                <ul>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list1' | translate}}</li>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list2' | translate}}</li>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list3' | translate}}</li>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list4' | translate}}</li>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list5' | translate}}</li>
+                    <li class="rule-unorder-list">{{'yourAccount.orderlist.list6' | translate}}</li>
+
+                </ul>
+
+                <div class="rule-subHead">{{'yourAccount.subHead1' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'yourAccount.subHead1-sec1.p1' | translate}}</p>
+                    <p>{{'yourAccount.subHead1-sec1.p2' | translate}}</p>
+                    <p>{{'yourAccount.subHead1-sec1.p3' | translate}}</p>
+                    <p>{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1' | translate}}</p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list1.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list1.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list1.list3' | translate}}</li>
+                    
+                    </ol>
+                    <p>{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.pargraph1' | translate}}</p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list2.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list2.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header1-list.order-list2.list3' | translate}}</li>
+                    
+                    </ol>
+                    <p>{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2' | translate}}</p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list3' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list4' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list5' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header2-list.order-list1.list6' | translate}}</li>
+
+                    </ol>
+                    <p>{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3' | translate}}</p>
+                    <ol>
+                    <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list3' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list4' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list5' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead1-sec1.paragraph-sub.paragraph-sub-header3-list.order-list1.list6' | translate}}</li>
+                    </ol>  
+
+                </div>
+                 <div class="rule-subHead">{{'yourAccount.subHead2' | translate}}</div>
+                 <div class="rules_wrap">
+                    <p>{{'yourAccount.subHead2-sec1.p1' | translate}}</p>
+
+                    <p class="rule-subheading">{{'yourAccount.subHead2-sec1.subHead2-sec1-headings.h1' | translate}}</p>
+                   <!-- view data corresponding to abouve heading -->
+                    <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h1.p1' | translate}}</p>
+                    <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h1.p2' | translate}}</p>
+
+                    <p class="rule-subheading">{{'yourAccount.subHead2-sec1.subHead2-sec1-headings.h2' | translate}}</p>
+                   <!-- view data corresponding to abouve heading -->
+                    <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h2.p1' | translate}}</p>
+                    <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h2.p2' | translate}}</p>
+
+                    <p class="rule-subheading">{{'yourAccount.subHead2-sec1.subHead2-sec1-headings.h3' | translate}}</p>
+                     <!-- view data corresponding to abouve heading -->
+                     <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h3.p1' | translate}}</p>
+           
+                    
+                     <p class="rule-subheading">{{'yourAccount.subHead2-sec1.subHead2-sec1-headings.h4' | translate}}</p>
+                     <!-- view data corresponding to abouve heading -->
+                     <p>{{'yourAccount.subHead2-sec1.subHead2-sec1-headings-h4.p1' | translate}}</p>
+                </div>
+
+                 <div class="rule-subHead">{{'yourAccount.subHead3' | translate}}</div>
+                 <div class="rules_wrap">
+                 <p>{{'yourAccount.subHead3-sec1.p1' | translate}}</p>
+                 <p>{{'yourAccount.subHead3-sec1.p2' | translate}}</p>
+                 <ol>
+                     <li class="rule-unorder-list">{{'yourAccount.subHead3-sec1.orderlist.list1' | translate}}</li>
+                     <li class="rule-unorder-list">{{'yourAccount.subHead3-sec1.orderlist.list2' | translate}}</li>
+                     <li class="rule-unorder-list">{{'yourAccount.subHead3-sec1.orderlist.list3' | translate}}</li>
+                     <li class="rule-unorder-list">{{'yourAccount.subHead3-sec1.orderlist.list4' | translate}}</li>
+                 </ol>
+                 <p>{{'yourAccount.subHead3-sec1.p3' | translate}}</p>
+                </div>
+
+                 <div class="rule-subHead">{{'yourAccount.subHead4' | translate}}</div>
+                 <div class="rules_wrap">
+                    <p>{{'yourAccount.subHead4-sec1.p1' | translate}}</p>
+                    <p>{{'yourAccount.subHead4-sec1.p2' | translate}}</p>
+                    <p>{{'yourAccount.subHead4-sec1.subHead4-sec1-step.step1' | translate}} </p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list1.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list1.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list1.list3' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list1.list4' | translate}}</li>
+                       
+
+                    </ol>
+                    <p>{{'yourAccount.subHead4-sec1.subHead4-sec1-step.step2' | translate}} </p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list2.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list2.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list2.list3' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead4-sec1.order-list2.list4' | translate}}</li>
+                       
+
+                    </ol>
+                 </div>
+
+                 <div class="rule-subHead">{{'yourAccount.subHead5' | translate}}</div>
+
+                 <div class="rules_wrap">
+                    <p>{{'yourAccount.subHead5-sec1.p1' | translate}}</p>
+                    <ol>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead5-sec1.order-list1.list1' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead5-sec1.order-list1.list2' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead5-sec1.order-list1.list3' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead5-sec1.order-list1.list4' | translate}}</li>
+                        <li class="rule-unorder-list">{{'yourAccount.subHead5-sec1.order-list1.list5' | translate}}</li>
+                       
+
+                    </ol>
+                    <p>{{'yourAccount.subHead5-sec1.p2' | translate}}</p>
+
+                    </div>
+
+                 <div class="rule-subHead">{{'yourAccount.subHead6' | translate}}</div>
+                 <div class="rules_wrap">
+                    <p>{{'yourAccount.subHead6-sec1.p1' | translate}}</p>
+                    </div>
+               
+            </section>
+    </section> 
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

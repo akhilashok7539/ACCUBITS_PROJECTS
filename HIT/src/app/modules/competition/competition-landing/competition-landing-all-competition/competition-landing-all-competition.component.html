@@ -1,0 +1,60 @@
+<section class="common_wrap_match">
+    <div class="competion-head"> 
+        <div class="c-left">
+            <div class="c-title mobile_hiddens">  {{'competition.allcompetion' | translate}}
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-title display_hiddens"> {{'competition.all' | translate}}
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-lbl"></div>
+        </div>
+        
+        <div class="c-right">
+            <!-- <div class="c-btn c-btn_width">
+                <img src="/assets/images/search.svg">
+            </div> -->
+           <div class="c-btn" (click)="onSelecttype()" (appClickOutside)="closeTypeDropdown($event)">{{gettypevalue()}} <div class="down-ic"></div></div>
+            <div class="c-btn" (click)="filterDrop()"  (appClickOutside)="closeFilterDropdown($event)" ><img src='/assets/images/filter.png'>{{getfilterValue()}}</div>
+            <div class="custm-drop" *ngIf="typeDrop">
+                <ul> 
+                    <li (click)="getMyCompetitionFilter(0)">{{'filter.all' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(1)">{{'filter.onetime' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(2)">{{'filter.championship' | translate}}</li>
+                </ul>
+            </div>
+            <div class="custm-drop filter-drop" *ngIf="liveFilter">
+                <div class="filter-hd">{{'sortFilter.FilterBy' | translate}}</div> 
+                <ul>
+                    <li (click)="selectFilter(1)"  [disabled]='popularity'   >{{'sortFilter.Popularity' | translate}} 
+                        <div class="select_games select_actives"  *ngIf='popularity'></div>
+                    </li>
+                    <li (click)="selectFilter(2)" [disabled]='trending' >{{'sortFilter.Trending' | translate}}
+                        <div class="select_games select_actives"  *ngIf='trending' ></div>
+                    </li>   
+                    <li (click)="selectFilter(3)" [disabled]='sort_entryfee' >{{'sortFilter.Entryfee' | translate}}
+                        <div class="select_games select_actives"  *ngIf='sort_entryfee' ></div>
+                    </li> 
+                    <li (click)="selectFilter(4)" [disabled]='sort_prize' >{{'sortFilter.SortByPrize' | translate}}
+                        <div class="select_games select_actives"  *ngIf='sort_prize' ></div>
+                    </li> 
+                </ul>
+                <div class="filter-bt filter-drops" *ngIf='popularity || trending || sort_entryfee || sort_prize' (click)="selectFilter(0)">Clear</div>
+            </div>
+
+        </div>
+    </div>
+    <section>
+        <ng-container *ngFor="let list of myCompetition | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total }">
+            <app-competition-details-row [item]=list [activeTab]=activeTabMain></app-competition-details-row>
+        </ng-container>
+        <div *ngIf="total>10" class="paginator">
+            <pagination-controls (pageChange)="paginateList($event)"></pagination-controls>
+        </div>
+    </section>
+
+</section>

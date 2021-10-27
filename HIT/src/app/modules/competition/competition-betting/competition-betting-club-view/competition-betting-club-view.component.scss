@@ -1,0 +1,419 @@
+.competition_club_layout{
+  // position: relative;
+  padding: 5vh 5vh;
+  border-radius: 12px;
+  margin: 4vh 0vh;
+  // width: 100%;
+  background-color: #181e2a;
+  // display: flex;
+}
+  .competition_club_card{
+      position: relative;
+      width: 100%;
+      padding: 24px 11px;
+      margin: 0vh 2vh;
+      overflow: hidden;
+      height: 218px;
+      background-image: url(/assets/images/club_lay.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 14px;
+      .competition_club_detail{
+          display: block;
+          .competition_card_imagew{
+            width: 83px;
+            height: 57px;
+          }
+          .competition_card_image{
+              width: 56px;
+              height: 57px;
+              border: 4px solid #32363e;
+              position: relative;
+              background-color: white;
+              border-radius: 50%;
+              .client_avatar{
+                  background-color: #32363e;
+                  background-size: cover;
+                  background-position: center;
+                  width: 85%;
+                  height: 85%;
+                  border-radius: 50%;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+              }
+
+          }
+          .name{
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+          .competition_card_detail{
+              padding: 0vh 1vh;
+              display: flex;
+              .competition_card_name{
+                  display: block;
+                  margin-left: 13px;
+                  margin-top: 10px;
+                  .heading{
+                      margin: 0px 2px 9px 1px !important;
+                      font-size: 2.1rem;
+                      font-weight: bold;
+                      font-family: 'Poppins-Medium' !important;
+                  }
+                      .competition_club_details{
+                          display: flex;
+                          .competition_club_heading{
+                              font-size: 1.4rem;
+                              padding-right: 33px;
+                              border-right:1px solid white ;
+                              font-family: Poppins-Light;
+                              color: white;
+                              font-weight: 100 !important;
+                          }
+                          .competition_club_league{
+                              font-size: 1.4rem;
+                              padding-left: 15px;
+                              font-family: Poppins-Light;
+                              color: white;
+                              font-weight: 100 !important;
+                          }
+                  }
+              }
+
+              .competition_club_match_detail{
+                  display: flex;
+                  margin-top: 5%;
+                  width: 100%;
+                  .ml_0{
+                      margin-left: 0px !important;
+                  }
+                  .competition_club_game{
+                      margin: 11px 29px 11px 11px;;
+                      .competition_detail{
+                          margin-top: 13px;
+                          font-size: 1.4rem !important;
+                          font-family: Poppins-Light;
+                          font-style: italic;
+                          color: white
+                      }
+                  }
+              }
+          }
+
+
+      }
+  }
+  .competition_club_card:hover{
+      .card_hover{
+          display: flex !important;
+      }
+  }
+.competition_detail_badge{
+  width: 35px;
+  height: 35px;
+  background-color: #393f49;
+  border-radius: 5px;
+  display: table;
+  text-align: center;
+  p {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 1.8rem;
+  }
+}
+.competition_club_card_hover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  display: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #0DB983;
+  .view_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      .view_header{
+          // position: absolute;
+          // top: 51%;
+          // left: 39%;
+          // font-size: 1.4rem;
+      }
+  }
+}
+.padding{
+padding:0px !important
+}
+// arrow_animation
+.slide_anim_outer{
+  display: flex;
+  justify-content: space-between;
+  .slide_arrow{
+    width: 52px;
+  height: 103px;
+    background-image: url(/assets/images/slide_arrow.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .slide_1{
+    opacity: 1;
+  }
+  .slide_2{
+    opacity: 0.6;
+    -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+        margin-left: -72px !important;
+  }
+  .slide_3{
+    opacity: 0.3;
+    -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+        margin-left: -72px !important;
+  }
+}
+.place_position{
+  position: absolute;
+  bottom: 23px;
+  left: 89px;
+
+}
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.animation_panel:hover .round .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.jusitfy_right{
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+
+@media only screen and (max-width: 1600px) {
+
+  .jusitfy_right{
+      justify-content: flex-end;
+    }
+    .competition_club_layout{
+      padding: 2vh 2vh;
+    }
+    .competition_card_detail{
+      padding: 0vh 0vh !important;
+    }
+    .competition_club_layout{
+      // position: relative;
+      padding: 5vh 5vh;
+      border-radius: 12px;
+      margin: 4vh 0vh;
+      // width: 100%;
+      background-color: #181e2a;
+      // display: flex;
+  }
+      .competition_club_card{
+          position: relative;
+          height: 190px;
+          .competition_club_detail{
+              display: block;
+              .competition_card_image{
+                  width: 45px;
+                  height: 45px;
+              }
+              .competition_card_detail{
+                  padding: 0vh 1vh;
+                  display: flex;
+                  .competition_card_name{
+                      display: block;
+                      margin-left: 13px;
+                      margin-top: 10px;
+                      .heading{
+                          margin: 0px 2px 9px 1px !important;
+                          font-size: 1.6rem;
+                          font-weight: bold;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          font-family: 'Poppins-Medium';
+                      }
+                          .competition_club_details{
+                              display: flex;
+                              .competition_club_heading{
+                                  font-size: 1.2rem;
+                                  padding-right: 20px;
+                                  border-right:1px solid white ;
+                                  font-family: Poppins-Light;
+                                  color: white;
+                                  font-weight: 100 !important;
+                                  white-space: nowrap;
+                                  overflow: hidden;
+                                  text-overflow: ellipsis;
+                              }
+                              .competition_club_league{
+                                  font-size: 1.2rem;
+                                  padding-left: 15px;
+                                  font-family: Poppins-Light;
+                                  color: white;
+                                  font-weight: 100 !important;
+                                  white-space: nowrap;
+                                  overflow: hidden;
+                                  text-overflow: ellipsis;
+                              }
+                      }
+                  }
+
+                  .competition_club_match_detail{
+                      display: flex;
+                      justify-content: left;
+                      margin-top: 2%;
+                      .ml_0{
+                          margin-left: 0px !important;
+                      }
+                      .competition_club_game{
+                          margin: 11px 29px 11px 11px;;
+                          .competition_detail{
+                              margin-top: 13px;
+                              font-size: 1.0rem !important;
+                              font-family: Poppins-Light;
+                              font-style: italic;
+                              color: white
+                          }
+                      }
+                  }
+              }
+
+
+          }
+      }
+  .competition_detail_badge{
+      width: 35px;
+      height: 35px;
+      background-color: #191F2B;
+      border-radius: 5px;
+      display: table;
+      text-align: center;
+      p {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 1.4rem;
+      }
+  }
+
+    .jusitfy_right{
+      justify-content: flex-end;
+    }
+
+
+  }
+  ngx-slick-carousel::ng-deep{
+      .slick-prev{
+          background-image: url(/assets/images/left-btn.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 35px;
+          height: 20px;
+          left: -35px;
+          &::before{
+              content: none;
+          }
+      }
+      .slick-next{
+          background-image: url(/assets/images/right-btn.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 35px;
+          height: 20px;
+          right: -35px;
+          &::before{
+              content: none;
+          }
+      }
+  }
+  .heading{
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  .competition_club_card:focus {
+      outline: none !important;
+   }
+   ::ng-deep .carousel:focus {
+      outline: none !important;
+   }
+  .card_hover{
+      background-image: url('../../../../../assets/images/club-hover.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-radius: 6px;
+      font-family: Poppins-Medium;
+      font-size: 1.2em;
+      text-align: center;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .competition_club_layout {
+        margin: 4vh 2vh;
+    }
+    .competition_detail .competition_detail_card {
+        padding: 1vh 2vh !important;
+        overflow: hidden !important;
+        .heading{
+            font-size: 1.3rem !important;
+        }
+    }
+    .common_wraps {
+        padding: 0% 4% 2% 4% !important;
+    }
+    .competition_club_card {
+        margin: 0vh 5px;
+    }
+    .display_hiddens{
+        display: initial !important;
+    }
+    .mobile_hiddens{
+        display: none !important 
+    }
+    .competition_breadcrumb{
+        display: none;
+    }
+    .competition_club_layout{
+        padding: 1vh 1vh;
+        margin-bottom: 50px !important;
+    }
+}

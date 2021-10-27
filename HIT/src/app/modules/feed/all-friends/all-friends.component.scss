@@ -1,0 +1,292 @@
+.all_friends_wrap{
+    .all_friends_list{
+        background-color: #1e242f;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        .user_details{
+            display: flex;
+            align-items: center;
+            width: 30%;
+            .profile_icon{
+                flex-shrink: 0;
+                width: 6rem;
+                height: 6rem;
+                background-image: url(../../../../assets/images/user.jpg);
+                margin-right: 1.7rem;
+                background-size: cover !important;
+                border-radius: 50%;
+                background-position: center;
+                overflow: hidden;
+            }
+            div{
+                font-size: 1.4rem;
+                font-family: Poppins-SemiBold;
+                p{
+                    font-family: Poppins-Light;
+                    margin: 0;
+                    opacity: 0.3;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+        .games_details{
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            div{
+                background-color: #353b46;
+                margin-right: 1rem;
+                padding: 1.3rem;
+                border-radius: 7px;
+                font-family: Poppins-SemiBold;
+            }
+        }
+        .actions{
+            display: flex;
+            align-items: center;
+            font-family: Poppins-Light;
+            min-width: 4rem;
+            div{
+                background-color: #353b46;
+                margin-right: 1.5rem;
+                padding: 1rem 1.2rem;
+                border-radius: 7px;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+            } 
+            div:nth-child(2){
+                margin-right: 2rem;
+            }
+            .isFriend{
+                background-image: url(/assets/images/is_friend.svg);
+            }
+            .addFriend{
+                background-image: url(/assets/images/add_friend.svg);
+                cursor: pointer;
+            }
+            .requestFriend{
+                background-image: url(/assets/images/is_requested.svg);
+            }
+            .req_btn{
+                width: 3rem;
+                height: 3rem;
+                background-size: 60%;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 0;
+            }
+        }
+    }
+}
+.align_name{
+    width: 10rem;
+    font-family: Poppins-Light;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.see-btn{
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #1d232f;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+}
+.see-btn{
+    margin: 0px 30px 50px;
+    width: calc(100% - 60px);
+ }
+@media only screen and (max-width: 1700px){
+    .all_friends_wrap{
+        .all_friends_list{
+            padding: 1.5rem;
+            .user_details{
+                .profile_icon{
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+            .games_details{
+                div{
+                    padding: 1rem;
+                }
+            }
+        }
+    } 
+}
+.follow_icon{
+    background-image: url(/assets/images/follow_add.png);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+.request_icon{ 
+    background-image: url(/assets/images/request.png);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+.follow_add{
+    background-image: url(/assets/images/follow_icon.svg);
+    background-size: cover;
+    background-position: center;
+    width: 17px;
+    height: 16px;
+}
+@media only screen and (max-width: 1400px){
+    .all_friends_wrap{
+        .all_friends_list{
+            padding: 1rem;
+            .user_details{
+                .profile_icon{
+                    width: 3rem;
+                    height: 3rem;
+                    margin-right: 1rem;
+                }
+                div{
+                    font-size: 1.2rem;
+                    text-align: center !important;
+                    margin-top: 10px;
+
+                }
+            }
+            .games_details{
+                font-size: 1.2rem;
+                div{
+                    padding: 1rem;
+                }
+            }
+            .actions{
+                div{
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+    } 
+}
+.hidden{
+    display: none !important;
+}
+// .all_friends_wrap .all_friends_list .actions div {
+//     background-color: transparent;
+//     margin-right: 0px;
+//     padding: 0px;
+//     border-radius: 0px;
+//     align-items: center;
+//     position: relative;
+//     cursor: pointer;
+// }
+.competition_option_view_add{
+    cursor: pointer !important;
+    position: relative !important;
+    padding: 0.2vh 0vh !important;
+    border-radius: 4px !important;
+    width: 35px !important;
+    margin-left: 13px !important;
+    text-align: center !important;
+    display: flex !important;
+    border-radius: 4px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #292E38 !important;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    height: 35px !important;
+}
+@media only screen and (max-width: 800px){
+    .hidden{
+        display: initial !important;
+    }
+    .dis_hidden{
+        display: none !important; 
+    }
+    .all_friends_wrap .all_friends_list .actions div {
+        background-color: transparent;
+        // margin-right: 0px;
+        padding: 1rem 1.2rem !important;
+    }
+    .competition_option_view_add{
+        cursor: pointer !important;
+        position: relative !important;
+        padding: 0.2vh 0vh !important;
+        border-radius: 4px !important;
+        width: 35px !important;
+        margin-left: 13px !important;
+        text-align: center !important;
+        display: flex !important;
+        border-radius: 4px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #292E38 !important;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        height: 35px !important;
+    }
+    .all_friends_wrap{
+        margin-bottom: 83px;
+    }
+    .friends_wrap .friends_nav li {
+        margin-right: 3rem;
+        cursor: pointer;
+    }
+    .all_friends_wrap .all_friends_list {
+        background-color: #1e242f;
+    }
+    .all_friends_wrap .all_friends_list .user_details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .all_friends_wrap .all_friends_list .games_details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 15px;
+    }
+    .all_friends_wrap .all_friends_list .actions {
+        display: flex;
+        align-items: center;
+        font-family: Poppins-Light;
+        justify-content: center;
+    }
+}
+.icon_background{
+    background-color: #292e38;
+    padding: 4px 7px !important;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 0 20px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+.ml_2{
+    margin-left: 2px;
+}
+.messages{
+    background-image: url(/assets/images/message.svg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.gamesplayed{
+    font-family: 'Poppins-Regular';
+}

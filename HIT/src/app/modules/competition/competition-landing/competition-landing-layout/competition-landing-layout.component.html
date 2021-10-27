@@ -1,0 +1,68 @@
+<section class="competition_outer">
+    <div class="back_button" *ngIf="!ownProfile" (click)="toSelectedTimeline()">Back</div>
+    <div class="competition_block_header">
+        <div class="tile">
+        </div>
+        <p class="title">{{'competition.head' | translate}}
+        </p>
+        <div class="host_Detail">
+            <div class="heading_1">{{'competition.desc' | translate}}</div>
+        </div>
+    </div>
+</section>
+<section class="common_wraps">
+    <div class="competition_detail">
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'all'}" (click)="onClick('all')" *ngIf="ownProfile">
+            <div class="heading mobile_hidden">
+                {{'competition.allcompetion' | translate}}
+            </div>
+            <div class="heading display_hidden">
+                {{'competition.all' | translate}}
+            </div>
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'my'}" (click)="onClick('my')" *ngIf="loggedIn">
+            <div class="heading mobile_hidden">
+                {{'competition.hostedComp' | translate}}
+            </div>
+            <div class="heading display_hidden">
+                {{'competiontabs.Hosted' | translate}}
+
+            </div>
+            <!-- <span class="competition_detail_badge">
+                <p>01</p>
+             </span> -->
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'join'}" (click)="onClick('join')" *ngIf="loggedIn && ownProfile">
+
+            <div class="heading mobile_hidden">
+                {{'competition.JoinedCompetitions' | translate}}
+            </div>
+            <div class="heading display_hidden">
+                {{'competiontabs.Joined' | translate}}
+
+            </div>
+            <!-- <span class="competition_detail_badge">
+               <p>01</p>
+            </span> -->
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'history'}" (click)="onClick('history')" *ngIf="loggedIn && ownProfile">
+
+            <div class="heading mobile_hidden">
+                {{'competition.CompetitionHistory' | translate}}
+            </div>
+            <div class="heading display_hidden">
+                {{'competiontabs.History' | translate}}
+
+            </div>
+            <!-- <span class="competition_detail_badge">
+                <p>01</p>
+             </span> -->
+        </div>
+
+    </div>
+    <app-competition-join-view *ngIf="isactive === 'join'"></app-competition-join-view>
+    <app-competition-landing-history *ngIf="isactive === 'history'"></app-competition-landing-history>
+    <app-competition-landing-all-competition *ngIf="isactive === 'all'"></app-competition-landing-all-competition>
+    <app-competition-landing-my-competition *ngIf="isactive === 'my'"></app-competition-landing-my-competition>
+</section>
+<app-footer></app-footer>

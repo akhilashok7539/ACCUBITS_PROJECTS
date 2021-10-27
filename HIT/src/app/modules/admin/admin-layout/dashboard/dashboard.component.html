@@ -1,0 +1,55 @@
+<section>
+    <div class="admin_block_header">
+        <section>
+            <p>Dashboard</p>
+        </section>
+        
+        <div class="tes">
+            <div class="c-btn" (click)="filterOpen()"><img src='/assets/images/filter.png'>Filter</div>
+            <app-from-to-filter (sendFilterData)=setFilter($event) *ngIf="showFilter" [type]="filterdashboard"></app-from-to-filter>
+        </div>
+    </div>
+</section>
+
+<section class="dashboard_grid">
+    <div class="dashboard_block">
+        <p>{{cardData?.totalDespositAmount}}</p>
+        <span>Deposits</span>
+    </div>
+    <div class="dashboard_block">
+        <p>{{cardData?.totalWithdrawalAmount}}</p>
+        <span>Withdrawals</span> 
+    </div>
+    <div class="dashboard_block">
+        <p>{{cardData?.totalBetAmount}}</p>
+        <span>Total Bets</span>
+    </div>
+    <div class="dashboard_block">
+        <p>{{cardData?.totalManagememtFee}}</p>
+        <span>Management Fee</span>
+    </div>
+    <div class="dashboard_block">
+        <p>{{cardData?.totalWinnigAmount}}</p>
+        <span>Winning Amount</span>
+    </div>
+    <div class="dashboard_block">
+        <p>{{cardData?.totalActiveUsers}}</p>
+        <span>Active Users</span>
+    </div>
+    
+</section>
+<div class="chart-wrap">
+    <ngx-charts-line-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [showGridLines]="showGridLines"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [timeline]="timeline"
+    [results]="multi"
+    (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+</div>
+

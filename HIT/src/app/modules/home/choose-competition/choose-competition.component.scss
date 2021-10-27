@@ -1,0 +1,162 @@
+.competition_flow_wrap {
+    padding: 0vh 15vh;
+    .choose_wrap {
+        padding: 8vh 0vh;
+        .cardGame_outer {
+            p {
+                font-family: Helvetica65;
+                font-size: 2.6rem;
+            }
+        }
+        .competitions_block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 10rem;
+            section {
+                cursor: pointer;
+                height: 36rem;
+                width: 33rem;
+                margin: 3vh;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 1.5rem;
+                position: relative;
+                transition: all ease 0.5s;
+                // transform: perspective(545px) rotateY(17deg);
+                .championship-legend {
+                    width: 2rem;
+                    height: 2rem;
+                    background-color: #FEBB2E;
+                    position: absolute;
+                    left: 3rem;
+                    top: 3rem;
+                    border-radius: 50%;
+                }
+                .champion {
+                    background-color: #FE6140;
+                }
+                p {
+                    font-family: Spantaran;
+                    background-color: #00000054;
+                    display: inline-block;
+                    font-size: 2.1rem;
+                    position: absolute;
+                    left: 3rem;
+                    bottom: 3rem;
+                    padding: 2px 10px;
+                    margin: 0;
+                }
+                .arrow_anim_out {
+                    position: absolute;
+                    bottom: 9rem;
+                    left: 3rem;
+                    width: 100%;
+                    display: flex;
+                    .card_arrow {
+                        width: 4rem;
+                        height: 4rem;
+                        background-image: url(/assets/images/slide_arrow.png);
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin-left: -1rem;
+                    }
+                    .slide_1 {
+                        opacity: 1;
+                    }
+                    .slide_2 {
+                        opacity: 0.6;
+                        -webkit-animation-delay: 0.4s;
+                        animation-delay: 0.4s;
+                    }
+                    .slide_3 {
+                        opacity: 0.3;
+                        -webkit-animation-delay: 0.8s;
+                        animation-delay: 0.8s;
+                    }
+                }
+            }
+            section:hover {
+                box-shadow: -5px 6px 4px 4px rgb(0 0 0 / 32%);
+                transition: all ease 0.5s;
+                transform: perspective(0px) rotateY(0deg);
+            }
+            section:nth-child(1) {
+                background-image: url(/assets/images/onetime.png);
+            }
+            section:nth-child(2) {
+                background-image: url(/assets/images/championship.png);
+            }
+            section:hover .arrow_anim_out .card_arrow {
+                animation-name: bounceAlpha;
+                animation-duration: 1.4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1690px) {
+    .competitions_block {
+        margin-top: 5rem !important;
+        section {
+            height: 27rem !important;
+            width: 22rem !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .championship-legend {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        left: 2rem !important;
+        top: 2rem !important;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .competitions_block {
+        section {
+            height: 20rem !important;
+            width: 17rem !important;
+            p {
+                left: 2rem !important;
+                bottom: 2rem !important;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .competition_breadcrumb {
+        display: none;
+    }
+    .split_input .form-group {
+        width: 100% !important;
+    }
+    .split_input {
+        display: block !important;
+    }
+    .formOut {
+        width: 91% !important
+    }
+    .common_wrap {
+        padding: 0vh 4% !important;
+    }
+    .competition_flow_wrap {
+        padding: 0px !important;
+    }
+    .competitions_block section p {
+        font-size: 1.3rem !important;
+    }
+    p {
+        font-size: 2.0rem !important;
+        margin-bottom: 2px !important
+    }
+}

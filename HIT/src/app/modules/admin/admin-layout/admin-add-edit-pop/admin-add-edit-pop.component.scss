@@ -1,0 +1,22 @@
+
+.admin_pop_form{
+    .form-group{
+        input{
+            border: 1px solid gray !important;
+            color: gray !important;
+        }
+    }
+}
+.adm_btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .btn_transparent{
+        border: 1px solid gray !important;
+        color: gray !important;
+    }
+}
+.form-control{
+    border: 1px solid #909090 !important;
+    color: #000;
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.547" height="24.001" viewBox="0 0 24.547 24.001">
+  <g id="Group_1375" data-name="Group 1375" transform="translate(-5429.8 -13885.999)">
+    <rect id="Rectangle_1669" data-name="Rectangle 1669" width="24" height="24" rx="4" transform="translate(5430 13886)" fill="#fff" opacity="0.2"/>
+    <g id="users" transform="translate(5429.647 13885.646)">
+      <rect id="Rectangle_1666" data-name="Rectangle 1666" width="24" height="24" transform="translate(0.353 0.353)" fill="none"/>
+      <circle id="Ellipse_199" data-name="Ellipse 199" cx="5" cy="5" r="5" transform="translate(3.353 5.353)" fill="none" stroke="#0db983" stroke-miterlimit="10" stroke-width="2"/>
+      <path id="Path_835" data-name="Path 835" d="M155.413,56.174a5.018,5.018,0,1,1,1.361,9.848" transform="translate(-140.415 -50.581)" fill="none" stroke="#0db983" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_836" data-name="Path 836" d="M16,163.608a8.493,8.493,0,0,1,13.9,0" transform="translate(-14.45 -144.559)" fill="none" stroke="#0db983" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Path_837" data-name="Path 837" d="M169.522,160a8.481,8.481,0,0,1,6.947,3.608" transform="translate(-153.163 -144.559)" fill="none" stroke="#0db983" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

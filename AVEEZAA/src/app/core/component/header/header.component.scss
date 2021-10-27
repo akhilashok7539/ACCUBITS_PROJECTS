@@ -1,0 +1,150 @@
+.header_layout{
+    height: 62px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 13px;
+    box-shadow: -1px -2px 31px -17px rgb(0 0 0 / 75%);;
+    .hamburger{
+        display: none;
+     .hamburger_icon{
+        width: 33px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(/assets/images/menu.svg);
+     }   
+    }
+    .search_layout{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 19px;
+        .search_logo{
+            width: 15px;
+            height: 15px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(/assets/images/search_logo.svg);
+        }
+        .search_input{
+            padding-left: 10px;
+            input{
+                border:none;
+                font-size: 1.2rem;
+                color: black;
+                padding: 6px 4px;
+            }
+            input:focus, textarea:focus, select:focus{
+                outline: none;
+            }
+            ::placeholder {
+                color: #d4d4d4;
+                opacity: 1;
+              }
+        }
+    }
+    .left_bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .file_layout{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button {
+                padding:0px;
+                .icon{
+                    width: 33px;
+                    height: 20px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-image: url(/assets/images/file_download.svg);
+                }
+                .icon_upload{
+                    background-image: url(/assets/images/file_upload.svg) !important;
+                }
+                .bulk_icon_upload{
+                    background-image: url(/assets/images/bulk_upload.svg) !important;
+                }
+            }
+            .download{
+                margin-left: 10px;
+            }
+        }
+        .add_spacing{
+            border-left: 1px solid var(--color-border);
+            height: 32px;
+            margin: 0px 23px;
+        }
+    .csv_layout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            padding:0px;
+            .icon{
+                width: 33px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(/assets/images/file_download.svg);
+            }
+            .icon_upload{
+                background-image: url(/assets/images/file_upload.svg) !important;
+            }
+        }
+        .download{
+            margin-left: 10px;
+        }
+    }
+    .button_layout{
+        padding: 0px 10px;
+    }
+    .notification_layout{
+        .notification_icon{
+            width: 33px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(/assets/images/notification.svg);
+        }
+    }
+}
+}
+@media only screen and (max-width: 500px) {
+    .header_layout .search_layout .search_input input {
+        width: 56px;
+    }
+    .hamburger{
+        display: block !important;
+    }
+}
+
+.right_arrow {
+    background-image: url(/assets/images/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    background-size: cover;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+  }
+.title1{
+    color: #adaeb2;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.title2{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

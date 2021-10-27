@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>College Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+
+
+    <ion-col size="12">
+      <ion-card>
+        <img src="assets/images/college.jpg" alt="">
+        <ion-row>
+          <ion-col size="8">
+            <p>College Name</p>
+            <p class="location">Location </p>
+            <button class="compare" routerLink="/tabs/tab1/gallery">Gallery</button>
+            <button class="apply" routerLink="/tabs/tab1/virtual-tour">Virtual Tour</button>
+
+          </ion-col>
+          <ion-col size="4">
+            <div class="row" style="    display: flex;
+            flex-direction: row;
+            margin-top: 16px;
+            color: orange;">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+
+            </div>
+            <p class="rating">45 Rating</p>
+            <div class="row" style="      margin-top: 8px;  display: flex;
+            flex-direction: column;">
+             
+            </div>
+
+
+          </ion-col>
+          <p>Address</p>
+          <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9164.804792000627!2d76.44254964470888!3d9.270852604011665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a0121932bfb3%3A0x2a9af01930727dcc!2zOcKwMTYnMDIuMiJOIDc2wrAyNiczNi43IkU!5e0!3m2!1sen!2sin!4v1621923534695!5m2!1sen!2sin" width="600"  height= "10%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <!-- <ion-button style="margin: 0 auto;
+          display: block;
+          margin-top: 11px;" expand="full" routerLink="searchlist">Choose Course</ion-button> -->
+          <p>Top Courses</p>
+          <ion-grid >
+            <ion-row>
+    
+                <ion-col size="12 ">
+    
+                    <ion-slides pager="false" [options]="slideOptsThree " #slideWithNav3 (ionSlideDidChange)="SlideDidChange(sliderThree,slideWithNav3) ">
+    
+                        <ion-slide *ngFor="let s of sliderOne.slidesItems ">
+    
+    
+                            <div class="card " (click)="clicktoapply()">
+                                <!-- <img *ngIf="s.dish_image != ''" src="{{s.dish_image}}" alt=" " style="height: 126px; "> -->
+                               
+    
+                                <div padding>
+                                    <p style="    font-size: 24px;
+                                    margin-bottom: 0px;
+                                    margin-top: 5px;
+                                    color: white;">{{s.course}}</p>
+                                    <h4 style="    font-size: 15px;
+                                  
+                                    margin-top: 2px;
+                                    text-align: center;
+                                    padding-bottom: 0px;">
+                                        {{s.duration }}</h4>
+                                        <ion-icon style="font-size: 24px;" name="chevron-forward-circle-outline"></ion-icon>
+                                   
+                                </div>
+    
+                            </div>
+    
+                        </ion-slide>
+                    </ion-slides>
+    
+                </ion-col>
+    
+            </ion-row>
+        </ion-grid>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

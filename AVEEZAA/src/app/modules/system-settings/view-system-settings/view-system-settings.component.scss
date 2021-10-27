@@ -1,0 +1,132 @@
+.container_layout {
+    padding: 24px;
+    .row {
+        .create_layout {
+            background-color: white;
+            padding: 10px;
+            p {
+                font-weight: 500;
+            }
+            .card {
+                background: #f6f4f4;
+                margin-bottom: 20px;
+            }
+            .paragraph-Scheduler {
+                margin-left: 10px;
+            }
+            .status {
+                margin-left: 12px;
+                font-size: 15px;
+                color: #29c969;
+            }
+            .updated-status {
+                margin-left: 12px;
+            }
+            .btn-warning{
+                margin-left: 12px;
+                width: 56%;
+                padding: 10px;
+                margin-top: 19px;
+                background: #ff8100;
+                color: white;
+                margin-bottom: 24px;
+                border: none;
+                border-radius: 10px;
+            
+            }
+            .card-section{
+                margin-top: 5px;
+                padding:10px;
+            }
+            #timepicker:before {
+                content:'Time:';
+                margin-right:.6em;
+                color:#9d9d9d;
+                }
+                #dateepicker:before {
+                    content:'Date:';
+                    margin-right:.6em;
+                    color:#9d9d9d;
+                    }
+            form {
+                margin-top: 58px;
+                .form-group {
+                    .showHideClick {
+                        width: 10%;
+                        height: 100%;
+                        position: absolute;
+                        right: 0px;
+                        top: 18px;
+                        cursor: pointer;
+                    }
+                    //     .focusInputImage{
+                    //         position: relative;
+                    //         input{
+                    //             background-image: url(/assets/images/view.svg);
+                    //         }
+                    //         input:focus{
+                    //             background-image: url(/assets/images/view.svg);
+                    //         }
+
+                    //     .show-password{
+                    //         input{
+                    //             background-image: url(/assets/images/visibility.svg);
+                    //         }
+                    //     }
+                    // }
+                    .forget_password {
+                        position: absolute;
+                        font-size: 1.2rem;
+                        right: 0px;
+                        color: #0066ff;
+                        text-decoration: none;
+                    }
+                    label {
+                        font-size: 1.2rem;
+                        color: #6c6c6c;
+                        text-align: left;
+                    }
+                    input {
+                        font-size: 1.2rem;
+                        height: 42px;
+                        padding: 15px;
+                    }
+                    input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0px 1000px white inset;
+                    }
+                    ::-webkit-input-placeholder {
+                        font-size: 1.2rem;
+                    }
+                }
+                .mt-20 {
+                    margin-top: 20px;
+                    position: relative;
+                }
+                .mt-60 {
+                    margin-top: 60px;
+                    button {
+                        background-color: #18b083;
+                        border: 1px solid #18b083;
+                        padding: 0px 31px;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+.trapezoid {
+    border-bottom: 50px solid #fff;
+    border-left: 0px solid transparent;
+    border-right: 25px solid transparent;
+    height: 10px;
+    width: 144px;
+    margin-bottom: -23px;
+    margin-top: 28px;
+    margin-left: 9px;
+    p {
+        text-align: center;
+        padding-top: 12px;
+        color: black;
+    }
+}

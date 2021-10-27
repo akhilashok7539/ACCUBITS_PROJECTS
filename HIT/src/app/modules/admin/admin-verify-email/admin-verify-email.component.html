@@ -1,0 +1,29 @@
+<div class="admin_login_wrap">
+    <!-- <img src="/assets/images/logo.png" /> --> 
+    <section class="login_wrap">
+        <div class="login_split_container">
+            <div class="back_btn" (click)="backTo()">
+                <img src="/assets/images/back.svg">
+                Back
+            </div>
+            <div class="otp_outer">
+                <p>{{'login.verify' | translate }}</p>
+                <p>{{'login.verifymsg' | translate } <span>{{otpEmail}}</span></p>
+                <div class="otp_input_sec">
+                    <ng-otp-input (keyup.enter)="onEnter()" (onInputChange)="onOtpChange($event)" [config]="{length:4,allowNumbersOnly:true}"></ng-otp-input>
+                </div>
+                <div class="form-btn">
+                    <button (click)="verifyOtp()" [disabled]="!otpEnable" class="btn btn-primary anim_button">Submit OTP
+                        <span>>>></span>
+                    </button>
+                </div>
+                <div class="resend">
+                    <button (click)="resendOtp()" [disabled]="!resendEnable" class="btn btn-primary">Resend OTP
+                    </button>
+                    <countdown *ngIf="!resendEnable" [config]="{ leftTime: resendTime, format: 'mm:ss',notify: [ 1, 1 ] }" (event)="handleEvent($event)"></countdown>
+                </div>
+            </div>
+
+            </div>
+            </section>
+            </div>

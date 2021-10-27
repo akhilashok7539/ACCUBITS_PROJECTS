@@ -1,0 +1,43 @@
+.pagination_layout{
+    display: flex;
+    align-items: center;
+    padding: 11px 0px;
+    justify-content: flex-end;
+    .pagination_detail{
+        span{
+            margin: 0px 3px;
+            input{
+                width: 25px;
+                border: 1px solid #626262;
+                border-radius: 5px;
+                padding: 1px 4px;
+            }
+        }
+    }
+}
+.font_color{
+    color: #626262;
+}
+.font_weight{
+    font-weight: 500;
+}
+.left_arrow {
+    background-image: url(/assets/images/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    background-size: cover;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+  }
+  .right_arrow {
+    background-image: url(/assets/images/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    background-size: cover;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+  }

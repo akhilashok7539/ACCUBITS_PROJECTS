@@ -1,0 +1,82 @@
+<section class="common_wrap_match">
+    <div class="competion-head">
+        <div class="c-left">
+            <div class="c-title mobile_hiddens"> {{'competition.CompetitionHistory' | translate}}
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-title display_hiddens"> {{'competition.histroy' | translate}}
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-lbl"></div>
+        </div>
+        <div class="c-right">
+            <div class="c-btn" (click)="onSelecttype()" (appClickOutside)="closeTypeDropdown($event)">{{gettypevalue()}}
+                <div class="down-ic"></div>
+            </div>
+
+            <div class="custm-drop" *ngIf="typeDrop">
+                <ul>
+                    <li (click)="getMyCompetitionFilter(0)">{{'filter.all' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(1)">{{'filter.onetime' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(2)">{{'filter.championship' | translate}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngFor="let item of competitionHistory | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total }">
+        <div class="competition_card_layout">
+            <div class="block_cont competition_detail_layout">
+                <div class="dot"></div>
+                <div class="card-title"><b>{{item.head?item.head[0]:'--'}}</b><span>@ {{item.head?item.head[1]:'--'}} </span></div>
+                <div class="card-tag" [ngClass]="{'championship':item.type==2}">{{item.type==1?'One Time':item.type==2?'Championship':'--'}}</div>
+                <div class="details">ID : {{item.competitionId}}</div>
+            </div>
+            <div class="block_cont competition_option_view_btn bor_none">
+                <p>{{item.numberOfMatches}} Matches</p>
+            </div>
+            <div class="block_cont competition_option_view_btn bor_none">
+                <p>{{item.startDate | date: 'mediumDate'}} - {{item.endDate | date: 'mediumDate'}}</p>
+            </div>
+            <div class="block_cont competition_option_view_btn bor_none earned_point">
+                <p>Earned {{item.earnedPoints}} Points</p>
+            </div>
+            <div class="block_cont viewers">
+                <ng-container *ngIf="item?.competitionPlayers?.length>0">
+                    <div class="card-view" [ngStyle]="{'background-image': item?.competitionPlayers[0]?.user.image?'url('+ item?.competitionPlayers[0]?.user.image +')' : 'url(/assets/images/user.jpg)'}" (click)="showPlayers(item)"></div>
+                    <div class="card-nbr" (click)="showPlayers(item)" *ngIf="item?.competitionPlayers?.length>1">
+                        <span>+</span> {{item?.competitionPlayers?.length - 1}}
+                    </div>
+                </ng-container>
+            </div>
+            <div class="block_cont outer_flex">
+                <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.isPlayer === 0 && item.type === 1' (click)="viewGame(item)">
+                    <p class="btn_name pl-16">View</p>
+                </div>
+                <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.isPlayer === 1 && item.type === 1' (click)="onExistingplayerNAvigate(item)">
+                    <p class="btn_name pl-16">Result</p>
+                </div>
+                <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.joinedRounds.length === 0 && item.type === 2' (click)="viewGame(item)">
+                    <p class="btn_name pl-16">View</p>
+                </div>
+                <div class="competition_option_view_btn view_btn ml_10" *ngIf='item.joinedRounds.length !== 0 && item.type === 2' (click)="onExistingplayerNAvigate(item)">
+                    <p class="btn_name pl-16">Result</p>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+    <div class="no_data_found" *ngIf='competitionHistory.length === 0'>
+        <img src="/assets/images/noData.svg">
+        <p>{{'filter.nocompetionavailable' | translate}} !!!</p>
+    </div>
+
+    <div *ngIf="total>10" class="paginator">
+        <pagination-controls (pageChange)="paginateList($event)"></pagination-controls>
+    </div>
+</section>
+
+<app-competition-players-pop (onClosePop)=closePop() *ngIf="showUser" [userData]=selectedUsers></app-competition-players-pop>

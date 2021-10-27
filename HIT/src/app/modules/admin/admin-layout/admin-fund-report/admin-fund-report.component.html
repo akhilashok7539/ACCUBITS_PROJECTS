@@ -1,0 +1,29 @@
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='33%'>Month & Year</th>
+            <th width='33%'>Final Balance</th>
+            <th width='33%'>Open Competition Fees</th> 
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of userFundTransactionDetails">
+                <td width='20%'>
+                    {{monthNames[item.month-1]}} {{item.year}}
+                </td>
+                <td width='20%'>
+                    {{item.finalBalance}}
+                </td>
+                <td width='10%'>
+                    {{item.openCompetitionFees}}
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+    <!-- <div *ngIf='userDetails.length === 0' class="text-center pd_16">
+        No User Available
+    </div> -->
+    <!-- <section class="paginator_admin" *ngIf="total>10">
+        <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+    </section> -->
+</section>

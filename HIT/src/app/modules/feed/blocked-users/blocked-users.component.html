@@ -1,0 +1,27 @@
+<section class="all_friends_wrap">
+    <ng-container *ngFor="let item of blockedUserList?.rows">
+        <div class="all_friends_list">
+            <div class="user_details">
+                <ng-container *ngIf="item?.friendInfo?.image; else elseTemplate">
+                    <div class="profile_icon" [style.background]="'url(' + item?.friendInfo?.image + ')'"></div>  
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="profile_icon"></div>
+                </ng-template>
+                <div>{{item?.friendInfo?.username}}
+                    <p>{{item?.friendInfo?.friendsCount}} Friend{{item?.friendInfo?.friendsCount>1?'s':''}}</p>
+                </div>
+            </div>
+            <div class="games_details">
+                <div>{{item?.competitionsPlayed}}</div>
+                <span>Games Played</span>
+            </div>
+            <div class="actions">
+                <div (click)="unBlockFriends(item)">Unblock</div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="blockedUserList?.rows.length==0">
+        <p>No blocked user to show</p>
+    </ng-container>
+</section>

@@ -1,0 +1,316 @@
+.languageSelector{
+    padding: 11px 0px;
+    font-size: 2.2rem;
+}
+.sidebar-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 98;
+    background: rgba(0,0,0,.8);
+    cursor: pointer;
+}
+.foot-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5%;
+    .f-menu{
+        ul{
+            display: flex;
+            list-style-type: none;
+            padding: 21px;
+            margin: 0px;
+            flex-wrap: wrap;
+            line-height: 15px;
+            li{
+                font-family: Poppins-Light;
+                color: #E5E5E5;
+                font-size: 1.1rem; 
+                position: relative;
+                padding: 0px 0px 0px 25px;
+                cursor: pointer;
+                outline: none;
+                margin-top: 10px;
+                width: 50%;
+                span{
+                    opacity: 0.5;
+                    line-height: 17px;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 4px;
+                    left: 0px;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50%;
+                    background-color: #3eb983;
+                }
+            }
+        }
+    }
+    .f-share{
+        display: none;
+        .share-icon{
+            width: 28px;
+            height: 28px;
+            background-image: url('../../../../assets/images/love.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .share-txt{
+            font-family: Poppins-Medium;
+            color: #E5E5E5;
+            font-size: 1.4rem;
+            padding-left: 12px;
+        }
+    }
+}
+.foot_log{
+    padding-top: 35% !important;
+}
+.sidebar-box {
+    position: fixed;
+    z-index: 999;
+    background: #fff;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 85%;
+    background-color: #1d232d;
+    .sidebar-top-layout{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 67px;
+        background-color: #0b0f17;
+        .icon{
+            width: 41px;
+            height: 30px;
+            margin-left: 16px;
+        }
+
+    }
+  
+  
+}
+.user_profile{
+    padding: 15px 0px 10px 20px;
+}
+.login{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    padding: 16px;
+    font-family: "Poppins-Light";
+    font-size: 2.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .logo{
+        margin-right: 11px;
+        img{
+            width: 25px;
+        }
+    }
+}
+.logout{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 56px;
+    width: 100%;
+    padding: 16px;
+    font-family: 'Poppins-Light';
+     font-size: 1.2rem;
+     .logo{
+        margin-right: 11px;
+        img{
+            width: 25px;
+        }
+    }
+}
+.sidebar_layout {
+    p{
+        text-align: center;
+        // margin-left: 16px;
+        // font-size: 2.0rem;
+        font-family: Poppins-Light-Italic;
+        font-size: 2.2rem;
+    }
+    ul{
+        list-style: none;
+        margin-left: -22px !important;
+        li{
+            padding: 11px 0px;
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins-Light';
+            font-size: 2.2rem;
+
+            .logo{
+                margin-right: 11px;
+                img{
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
+.sidebar-box1 {
+    position: fixed;
+    z-index: 999;
+    background: #fff;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #213041;
+
+}
+.user_name{
+    font-size: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .user_avatar{
+        background-color: #364151;
+    display: flex;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 1.6rem;
+    text-align: center;
+    justify-content: center;
+    color: #DEDEDE;
+    text-transform: uppercase;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    }
+    
+    section{
+        p{
+            margin: 0;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+             font-weight: 600;
+        }
+        span{
+            cursor: pointer;
+            font-family: Poppins-Light;
+            font-size: 1.2rem;
+
+        }
+    }
+
+}
+.frnd_detail{
+    display: flex;
+    padding: 13px 0px 10px 0px;
+    .detail{
+    padding: 10px;
+    border: 1px solid hsla(0,0%,100%,.1);
+    font-size: 1.2rem;
+    width: 50%;
+    text-align: center;
+    font-family: Poppins-Light;
+    }
+}
+img {
+    border-style: none;
+    width: 100%;
+    height: 100% !important;
+    object-fit: contain;
+} 
+a {
+    background-color: transparent;
+    color: inherit;
+    display: contents;
+    text-decoration: none;
+}
+.active{
+    font-family: Poppins-Medium;
+    // border-bottom: 5px solid #0DB983;
+    font-weight: 600;
+    color: white;
+    &::before{
+        content: "";
+        background-color: #0DB983;
+        width: 100%;
+        height: 5px;
+        bottom: -5px;
+        left: 0px;
+        border-top-left-radius: 2px;
+        position: absolute;
+        border-top-right-radius: 2px;
+    }
+}
+
+.profile-icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+}
+
+@media only screen and (max-width: 400px) {
+    .sidebar_layout {
+        ul{
+            li{
+                padding: 7px 0px;
+                display: flex;
+                font-size: 2.2rem;
+    
+                .logo{
+                    img{
+                        width: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .foot-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2.5%;
+        margin-top: -20px;
+        .f-menu{
+            ul{
+                padding: 0px 15px;
+            }
+        }
+    }
+}
+
+.dropdownlist{
+    background: #616b77;
+    margin-right: 15px;
+    padding: 1px;
+    border-radius: 16px;
+
+}
+.logo{
+    margin-right: 11px;
+    img{
+        width: 25px;
+    }
+}

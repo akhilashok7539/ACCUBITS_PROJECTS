@@ -1,0 +1,26 @@
+<div id="section" >
+    <section class="layout_outer">
+        <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+        <section class="rules_outer">
+            <div class="rules_head">{{'footer.verification' | translate}}</div>
+            <p>{{'identityVerfication.p1' | translate}}</p>
+            <p>{{'identityVerfication.p2' | translate}}</p>
+
+            <ul>
+                <li class="rule-unorder-list">{{'identityVerfication.p3' | translate}}</li>
+                <li class="rule-unorder-list">{{'identityVerfication.p4' | translate}}</li>
+                <li class="rule-unorder-list">{{'identityVerfication.p5' | translate}}</li>
+
+            </ul>
+            <p>{{'identityVerfication.p6' | translate}}</p>
+            <p>{{'identityVerfication.p7' | translate}}</p>
+            <p>{{'identityVerfication.p8' | translate}}</p>
+
+           
+
+
+           
+        </section>
+    </section>
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

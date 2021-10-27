@@ -1,0 +1,36 @@
+<div class="common_wraps">
+    <app-team-overview [team_id]='team_id'></app-team-overview>
+    <section>
+        <div class="competition_detail">
+            <!-- <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Stats'}" (click)="onClick('Stats')">
+                <div class="heading">
+                    Stats
+                </div>
+                <span class="competition_detail_badge" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'player'" >
+                   <p>{{acive_player_value || 0 | number:'2.0'}}</p>
+                </span>
+            </div> -->
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Squad'}"  (click)="onClick('Squad')">
+                <div class="heading">
+                    Squad
+                </div>
+                <!-- <span class="competition_detail_badge" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'Matches'">
+                  <p>{{competition_matches_view || 0 | number:'2.0'}}</p>
+               </span> -->
+            </div>
+            <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Fixtures'}"  (click)="onClick('Fixtures')">
+                <div class="heading">
+                    Fixtures
+                </div>
+                <!-- <span class="competition_detail_badge" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'Clubs'">
+                  <p>{{Fixturescompetition_club_view || 0 | number:'2.0'}}</p>
+               </span> -->
+            </div>
+           
+        </div>
+            <app-team-stats [team_id]='team_id' *ngIf="isactive === 'Stats'"></app-team-stats>
+            <app-team-fixtures [team_id]='team_id' *ngIf="isactive === 'Fixtures'"></app-team-fixtures>
+            <app-team-squad [team_id]='team_id' *ngIf="isactive === 'Squad'"></app-team-squad>
+      </section>
+</div>
+<app-footer></app-footer>

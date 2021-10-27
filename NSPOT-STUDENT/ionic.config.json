@@ -1,0 +1,7 @@
+{
+  "name": "nspot-student",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,386 @@
+.competition_breadcrumb {
+    margin: 3rem 0rem 2rem 0rem;
+    .sec {
+        .heading {
+            padding: .8vh 1vh;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            font-family: Poppins-Light;
+            position: relative;
+            color: #DEDEDE;
+            cursor: pointer;
+            .back_arrow {
+                background-image: url(/assets/images/back_arrow.svg);
+                background-color: transparent;
+                background-position: left;
+                background-size: 100%;
+                height: 13px;
+                width: 39px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+.socialShare {
+    position: fixed;
+    left: 0;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+     ::ng-deep {
+        .sb-group {
+            flex-direction: column;
+        }
+    }
+}
+
+.first_child {
+    padding: .8vh !important;
+}
+
+.competition_outer {
+    margin-top: 86px;
+    .competition_block_header {
+        p {
+            font-size: 3rem;
+        }
+        .host_Detail {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .heading_1 {
+                font-size: 1.6rem;
+                font-family: system-ui !important;
+                font-style: italic;
+                position: relative;
+                color: white;
+                padding: 1vh 0vh;
+                letter-spacing: 0.2vh;
+                font-weight: 100 !important;
+            }
+            .heading_2 {
+                padding: 0vh 2vh;
+                font-size: 1.6rem;
+                font-family: Poppins-Light;
+                font-style: italic;
+                position: relative;
+                color: white;
+                letter-spacing: 0.2vh;
+                font-weight: 100 !important;
+            }
+        }
+    }
+    .progess_bar_layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 64px;
+        position: relative;
+        p {
+            font-size: 1.9rem;
+            font-family: Poppins-Light;
+        }
+        .bar_layout {
+            width: 200px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 13px;
+            margin-left: 15px;
+            position: relative;
+            display: flex;
+            .bar_inner_comp {
+                background-color: #FE6140 !important;
+                border-radius: 10px;
+                // width: 50%;
+                height: 6px;
+                position: relative;
+            }
+            .bar_inner {
+                background-color: #FEBB2E;
+                border-radius: 10px;
+                height: 6px;
+                position: relative;
+                .label {
+                    width: auto;
+                    margin-top: -35px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    padding: 5px;
+                    position: absolute;
+                    border-radius: 5px;
+                    text-align: center;
+                    right: -15px;
+                }
+                .label::after {
+                    position: absolute;
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 8px solid rgba(255, 255, 255, 0.1);
+                    top: 100%;
+                    left: calc(50% - 4px);
+                }
+            }
+        }
+    }
+    .competition_outer_slide {
+        display: flex;
+        justify-content: center;
+        margin-top: 14px;
+        padding: 11px 0px;
+        align-items: center;
+        background-color: #1e212e;
+        border-radius: 8px;
+        flex-wrap: wrap;
+        .competition_slide {
+            position: relative;
+            padding: 1.5vh 1.8vh;
+            margin: 10px;
+            min-width: 181px;
+            border-radius: 6px;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            height: 79px;
+            .competition_heading {
+                margin: 0px;
+                padding-right: 2vh;
+                font-size: 1.8rem;
+                font-weight: 500 !important;
+                font-family: 'Poppins-Medium';
+            }
+            .competition_label {
+                font-family: Poppins-Light;
+                font-style: italic;
+                margin-top: 10px;
+                font-size: 1.4rem;
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .competition_border {
+                position: absolute;
+                width: 2px;
+                height: 30px;
+                border: 1px solid #FEBB2E;
+                background-color: #FEBB2E;
+                top: 30%;
+                left: 0%;
+            }
+            .competition_border_comp {
+                position: absolute;
+                width: 2px;
+                height: 30px;
+                border: 1px solid #FE6140 !important;
+                background-color: #FE6140 !important;
+                top: 30%;
+                left: 0%;
+            }
+        }
+    }
+}
+
+.competition_bottom_layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    .btn {
+        border-radius: 4px !important;
+    }
+    .btn_width {
+        width: 297px;
+        height: 48px;
+        font-size: 1.6vh;
+    }
+    .header_buttons {
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        margin: 0vh 3.5vh;
+        background-size: 45%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .add {
+        background-image: url(/assets/images/add.svg);
+    }
+    .search {
+        background-image: url(/assets/images/search.svg);
+        background-color: transparent;
+        background-position: left;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        background-size: 40%;
+        border-radius: 0px;
+        margin-right: 15px;
+        padding-right: 60px;
+        margin-left: 20px;
+    }
+    .notification {
+        background-image: url(/assets/images/betting_prize_icon.svg);
+    }
+    .back {
+        background-image: url(/assets/images/refresh_icon.svg);
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .competition_heading {
+        font-size: 1.6rem !important;
+        font-weight: bold !important;
+    }
+    .competition_outer {
+        .competition_outer_slide {
+            .competition_slide {
+                height: 100%;
+                position: relative;
+                padding: 1.5vh 1.8vh !important;
+                min-width: 151px;
+                .competition_label {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    .competition_bottom_layer {
+        align-items: center;
+        .header_buttons {
+            cursor: pointer;
+            width: 9vh;
+            height: 6vh;
+        }
+    }
+    .heading {
+        font-size: 1.2rem !important;
+    }
+    .competition_block_header {
+        p {
+            font-size: 2.1rem !important;
+        }
+    }
+    .heading_1 {
+        font-size: 1.1rem !important;
+    }
+    .heading_2 {
+        font-size: 1.1rem !important;
+    }
+    .progess_bar_layout {
+        p {
+            font-size: 1.2rem !important;
+        }
+    }
+    .label {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .competition_outer {
+        .competition_outer_slide {
+            .competition_slide {
+                height: 100%;
+                position: relative;
+                padding: 1.5vh 1.8vh !important;
+                min-width: 151px;
+                .competition_label {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    .competition_bottom_layer {
+        align-items: center;
+        // .btn_width{
+        //     color: #0DB983;
+        //     font-weight: bold !important;
+        // }
+        .header_buttons {
+            cursor: pointer;
+            width: 10vh;
+            height: 6vh;
+            margin: 0vh 7vh;
+        }
+    }
+}
+
+.btn_child_1 {
+    background-color: #272a3b !important;
+}
+
+.btn_child_2 {
+    background-color: #3a3d4e !important;
+}
+
+.btn_child_3 {
+    background-color: #343747 !important;
+}
+
+.child_1 {
+    background-color: #343742 !important;
+}
+
+.child_2 {
+    background-color: #333640 !important;
+}
+
+.child_3 {
+    background-color: #31333c !important;
+}
+
+.child_4 {
+    background-color: #2f3239 !important;
+}
+
+.child_5 {
+    background-color: #2b2d36 !important;
+}
+
+@media only screen and (max-width: 800px) {
+    .competition_breadcrumb {
+        display: none;
+    }
+    .common_wraps {
+        padding: 0% 4% 2% 4% !important;
+    }
+    .competition_outer {
+        margin-top: 28px !important;
+    }
+    .progess_bar_layout {
+        margin-top: 35px !important;
+    }
+    .heading_1 {
+        font-size: 0.9rem !important;
+        letter-spacing: 0.1vh !important;
+    }
+    .competition_block_header p {
+        font-size: 1.6rem !important;
+        margin: 0px 0px 7px 0px !important;
+    }
+    .btn_width {
+        width: 200px !important;
+        height: 33px !important;
+    }
+    .header_buttons {
+        margin: 0px 15px !important;
+        width: 33px !important;
+        height: 33px !important;
+        background-size: 100% !important;
+    }
+    .competition_outer_slide .competition_slide {
+        height: 100%;
+        position: relative;
+        padding: 1.5vh 1.5vh !important;
+        width: 41% !important;
+        min-width: auto !important
+    }
+    .competition_heading {
+        font-size: 1.4rem !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .socialShare {
+        display: none;
+    }
+}

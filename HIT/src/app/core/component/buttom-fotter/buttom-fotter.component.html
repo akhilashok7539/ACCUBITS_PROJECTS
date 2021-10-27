@@ -1,0 +1,49 @@
+<div class="osahan-menu-fotter fixed-bottom bg-white px-3 text-center dipsly_hidden">
+    <div class="row">
+        <div class="col selected">
+            <a [routerLink]="['/']" [routerLinkActive]="['actives']" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'actives': isactive === 'home'}" (click)="onClick('home')" class="text-danger small  text-decoration-none">
+                <div class="logo">
+                    <div [ngClass]="{'home_active': isactive === 'home'}" class="home">
+                    </div>
+                </div>
+                Home
+            </a>
+        </div>
+        <div class="col">
+            <a [routerLink]="['/competition/landing']" [routerLinkActive]="['actives']" class="text-dark small  text-decoration-none" [ngClass]="{'actives': isactive === 'team'}" (click)="onClick('team')">
+                <div class="logo">
+                    <div [ngClass]="{'comp_active': isactive === 'team'}" class="comp">
+                    </div>
+                </div>
+                {{'bottombar.comp' | translate}}
+            </a>
+        </div>
+        <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+            <div class="bg-danger rounded-circle mt-n0 shadow">
+                <a (click)="addCompetition()" class="text-white small  text-decoration-none">
+                    <div class="add_logo">
+                        <img src="/assets/images/add-line.svg" alt="Logo_login">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <a (click)="setDocTitle( 'Feed' )" [routerLinkActive]="['actives']" [routerLink]="['/feed']" [ngClass]="{'actives': isactive === 'feed'}" (click)="onClick('feed')" class="text-dark small  text-decoration-none">
+                <div class="logo">
+                    <div [ngClass]="{'feed_active': isactive === 'feed'}" class="feed">
+                    </div>
+                </div>
+                {{'bottombar.Feed' | translate}}
+            </a>
+        </div>
+        <div class="col">
+            <a (click)="setDocTitle( 'Wallet' )" [routerLinkActive]="['actives']" [routerLink]="['/wallet']" [ngClass]="{'actives': isactive === 'wallet'}" (click)="onClick('wallet')" class="text-dark small  text-decoration-none">
+                <div class="logo">
+                    <div [ngClass]="{'wallet_active': isactive === 'wallet'}" class="wallet">
+                    </div>
+                </div>
+                {{'bottombar.Wallet'| translate}}
+            </a>
+        </div>
+    </div>
+</div>

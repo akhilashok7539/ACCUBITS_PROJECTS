@@ -1,0 +1,179 @@
+.create_competition_outer {
+    padding: 5vh 0vh;
+}
+
+.gradient_loader {
+    background: rgb(13, 185, 131) !important;
+    background: linear-gradient(90deg, rgba(13, 185, 131, 1) 0%, rgba(35, 194, 144, 0.26096376050420167) 47%) !important;
+}
+
+.date-form {
+    width: 200px !important;
+}
+
+.client_avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: black;
+}
+
+.choose_game_details {
+    form {
+        section {
+            .form-group {
+                &:nth-child(3) {
+                    input {
+                        padding: 12px 25px !important;
+                        border-left: 1px solid rgb(255 255 255 / 0.25) !important;
+                        border-right: 1px solid rgb(255 255 255 / 0.25) !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile_hidden {
+    display: initial !important;
+}
+
+.desktop_hidden {
+    display: none !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .choose_game_details form section .form-group:nth-child(3) input {
+        border: none !important;
+        padding: 12px 35px 12px 12px !important;
+        overflow: hidden;
+    }
+    .desktop_hidden {
+        display: initial !important;
+    }
+    .mobile_hidden {
+        display: none !important;
+    }
+    .choose_game_details .trending_games_tab .trending_row .vs section div {
+        width: 3.0rem;
+        height: 3.0rem;
+    }
+    .choose_game_details .trending_games_tab .trending_row .view_button {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    .choose_game_details .trending_games_tab .trending_row .details {
+        display: flex;
+        width: auto;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .choose_game_details .trending_games_tab .trending_row .details section span:nth-child(2) {
+        font-size: 1.2rem;
+        margin-top: 0.3rem;
+    }
+    .choose_game_details .trending_games_tab .trending_row .details section {
+        margin-right: 0rem !important;
+    }
+    .choose_game_details .trending_games_tab .trending_row .view_button .select_game {
+        margin-left: 0rem !important;
+    }
+    .choose_game_details .trending_games_tab .trending_row .vs {
+        width: auto;
+    }
+    .choose_game_details .trending_games_tab .trending_row .vs section {
+        width: auto;
+        padding-left: 4.5rem;
+        margin: 14px;
+    }
+    .choose_game_details .trending_games_tab .trending_row {
+        display: block !important;
+    }
+    .trending_games_tab {
+        padding: 0rem 1rem !important;
+    }
+    .listed_games {
+        margin-right: 0px !important;
+    }
+    .choose_game_details .trending_games_tab .trending_row .view_button .select_game {
+        border: 3px solid #3eb983;
+    }
+    .choose_game_details .game_selection_tab {
+        padding: 2rem 2rem !important;
+        display: block !important;
+    }
+    .clear_league {
+        cursor: pointer;
+        position: initial !important;
+        height: 16px;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 11px;
+    }
+    .choose_game_details .trending_games_tab .trending_row .vs section label {
+        font-size: 1.2rem;
+        font-family: Poppins-Light;
+        font-style: italic;
+        color: #ffffff5c;
+        // width: 58px;
+        // white-space: nowrap;
+        // overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .mobileView {
+        // padding-bottom: 26px;
+    }
+    .mobileView1 {
+        // padding-top: 18px;
+    }
+    .choose_game_details .trending_games_tab .trending_row .vs {
+        // flex-direction: row;
+        flex-direction: column;
+    }
+    .wifth {
+        width: 76% !important;
+    }
+    .disply_hidden {
+        display: flex !important;
+    }
+    .competition_breadcrumb {
+        display: none !important;
+    }
+    .competition_block_header p {
+        font-size: 1.7rem !important;
+        margin-bottom: 6px !important
+    }
+    .create_competition_outer {
+        margin-top: 12px !important;
+        margin-bottom: 60px !important;
+    }
+    .go_to_previous {
+        left: 4% !important;
+        top: 18px !important;
+    }
+    .choose_game_details form section {
+        padding-top: 4px !important;
+        width: 100% !important;
+        margin: 0px !important;
+        padding: 4px 0px 0px 0px !important;
+        display: block;
+    }
+    .date-form {
+        width: auto !important;
+    }
+    .common_wrap {
+        padding: 0vh 4% !important;
+    }
+    .choose_game_details form section .form-group:nth-child(3) input {
+        border: none !important;
+    }
+    .flex {
+        display: flex !important;
+    }
+    .choose_game_details form .search_button {
+        margin-top: -19px;
+    }
+}

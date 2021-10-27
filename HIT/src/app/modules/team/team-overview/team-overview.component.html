@@ -1,0 +1,74 @@
+<div class="match_layout">
+
+    <div id="cont">
+        <div id="box">
+            <ng-container *ngIf="overview?.logo; else elseTemplate">
+                <img class='team_1' [src]="(overview?.logo?envurl +'/v1/image?url=' + overview?.logo:'/assets/images/club.png')">
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="title1">{{overview?.name | slice:0:1}}</div>
+            </ng-template>
+            
+            
+        </div>
+    </div>
+    <div class="title1">{{overview?.name}}</div>
+    <!-- <div class="title2">Thrusday 24, July 2020 at 09:00 Am </div> -->
+</div>
+<div class="competition_outer_slide" style="display: none;">
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">1089</div>
+        <div class="competition_label">Matches</div>
+    </div>
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">673</div>
+        <div class="competition_label">Wins</div>
+    </div>
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">177</div>
+        <div class="competition_label">Losses</div>
+    </div>
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">2077</div>
+        <div class="competition_label">Goals</div>
+    </div>
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">987</div>
+        <div class="competition_label">Goals Concended</div>
+    </div>
+    <div class="competition_slide child_1">
+        <div class="competition_border"></div>
+        <!-- <div class="competition_borders"  *ngIf='competition_detail.type === 2'></div> -->
+        <div class="competition_heading">460</div>
+        <div class="competition_label">Clean sheets</div>
+    </div>
+
+</div>
+
+<!-- <div class="profile_layout">
+  <div class="single-head ">
+    <div class="head-icon"><img src="../../../../assets/images/client_1.png"></div>
+    <div class="head-txt ">
+        <div class="h-txt">{{overview.coach}} </div>
+        <p>Coach </p>
+    </div>
+</div>
+<div class="single-head ">
+  <div class="head-icon"><img src="../../../../assets/images/client_1.png"></div>
+  <div class="head-txt ">
+      <div class="h-txt">Tony Stark </div>
+      <p>Captain </p>
+  </div>
+</div>
+</div> -->
+

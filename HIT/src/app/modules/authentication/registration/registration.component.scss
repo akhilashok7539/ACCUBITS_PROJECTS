@@ -1,0 +1,195 @@
+@media only screen and (max-width: 500px) {
+    .login_wrap {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .login_wrap_mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .login_wrap_mobile {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .login_split_container {
+            padding: 3rem 8rem;
+            background-color: rgb(17 22 41 / 50%);
+            width: 90%;
+            border-radius: 8px;
+            p {
+                margin: 0;
+            }
+            p:nth-child(2) {
+                // font-size: 1.8rem;
+                // font-family: Poppins-Light;
+                margin-bottom: 1rem;
+                margin-bottom: 1px;
+                text-align: center;
+            }
+            p:nth-child(1) {
+                font-size: 3rem;
+                font-family: Poppins-Medium;
+                color: #0db983;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            .social_media_login {
+                margin-top: 2.5rem;
+                p {
+                    font-size: 1.4rem;
+                    color: white;
+                    font-family: Poppins-Light;
+                }
+                a {
+                    font-size: 1.8rem;
+                    text-decoration: underline;
+                }
+                .social_buttons {
+                    display: flex;
+                    margin: 2vh 0vh 0vh 0vh;
+                    flex-direction: column;
+                    div {
+                        border: 1px solid;
+                        border-radius: 10px;
+                        background-repeat: no-repeat;
+                        background-size: 24px;
+                        height: 45px;
+                        cursor: pointer;
+                    }
+                    div:nth-child(1) {
+                        font-size: 14px;
+                        padding: 0px 35px 0px 75px;
+                        line-height: 43px;
+                        background-image: url(/assets/images/google_icon.svg);
+                        background-position: 28px 9px;
+                        margin-right: 2vw;
+                        display: flex;
+                        margin-top: 10px;
+                        width: 100%;
+                        align-items: center;
+                    }
+                    div:nth-child(3) {
+                        // // width: 45px;
+                        // font-size: 14px;
+                        // padding: 0px 35px 0px 75px;
+                        // line-height: 43px;
+                        // background-image: url(/assets/images/facebook_icon.svg);
+                        // background-position: 11px 9px;
+                        // display: flex;
+                        // width: 100%;
+                        // align-items: center;
+                        // margin-top: 10px;
+                        font-size: 13px;
+                        padding: 0px 35px 0px 75px;
+                        line-height: 43px;
+                        background-image: url(/assets/images/facebook_icon.svg);
+                        background-position: 28px 9px;
+                        margin-right: 2vw;
+                        display: flex;
+                        margin-top: 10px;
+                        width: 100%;
+                        align-items: center;
+                    }
+                    div:nth-child(2) {
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    div:nth-child(4) {
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+            .forgot_password {
+                display: flex;
+                justify-content: flex-end;
+                outline: none;
+                label {
+                    cursor: pointer;
+                    margin-top: 1rem;
+                    outline: none;
+                }
+            }
+            .otp-input {
+                background-color: var(--primary_color) !important;
+                outline: none;
+                color: black !important;
+                border: 0px solid !important;
+                margin-right: 2rem !important;
+                border-radius: 13px;
+                font-size: 25px;
+            }
+            .back_btn {
+                cursor: pointer;
+                position: relative;
+                padding-left: 4rem;
+                font-family: poppins-light;
+                outline: none;
+                img {
+                    position: absolute;
+                    left: 0;
+                    width: 2rem;
+                    top: 0;
+                }
+            }
+        }
+        .login_split_container:nth-child(1) {
+            backdrop-filter: blur(5px);
+            min-height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 19px;
+        }
+        .login_split_container:nth-child(2) {
+            background-color: #0db983;
+            margin-top: 1rem;
+            section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p {
+                    margin-bottom: 0rem;
+                    color: white !important;
+                    font-family: Poppins-Light;
+                    font-size: 1.6rem;
+                    font-style: italic;
+                }
+                a {
+                    border: 1px solid;
+                    padding: 0.5rem 2rem;
+                    border-radius: 4px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .no-records {
+        width: 100%;
+        text-align: center;
+        padding: 25px 0px;
+    }
+}
+.or{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px;
+}
+.form-btn{text-align: center;}
+.submitbutton{
+    width: 80%;
+    padding: 0;
+}
+.login_wrap .login_split_container p{
+    text-align: center;
+}

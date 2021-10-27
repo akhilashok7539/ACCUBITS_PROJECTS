@@ -1,0 +1,102 @@
+<div class="qfwq">
+    <div>
+        <div class="competition_match_selection_btn overall overall_back" [ngClass]="{'is_active_date': date_index === 0 }" [ngStyle]="{ 'width': overall_width.width}" *ngIf="competition_detail.type === 2 && rounds.length > 0 && competition_detail.isFullPlayer === 1">
+            <div class="competition_date" (click)='onSelectDate(over_all,0)'>
+                <p> Over All </p>
+                <p>{{over_all.startDate | date:'dd MMM'}} - {{over_all.endDate | date:'dd MMM y'}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="tab_date_selection" *ngIf="competition_detail.type === 2">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigDate" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem class="competition_match_selection_btn" #myIdentifier [ngClass]="{'is_active_date': date_index === i }" *ngFor='let item of rounds ;let i =index' (click)='onSelectDate(item,i,$event)'>
+                <div class="competition_date">
+                    {{getdatawidth(myIdentifier.offsetWidth)}}
+                    <p> Round {{item.name}} </p>
+                    <p>{{item.startDate | date:'dd MMM'}} - {{item.endDate | date:'dd MMM y'}}</p>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+    <div class="no-records" *ngIf="!leaderBoardList.length && !loading">{{'noRecords' | translate}}</div>
+    <section class="competition_layout checksdc" *ngIf="leaderBoardList.length">
+        <table class="table_spacing">
+            <tr>
+                <th width='25%'>{{'leaderboard.name' | translate}}</th>
+                <th width='10%'>{{'leaderboard.rank' | translate}}</th>
+                <th width='32%'>{{'leaderboard.pointEarn' | translate}}</th>
+                <th width='20%' class="pd_25">{{'leaderboard.priceEarn' | translate}}</th>
+                <th width='10%' class="mobile_hid"></th>
+                <th width='3%' class="mobile_hid"></th>
+            </tr>
+            <ng-container *ngFor='let data of leaderBoardList | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total },let i = index'>
+                <tr *ngIf='data.user.guid !== user_id'>
+                    <td width='25%' class="td_first-child">
+                        <div class="player_detail" (click)='onViewProfile(data)'>
+                            <div class="competition_card_image">
+                                <img class="client_avatar" *ngIf="data.user.image" [src]="data.user.image" />
+                                <div class="client_avatar_text" *ngIf="!data.user.image">{{data.user.username.substring(0,2)}}</div>
+                            </div>
+                            <p>{{data.user.username}}</p>
+                        </div>
+                    </td>
+                    <td width='10%'>{{ data.rank | number:'2.0' }}</td>
+
+                    <td width='32%'>
+                        <p class="earned_coin " *ngIf="data.totalPoints">{{data.totalPoints}} points</p>
+                        <p class="earned_coin" *ngIf="!data.totalPoints">--</p>
+                    </td>
+
+                    <td width='20%'>
+                        <p class="earned_coin earned_col" *ngIf="data.prizeAmount">{{data.prizeAmount * data.conversionRate | number:'1.2-2'}} {{data.conversionCurrency}}</p>
+                        <p class="earned_coin earned_col" *ngIf="!data.prizeAmount">--</p>
+                    </td>
+
+                    <td width='10%' class="flex mobile_hid">
+                        <div class="competition_option_view_btn mobile_hid" (click)='onViewProfile(data)'>
+                            <p>{{'feeds.viewProfile' | translate}}</p>
+                        </div>
+                    </td>
+                    <td width='3%' class="td_last-child mobile_hid">
+                        <div class="competition_option_view_add disp mobile_hid">
+                            <div class=" follow_icon" *ngIf="data.user.isFriend == 0 && data.user.isRequested == 0" (click)="sendRequest(data.user.guid,data.user.isFriend,i)"></div>
+                            <div class="request_icon" *ngIf="data.user.isFriend==0 && data.user.isRequested==1" (click)="sendRequests(1)"></div>
+                            <div class="follow_add" *ngIf="data.user.isFriend==1" (click)="sendRequests(2)"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf='data.user.guid === user_id'>
+                    <td width='25%' class="td_first-child">
+                        <div class="player_detail">
+                            <div class="competition_card_image">
+                                <img class="client_avatar" *ngIf="data.user.image" [src]="data.user.image" />
+                                <div class="client_avatar_text" *ngIf="!data.user.image">{{data.user.username.substring(0,2)}}</div>
+                            </div>
+                            <p>{{data.user.username}}</p>
+                        </div>
+                    </td>
+                    <td width='10%'>{{ data.rank | number:'2.0' }}</td>
+
+                    <td width='32%'>
+                        <p class="earned_coin " *ngIf="data.totalPoints">{{data.totalPoints}} points</p>
+                        <p class="earned_coin" *ngIf="!data.totalPoints">--</p>
+                    </td>
+
+                    <td width='20%'>
+                        <p class="earned_coin earned_col" *ngIf="data.prizeAmount">{{data.prizeAmount * data.conversionRate | number:'1.2-2'}} {{data.conversionCurrency}}</p>
+                        <p class="earned_coin earned_col" *ngIf="!data.prizeAmount">--</p>
+                    </td>
+                    <td width='10%' class="mobile_hid">
+
+                    </td>
+                    <td width='3%' class="mobile_hid" class="td_last-child mobile_hid">
+
+                    </td>
+                </tr>
+            </ng-container>
+        </table>
+        <section class="paginator" *ngIf='total > 10'>
+            <pagination-controls (pageChange)="paginateBoard($event)"></pagination-controls>
+        </section>
+    </section>
+</div>

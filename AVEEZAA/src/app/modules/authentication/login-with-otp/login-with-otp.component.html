@@ -1,0 +1,24 @@
+<div class="login_otp_layout">
+    <div class="back_option">
+        <button  class="back_arrow_btn btn-primary" (click)='onBack()'>
+        </button>
+        <span>Enter OTP</span>
+    </div>
+    <div class="pincode_layput">
+        <!-- <input type="number" [min]='1' [max]='1'  class="form-control ml_0" />
+        <input type="number" maxlength="1" class="form-control" />
+        <input type="number" maxlength="1" class="form-control" />
+        <input type="number" maxlength="1" class="form-control" />
+        <input type="number" maxlength="1" class="form-control" />
+        <input type="number" maxlength="1" class="form-control" /> -->
+        <ng-otp-input (keyup.enter)="onEnter()" (onInputChange)="onOtpChange($event)" [config]="{length:6,allowNumbersOnly:true}"></ng-otp-input>
+
+    </div>
+    <div class="pincode_detail">
+        <span>Didn't Recieve OTP?</span><span class="resend" (click)="resendOTP()">Resend</span>
+    </div>
+    <div class="form-btn mt-60">
+        <button  class="btn btn-primary btn-full" [disabled]='!otp' (click)='verifyOtp()'>Next</button>
+    </div>
+
+</div>

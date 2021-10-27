@@ -1,0 +1,70 @@
+# The docker image will be validated and pushed to the docker registry after the code is merged to development.
+
+image: atlassian/default-image:2
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build and Test
+            script:
+              - IMAGE_NAME=$BITBUCKET_REPO_SLUG
+              - docker build . --file Dockerfile --tag ${IMAGE_NAME}
+            services:
+              - docker
+            caches:
+              - docker
+        - step:
+            name: Lint the Dockerfile
+            image: hadolint/hadolint:latest-debian
+            script:
+              - hadolint Dockerfile
+  branches:
+    master:
+      - step:
+          name: Build and Test
+          script:
+            - IMAGE_NAME=$BITBUCKET_REPO_SLUG
+            - docker build . --file Dockerfile --tag ${IMAGE_NAME}
+            - docker save ${IMAGE_NAME} --output "${IMAGE_NAME}.tar"
+          services:
+            - docker
+          caches:
+            - docker
+          artifacts:
+            - "*.tar"
+      - step:
+          name: Deploy to Production
+          deployment: Production
+          size: 2x
+          script:
+            - echo $BITBUCKET_REPO_SLUG
+            - docker logout
+            - echo ${DOCKERHUB_PASSWORD} | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - IMAGE_NAME=$BITBUCKET_REPO_SLUG
+            # - IMAGE_NAME="abhiaccubit/aveza-fe"
+            - docker load --input "${IMAGE_NAME}.tar"
+            - VERSION="prod-0.1.${BITBUCKET_BUILD_NUMBER}"
+            - IMAGE=${DOCKERHUB_NAMESPACE}/${IMAGE_NAME}
+
+            - echo $DOCKERHUB_NAMESPACE
+            - echo $DOCKERHUB_USERNAME
+            - echo $IMAGE_NAME
+            - echo $IMAGE
+            - echo $VERSION
+            - docker tag "${IMAGE_NAME}" "abhiaccubit/aveza-fe:${VERSION}"
+            - docker push "abhiaccubit/aveza-fe:${VERSION}"
+
+            - apt-get update
+            - apt-get install -y ssh
+            - ssh $SERVER_USER@$SERVER_URL "docker kill dheepak_aveza-fe && docker rm dheepak_aveza-fe &&  docker run -itd  --name dheepak_aveza-fe -p 8885:80 abhiaccubit/aveza-fe:$VERSION"
+            # - ssh $SERVER_USER@$SERVER_URL "ls -al && pwd && docker ps && echo $VERSION"
+
+
+          services:
+            - docker
+
+definitions:
+  services:
+    docker:
+      memory: 3021  # reduce memory for docker-in-docker from 1GB to 512MB

@@ -1,0 +1,81 @@
+<section>
+    <div class="competition_card_layout">
+        <div class="competition_card">
+            <div class="competition_heading_layout">
+                <p class="competition_heading">Matches Played <span class=" moile_hid c-noti">{{ view_match_played.length || 00  | number:'2.0' }}</span></p>
+                <div class="border"></div>
+                <!-- <div class="c-btn"><img src="../../../../assets/images/filter.png">Filter</div> -->
+            </div>
+            <div class="match_played_layout">
+                <div class="match_played_group_card" *ngFor='let data of view_match_played;let i = index;let first = first; 
+                let last = last' [ngClass]="{'ml_10':i !== 0}">
+                    <div class="match_played_group">
+                        <div class="match_played_card">
+                            <div class="match_name_logo">
+                                <div class="competition_card_image">
+                                    <img class="team_1" [src]="(envurl +'/v1/image?url=' + data.homeTeam.logo)" />
+                                </div>
+                                <div class="match_name">
+                                    {{data.homeTeam.name}}
+                                </div>
+                                <div class="crown_card_image" *ngIf='data.homeScore > data.awayScore'>
+                                    <div class="crown">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match_played_card_number">
+                            {{data.homeScore | number:'2.0'}}
+                        </div>
+                    </div>
+                    <div class="match_played_group mt_10">
+                        <div class="match_played_card">
+                            <div class="match_name_logo">
+                                <div class="competition_card_image">
+                                    <img class="team_2" [src]="(envurl +'/v1/image?url=' + data.awayTeam.logo)" />
+                                </div>
+                                <div class="match_name">
+                                    {{data.awayTeam.name}}
+                                </div>
+                                <div class="crown_card_image" *ngIf='data.awayScore > data.homeScore'>
+                                    <div class="crown">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="match_played_card_number">
+                            {{data.awayScore | number:'2.0'}}
+                        </div>
+                    </div>
+                    <div class="match_played_date_layout">
+                        <div class="match_play_date">
+                            <div class="heading">
+                                {{data.league.name}}
+                            </div>
+                            <div class="sub_heading">
+                                {{formatDate(data.matchTime)}}
+                            </div>
+                        </div>
+                        <div class="stage_parent_layout" *ngIf='!last'>
+                            <div class="stage_child_layout">
+                                <div class="circle ml_8"></div>
+                                <div class="dashed_line"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="next moile_hid">
+                >>
+            </div>
+
+        </div>
+    </div>
+</section>

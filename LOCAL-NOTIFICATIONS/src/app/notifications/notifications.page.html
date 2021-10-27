@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Notification</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h5 class="title">{{notificationresposne?.title}}</h5>
+    <!-- <ion-row>
+
+
+        <ion-col>
+     
+
+            <ion-list>
+                <ion-item>
+                    <ion-icon (click)="snooze()" name="alarm-outline" slot="end"></ion-icon>
+                    <ion-label>{{notificationresposne?.text}}</ion-label>
+                    <ion-label>{{notificationresposne?.data?.mydata}}</ion-label>
+                </ion-item>
+[disabled]="snoozebuttonclickstatus"
+            </ion-list>
+        </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+        <ion-col size="12">
+            <h5>Notification Tittle</h5>
+            <button class="btn" (click)="multitpletimes()" [disabled]="snoozebuttonclickstatus === 'true'"> 
+                <ion-icon name="alarm-outline" slot="end"></ion-icon> 
+                Snooze
+            </button>
+            <h6>{{notificationresposne?.text}}</h6>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

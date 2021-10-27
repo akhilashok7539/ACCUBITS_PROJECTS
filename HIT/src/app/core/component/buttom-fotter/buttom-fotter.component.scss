@@ -1,0 +1,206 @@
+.osahan-menu-fotter {
+    padding: 0px !important;
+    .row {
+        margin: 0px;
+    }
+}
+.osahan-menu-fotter .col {
+    padding: 0px;
+}
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+.actives{
+    color: #0DB983 !important;
+    font-weight: bold !important;
+}
+.fixed-bottom {
+    height: 58px;
+    border-radius: 0px;
+    box-shadow: 10px -1px 10px rgb(0 0 0 / 8%);
+}
+.dipsly_hidden{
+    display: none;
+}
+.home_active{
+    background-image: url(/assets/images/home-active.svg) !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.home{
+    background-image: url(/assets/images/home-2.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.comp_active{
+    background-image: url(/assets/images/trophy-active.svg) !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.comp{
+    background-image: url(/assets/images/trophy.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.feed_active{
+    background-image: url(/assets/images/booklet-active.svg) !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.feed{
+    background-image: url(/assets/images/booklet-line.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.wallet_active{
+    background-image: url(/assets/images/wallet-active.svg) !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+.wallet{
+    background-image: url(/assets/images/wallet-line.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 22px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+}
+@media only screen and (max-width: 500px) {
+    .dipsly_hidden{
+        display: initial;
+    }
+}
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.osahan-menu-fotter .col.bg-white.rounded-circle.mt-n4.px-3.py-2 a {
+    width: 50px;
+    color: #fff !important;
+    height: 55px;
+    font-size: 27px !important;
+}
+.osahan-menu-fotter .col.bg-white.rounded-circle.mt-n4.px-3.py-2 {
+    width: 100px;
+    min-width: 78px;
+    max-width: 79px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    margin: -24px 0 0 0 !important;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}
+.bg-danger {
+    margin-top: 3px;
+    background-color: #3eb983!important;
+}
+.text-center {
+    text-align: center!important;
+}
+.pl-3, .px-3 {
+    padding-left: 1rem!important;
+}
+.pr-3, .px-3 {
+    padding-right: 1rem!important;
+}
+.pb-2, .py-2 {
+    padding-bottom: .5rem!important;
+}
+.pt-2, .py-2 {
+    padding-top: .5rem!important;
+}
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 35;
+}
+.bg-white {
+    background-color: #262D35 !important;
+}
+.osahan-menu-fotter .col a {
+    padding: 12px;
+    display: block;
+}
+.logo{
+    img{
+        width: 20px;
+    }
+}
+.small, small {
+    font-size: 11px !important;
+}
+.font-weight-bold {
+    font-weight: 600 !important;
+}
+.osahan-menu-fotter .col a p {
+    font-size: 19px;
+}
+
+.m-0 {
+    margin: 0!important;
+}
+.text-decoration-none {
+    text-decoration: none!important;
+}
+.add_logo{
+    width: 33px;
+    margin-top: -1px;
+}
+.osahan-menu-fotter .col {
+    padding: 0px;
+}
+.mt-n4, .my-n4 {
+    margin-top: -1.5rem!important;
+}
+.pl-3, .px-3 {
+    padding-left: 1rem!important;
+}
+.pr-3, .px-3 {
+    padding-right: 1rem!important;
+}
+.pb-2, .py-2 {
+    padding-bottom: .5rem!important;
+}
+.pt-2, .py-2 {
+    padding-top: .5rem!important;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}

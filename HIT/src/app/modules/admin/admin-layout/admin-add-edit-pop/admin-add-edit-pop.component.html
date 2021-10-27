@@ -1,0 +1,51 @@
+<h3 mat-dialog-title>{{addAdmin?'Add':'Edit'}} Sub-Admin</h3>
+<div mat-dialog-content class="admin_pop_out">
+    <div class="mat_admin_pop_out">
+    <form [formGroup]="userDetailsForm" class="admin_pop_form">
+        <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" formControlName="firstName" placeholder="" class="form-control"
+            [ngClass]="{'is-invalid':!userDetailsForm.controls.firstName.valid && userDetailsForm.controls.firstName.touched}"/>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" formControlName="lastName" placeholder="" class="form-control"
+            [ngClass]="{'is-invalid':!userDetailsForm.controls.lastName.valid && userDetailsForm.controls.lastName.touched}"/>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="text" ng2TelInput (countryChange)="getNumber($event)" maxlength="15"
+             [ng2TelInputOptions]="{initialCountry: country}" formControlName="mobileNumber" placeholder="" class="form-control" 
+            [ngClass]="{'is-invalid':!userDetailsForm.controls.mobileNumber.valid && userDetailsForm.controls.mobileNumber.touched}" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Email ID</label>
+            <input type="text" [readonly]="!addAdmin" formControlName="email" placeholder="" class="form-control"
+            [ngClass]="{'is-invalid':!userDetailsForm.controls.email.valid && userDetailsForm.controls.email.touched}"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Admin Role</label>
+            <select  class="form-control"  formControlName="adminType" >
+                <option *ngFor="let value of adminTypeList" value="{{value.id}}">{{value.name}}</option>
+            </select>
+            <!-- <input type="text" [(ngModel)]="adminTypeName" formControlName="adminType"  placeholder="Admin Type" class="form-control back" (focus)="searchRpleDrop()"
+                  />
+                <ng-container *ngIf="adminRoleDropdown">
+                    <ul class="dropdown_wrap search_drop">
+                        <li *ngFor="let value of adminTypeList | keyvalue"  (click)="selectrole(value)" >{{value.key}}</li>
+                    </ul> 
+                </ng-container>-->
+        </div>
+  
+        
+    </form>
+    </div>
+</div>
+<div class="adm_btn">
+  <button class="btn btn_transparent" (click)="onNoClick()">Cancel</button>
+  <button class="btn btn-primary" (click)="submitDetails()" [disabled]="userDetailsForm.invalid">Create
+  </button>
+</div>

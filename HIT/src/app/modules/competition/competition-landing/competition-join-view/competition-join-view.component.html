@@ -1,0 +1,128 @@
+<section class="common_wrap_match">
+    <div class="competion-head">
+        <div class="c-left">
+            <div class="c-title mobile_hiddens"> Joined Competition
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-title display_hiddens"> Joined
+                <!-- <div class="c-btn c-btn_width" (click)="swapTrending()">
+                    <img src="/assets/images/down_arrow.svg">
+                </div> -->
+            </div>
+            <div class="c-lbl"></div>
+        </div>
+        <div class="c-right">
+            <!-- <div class="c-btn c-btn_width">
+                <img src="/assets/images/search.svg">
+            </div> -->
+           <div class="c-btn" (click)="onSelecttype()" (appClickOutside)="closeTypeDropdown($event)">{{gettypevalue()}} <div class="down-ic"></div></div>
+            <!-- <div class="c-btn" (click)="liveFilter=!liveFilter"  (appClickOutside)="closeFilterDropdown($event)" ><img src='/assets/images/filter.png'>{{filter}}</div> -->
+            <div class="custm-drop" *ngIf="typeDrop">
+                <ul> 
+                    <li (click)="getMyCompetitionFilter(0)">{{'filter.all' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(1)">{{'filter.onetime' | translate}}</li>
+                    <li (click)="getMyCompetitionFilter(2)">{{'filter.championship' | translate}}</li>
+                </ul>
+            </div>
+            <div class="custm-drop filter-drop" *ngIf="liveFilter">
+                <div class="filter-hd">Filter By:</div> 
+                <ul>
+                    <li (click)="selectFilter(1)"  [disabled]='popularity'   >Popularity 
+                        <div class="select_games select_actives"  *ngIf='popularity'></div>
+                    </li>
+                    <li (click)="selectFilter(2)" [disabled]='trending' >Most Trending 
+                        <div class="select_games select_actives"  *ngIf='trending' ></div>
+                    </li>   
+                </ul>
+                <div class="filter-bt filter-drops" *ngIf='popularity || trending' (click)="selectFilter(0)">Cancel</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <ng-container *ngIf="showTrending; else elseBlock">
+        <div class="competion">
+            <div class="slide">
+                <div class="card" *ngFor="let item of trendingCompetition">
+                    <div class="card-title"><b>{{item.head?item.head[0]:'--'}}</b><br />@
+                        {{item.head?item.head[1]:'--'}}</div>
+                    <div class="card-tag">
+                        <div class="tag" [ngClass]="{'red':item.type==2}">
+                            {{item.type==1?'One Time':item.type==2?'Championship':'--'}}</div>>
+                        <div class="tag"><b>ID</b> : {{item.competitionId}}</div>
+                    </div>
+                    <div class="card-icon">
+                        <div class="card-lay">
+                            <div class="c-day"><b>{{item.noOfDays.length}}</b> Day{{item.noOfDays.length>1?'s':''}}
+                            </div>
+                            <div class="c-day"><b>{{item.numberOfMatches}}</b> Matches</div>
+                        </div>
+                    </div>
+                    <div class="time_layout">
+                        <div class="competition_option_view_btn">
+                            <p>
+                                <countdown [config]="{ leftTime: item.remainingTime, format: 'hh',notify: [ 1 ]}">
+                                </countdown>
+                            </p>
+                        </div>
+                        :
+                        <div class="competition_option_view_btn">
+                            <p>
+                                <countdown [config]="{ leftTime: item.remainingTime, format: 'mm',notify: [ 1 ] }">
+                                </countdown>
+                            </p>
+                        </div>
+                        :
+                        <div class="competition_option_view_btn">
+                            <p>
+                                <countdown [config]="{ leftTime: item.remainingTime, format: 'ss',notify: [ 1 ]}">
+                                </countdown>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="coast">Entry cost : <span>{{item.entryCostInUSD}}</span></div>
+                    <div class="prize" [ngClass]="{'opacity':item.totalPrizeInUSD==0}">Total Prize :
+                        {{item.totalPrizeInUSD}} USD</div>
+                    <div class="viewers">
+                        <ng-container *ngIf="item?.competitionPlayers?.length>0">
+                            <div class="card-view"></div>
+                            <div class="card-nbr" *ngIf="item?.competitionPlayers?.length>1">
+                                <span>+</span>
+                                {{item?.competitionPlayers?.length-1}}
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="item?.competitionPlayers?.length === 0">
+                            <p>
+                                No Users
+                            </p>
+                        </ng-container>
+                    </div>
+                    <div class="card-hover ">
+                        <div class="hover-btn" (click)="viewGame(item)">View</div>
+                        <div class="hover-btn">{{'forms.join' | translate}} name USD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="dataCountTrending>dataLimitTrending" (click)="loadMoreTrendingData()"
+            class="competition_card_layout align_center">
+            {{'feeds.LoadMore' | translate}}
+        </div>
+    </ng-container> -->
+    <section>
+        <ng-container *ngFor="let list of myCompetition | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total }">
+            <app-competition-details-row [item]=list [activeTab]=activeTabMain [joined]=joined></app-competition-details-row>
+        </ng-container>
+        
+        <div class="no_data_found" *ngIf='myCompetition.length === 0'>
+            <img src="/assets/images/noData.svg">
+            <p>{{'filter.nocompetionavailable' | translate}} !!!</p>
+        </div>    
+        <div *ngIf="total>10" class="paginator">
+            <pagination-controls (pageChange)="paginateList($event)"></pagination-controls>
+        </div>
+    </section>
+
+</section>

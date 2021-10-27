@@ -1,0 +1,159 @@
+<section class="create_competition_out common_wrap">
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <!-- <section [routerLink]="['/choose-competition']" class="home_leg">{{'header.home' | translate}}</section> -->
+            <section [routerLink]="['/']" class="home_leg">{{'header.home' | translate}}</section>
+            <section (click)="goToCreateCompetition('1')">{{'header.createCompetition' | translate}}</section>
+            <section>{{'createCompetition.choosegame' | translate}}</section>
+        </div>
+        <!-- <div class="sec">
+            <section (click)="showSwapPopup()">{{'createCompetition.swapType' | translate}}
+            </section>
+        </div> -->
+    </div>
+    <div class="create_competition_outer">
+        <div class="gradient_loader"></div>
+        <div class="go_to_previous" [routerLink]="['/create-competition']"><img src="/assets/images/back.svg" /> {{'profileMenu.back' | translate}}</div>
+        <div class="competition_block_header">
+            <p>{{'createCompetition.chooseGames' | translate}}</p>
+            <span>{{'createCompetition.chooseGameSubHead' | translate}}</span>
+        </div>
+        <div class="choose_game_details">
+            <form>
+                <section >
+                    <div class="form-group date-form">
+                        <input readonly matInput (click)="pickerFrom.open()" 
+                        placeholder="{{'createCompetition.from' | translate}}" #searchFromInput name="startDate" 
+                        [min]="todayDate" 
+                        [(ngModel)]="startDate" [matDatepicker]="pickerFrom" 
+                        class="form-control" />
+                        <mat-datepicker #pickerFrom></mat-datepicker>
+                        <div class="clear_picker" (click)="clearFrom()" *ngIf="startDate"></div>
+                    </div>
+                    <div class="form-group date-form">
+                        <input  readonly matInput (click)="picker.open()"  [disabled]='!startDate'
+                        placeholder="{{'createCompetition.to' | translate}}" name="toDate" [(ngModel)]="endDate" 
+                        [min]="startDate" 
+                        [matDatepicker]="picker" class="form-control" />
+                        <div class="clear_picker" (click)="clearTo()" *ngIf="endDate"></div>
+                        <mat-datepicker #picker></mat-datepicker>      
+                    </div>
+                    <div class="form-group search-form flex" (appClickOutside)="closeLeagueDropdown($event) " >
+                        <!-- <label class="form-label">Select League/Game</label> -->
+                        <input readonly type="text" 
+                        (click)="leagueDropdown()" [value]="leagueName" 
+                        placeholder="{{'createCompetition.selectGame' | translate}}" 
+                        class="form-control dropdownInput" />
+                        <div class="clear_league" *ngIf="leagueId!=''" (click)="clearLeague()">X</div>
+                        <div class="league_drop" *ngIf="showLeague">
+                            <input type="text" 
+                            placeholder="Search League"
+                            [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}">
+                            <div class="drop_wrap">
+                                <div class="league_out" (click)="selectedLeague(item)" *ngFor="let item of allLeagues | search : filterText">
+                                    <div *ngIf="item.logo"><img [src]="( envurl +'/v1/image?url=' + item.logo)" /></div>
+                                    <div class="competition_card_image" *ngIf="!item.logo">
+                                        <div class="client_avatar client-name" >
+                                          {{item.name | slice:0:1}}
+                                        </div>
+                                    </div>
+                                    <span>{{item.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group desktop_hidden">
+                            <label class="form-label"></label>
+                            <div class="form-control search_button" (click)="searchGames()"></div>
+                        </div>
+                    </div>
+                    <div class="form-group mobile_hidden">
+                        <label class="form-label"></label>
+                        <div class="form-control search_button" (click)="searchGames()"></div>
+                    </div>
+                </section>
+            </form>
+            <div class="game_selection_tab" *ngIf='selectedGamesObject.length >0'>
+                <ng-container *ngIf="selectedGamesObject.length==0; else elseBlock">
+                    <section>
+                        <div class="add_game_btn">+</div>
+                        {{'createCompetition.noGameSelected' | translate}}
+                    </section>
+                </ng-container>
+                <ng-template #elseBlock>
+                    <section class="listed_games">
+                        <div class="selectedGamesOut" *ngFor="let item of selectedGamesObject">
+                            <div>
+                                <img [src]="(item.homeTeam.logo?envurl +'/v1/image?url=' + item.homeTeam.logo:'/assets/images/club.png')" />
+                            </div>
+                            <span>X</span>
+                            <div>
+                                <img [src]="(item.awayTeam.logo?envurl +'/v1/image?url=' + item.awayTeam.logo:'/assets/images/club.png')" />
+                            </div>
+                            <section class="remove_games" (click)="selectGame(item)">{{'filter.remove' | translate}}</section>
+                        </div>
+                    </section>
+                </ng-template>
+                <section>
+                    <button type="submit" class="btn btn-primary anim_button" (click)="gotoEntryFee()">{{'createCompetition.continue' | translate}} <span>>>></span> </button> 
+                </section>
+            </div>
+            <div class="trending_games_tab">
+                <p>{{'createCompetition.trendingGames' | translate}}</p>
+                <ng-container *ngFor="let item of trendingGames | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total }">
+                    <section class="trending_row" [ngClass]="{'active': item.isSelected}">
+                        <div class="vs">
+                            <section class="mobileView">
+                                <!-- <div [ngStyle]="{'background-image': 'url(' + item.homeTeam.logo + ')'}"></div> -->
+                                <div>
+                                    <div *ngIf="item.homeTeam.logo"><img [src]="(item.homeTeam.logo?envurl +'/v1/image?url=' + item.homeTeam.logo:'/assets/images/club.png')" /></div>  
+                                    <div class="competition_card_image" *ngIf="!item.homeTeam.logo">
+                                        <div class="client_avatar client-name" >
+                                          {{item.homeTeam.name | slice:0:1}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>{{item.homeTeam.name ?item.homeTeam.name:'--'}}</label>
+                            </section>
+                            <span>X</span>
+                            <section class="mobileView1">
+                                <div *ngIf="item.awayTeam.logo"><img [src]="(item.awayTeam.logo?envurl +'/v1/image?url=' + item.awayTeam.logo:'/assets/images/club.png')" /></div>  
+                                <div class="competition_card_image" *ngIf="!item.awayTeam.logo">
+                                    <div class="client_avatar client-name" >
+                                      {{item.awayTeam.name| slice:0:1}}
+                                    </div>
+                                </div>
+                                <label>{{item.awayTeam.name ?item.awayTeam.name:'--'}}</label>
+                            </section>
+                        </div>
+                        <div class="details">
+                            <section>
+                                <span>{{item.league.name}}</span>
+                                <!-- <span>Football League</span> -->
+                            </section>
+                        </div>
+                        <div class="details">
+                            <section>
+                                <span>{{item.matchTime | date: 'dd/MM/yyyy'}}</span>
+                                <!-- <span>Date</span> -->
+                            </section>
+                        </div>
+                        <div class="view_button">
+                            <!-- <div class="vw" (click)="viewGame(item)">View</div> -->
+                            <div class="select_game" (click)="selectGame(item)"></div>
+                        </div>
+                    </section>
+                </ng-container>
+                <div class="no_data_found" *ngIf='trendingGames.length === 0'>
+                    <img src="/assets/images/noData.svg">
+                    <p>{{'wallet.nodatafound' | translate}}!</p>
+                </div>
+                <section class="paginator" *ngIf="total>10">
+                    <pagination-controls (pageChange)="paginateGames($event)"  previousLabel="{{'pagination.prev'| translate}}"
+                    nextLabel="{{'pagination.next'| translate}}"></pagination-controls>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<app-cancel-popup *ngIf="showCancelPop" [popupData]=cancelPopData (selectedAction)=cancelEvent($event)></app-cancel-popup>
+<app-footer></app-footer>

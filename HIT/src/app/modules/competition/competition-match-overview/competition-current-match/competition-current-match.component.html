@@ -1,0 +1,59 @@
+<section class="common_wraps">
+    <div class="competition_card_layout">
+        <div class="competition_card">
+            <section class="match_layout">
+
+                <div id="cont">
+                    <div id="box">
+                        <img class="team_1" [src]="(match_overview_detail.homeTeam.logo?envurl +'/v1/image?url=' + match_overview_detail.homeTeam.logo:'/assets/images/club.png')" />
+                    </div>
+                  </div>
+                <div class="competition_card_detail">
+                    <p class="heading">{{match_overview_detail.homeTeam.name}}</p>
+                    <p class="game_place">Home Match</p>
+                    <div class="competition_option_layout">
+                        <div class="competition_option_view_btn">
+                            <p (click)="onSelectCompetition(match_overview_detail.homeTeam)">View Team</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="match_seperation">
+                X
+            </section>
+            <section class="match_layout">
+                <div id="cont">
+                    <div id="box">
+                        <img class="team_1" [src]="(match_overview_detail.awayTeam.logo?envurl +'/v1/image?url=' + match_overview_detail.awayTeam.logo:'/assets/images/club.png')" />
+                    </div>
+                  </div>
+                <div class="competition_card_detail">
+                    <p class="heading">{{match_overview_detail.awayTeam.name}}</p>
+                    <p class="game_place">Away Match</p>
+                    <div class="competition_option_layout">
+                        <div class="competition_option_view_btn">
+                            <p (click)="onSelectCompetition(match_overview_detail.awayTeam)">View Team</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="match_location">
+        <div class="location_name" *ngIf="getlang() ==='en'">
+            <span class="material-icons location">
+                location_on
+                </span>
+            {{match_overview_detail.location || 'Will be Updated....'}}
+        </div>
+        <div class="location_name" *ngIf="getlang() ==='por'">
+            <span class="material-icons location">
+                location_on
+                </span>
+            {{match_overview_detail.location || 'A definir'}}
+        </div>
+        <div class="match_date">
+            {{formatWeek(match_overview_detail.matchTime)}} {{formatDate(match_overview_detail.matchTime)}} at {{match_overview_detail.matchTime  | date:'shortTime'}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,396 @@
+
+.competition_breadcrumb{
+    margin: 3rem 0rem 2rem 0rem;
+    .sec{
+        .heading{
+            padding: .8vh 2.1vh;
+            font-size: 1.4rem;
+            border-radius: 7px;
+            font-family: "Poppins-Light";
+            position: relative;
+            color: #DEDEDE;
+            cursor: pointer;
+            .back_arrow{
+                background-image: url(/assets/images/back_arrow.svg);
+                background-color: transparent;
+                background-position: left;
+                background-size: 100%;
+                height: 13px;
+                width: 39px;
+                background-repeat: no-repeat;
+            }
+        }
+
+    }
+}
+.socialShare{
+    position: fixed;
+    left: 0;
+    height: 50%;
+    top: 25%;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    ::ng-deep {
+        .sb-group{
+            flex-direction: column;
+        }
+    }
+}
+
+.first_child{
+    padding: .8vh !important;
+    outline: none !important
+}
+.competition_outer{
+    margin-top: 48px;
+    .competition_block_header{
+        p{
+            font-size: 3rem;
+            margin: 0px 0px 9px 0px !important;
+        }
+        .host_Detail{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .heading_1{
+                font-size: 1.6rem;
+                font-family: system-ui !important;
+                font-style: italic;
+                position: relative;
+                color: white;
+                padding: 1vh 0vh;
+                letter-spacing: 0.2vh;
+                font-weight: 100 !important;
+            }
+            .heading_2{
+                padding: 0vh 2vh;
+                font-size: 1.6rem;
+                font-family: 'Poppins-Light-Italic';
+                font-style: italic;
+                position: relative;
+                color: white;
+                letter-spacing: 0.2vh;
+                font-weight: 100 !important;
+            }
+        }
+
+    }
+.competition_outer_slide{
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    align-items: center;
+    .competition_slide{
+    position: relative;
+    padding: 2vh 2.1vh;
+    margin: 10px;
+    min-width: 153px;
+    border-radius: 6px;
+    height: 79px;
+    .competition_heading{
+        margin-top: -5px;
+        padding-right: 2vh;
+        font-size: 1.8rem;
+        font-weight: 500 !important;
+    }
+    .competition_label{
+        font-family: 'Poppins-Light-Italic';
+        margin-top: 13px;
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .competition_border{
+        position: absolute;
+        width: 2px;
+        height: 30px;
+        border: 1px solid #FEBB2E;
+        background-color: #FEBB2E;
+        top: 30%;
+        left: 0%;
+    } 
+    .competition_borders{
+      position: absolute;
+      width: 2px;
+      height: 30px;
+      border: 1px solid #FE6140;
+      background-color: #FE6140;
+      top: 30%;
+      left: 0%;
+  }
+    }
+
+}
+}
+.competition_bottom_layer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    .btn {
+        border-radius: 4px !important;
+    }
+    .btn_width{
+        width: 297px;
+        height: 48px;
+        font-size: 1.6rem;
+    }
+    // .btn{
+    //     height: 100% !important;
+    // }
+    // .btn_width{
+    //     background-color:#122F2F !important;
+    //     border: none;
+    //     color: #719E40;
+    //     font-weight: bold !important;
+    //     padding: 2vh 2.8vh;
+    // }
+    .header_buttons{
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        margin: 0vh 3.5vh;
+        background-size: 45%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .add{
+        background-image: url(/assets/images/add.svg);
+    }
+    .search{
+        background-image: url(/assets/images/search.svg);
+        background-color: transparent;
+        background-position: left;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        background-size: 40%;
+        border-radius: 0px;
+        margin-right: 15px;
+        padding-right: 60px;
+        margin-left: 20px;
+    }
+    .notification{
+        background-image: url(/assets/images/notification_icon.svg);
+    }
+    .back{
+        background-image: url(/assets/images/refresh_icon.svg);
+    }
+
+}
+@media only screen and (max-width: 1600px) {
+    .host_Detail{
+        .heading_1{
+            font-size: 1.4rem !important;
+        }
+        .heading_2{
+            font-size: 1.4rem !important;
+        }
+    }
+    .competition_block_header{
+        p{
+            font-size: 2.8rem !important;
+        }
+    }
+    .sec{
+        .heading{
+            font-size: 1.2rem !important;
+        }
+
+    }
+    .competition_heading{
+        font-size: 1.5rem !important;
+    }
+    .competition_label{
+        font-size: 1.2rem !important;
+    }
+
+    .competition_outer{
+    .competition_outer_slide{
+        .competition_slide{
+            padding: 2.2vh 2.2vh !important;
+            height: 100%;
+            min-width: 130px !important;
+        .competition_label{
+            font-size: 1.2rem !important;
+        }
+        }
+    }
+}
+    .competition_bottom_layer{
+        align-items: center !important;
+        // .btn_width{
+        //     color: #0DB983;
+        //     font-weight: bold !important;
+        // }
+        // .btn{
+        //     height: 100% !important;
+        // }
+        .header_buttons{
+            cursor: pointer !important;
+            width: 12.5vh !important;
+            height: 6vh !important;
+        }
+
+    }
+    .competition_border{
+        height: 25px !important;
+    }
+    .btn_width{
+      font-size: 1.4vh;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .btn_width{
+    font-size: 1.3rem !important;
+  }
+    .host_Detail{
+        .heading_1{
+            font-size: 1.1rem !important;
+        }
+        .heading_2{
+            font-size: 1.1rem !important;
+        }
+    }
+    .competition_block_header{
+        p{
+            font-size: 2.6rem !important;
+        }
+    }
+    .sec{
+        .heading{
+            font-size: 1.2rem !important;
+        }
+
+    }
+    .competition_heading{
+        font-size: 1.4rem !important;
+        margin-top: 0px !important;
+    }
+    .competition_label{
+        font-size: 1.0rem !important;
+    }
+    .competition_outer{
+        .competition_outer_slide{
+            .competition_slide{
+                height: 100%;
+                position: relative;
+                min-width: 110px !important;
+
+                padding: 2vh 2vh !important;
+            .competition_label{
+                font-size: 1.2rem !important;
+            }
+            }
+        }
+    }
+    .competition_bottom_layer{
+        align-items: center;
+        // .btn_width{
+        //     color: #0DB983;
+        //     font-weight: bold !important;
+        // }
+
+        .header_buttons{
+            cursor: pointer;
+            width: 10vh;
+            height: 9vh;
+            margin: 0vh 7vh;
+        }
+
+
+    }
+    .competition_border{
+        height: 22px !important;
+    }
+    .btn_width{
+      font-size: 1.4vh;
+  }
+}
+
+
+.child_1{
+  background-color: #323542;
+}
+.child_2{
+  background-color: #2d303e;
+}
+.child_3{
+  background-color: #2d303c;
+}
+.child_4{
+  background-color: #272a36;
+}
+.child_5{
+  background-color: #262835;
+}
+.child_6{
+  background-color: #262836;
+}
+.child_7{
+  background-color: #20222f;
+}
+.btn_child_1{
+  background-color: #272a3b !important;
+}
+.btn_child_2{
+  background-color: #3a3d4e !important;
+}
+.btn_child_3{
+  background-color: #343747 !important;
+}
+
+.display_hiddens{
+    display: none !important;
+}
+.mobile_hiddens{
+    display: initial !important 
+}
+@media only screen and (max-width: 800px) {
+    .competition_card_layout{
+        flex-wrap: wrap !important;
+    }
+    .btn_width {
+        width: 200px !important;
+        height: 33px !important;
+    }
+    .competition_bottom_layer .header_buttons {
+    margin: 0px 15px  !important;
+    width: 33px !important;
+    height: 33px !important;
+    background-size: 100% !important;
+    }
+    .competition_outer .competition_outer_slide {
+        flex-wrap: wrap !important;
+    }
+    .competition_outer .competition_outer_slide .competition_slide {
+        width: 43% !important;
+        min-width:  auto !important;
+    }
+    .competition_outer .competition_block_header p {
+        font-size: 1.8rem !important;
+        margin: 0px 0px 1px 0px !important;
+    }
+    .common_wraps {
+        padding: 0% 4% 2% 4% !important;
+    }
+    .display_hiddens{
+        display: initial !important;
+    }
+    .mobile_hiddens{
+        display: none !important 
+    }
+    .competition_breadcrumb{
+        display: none;
+    }
+    @media only screen and (max-width: 500px) {
+        .socialShare{
+            ::ng-deep {
+                .sb-group{
+                    display: none;
+                }
+            }
+           
+        }
+    }
+}
+

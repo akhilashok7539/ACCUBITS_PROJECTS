@@ -1,0 +1,22 @@
+<div *ngIf="!loading && competition_detail" >
+<app-admin-match-overviews [competition_detail]='competition_detail' [competition_days]='competition_days'></app-admin-match-overviews>
+<section  class="common_wraps">
+    <div class="competition_detail " #input1>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'leader'}" (click)="onClick('leader')">
+            <div class="heading">
+                Leaderboard
+            </div>
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'result'}" (click)="onClick('result')" *ngIf="loggedIn">
+            <div class="heading">
+                Results
+            </div>
+            
+        </div>
+    </div>
+    <app-admin-match-leaderboard [competition_detail]='competition_detail' *ngIf="isactive === 'leader'"></app-admin-match-leaderboard>
+    <app-admin-match-result [competition_detail]='competition_detail'  *ngIf="isactive === 'result'"></app-admin-match-result>
+</section>
+
+</div>
+

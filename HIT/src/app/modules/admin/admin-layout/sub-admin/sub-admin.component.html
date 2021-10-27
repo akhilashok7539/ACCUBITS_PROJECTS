@@ -1,0 +1,63 @@
+<section>
+    <div class="admin_block_header">
+        <section class="add_admin_out">
+            <p>Admin Management</p>
+            <button type="submit"  (click)="openDialog()" class="btn btn-primary">Add Admin</button>
+        </section>
+        <div class="tes">
+            <input type="text" appDebounce
+            [delay]='700' [ngModel]="searchText"  
+            (getValue)="getData($event)" class="form-control" placeholder="Search Admins">
+        </div>
+    </div>
+</section>
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='30%'>Name</th>
+            <th width='40%'>E-mail</th>
+            <th width='20%'>Phone</th> 
+            <th>Role</th>
+            <th width='10%'></th> 
+        </tr>
+        <tbody>
+            <tr *ngFor="let item of adminList | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}; let i=index">
+                <td width='30%'>
+                    {{item.firstName}} {{item.lastName}}
+                </td>
+                <td width='40%'>
+                    {{item.email}}
+                </td>
+                <td width='20%'>
+                    <div *ngIf='select_index !== i'>
+                        {{item.mobileNumber}}
+                    </div>
+                </td>
+                <td>
+                    {{getadminrole(item.type).name}}
+                </td>
+                <td width='10%'>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="editAdmin(item)">
+                          <span>Edit</span>
+                        </button>
+                        <button *ngIf="adminType == 2" mat-menu-item (click)="deleteAdmin(item)">
+                            <span>Delete</span>
+                          </button>
+                      </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+    <div *ngIf='adminList.length === 0' class="no_data_found">
+        <img src="/assets/images/noData.svg">
+        <p>No data available !!</p>
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

@@ -1,0 +1,70 @@
+<section class="all_friends_wrap">
+    <ng-container *ngFor="let item of allFriendsList?.rows;let i=index">
+        <div class="all_friends_list">
+            <div class="user_details">
+                <ng-container *ngIf="item?.friendInfo?.image; else elseTemplate">
+                    <div class="profile_icon" [style.background]="'url(' + item?.friendInfo?.image + ')'"></div>  
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="profile_icon"></div>
+                </ng-template>
+                <div class="align_name" (click)="onViewProfile(item)">{{item?.friendInfo?.username}}
+                    <p>{{item?.friendInfo?.friendsCount}} {{'login.friends' | translate}}</p>
+                </div>
+            </div>
+            <div class="games_details"> 
+                <div>
+                <span class="gamesplayed">{{'competition.JoinedCompetitions' | translate}} </span>
+                {{item?.competitionsPlayed  | number:'2.0'}}
+
+                   
+
+                </div>
+                <!-- <span>Games Played</span> -->
+                <!-- <p>p</p> -->
+            </div>
+            <!-- <div class="games_details hidden"> 
+                <div>
+                    <div>{{item?.competitionsPlayed  | number:'2.0'}}</div>
+                    <span>Games Played</span>
+                </div>
+                <div *ngIf="item?.friendInfo?.isAuthUser==0">
+                    <div class="competition_option_view_add" *ngIf="!ownProfile"> 
+                        <div class="request_icon" *ngIf="item?.friendInfo?.isRequested==1"></div>
+                        <div class=" follow_icon"*ngIf="item?.friendInfo?.isFriend==0 && item?.friendInfo?.isRequested==0" (click)="sendFriendRequest(item.friendInfo.guid,i)"></div>
+                        <div class="follow_add" *ngIf="item?.friendInfo?.isFriend==1"></div> 
+                    </div>
+                </div>
+            </div> -->
+            <div class="actions">
+                <ng-container *ngIf="item?.friendInfo?.isAuthUser==0">
+                    <ng-container *ngIf="ownProfile; else reqTemplate">
+                        <div class="icon_background ml_2 hidden"> 
+                            <div class="messages" (click)="onMessage(item)">
+                            </div>
+                        </div>
+
+                        <div class="dis_hidden" (click)="onMessage(item)">{{'competitionTag.msg' | translate}}</div>
+                        <div (click)="blockFriends(item)">{{'competitionTag.block' | translate}}</div>
+                    </ng-container>
+                    <ng-template #reqTemplate>
+                        <div class="competition_option_view_add"> 
+                            <section class="request_icon" *ngIf="item?.friendInfo?.isRequested==1"></section>
+                            <section class=" follow_icon"*ngIf="item?.friendInfo?.isFriend==0 && item?.friendInfo?.isRequested==0" (click)="sendFriendRequest(item.friendInfo.guid,i)"></section>
+                            <section class="follow_add" *ngIf="item?.friendInfo?.isFriend==1"></section> 
+                        </div>
+                        
+                        <!-- <div  class="isFriend req_btn"></div>
+                        <div  class="addFriend req_btn"></div>
+                        <div  class="requestFriend req_btn"></div> -->
+                    </ng-template>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+    <div class="see-btn" *ngIf="allFriendsList?.totalCount>10 && show" (click)="onSelect(allFriendsList)">{{'feeds.seeAll' | translate}}</div>
+    <ng-container *ngIf="allFriendsList?.rows.length==0">
+        <p>No Friends to show</p>
+    </ng-container>
+    
+</section>

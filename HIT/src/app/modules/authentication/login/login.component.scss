@@ -1,0 +1,46 @@
+.focusInputImage{
+    position: relative;
+    input{
+        background-image: url(/assets/images/view.svg);
+    }
+    input:focus{
+        background-image: url(/assets/images/eye_open_green.svg);
+    }
+}
+.show-password{
+    input{
+        background-image: url(/assets/images/visibility.svg);
+    }
+}
+.hidden_desktop{
+    display: none;
+}
+@media only screen and (max-width: 500px) {
+    .hidden_mobile {
+      display: none !important;
+    }
+    .hidden_title{
+        padding: 20px 0px;
+    }
+    .hidden_desktop{
+        display: initial;
+        margin: 0 auto !important;
+        font-size: 15.3px;
+    }
+    .icon{
+        width: 41px;
+        height: 30px;
+    }
+    }
+    .or{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+    }
+.center{
+    text-align: center;
+}
+.submitbutton{
+    width: 80%;
+    padding: 0;
+}

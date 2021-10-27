@@ -1,0 +1,39 @@
+<div class="cancel_overlay" ></div>
+<div class="popup_out review_pop common_popup">
+    <div class="common_pop_head review_pop_head">
+        <div class="close_common" (click)='closePopup()'></div>
+        <p>Would you like to join the competition ?</p> 
+    </div>
+    <section class="competition_card_image">
+        <div class="user_avatar" >
+        </div>
+    </section>
+    <div class="review_base">
+        <p>{{competition_detail?.name}}</p>
+      <span>{{'competitionTag.hostedBy' | translate}} : {{competition_detail?.user?.username}}</span> | <span> ID : {{competition_detail?.competitionId}}</span> |
+       <span *ngIf='competition_detail.type === 2'> Championship competition</span>
+       <span *ngIf='competition_detail.type === 1'> One Time competition</span>
+    </div>
+    <div class="review_base mb_1">
+      <span>Entry cost : {{competition_detail?.entryCostInUSD * competition_detail?.conversionRate | number:'1.2-2'}} {{competition_detail?.conversionCurrency}}</span>
+    </div>
+    <div class="betting_price">
+        <span>{{'competitionTag.winningPrize' | translate}} : {{competition_detail?.totalPrizeInUSD * competition_detail?.conversionRate | number:'1.2-2'}} {{competition_detail?.conversionCurrency}}</span>
+      </div>
+      <div class="betting_detail">
+        <span>By Clicking yes,{{competition_detail?.entryCostInUSD * competition_detail?.conversionRate | number:'1.2-2'}} {{competition_detail?.conversionCurrency}} will be deducted from your wallet which is not refundable. </span>
+      </div>
+      <div class="button_layout">
+        <!-- <div class="button_create">
+            <button class="btn btn-primary view_btn" (click)='onView()'>
+                View
+            </button>
+        </div> -->
+        <div class="button_create">
+            <button class="btn btn-primary" (click)='onNavigate()'>
+                Yes 
+            </button>
+        </div>
+      </div>
+  
+</div>

@@ -1,0 +1,64 @@
+{
+  "countryName": "Brazil",
+  "countryCode": "BR",
+  "currency": "BRL",
+  "cashoutFields": {
+    "documentType": {
+      "type": "String",
+      "in": [ "CPF", "CNPJ" ]
+    },
+    "documentId": {
+      "type": "Numeric",
+      "minLength": {
+        "CPF": 11,
+        "CNPJ": 12
+      },
+      "maxLength": {
+        "CPF": 11,
+        "CNPJ": 14
+      }
+    },
+    "amount": {
+      "type": "Number",
+      "decimalPlaces": 2
+    },
+    "bankAccount": {
+      "type": "Numeric",
+      "maxLength": 22
+    },
+    "beneficiaryName": {
+      "type": "String",
+      "maxLength": 100
+    },
+    "accountType": {
+      "type": "String",
+      "in": [ "C", "S", "O", "P" ],
+      "config": {
+        "C": "Checkings account",
+        "S": "Savings account",
+        "O": "Joint checkings",
+        "P": "Joint savings account"
+      }
+    },
+    "bankBranch": {
+      "type": "String",
+      "config": {
+        "001": [ "^\\d{1,4}(-)?[\\dxX]$", "^0{0,4}(-)?[\\dxX]$" ],
+        "033": [ "^\\d{1,4}$", "^033$" ],
+        "041": [ "^\\d{1,4}(-)?[\\dxX]$" ],
+        "077": [ "^\\d{1,4}(-)?[\\d]$", "^0{0,3}77$" ],
+        "104": [ "^\\d{1,4}(-)?[\\d]$", "^001$|^013$|^023$|^104$" ],
+        "212": [ "^\\d{1,4}(-)?[\\d]$", "^0{0,2}212$" ],
+        "237": [ "^\\d{1,4}(-)?[\\d]$", "^237$" ],
+        "260": [ "^\\d{1,4}(-)?[\\d]$", "^0{0,2}260$" ],
+        "290": [ "^\\d{3}(-)?[\\d]$", "^0{0,2}290$" ],
+        "341": [ "^\\d{1,4}(-)?[\\d]$", "^341$" ],
+        "other": [ "^\\d{1,4}(-)?[\\d]$" ]
+      }
+    },
+    "bankCode": {
+      "type": "Numeric",
+      "minLength": 3
+    }
+  }
+}

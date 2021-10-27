@@ -1,0 +1,19 @@
+@media only screen and (max-width: 800px) {
+    .rules_outer {
+        padding: 3rem 3rem 3rem 3rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .rules_outer .rules_head {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 5rem;
+        color: white;
+        position: relative;
+    }
+    .rules_outer .rules_wrap {
+        margin-bottom: 6rem;
+        font-family: Poppins-Light;
+        overflow-wrap: break-word;
+    }
+}

@@ -1,0 +1,102 @@
+<section>
+    <div class="admin_block_header">
+        <section>
+            <p>Competition Management</p> 
+        </section> 
+        <section>
+            <span>Total Management Fee</span>
+            <p class="revenue">{{total_mang_fee}} USD</p> 
+        </section> 
+            
+    </div>
+    <div class="admin_block_header mt_30">
+
+            <div class="form-group date-form">
+                <input readonly matInput (click)="pickerFrom.open()" placeholder="From Date" #searchFromInput name="fromDate" (dateChange)="fromDateChanged($event)" [matDatepicker]="pickerFrom" class="form-control" />
+                <mat-datepicker #pickerFrom></mat-datepicker>
+                <div class="clear_picker" (click)="clearFrom()" *ngIf="leagueFromDate"></div>
+            </div>
+            <div class="form-group date-form">
+                <input readonly matInput (click)="picker.open()" placeholder="To Date" #searchToInput name="toDate" (dateChange)="toDateChanged($event)" [matDatepicker]="picker" class="form-control" />
+                <div class="clear_picker" (click)="clearTo()" *ngIf="leagueToDate"></div>
+                <mat-datepicker #picker></mat-datepicker>      
+            </div>
+            <div class="form-control search_button" (click)="searchGames()"></div>
+
+        <input type="text" appDebounce
+        [delay]='700' [ngModel]="searchText"  
+        (getValue)="getData($event)" class="form-control search_box" placeholder="Search Users">
+
+    </div>
+</section>
+<section class="admin_table_layout">
+    <table class="table_spacing">
+        <tr>
+            <th width='10%'>Competition Name</th>
+            <th width='10%'>Competition Id</th>
+            <th width='10%'>Type</th>
+            <th width='10%'>Host</th>
+            <th width='10%'>Total Prize</th>
+            <th width='10%'>Management Fee</th>
+            <th width='10%'>People Joined</th>
+            <th width='10%'>Created On</th>
+            <th width='10%'>Created Time</th>
+            <th width='15%'>Status</th>
+            <th width='15%' class="text-center"></th> 
+        </tr>
+        <tr *ngFor='let data of match_details| paginate: { itemsPerPage: limit, currentPage:p,totalItems: total}; let i=index'>
+            <td width='10%'>
+                {{data.name}}
+            </td>
+            <td width='10%'>
+                {{data.competitionId}}
+            </td>
+            <td width='10%'>
+                {{data.type==1?"One Time":"Championship"}}
+            </td>
+            <td width='10%'>
+                {{data.user.username}}
+            </td>
+            <td width='10%'>
+                {{data.totalPrizeInUSD}} USD
+            </td>
+            <td width='10%'>
+                {{data.managementFee}} USD
+            </td>
+            <td width='10%'>
+                {{data.peopleJoined}}
+            </td>
+            <td  width='10%'>
+                {{data.createdAt | date:'dd MMM yyyy'}}
+            </td>
+            <td width='10%'>
+                {{data.createdAt | date:'h:mm a'}}
+            </td>
+            <td width='15%' *ngIf='data.status === 1'>
+                <div class="actives"></div>
+                Active
+            </td>
+            <td width='15%'*ngIf='data.status === 2'>
+                <div class="expire"></div>
+                Closed
+            </td>
+            <td width='15%' *ngIf='data.status === 3'>
+                <div class="inactives"></div>
+                Cancelled
+            </td>
+            <td width='15%' class="text-right td_last">
+                <div class="admn_view_btn" (click)='viewGame(data)'>
+                    <p>View</p>
+                </div>
+            </td>
+        </tr>
+
+
+    </table>
+    <div *ngIf='match_details.length === 0' class="text-center pd_16">
+        No Competition Available
+    </div>
+</section>
+<section class="paginator_admin" *ngIf="total>10">
+    <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+</section>

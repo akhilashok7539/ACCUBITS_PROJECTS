@@ -1,0 +1,62 @@
+<section class="login">
+    <div class="login_container">
+        <div class="row">
+            <div class="col-6 hide">
+                <div class="fill">
+                </div>    
+            </div>
+            <div class="col-6 full_width text-center">
+                <div class="login_layout">
+                    <div class="login_detail">
+                        <div *ngIf='!otpClick && !forgetPassword'>
+                        <div class="logo"></div> 
+                        <div class="title1">Welcome to</div>
+                        <div class="title2">Aveza</div>
+                        <form [formGroup]="loginForm">
+                            <div class="form-group">
+                                <label class="form-label">Email ID</label>
+                                <input type="mail" placeholder="Enter your email address" autocomplete="off" formControlName="email" class="form-control" />
+                                <app-form-error [control]="loginForm.get('email')" validatorName="required">
+                                    Email ID is required.
+                                </app-form-error>
+                            </div>
+                            <div class="form-group mt-20">
+                                <a routerLink="/" class="forget_password" (click)='forgetPasswordClick()'>Forget Password?</a>
+                                <label class="form-label">Password</label>
+                                <section class="focusInputImage" [ngClass]="{'show-password':passwordShow}">
+                                    <input type="{{type}}" formControlName="password" class="form-control" />
+                                    <div class="showHideClick" (click)="showPassword()"></div>
+                                </section>
+                                <!-- <input type="password" placeholder="Enter Password" autocomplete="off" formControlName="password" class="form-control" /> -->
+                                <div class="showHideClick" (click)="showPassword()"></div>
+                                <app-form-error [control]="loginForm.get('password')" validatorName="required">
+                                    Password is required.
+                                </app-form-error>
+                                <app-form-error [control]="loginForm.get('password')" validatorName="pattern">
+                                    Password must have a number and a uppercase character with minimum 8 characters long.
+                                </app-form-error>
+                            </div>
+                    
+                            <div class="form-btn mt-60">
+                                <button [disabled]="loginForm.invalid" class="btn-full btn btn-primary" (click)="login()">Login</button>
+                            </div>
+                            <div class="form-btn mt-20">
+                                <button *ngIf='!forgetPassword' [disabled]="!loginForm.value.email" class="outline_btn outline_btn-full btn-primary" (click)='loginWithOtp()'>Login with OTP</button>
+                            </div>
+                        </form>
+                        </div>
+                        <app-login-with-otp [EmailGotFromForgetPassword]='EmailGotFromForgetPassword' *ngIf='otpClick' (onBackFromOTP)="onBackFromOTP($event)"></app-login-with-otp>
+                        <app-login-forget-password [headingForEmailPage]='headingForEmailPage' *ngIf='forgetPassword' [loginDetails]='loginDetails' (onNextClick)='onNext($event)' (onBackClick)="onBack()"></app-login-forget-password>
+                    </div>
+                    <div>
+                    </div>
+                </div>   
+                <div class="footer">
+                    <span>aveza@copyright</span>
+                    <span class="spacing">|</span>
+                    <span>2020</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

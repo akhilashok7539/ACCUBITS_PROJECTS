@@ -1,0 +1,47 @@
+.foot-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5%;
+    padding-bottom: 3.8%;
+    .f-menu{
+        ul{
+            display: flex;
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            li{
+                font-family: "Poppins-Light";
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 1.2rem;
+                position: relative;
+                padding-left: 30px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 10px;
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 50%;
+                    background-color: #3eb983;
+                }
+            }
+        }
+    }
+    .f-share{
+        display: none;
+        .share-icon{
+            width: 28px;
+            height: 28px;
+            background-image: url(/assets/images/love.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .share-txt{
+            font-family: Poppins-Medium;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2rem;
+            padding-left: 12px;
+        }
+    }
+}

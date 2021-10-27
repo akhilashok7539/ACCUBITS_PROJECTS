@@ -1,0 +1,125 @@
+table { 
+	width: 100%;
+    border-collapse: collapse;
+    margin: 5px auto;
+    box-shadow: -1px -2px 31px -21px rgb(0 0 0 / 75%);
+	}
+
+// tr:nth-of-type(odd) { 
+// 	background: #eee; 
+// 	}
+
+th { 
+	background: #F3F2F2; 
+	color: #959595; 
+	font-weight: bold; 
+	}
+
+     th { 
+	padding: 14px 14px; 
+	text-align: left; 
+	font-size: 1.2rem;
+    font-weight: 400;
+	position: relative;
+	}
+    th:first-child { 
+        border-radius: 8px 0px 0px 0px;
+        }
+    th:last-child { 
+        border-radius: 0px 8px 0px 0px;
+        }
+
+    td { 
+        padding: 14px 14px;
+        border-bottom: 4px solid #fbfbfb;
+        text-align: left;
+        font-size: 1.2rem;
+        font-weight: 400;
+        background-color: white;
+        }
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 15px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+//to add sort in table
+ .sort {
+    background-image: url(/assets/images/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    width: 15px;
+    height: 0px;
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+.SortDown {
+    background-image: url(/assets/images/desc.gif);
+}
+
+.SortUp {
+    background-image: url(/assets/images/asc.gif);
+}
+
+.sort_filter {
+    background-image: url(/assets/images/filter.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    background-size: 9px;
+    width: 10px;
+    height: 0px;
+    display: inline-block;
+    margin-left: 4px;
+    padding-top: 9px;
+}

@@ -1,0 +1,1461 @@
+{
+    "noRecords": "Sem Registros Encontrados",
+    "login": {
+        "mainText": "Entre na versão Beta do Hit e mostre que seus palpites valem muito!",
+        "subscribeemail": "Quero receber receber promoções, notícias e informações de eventos",
+        "signIn": "Entrar",
+        "signInHead": "Bem-vindo ao Clube, sinta-se em casa",
+        "userEmail": "Nome de usuário/Email",
+        "password": "Senha",
+        "forgotPassword": "Esqueceu a senha?",
+        "login": "Entrar",
+        "orSigninWith": "Ou continue com",
+        "signInWithGoogle": "Google",
+        "Facebook": "Facebook",
+        "notARegUser": "Ainda não é membro?",
+        "signUp": "Criar Conta ",
+        "emailId": "Email",
+        "verifyEmail": "Verificação de e-mail",
+        "otpToast": "Enviamos um código de confirmação para o seu email",
+        "submitOtp": "Verificar",
+        "resendOtp": "Reenviar código",
+        "submitBasic": "Cadastre suas informações básicas",
+        "username": "Nome de usuário",
+        "firstname": "Primeiro Nome",
+        "PhoneNumber": "Número de celular",
+        "iAgree": "Eu concordo com os",
+        "t&c": "termos e condições",
+        "privacyPolicy": "Política de Privacidade",
+        "continue": "Continuar",
+        "alreadyRegitered": "Já é membro ?",
+        "sigupWith": "Ou entre com",
+        "verify": "Verificação de e-mail",
+        "friends": "Amigos ",
+        "resendmgsnote": "*Se o email ainda não chegou, por favor cheque sua caixa de spam.",
+        "verifymsg": "Por motivos de segurança, precisamos que você verifique seu endereço de e-mail.Nós lhe enviamos um código de verificação para o seu email:"
+    },
+    "password": {
+        "msg1": "A senha deve ter pelo menos 8 caracteres e conter:",
+        "msg2": "-letra minúsuca;",
+        "msg3": "-letra maiúscula;",
+        "msg4": "-caracter especial;",
+        "msg5": "-número;",
+        "dotnmatch": "As senhas não coincidem"
+
+    },
+    "forms": {
+        "username": "Nome de usuário",
+        "firstname": "Primeiro Nome",
+        "lastname": "Sobrenome",
+        "phonenumber": "Número de celular",
+        "currency": "Moeda",
+        "country": "País",
+        "searchcountry": "Pesquisar País",
+        "dob": "Data de Nascimento",
+        "date": "Selecione a Data",
+        "address1": "Endereço - Linha 1",
+        "address2": "Endereço - Linha 2",
+        "state": "Estado",
+        "searcgstate": "Pesquisar Estado",
+        "city": "Cidade",
+        "searchcity": "Pesquisar Cidade",
+        "zipcode": "CEP",
+        "depositelimit": "Configurar Limite de Depósitos agora",
+        "amount": "Total",
+        "recurrence": "Recorrência",
+        "ChooseRecurrance": "Escolha uma Recorrência",
+        "duration": "Duração",
+        "durationtodate": "Até a Data",
+        "betlimit": "Configurar Limite de Apostas agora",
+        "terms": "Eu concordo com os Termos e Condições e Política de Privacidade",
+        "subscribe": "Yes, Please keep me updated on news,events and offers",
+
+        "createyourpassword": "Crie sua senha",
+        "updateyoutpassword": "atualizar sua senha",
+        "passwordcreate": "Criar Senha",
+        "strongpasswordcreate": "Para sua segurança, crie uma senha forte.",
+        "password": "Senha",
+        "renterpassword": "Confirmar Senha",
+        "forgotrenterpassword": "",
+        "login": "Entrar",
+        "resetpasswordmsg": "Não se preocupe! Redefinir sua senha é fácil. Digite seu email e enviaremos os direcionamentos para sua caixa de entrada.",
+        "enteremail": "Digite seu e-mal",
+        "sendOTP": "Redefinir senha",
+        "unselectselfexclude": "Auto-Exclusão desabilitada",
+        "selctedSelfexlcude": "Auto-Exclusão habilitada",
+        "indefinite": "Auto-Exlclusão indeterminada",
+        "definite": "Auto-Exlclusão determinada",
+        "Resetpassword": "Redefinir senha",
+
+        "from": "De",
+        "to": "Até",
+        "Cancel": "Cancelar",
+        "Save": "Salvar",
+        "join": "Participar @",
+        "aboutYou": "Acerca de ti",
+        "somemoreinfo": "Informações Adicionais",
+        "addressinfo": "Informações de Endereço",
+        "aboutusparagraph": "Please, enter correct information. We may eventually request identity verification for security reasons.",
+        "fullname": "Nome Completo",
+        "fulladdress": "Endereço Completo",
+        "enterfulladdress": "Enter your Endereço Completo",
+        "passowrdparagraph": "Por fim, crie uma senha forte para sua segurança.",
+        "welcometohit": "Bem-vindo ao Hit!",
+        "paragraph1": "Obrigado por criar sua conta. Agora você pode criar, participar de Ligas e muita resenha!",
+        "paragraph2": "Nós disponibilizamos a possibilidade de configurar limites de jogos para te ajudar a jogar de maneira responsável.Não se preocupe, você pode configurá-los depois nas configurações de sua conta.",
+        "idontwant": "Não quero configurar limites agora.",
+        "dontWorrry": "Não se preocupe! Redefinir sua senha é fácil. Digite seu email e enviaremos os direcionamentos para sua caixa de entrada.",
+        "accesshit": "Acesse o Hit!",
+        "next": "Continuar"
+    },
+
+    "filter": {
+        "all": "Todas",
+        "onetime": "Tiro Curto",
+        "championship": "Campeonato",
+        "Filter": "Ordenar",
+        "FilterBy": "Ordenar por",
+        "Popularity": "Participantes",
+        "Trending": "Em Alta",
+        "sortbyfee": "Valor de Entrada",
+        "sortbyprize": "Premiação Total",
+        "view": "Ver",
+        "result": "Resultados",
+        "share": "Compartilhar",
+        "nocompetionavailable": "Não há competições disponíveis",
+        "noHostedCompetion": "Não há competições disponíveis",
+        "noJoinedCompetion": "Não há competições disponíveis",
+        "noDataFound": "Não há competições disponíveis",
+        "remove": "Remover",
+        "prev": "Anterior",
+        "nxt": "Próxima",
+        "ChoosePlayer": "Usuário",
+        "AllPlayers": "Username"
+    },
+    "header": {
+        "home": "Home",
+        "competitions": "Ligas",
+        "teams": "Times",
+        "feed": "Feed",
+        "wallet": "Carteira",
+        "Today": "Hoje",
+
+        "createCompetition": "Criar Liga",
+        "logout": "Sair",
+        "activePlayer": "Liga",
+        "BettingClosesIn": "Palpites Encerram em"
+    },
+    "mode": {
+        "onetime": "Tiro Curto",
+        "champion": "Campeonato",
+        "public": "Pública",
+        "private": "Privada",
+        "hosted": "Ligas Criadas",
+
+        "kyctitle": "Verificação de Identidade (KYC)",
+        "kycpara": "Por questões de segurança, precisamos verificar sua identidade para que você continue aproveitando de todas funcionalidades do Hit."
+    },
+    "clubscard": {
+        "games": "Partidas",
+        "goal": "Gols Marcados",
+        "championship": "Campeonato",
+        "requestSent": "Solicitação Enviada",
+        "addfriend": "Adicionar amigo"
+
+
+    },
+    "transactions": {
+        "wallettoipup": "Depósito",
+        "completed": "Completada",
+        "Payment": "Pagamento"
+    },
+    "breadcumbs": {
+        "chooseagame": "Escolher Partidas",
+        "review": "Revisar ",
+        "nousers": "usuários"
+    },
+    "footer": {
+        "download": "Baixe Nosso Aplicativo",
+        "desc": "Jogue em qualquer hora e lugar",
+        "about_hit": "Conheca a Hit",
+        "about": "Sobre Nós",
+        "help": "Ajuda",
+        "your_account": "Sua Conta",
+        "create_compeition": "Criando Ligas",
+        "join_compeition": "Participando de Ligas",
+        "game_rule": "Regras dos Jogos",
+        "deposits": "Depósitos",
+        "withdrawal": "Retiradas",
+        "faq": "FAQ (Dúvidas Frequentes)",
+        "contact": "Contato",
+        "termpolicy": "Termos e Politicas",
+        "privacy": "Politica de Privacidade",
+        "terms": "Termos de Serviço",
+        "responsiblegame": "Jogo Responsável",
+        "responsiblegame1": "Apostar pode provocar dependência se não controlado corretamente, por favor jogue responsavelmente. Para informações sobre formas de apoio,acesse nossa página de Jogo",
+        "responsiblegame2": "",
+        "addresshead": "Endereço",
+        "address": "www.hit-game.com é operado pela P2P Entertainment BV, uma empresa constituída em Curaçao sob o número de registro 158303, localizada em KAYA W.F.G Jombi (Mensing) 24, unidade A - Willemstad, Curaçao e licenciada sob a licença número 1668/JAZ emitida para Curaçao eGaming. Os serviços administrativos e de suporte são gerenciados pela P2P Entertainment BV.",
+        "selfexlusion": "Auto-Exclusão",
+        "verification": "Verificação de Identidade (KYC)",
+        "dispute": "Resolução de Disputas",
+        "anti-money": "Anti-Lavagem de Dinheiro",
+        "fairness": "Justiça e RNG",
+        "personalData": "Dados Pessoais",
+        "kycandpolicyandpersonaldata": "Política de Privacidade, Dados e KYC",
+        "Accounts_Bonuses": "Contas, Pagamentos e Bônus"
+    },
+    "homePage": {
+        "mainHead": "Mostre que você entende de esportes, faça seus palpites",
+        "subHead": "Hit te coloca lado a lado com os amantes de esportes ao redor do mundo",
+        "trendingHead": "Ligas em Alta",
+        "trendingSubHead": "Ligas em Alta no momento",
+        "viewall": "Veja Todas Ligas",
+        "treandingHeader": "TRENDING "
+    },
+    "competitionTag": {
+        "days": "Dia(s)",
+        "matches": "Partidas",
+        "round": "Rodada",
+        "daysToClose": "Dias para Fechar",
+        "entryFee": "Entrada",
+        "entryfeeeforpopup": "Valor de Entrada",
+        "totalPrize": "Prêmio Total",
+        "extension": "(até o momento)",
+        "Willbeupdated": "A definir",
+        "totalPrizeforpopup": "Prêmio Total (até o momento)",
+        "moredays": "Dias",
+        "view": "Detalhes",
+        "join": "Entrar",
+        "back": "Voltar",
+        "duration": "Duração",
+        "clubs": "Times",
+        "mode": "Tipo",
+        "privacy": "Privacidade",
+        "participantsJoined": "Participantes",
+        "viewMatch": "Ver Partidas",
+        "viewClub": "Ver Times",
+        "viewProfile": "Ver Perfil",
+        "hostedBy": "Criada Por",
+        "createNow": "Criar Agora",
+        "entryfee": "Valor de Entrada",
+        "block": "Bloquear",
+        "msg": "Enviar Mensagem",
+        "winningPrize": "Prêmio Total (até então)",
+        "ResultGenerated": "Resultados",
+        "PointsEarned": "Pontos Ganhos",
+        "Type": "Modo",
+        "more": "Mais"
+    },
+    "tabs": {
+        "Leaderboard": "Ranking",
+        "Results": "Resultados",
+        "submitall": "Enviar Todos"
+
+    },
+    "hitofficial": {
+        "header": "Hit - Ligas Oficiais",
+        "paragraph": "Confira as Ligas Hit disponíveis"
+    },
+    "inviteDesc": {
+        "head": "Crie competições emocionantes e compartilhe o Hit!",
+        "desc": "Convide 5 amigos e ganhe $XX em créditos para jogar!"
+    },
+    "yourNews": {
+        "head": "Resultados das Suas Ligas",
+        "prediction": "Seu Palpite",
+        "view": "Detalhes"
+    },
+    "pagination": {
+        "prev": "Anterior",
+        "next": "Próxima"
+    },
+    "matches": {
+        "match": "Partidas",
+        "head": "Jogos da Liga",
+        "desc": "Você entende de futebol? Faça parte da liga agora e dê seus palpites!",
+        "closesIn": "Palpites Encerram em",
+        "overview": "Details",
+        "formation": "Formações",
+        "predictionClosed": "Palpites Encerrados em"
+
+    },
+    "tooltip": {
+        "text": "Ligas com 5+ partidas: usuário pode selecionar um Boost que dobrará (2x) seus pontos em uma das partidas.Ligas com 10+ partidas: além do Boost de 2x, há também um boost de 1.5x em uma outra partida"
+    },
+    "joinPop": {
+        "head": "Você deseja participar dessa competição?",
+        "confirm1": "Clicando em sim",
+        "confirm2": " será descontado da sua wallet.Esse valor não é reembolsável, a não ser que a Liga seja cancelada por falta de participantes ou outro acontecimento especial.",
+        "view": "Detalhes",
+        "yes": "Sim"
+    },
+    "betting": {
+        "makeBet": "Dê seus palpites!",
+        "bettingOverview": "Palpites",
+        "bettingClosesOn": "Prazo Final",
+        "teamA": "Gols do Mandante",
+        "teamB": "Gols do Visitante",
+        "pointBoost": "Boost",
+        "action": "Ver Informações",
+        "overview": "Informações",
+        "submit": "Enviar",
+        "makeabettext": "Fazer Palpite"
+    },
+    "leaderboard": {
+        "rank": "Ranking",
+        "name": "Usuário",
+        "posChange": "Variação",
+        "pointEarn": "Pontuação",
+        "priceEarn": "Premiação Recebida",
+        "noreasults": "Não há resultados disponíveis ainda"
+
+    },
+    "result": {
+        "resultGen": "Partidas Realizadas",
+        "actScore": "Placar Final",
+        "yourPrediction": "Seu Palpite",
+        "pointEarn": "Pontos",
+        "totalPoint": "Pontuação Total",
+        "pointboost": "Boost"
+    },
+    "competition": {
+        "head": "Confira todas as ligas",
+        "desc": "Encontre novas ligas, confira sua perfomance e veja seu histórico",
+        "hostedComp": "Ligas Criadas",
+        "BettingExpired": "Prazo Expirado",
+        "compHis": "Histórico",
+        "allcompetion": "Todas Ligas",
+        "JoinedCompetitions": "Ligas em Andamento",
+        "CompetitionHistory": "Seu Histórico",
+        "all": "Todas",
+        "joined": "Participando",
+        "histroy": "Histórico",
+        "hosted": "Ligas Criadas",
+        "validnumber": "Insira um número válido",
+        "enterprice": "Insira o valor aqui",
+        "matches": "Partidas",
+        "Leaderboard": "Ranking",
+        "Results": "Resultados"
+
+    },
+    "feeds": {
+        "viewProfile": "Ver perfil",
+        "followers": "Amigos",
+        "hostedComp": "Ligas Criadas",
+        "joinedComp": "Ligas em disputa",
+        "compHistory": "Histórico",
+        "changeCover": "Mudar foto de capa",
+        "timeline": "Linha do tempo",
+        "about": "Sobre",
+        "comments": "Comentários",
+        "likes": "Curtidas",
+        "shareSomething": "Aqui é lugar de mesa redonda, zoação, opinião, clubismo...Comece sua resenha aqui!  ",
+        "shareCompetition": "Compartilhe uma Liga",
+        "addcomptoshare": "Compartilhe alguma Liga",
+        "cancel": "Cancelar",
+        "publish": "Publicar",
+        "followRequests": "Solicitações de Amizade",
+        "reject": "Recusar",
+        "accept": "Aceitar",
+        "seeAll": "Ver Todos",
+        "mutualFollowers": "Amigos em Comum",
+        "clubpage": "Perfil do Clube",
+        "blockedUsers": "Usuários Bloqueados",
+        "AddComment": "Comentar",
+        "LoadMore": "Carregar Mais",
+        "nothing": "Nada a mostrar !!",
+        "addmoney": "Adicione créditos à sua carteira para participar de mais jogos!",
+        "at": "às"
+    },
+    "competiontabs": {
+        "Hosted": "Criadas",
+        "Joined": "Participando",
+        "History": "Histórico"
+    },
+    "timelineData": {
+        "PeopleJoined": "Participantes"
+
+    },
+    "bottombar": {
+        "comp": "Ligas",
+        "Feed": "Feed",
+        "Wallet": "Carteira"
+    },
+    "about": {
+        "Username": "Nome de Usuário",
+        "Email": "Email ",
+        "Instagram": "Instagram",
+        "Add": "Adicionar seu perfil do Instagram",
+        "Name": "Nome",
+        "Phone": "Número de Celular",
+        "Default": "Default Language",
+        "cancel": "Cancelar"
+    },
+    "review": {
+        "onetime": "Liga Turo Curto",
+        "champion": "Campeonato Curto",
+        "important": "Aviso Importante!"
+    },
+    "profileMenu": {
+        "Friends": "Amigos",
+        "Competitions": "Ligas Vencidas",
+        "Total": "Pontos Totais",
+        "TotalCompetitions": "Ligas Participadas",
+        "Timeline": "Timeline",
+        "About": "Sobre",
+        "Settings": "Configurações",
+        "coverpic": "Alterar Foto de Capa",
+        "back": "Voltar",
+        "uploadpic": "Fazer Upload de Foto",
+        "removepic": "Remover Foto",
+        "select1player": "Selecione 1 Jogador",
+        "howitworks": "Quer Saber Mais?",
+        "cancel": "Cancelar"
+    },
+    "wallet": {
+        "head": "Seu Saldo Atual",
+        "transactions": "Transações",
+        "redeem": "Sacar",
+        "addMoney": "Adicione Créditos",
+        "addSub": "Deposite Agora e Mostre Quem Sabe",
+        "amount": "Valor",
+        "addNow": "Depositar Agora",
+        "transDesc": "Veja Todas as Transações da sua Conta",
+        "tranId": "ID da Transação",
+        "tranType": "Tipo da Transação",
+        "time": "Data e Hora",
+        "credit": "Crédito",
+        "debit": "Débito",
+        "balance": "Saldo",
+        "filter": "Filtrar",
+        "daterange": "Selecionar Período",
+        "fromdate": "De",
+        "todate": "Até",
+        "transactionType": "Selecione o Tipo de Transação",
+        "type": "Selecione o Tipo",
+        "clear": "Limpar",
+        "applyfilter": "Aplicar Filtros",
+        "notransactionfound": "Não há transações disponíveis",
+        "nodatafound": "Nenhum dado encontrado"
+    },
+    "sortFilter": {
+        "Filter": "Ordenar",
+        "FilterBy": "Ordenar por:",
+        "Popularity": "Participantes",
+        "Trending": "Em Alta",
+        "Entryfee": "Valor de Entrada",
+        "SortByPrize": "Premiação Total"
+    },
+    "createCompetition": {
+        "chooseMode": "Escolha o Modo da Liga",
+        "modeDiff": "Tiro Curto = escolha partidas de um ou mais campeonatos e personalize como quiser",
+        "modeDiff2": "Campeonato = escolha um campeonato e jogue nele até o final, prêmios por rodada também serão distribuidos",
+        "knowMore": "Saiba Mais ?",
+        "oneTime": "Tiro Curto",
+        "championship": "Campeonato",
+        "createYourComp": "Crie Sua Liga",
+        "createCompSubHead": "Esse é o pontapé para criar uma liga emocionante",
+        "compMode": "Modo da Liga",
+        "privacy": "Privacidade",
+        "selCompPrivacy": "Selecione a privacidade da liga",
+        "competitionName": "Nome da Liga",
+        "enterCompName": "Diferencia sua Liga das demais",
+        "inviteFriends": "Convide Seus Amigos",
+        "noFriendsInvited": "Nenhum amigo convidado",
+        "FriendsInvited": "Amigos Convidados",
+        "doItNow": "Seguinte",
+        "swapType": "Alterar Modo",
+        "chooseGames": "Selecione as Partidas Desejadas",
+        "chooseGameSubHead": "Você Pode Escolher Diversas Partidas de Ligas Diferentes",
+        "from": "De",
+        "to": "Até",
+        "selectGame": "Selecionar Campeonato",
+        "searchLeague": "Pesquisar Por Campeonato",
+        "noGameSelected": "Nenhuma Partida Selecionada",
+        "continue": "Continuar",
+        "trendingGames": "Partidas em Alta",
+        "minimumFive": "Selecione Pelo Menos 5 Partidas",
+        "entryFeeForComp": "Defina um Preço de Entrada para sua Liga",
+        "moreAboutFee": "Esse é o valor que cada participante deverá pagar para participar da Liga.",
+        "pricePerMatch": "Valor por Partida",
+        "totalPrice": "Valor de Entrada",
+        "review": "Revisar",
+        "ReviewYourCompetition": "Revise a Sua Liga",
+        "yourLastStep": "Certifique-se se tudo está como você quer",
+        "createCompetiotion": "Criar",
+        "invitedList": "Amigos Convidados",
+        "inviteMore": "Convide Mais Amigos",
+        "SearchFriends": "Procure amigos para convidar",
+        "clear": "Limpar",
+        "choosegame": "Escolher Partidas",
+        "minpricepermatch": "*Valor mínimo por partida é de ",
+        "yes": "yes",
+        "preditedMatch": "Palpites Realizados",
+        "championplayer": "Artilheiro",
+        "pointBoost": "Boost",
+        "InvitedPeople": "Amigos Convidados",
+        "notificationMsgNo": "Sem novas notificações",
+        "edit": "Editar"
+    },
+    "walletwidraw": {
+        "msg": "Enviaremos os fundos de volta ao método de pagamento utilizado para depositar os fundos originais. Por favor, confirme que a conta está ativa.",
+        "contactus": "Contate-nos",
+        "continue": "Continuar",
+        "friends": "Sugestões de Amizade"
+
+    },
+    "teams": {
+        "head": "Times",
+        "subHead": "Ver e filtrar todos os times",
+        "upcomingMathch": "Próxima partida",
+        "noUpcomingMatch": "Sem próximas partidas disponíveis",
+        "squad": "Equipe",
+        "fixtures": "Partidas"
+    },
+    "notification": {
+        "all": "Todas",
+        "unread": "Não lidas",
+        "header": "Notificações"
+
+    },
+    "search": {
+        "head": "Busque ligas ou pessoas aqui",
+        "searchHere": "Faça sua busca aqui",
+        "competition": "Ligas",
+        "players": "Usuários",
+        "searchResult": "Resultados da busca"
+    },
+    "responsibleGame": {
+        "mainHead": "Jogo Responsável",
+        "list": {
+            "list1": "Como posso apostar de forma responsável?",
+            "list2": "O que é Problema de Jogo?",
+            "list3": "Sinais de Problemas de Jogo",
+            "list4": "Organizações Úteis",
+            "list5": "Alguém com menos de 18 anos está apostando no Hit?",
+            "list6": "Como configurar limites de depósito e aposta?",
+            "list7": "Como desativar ou excluir a conta?"
+
+        },
+        "sec1": {
+            "title": "¿Cómo puedo apostar de forma responsable?",
+            "l1": "Veja a atividade de apostas como uma forma de entretenimento e não como uma fonte de renda.",
+            "l2": "Aposte somente o que pode perder.",
+            "l3": "Nunca tente recuperar perdas, já que isto pode causar problemas.",
+            "l4": "Monitore a quantidade de tempo que você passa jogando.",
+            "l5": "Equilibre sua atividade de apostas com outras atividades. Quando a atividade de apostas vira a sua única forma de entretenimento, você deve parar e refletir sobre se ainda está se divertindo ou não.",
+            "l6": "Faça pausas regulares na sua atividade de apostas. Apostar continuamente pode fazer com que você perca a noção de tempo e espaço.",
+            "l7": "Não aposte se estiver sob influência de álcool ou se estiver triste ou deprimido já que isto pode afetar a sua habilidade de tomar decisões.",
+            "l8": "Pense em quanto tempo e dinheiro você gasta jogando. Entenda as suas chances de ganhar ecomo funciona o produto.",
+            "l9": "Entenda sua chance de ganhar e como o produto funciona.",
+            "l10": "Saiba que se algum dia você precisar falar com alguém sobre um Problemas de Jogo você pode contatar umaorganização de apoio sobre problemas de jogo."
+        },
+        "sec2": {
+            "title": "O que é Problema de Jogo?",
+            "p": "Problema de jogo é quando a atividade de apostas compromete, atrapalha ou danifica sua família, vida pessoal ou hora de lazer. Um jogador com problema de jogo é tipicamente descrito como alguém que gasta mais tempo e/ou dinheiro apostando do que pode."
+        },
+        "sec3": {
+            "title": "Sinais de Problemas de Jogo",
+            "l1": "Gastar mais dinheiro e tempo apostando do que pode",
+            "l2": "Ter dificuldade em gerenciar suas apostas ou em parar de apostar",
+            "l3": "Ter brigas com a família ou com amigos sobre dinheiro e apostas",
+            "l4": "Perder o interesse nas suas atividades ou hobbies usuais como, por exemplo, deixar de - sair com amigos ou passar tempo com a sua família",
+            "l5": "Estar constantemente pensando em ou falando sobre apostas",
+            "l6": "Mentir sobre sua atividade de apostas ou escondê-la das outras pessoas",
+            "l7": "Tentar recuperar perdas ou apostar para sair de dificuldades financeiras",
+            "l8": "Apostar até que todo o seu dinheiro tenha acabado",
+            "l9": "Pedir dinheiro emprestado, vender bens ou deixar de pagar contas para financiar suas apostas",
+            "l10": "Precisar apostar com grandes quantias de dinheiro ou por mais tempo para atingir o mesmo sentimento de entusiasmo e euforia",
+            "l11": "Negligenciar trabalho, universidade, família, necessidades pessoais ou responsabilidadesda casa por conta da atividade de apostas",
+            "l12": "Sentir-se ansioso, preocupado, culpado, deprimido ou irritado"
+        },
+        "sec4": {
+            "title": "Organizações Úteis",
+            "p": "Clientes tendo problemas com atividade de apostas e outros afetados por jogo problemático devem buscar ajuda. As seguintes organizações estão disponíveis para disponibilizar aconselhamento gratuito e confidencial em assuntos relacionados com jogo problemático.",
+            "p1": "As seguintes organizações estão disponíveis para fornecer conselhos gratuitos e confidenciais sobre questões de jogos de azar problemáticos:",
+            "p3": "-Gambling Therapy:",
+            "link": "https://www.gamblingtherapy.org",
+            "p4": "A Gambling Therapy oferece suporte on-line a qualquer pessoa viciada em jogos de azar e àqueles que apresentam comportamento problemático, e é gratuito para download em dispositivos iOS e Android.",
+            "p5": "-Gamblers Anonymous:",
+            "link2": "https://www.gamblersanonymous.org/ga",
+            "p6": "A Gamblers Anonymous oferece suporte confidencial por telefone e aconselhamento presencial para qualquer um que seja afetado por Problemas de Jogo."
+
+        },
+        "sec5": {
+            "title": "Alguém com menos de 18 anos está apostando no Hit?",
+            "p": "Nós fazemos a verificação da idade de todos os clientes e pedimos prova documental de idade nos casos em que a verificação seja inconclusiva. Contas de qualquer pessoa menor de 18 que sejam encontradas apostando com o Hit vão ser fechadas e quaisquer ganhos vão ser removidos",
+            "p1": "Se você suspeita que alguém com menos de 18 anos está apostando com o Hit, por favorContate-nospara reportar este problema para que nós possamos tomar as medidas necessárias."
+        },
+        "sec6": {
+            "title": "Como configurar limites de depósito e aposta?",
+            "p1": "A qualquer momento você pode adicionar ou editar limites de depósito e de aposta. ",
+            "p2": "Para isso, basta acessar sua página de perfil (hit-game.com/feed/profile ou clicar em seu nome/foto no canto superior direito da página) e ir na seção Settings",
+            "p3": "-Limite de Depósito:",
+            "p4": "1. Habilite a caixa de seleção  Deposite Limit e clique no ícone de edição caso deseja alterar os valores",
+            "p5": "2. Escolha o valor limite de depósito;",
+            "p6": "3. Escolha a data final do período que esse limite ficará válido;",
+            "p7": "4. Você pode reduzir esse limite quando quiser, mas só poderá aumentar o desativar esse limite com no mínimo 24h de intervalo",
+            "p8": "-Limite de Aposta:",
+            "p9": "1. Habilite a caixa de seleção Bet Limit e clique no ícone de edição caso deseja alterar os valores;",
+            "p10": "2. Escolha o valor limite de cada aposta que deseja;",
+            "p11": "3. Escolha a data final do período que esse limite ficará válido;",
+            "p12": "4. Você pode reduzir esse limite quando quiser, mas só poderá aumentar o desativar esse limite com no mínimo 24h de intervalo."
+        },
+        "sec7": {
+            "title": "Como desativar ou excluir a conta?",
+            "p": "A qualquer momento você pode desativar a sua conta temporariamente. ",
+            "p1": "1. Acessar sua página de perfil (hit-game.com/feed/profile ou clicar em seu nome/foto no canto superior direito da página) ",
+            "p2": "2. Vá até a seção Settings",
+            "p3": "3. Habilite a caixa de seleção SelfExclude e clique no ícone de edição caso deseja alterar os valores;",
+            "p4": "4. Escolha o período que deseja ficar com sua conta desativada;",
+            "p5": "5. Você pode aumentar esse período, mas só poderá reduzir esse período após um intervalo de pelo menos 7 dias.",
+            "p6": "Caso deseje excluir sua conta permanentemente, entre em contato conosco através da seção Contato."
+        }
+    },
+    "tAndC": {
+        "mainHead": "Termos de Uso",
+        "mainSubHead": "Esses Termos de Uso foram primariamente escritos em inglês, de forma quepodem haver diferenças de interpretação entre as traduções. Em caso dedisputa, a versão original em inglês deverá prevalecer.",
+        "sec1": {
+            "title": "1. Aceitação dos termos",
+            "p": "A P2P Entertainment Limited (coletivamente, 'ós', ou 'P2P Entertainment')fornece   um   site   de   plataforma   de   apostas   peer-to-peer   localizado   emwww.hit-game.com (o 'Site') e um aplicativo móvel relacionado - que incluitodo o texto, imagens, áudio, código e outros materiais que eles contêm oufornecem (coletivamente, o 'Conteúdo') e todas as características, concursose outros serviços que eles fornecem. O Site, o aplicativo móvel e quaisqueroutras características, ferramentas, materiais ou outros serviços (incluindoco-marcas ou serviços afiliados) oferecidos de tempos em tempos pela P2PEntertainment são referidos aqui como o 'Serviço'. Favor ler estes Termos deUso (os 'Termos' ou 'Termos de Uso') cuidadosamente antes de usar oServiço. Ao usar ou acessar o Serviço, ou clicar para aceitar ou concordarcom estes Termos onde essa opção estiver disponível, você (1) aceita econcorda  com estes Termos e nossas regras adicionais e sistema depontuação e (2) consente com a coleta, uso, divulgação e outro tratamentode   informações  como   descrito   em   nossa   política   de   privacidade   e   (3)quaisquer   termos,   regras   e   condições   adicionais   de   participação   emdeterminados concursos emitidos pela P2P Entertainment de tempos emtempos. Se você não concordar com os Termos, então você não poderáacessar ou usar o Conteúdo ou Serviços. A P2P Entertainment poderá emitir termos, regras e condições adicionais departicipação em determinados concursos. Por exemplo, a P2P Entertainmentpode emitir condições conforme exigido por vários regulamentos, o que podeter impacto em sua experiência ou participação no Serviço. Você concordaem estar sujeito a essas regras adicionais se participar de tais concursos."
+        },
+        "sec2": {
+            "title": "2. Modificação dos Termos de Uso",
+            "p": "Com exceção da Seção 15, que prevê a arbitragem obrigatória e a renúncia aos direitos de ação coletiva, a P2P Entertainment se reserva o direito, a seu exclusivo critério, de modificar ou substituir os Termos de Uso a qualquer momento. A versão mais atual destes Termos será publicada em nosso Site. Você será responsável por rever e se familiarizar com tais modificações. Se uma revisão dos Termos, a nosso critério exclusivo, for material, nós o notificaremos entrando em contato com você através do endereço de e-mail associado à sua conta. O uso dos Serviços por você após qualquer modificação dos Termos constitui sua aceitação dos Termos de Uso "
+        },
+        "sec3": {
+            "title": "3. Elegibilidade",
+            "p": "Você declara e garante, por meio deste documento, que está plenamenteapto   e   competente   para   assumir   os   termos,   condições,   obrigações,afirmações, representações e garantias estabelecidas nestes termos e paracumprir e cumprir com estes termos.",
+            "p1": "Ao depositar dinheiro ou participar de um concurso, você está representandoe garantindo isso",
+            "l1": "você tem 18 anos de idade ou mais ",
+            "l2": "você é um cidadão ou residente de e tem um endereço em uma jurisdiçãona qual está autorizado a jogar",
+            "l3": "no momento do depósito ou entrada no jogo, você está fisicamentelocalizado em uma jurisdição na qual a participação no concurso não éproibida pela lei aplicável",
+            "l4": "você não consta na lista de partes proibidas ou restritas de nenhum país",
+            "l5": "você cumprirá sempre estes Termos de Uso e quaisquer outros acordosentre você e a P2P Entertainment em relação ao seu uso do Serviço ouparticipação em jogos",
+            "l6": "Ao participar de qualquer concurso que concede prêmios, você não éfuncionário ou operador de um site de fantasia diário que cobra taxas deentrada ou oferece prêmios em dinheiro",
+            "l7": "Você não tem acesso, em virtude de afiliação a um site de fantasia diário,aos dados confidenciais não públicos pré-lançados do site sobre informaçõesrelacionadas a concursos.",
+            "p2": "Se a P2P Entertainment determinar que você não atende aos requisitos deelegibilidade desta seção, então você não está autorizado a usar o Serviço. AP2P Entertainment pode exigir que você apresente provas de que é elegívelpara participar de acordo com esta seção antes de receber um prêmio. Istoinclui a solicitação de que você preencha uma declaração de elegibilidade ououtras informações de verificação (como discutido na Seção 4 abaixo). Se aP2P   Entertainment   determinar   que   você   não   cumpre   os   requisitos   deelegibilidade   desta   seção,   além   de   quaisquer   direitos   que   a   P2PEntertainment possa ter em lei ou equidade, a P2P Entertainment se reservao direito de encerrar sua conta, reter ou revogar a concessão de quaisquerprêmios associados à sua conta ou limitar sua capacidade de retirada. Em talsituação, a P2P Entertainment poderá pagar qualquer prêmio retido ourevogado   aos   outros   participantes   do   concurso   em   questão   de   formaconsistente com a estrutura de prêmios do concurso, a ser determinada comprecisão   pela   P2P   Entertainment   a   seu   exclusivo   critério.   A   P2PEntertainment também se reserva o direito de reter prêmios revogados parauso na promoção de seus esforços de prevenção à fraude ou de combate àlavagem de dinheiro. Os funcionários da P2P Entertainment podem usar oServiço com a finalidade de testar a experiência do usuário, mas não podemretirar dinheiro ou prêmios, exceto quando estiverem jogando em uma ligaprivada. Os parentes dos funcionários da P2P Entertainment com os quaiscompartilham um lar não são elegíveis para participar de concursos pagos, amenos que sejam concursos privados com outros funcionários da P2PEntertainment ou membros do lar. Os consultores ou promotores do ServiçoP2P  Entertainment   podem  jogar  em   concursos  sem  tal   limitação,  massomente se (i) seu acordo com a P2P Entertainment não lhes permitirqualquer acesso a dados não públicos do Serviço ou quaisquer outros dadosnão   disponibilizados   a   todos   os   jogadores   no   Serviço   e   (ii)   eles   nãoreceberem quaisquer outras vantagens em seu jogo no Serviço.",
+            "p3": "Funcionários ou operadores de outros sites diários de fantasia que cobramtaxas de inscrição ou oferecem prêmios em dinheiro e indivíduos que, emvirtude de afiliação a outro site diário de fantasia, têm acesso aos dadosconfidenciais não-públicos de pré-lançamento do site sobre informaçõesrelacionadas a jogos não podem participar de nenhum concurso no qual umprêmio em dinheiro real é concedido. Se tal pessoa entrar em um concursoda   P2P   Entertainment   que   concede   prêmios,   a   P2P   Entertainmentdesqualificará   a   entrada,   não   concederá  prêmio   e   poderá   denunciar  aviolação desta disposição ao site de fantasia diário para o qual o participanteé empregado, opera ou é afiliado. Além disso, a P2P Entertainment poderámanter informações sobre o participante suficientes para ajudar a P2PEntertainment a bloquear o usuário de participar de futuros concursos da P2PEntertainment, a menos e até que a P2P Entertainment determine, a seuexclusivo critério, que o participante não é mais funcionário ou operador deoutro site de fantasia diário ou não tem mais acesso a dados confidenciaispré-lançados  não   públicos  sobre  informações  relacionadas ao   jogo  emvirtude de afiliação a um site de fantasia diário.",
+            "p4": "Atletas, treinadores e outros gerentes de equipe, pessoal de apoio à equipe(por exemplo, sem limitação, médicos da equipe) e proprietários de equipenão podem participar de quaisquer competições da P2P Entertainment noesporte ou esportes com os quais estão associados. Os proprietários deequipes,   árbitros,   funcionários   da   liga,   comissários   esportivos   e   outrosindivíduos   que   através   de   um   interesse   de   propriedade   ou   empregorelacionado   ao   jogo   possam   influenciar   a   jogabilidade   são   igualmenteinelegíveis.",
+            "p5": "A P2P Entertainment oferece ferramentas proativas e apoio destinados aencorajar o comportamento saudável do jogador e proporcionar experiênciaspositivas ao jogador. Também permitimos que terceiros qualificados, quetenham preocupações sobre a capacidade de um jogador de administrar seujogo, solicitem uma limitação no uso da P2P Entertainment por esse jogador.Você   pode   saber   mais   sobre   nossas   políticas   e   ferramentas   de   jogoresponsável em www.hit-game.com/responsible-gaming."
+        },
+        "sec4": {
+            "title": "4. Condições de participação",
+            "subTitle": "4.1 Registro",
+            "p": "Para participar de um concurso sobre o Serviço, você deve se registrar paraobter uma conta. Ao registrar-se como usuário do Serviço, você concorda emfornecer informações precisas, atuais e completas sobre si mesmo conformesolicitado (sendo tais informações os 'Dados de Registro') e manter eatualizar prontamente os Dados de Registro para mantê-los precisos, atuais ecompletos. Se você fornecer qualquer informação que seja imprecisa, nãoatual ou incompleta, ou se a P2P Entertainment tiver motivos razoáveis parasuspeitar que tal informação é imprecisa, não atual ou incompleta, a P2PEntertainment poderá negar-lhe acesso a áreas que requerem registro, ouencerrar sua conta, a seu exclusivo critério.",
+            "p1": "Você pode estabelecer, manter, usar e controlar apenas uma conta noServiço. Cada conta no Serviço só pode ser propriedade, mantida, usada econtrolada por um indivíduo. Para evitar dúvidas, os usuários não podem'coproprietários' de contas no Serviço. No caso da P2P Entertainmentdeterminar que você tenha aberto, mantido, usado ou controlado mais deuma conta, além de quaisquer outros direitos que a P2P Entertainment possater, a P2P Entertainment se reserva o direito de suspender ou encerrarqualquer ou todas as suas contas e encerrar, reter ou revogar a concessãode quaisquer prêmios.",
+            "p2": "Você concorda que o único e específico objetivo de criar uma conta na P2PEntertainment   é   participar   de   concursos   esportivos   de   fantasia   ou   emqualquer produto de apostas peer-to-peer no Serviço. A P2P Entertainmentterá o direito de suspender, limitar ou encerrar sua conta se determinarmos, anosso exclusivo critério, que você está depositando fundos sem a intenção deutilizá-los em competições no Serviço. Em tais circunstâncias, podemostambém relatar tal atividade às autoridades competentes.",
+            "subTitle1": "4.2 Senhas de conta e segurança",
+            "p3": "No momento do registro para acesso à conta on-line, você deve fornecer umendereço de e-mail válido e fornecer um Nome de Usuário e Senha para serusado em conjunto com sua conta. Você não pode usar um Nome de Usuárioque promova um empreendimento comercial ou um Nome de Usuário que aP2P Entertainment considere ofensivo, a seu critério exclusivo. Muitas partesdo Serviço requerem registro para acesso (as 'Áreas Restritas'). Você éresponsável   por   manter   a   confidencialidade   da   Senha,   e   é   totalmenteresponsável por todos os usos de seu Nome de Usuário e Senha, seja porvocê ou por outros. Você concorda em (a) nunca usar a mesma senha para oServiço que você usa ou já usou fora do Serviço; (b) manter seu nome deusuário  e senha  confidenciais e não  compartilhá-los com  ninguém; (c)notificar   imediatamente   a   P2P   Entertainment   sobre   qualquer   uso   nãoautorizado de seu nome de usuário e senha ou conta ou qualquer outraviolação de segurança; e (d) usar somente seu próprio nome de usuário esenha para acessar as Áreas Restritas do Serviço. A P2P Entertainment nãopode e não será responsável por qualquer perda ou dano decorrente de seudescumprimento desta Seção.",
+            "p4": "Você reconhece e concorda que a P2P Entertainment está autorizada a agirde acordo com as instruções recebidas através do uso de seu Nome deUsuário e Senha, e que a P2P Entertainment pode, mas não é obrigada a,negar acesso ou bloquear qualquer transação feita através do uso de seuNome de Usuário e Senha sem aviso prévio se acreditarmos que seu Nomede Usuário e Senha estão sendo usados por outra pessoa que não você, oupor qualquer outro motivo",
+            "p5": "P2P Entertainment pode exigir que você mude seu nome de usuário ou podemudar unilateralmente seu nome de usuário.",
+            "subTitle2": "4.3 Comunicações e Práticas de Informação",
+            "p6": "Como resultado de seu registro para o Serviço, você poderá receber certas comunicações comerciais da P2P Entertainment. Você compreende e concorda que estas comunicações fazem parte de seu registro e que, na medida exigida por lei, você pode optar por não receber estas comunicações a qualquer momento utilizando a funcionalidade de cancelar a inscrição ou enviando um e-mail para o endereço contact@hit-game.com. Após essa opção, ainda podemos nos comunicar com você por e-mail, na medida do permitido pela lei aplicável.",
+            "subTitle3": "4.4 Desqualificações e cancelamentos",
+            "p7": "A P2P Entertainment também se reserva o direito de cancelar os concursos,a nosso critério exclusivo, sem quaisquer restrições",
+            "p8": "P2P Entertainment, a seu critério exclusivo, poderá desqualificá-lo de umconcurso ou de todo o Serviço, recusar a concessão de pontos ou prêmiosvirtuais e exigir a devolução de quaisquer prêmios, ou suspender, limitar ouencerrar sua conta se você se envolver em conduta que P2P Entertainmentconsidere, a seu critério exclusivo, ser imprópria, injusta, fraudulenta ou dequalquer outra forma adversa à operação do Serviço ou de qualquer formaprejudicial a outros usuários. A conduta imprópria inclui, mas não estálimitada a: falsificação de informações pessoais, incluindo informações depagamento, necessárias para usar o Serviço ou reivindicar um prêmio;violação dos termos do método de pagamento elegível, incluindo os termosde qualquer cartão de pagamento de prêmios em dinheiro, violação dequalquer uma destas regras, acumulação de pontos ou prêmios através demétodos não autorizados, tais como scripts não autorizados ou outros meiosautomatizados; adulteração da administração do Serviço ou tentativa de dequalquer   forma   adulterar   os   programas   de   computador   associados   aoServiço; obtenção de informações de outros participantes e envio de spam aoutros participantes; e abuso do Serviço de qualquer forma; ou violação dequalquer   outra   forma   destes   Termos   de   Uso.   Você   reconhece   que   aconfiscação e/ou devolução de qualquer prêmio não impedirá de formaalguma que a P2P Entertainment informe as autoridades competentes, e/oupersiga procedimentos criminais ou civis relacionados a tal conduta.",
+            "p9": "Se, por qualquer razão, o Serviço não estiver funcionando como planejadooriginalmente (por exemplo se o Site se corromper ou não permitir o uso eprocessamento adequado das entradas de acordo com as regras, ou se ainfecção   por   vírus   de   computador,   bugs,   adulteração,   intervenção   nãoautorizada, ações dos participantes, fraude, falhas técnicas ou quaisqueroutras causas de qualquer tipo, na opinião exclusiva da P2P Entertainmentcorrompe   ou   afeta   a   administração,   segurança,   justiça,   integridade   ouconduta adequada do Serviço), P2P Entertainment se reserva o direito, a seuexclusivo   critério,   de   desqualificar   qualquer   indivíduo   implicado   ourelacionado   à   causa   e/ou   cancelar,   terminar,   estender,   modificar   oususpender o Serviço, e selecionar o(s) vencedor(es) de todas as inscriçõeselegíveis recebidas. Se tal cancelamento, término, modificação ou suspensãoocorrer, a notificação poderá ser publicada no Site.",
+            "p10": "A falha da P2P Entertainment em cumprir qualquer disposição destes Termosdevido a furacão, guerra, incêndio, motim, terremoto, terrorismo, ato deinimigos públicos, ações de autoridades governamentais fora do controle daP2P Entertainment (exceto o cumprimento dos códigos e regulamentosaplicáveis) ou outro evento de força maior não será considerado umaviolação destes Termos.",
+            "subTitle4": "4.5 Depósitos e Saques",
+            "p11": "Ao depositar fundos ou participar de concursos pagos, você concorda em nosfornecer um endereço de correspondência válido, data de nascimento enúmero de seguridade social e quaisquer outras informações que possamosrequerer a fim de executar verificações de identidade apropriadas e cumprircom as regras e regulamentos aplicáveis. Se necessário, você poderá sersolicitado a fornecer a documentação apropriada que nos permita verificá-lo.Enquanto sua conta estiver pendente de verificação, você poderá depositarfundos em sua conta e participar de concursos, mas não poderá retirarquaisquer fundos de sua conta até que a verificação esteja concluída. Se nãopudermos verificá-lo, nos reservamos o direito de suspender sua conta ereter quaisquer fundos até que tenhamos sido capazes de verificá-lo comsucesso.",
+            "p12": "Também podemos realizar verificações de conformidade com os Termos,incluindo verificações antifraude nos padrões de jogo e depósitos antes deprocessar um saque, e podemos solicitar informações adicionais antes depermitir um saque. Sujeito a tais verificações, você poderá fechar sua conta eretirar seus depósitos e/ou ganhos a qualquer momento e por qualquermotivo.",
+            "p13": "Os depósitos e os ganhos do jogador após a conclusão dos concursos sãomantidos em uma conta bancária separada e segregada por uma subsidiáriada P2P Entertainment. Esses fundos pertencem a você, sujeitos a análisepara  prova  de   fraude,  verificação   ou   outra   conduta  proibida,  conformedescrito acima, e a P2P Entertainment não pode usá-los para cobrir suasdespesas operacionais ou para outros fins. Seus saques serão feitos a partirdesta conta bancária segregada, e os cheques emitidos a partir desta contapoderão ter o nome da subsidiária da P2P Entertainment.",
+            "p14": "A P2P Entertainment pode limitar a quantia que um usuário pode depositarem sua conta de acordo com os limites de depósito impostos pela jurisdiçãodo usuário. Nos casos em que o usuário participou de uma promoção para receber umbônus ou outro benefício, poderá ser solicitado a jogar através de seudepósito (participando de concursos) cujas taxas totais de entrada equivalemao valor do depósito para receber a totalidade de tal bônus",
+            "subTitle5": "4.6 Publicidade",
+            "p15": "Ao participar de um concurso, você consente que a P2P Entertainment eseus provedores de serviços e parceiros comerciais utilizem seu nome, voz,imagem,   localização   e   fotografia   em   conexão   com   o   desenvolvimento,produção, distribuição e/ou exploração (incluindo marketing e promoção) doconcurso selecionado e/ou outros concursos da P2P Entertainment e da P2PEntertainment em geral, a menos que de outra forma proibido por lei. A P2PEntertainment BV e seus parceiros comerciais reservam-se o direito de fazerdeclarações públicas sobre os participantes e vencedores, no ar, na Internet,ou de outra forma, antes, durante ou após o concurso. Os participantesconcordam  que   a   P2P  Entertainment   BV  poderá   anunciar   o   nome  dequalquer vencedor no ar ou em qualquer de seus websites ou em qualqueroutro local a qualquer momento em conexão com o marketing e promoção daP2P   Entertainment   ou   outros   concursos   ou   jogos   operados   pela   P2PEntertainment BV. Você concorda que a participação e (quando aplicável) aconquista de um prêmio em conexão com um concurso constitui uma compensação completa por suas obrigações sob este parágrafo, e concordaem   não   procurar   cobrar   uma   taxa   ou   impor   outras   condições   para   ocumprimento destas obrigações. As regras específicas de certos concursospodem conter obrigações adicionais de publicidade ou podem exigir umaassinatura por escrito em uma renúncia separada de publicidade."
+        },
+        "sec5": {
+            "title": "5. Regras do Jogo",
+            "subTitle": "5.1 Jogo de Habilidade",
+            "p": "A P2P Entertainment é um jogo de habilidade. Os vencedores são determinados pelos critérios estabelecidos nas regras de cada concurso. Para cada concurso, os indivíduos usam sua habilidade e conhecimento de informações esportivas profissionais relevantes e regras de apostas entre pares para acumular os pontos mais virtuais determinar os vencedores. Os pontos virtuais são acumulados através do desempenho de atletas individuaisem eventos esportivos e/ou através dos resultados reais das partidas em eventos esportivos.",
+            "subTitle1": "5.2 Entry fees",
+            "p1": "Cada concurso P2P Entertainment tem uma taxa de inscrição listada na moeda local do usuário. Quando você optar por participar de um concurso, esse valor em moeda local será debitado de sua conta P2P Entertainment. Em seguida, siga os links e as instruções fornecidas para a inscrição. No caso de uma disputa a respeito da identidade da pessoa que submeteu uma inscrição, a inscrição será considerada como tendo sido submetida pela pessoa em cujo nome de usuário a inscrição foi submetida, ou se a posse do próprio nome de usuário for contestada e na opinião da P2P Entertainment for suficientemente incerta, o nome no qual o endereço de e-mail em arquivo foi registrado junto ao provedor de serviços de e-mail. A P2P Entertainment se reserva o direito de não conceder um prêmio a uma pessoa que ela acredita que, a seu critério exclusivo, não tenha submetido o trabalho vencedor. Após o pagamento das taxas de inscrição, elas não são reembolsáveis, a menos que o concurso seja cancelado.",
+            "subTitle2": "5.3 Prazo das competições",
+            "p3": "A P2P Entertainment oferece competições para eventos esportivos profissionais que geralmente acontecem em um único dia, uma semana, um mês ou mesmo durante toda a temporada esportiva.",
+            "subTitle3": "5.4 Premiação",
+            "p4": "Após o término de cada concurso, os vencedores provisórios são anunciados(geralmente até o dia seguinte), mas continuam sujeitos à verificação final.Os jogadores em cada concurso que acumularem os pontos mais virtuais ecumprirem   os   requisitos   de   elegibilidade   e   regras   aplicáveis,   ganharãoprêmios  conforme  estabelecido  nos detalhes do  concurso   afixados. Osprêmios são adicionados ao saldo da conta do jogador vencedor. Em caso deempate, o prêmio é dividido igualmente entre os jogadores empatados, amenos que especificado de outra forma.",
+            "p5": "A P2P Entertainment oferece vários tipos diferentes de concursos. Para cadaconcurso, anunciamos as taxas de inscrição e os prêmios antecipadamentena página do concurso. Para um resumo das taxas de inscrição e prêmiospara os concursos atualmente abertos, faça o login e visite o lobby principalou a seção de concursos.",
+            "p6": "Os cálculos dos prêmios são baseados nos resultados a partir do momentoem que a P2P Entertainment tabula a pontuação final. Uma vez que osvencedores   sejam   anunciados   inicialmente   pela   P2P   Entertainment,   osresultados da pontuação não serão alterados em função dos ajustes oficiaisfeitos pelas ligas profissionais, embora nos reservemos o direito de fazerajustes com base em erros ou irregularidades na transmissão de informaçõesde nosso provedor de estatísticas ou em nosso cálculo de resultados.Também podemos fazer ajustes em caso de não cumprimento dos Termos. AP2P Entertainment não tem obrigação de atrasar a concessão de um prêmioem antecipação a qualquer ajuste, e nos reservamos o direito de reverterpagamentos no caso de qualquer ajuste. Você concorda em cooperar comnossos esforços para reverter os pagamentos.",
+            "p7": "Não é permitida a substituição ou transferência de um prêmio. Todos osimpostos associados ao recebimento ou uso de qualquer prêmio são deresponsabilidade exclusiva do vencedor. No caso de qualquer autoridadelegal   contestar   a   concessão   de   qualquer   prêmio   aos   vencedores   doConcurso, a P2P Entertainment se reserva o direito, a seu exclusivo critério,de determinar se deve ou não conceder ou ajustar tais prêmios. Em todas asdisputas decorrentes da determinação do vencedor dos concursos da P2PEntertainment, a P2P Entertainment BV é o único juiz e suas ações são finaise vinculativas.",
+            "subTitle4": "5.5 Notificações",
+            "p8": "Os vencedores são geralmente postados no Site após a conclusão de cada concurso. Os vencedores podem ser solicitados a devolver via e-mail ou correio regular uma declaração de elegibilidade, um acordo de publicidade e formulários de impostos apropriados dentro de um prazo especificado. O não cumprimento desta exigência pode resultar na desqualificação. Qualquer notificação de prêmio devolvido como não pagável pode resultar na desqualificação e seleção de um vencedor alternativo.",
+            "subTitle5": "5.6 Bônus e Promoções",
+            "p9": "Oferecemos bônus aos usuários recém depositados e para outros fins demarketing. Alguns bônus são concedidos como um 'bônus pendente' ganhogradualmente quando os usuários entram e completam os concursos pagos.O bônus pendente de um usuário é convertido em um crédito monetário quepode ser usado para jogar na P2P Entertainment à medida que o usuárioentra em concursos de dinheiro real, de acordo com os termos da oferta oupromoção. A menos que de outra forma indicado, qualquer bônus pendentenão convertido remanescente na conta de um jogador 45 dias após ter sidoinicialmente creditado pode ser removido pela P2P Entertainment. Qualquercrédito que um novo usuário receba é para entrar em competições na P2PEntertainment e só pode ser retirado se tiver sido previamente entrado empelo menos um jogo. Além disso, se um usuário retirar imediatamente odinheiro após um depósito que entregue um bônus de depósito, então obônus será retirado. No caso de abuso do sistema de bônus por qualquerusuário, a P2P Entertainment se reserva o direito de retirar seus bônus deusuário.",
+            "p10": "A P2P Entertainment também pode oferecer Pontos de Entretenimento P2P,de acordo com os termos de uma promoção ou para outros fins de marketinga critério exclusivo da P2P Entertainment.",
+            "subTitle6": "5.7 Provedores de dados",
+            "p11": "A P2P Entertainment pode utilizar terceiros para fornecer estatísticas para as competições."
+        },
+        "sec6": {
+            "title": "6. Conduta",
+            "p": "Como condição de uso, você promete não utilizar os Serviços para qualquerpropósito ilegal ou proibido por estes Termos, ou qualquer outro propósitoque não seja razoavelmente pretendido pela P2P Entertainment. A título deexemplo, e não como uma limitação, você concorda em não o fazer:",
+            "l1": "abusar, assediar, personificar, intimidar ou ameaçar outros usuários da P2PEntertainment",
+            "l2": "publicar ou transmitir, ou causar a publicação ou transmissão de qualquerConteúdo que esteja infringindo, difamatório, difamatório, abusivo, ofensivo,obsceno, pornográfico ou que de outra forma viole qualquer lei ou direito dequalquer terceiro",
+            "l3": "utilizar o Serviço para qualquer propósito não autorizado, ou em violação aqualquer lei aplicável, incluindo leis de propriedade intelectual",
+            "l4": "postar ou transmitir, ou causar a postagem ou transmissão, qualquercomunicação ou solicitação projetada ou destinada a obter senha, conta ouinformação privada de qualquer usuário do P2P Entertainment",
+            "l5": "criar ou enviar e-mails indesejados ('Spam') a qualquer outro usuário daP2P Entertainment",
+            "l6": "infringir os direitos de propriedade intelectual da P2P Entertainment, seususuários ou qualquer terceiro",
+            "l7": "Enviar comentários vinculados a programas de afiliados, esquemas demarketing multinível, sites que redirecionam histórias existentes ou conteúdofora do tópico",
+            "l8": "publicar, enviar por e-mail, transmitir, carregar ou disponibilizar de outraforma qualquer material que contenha vírus de software ou qualquer outrocódigo de computador, arquivos ou programas projetados ou funcionandopara interromper, destruir ou limitar a funcionalidade de qualquer software ouhardware de computador ou equipamento de telecomunicações",
+            "l9": "usar qualquer robô, aranha, raspador, software sniping ou outros meiosautomatizados para acessar o Serviço para qualquer propósito (exceto paraacesso a feed RSS) sem nossa permissão expressa por escrito. Além disso,você concorda que não o fará: (1) tomar qualquer ação que imponha, oupossa   impor,   a   nosso   exclusivo   critério,   uma   carga   excessiva   oudesproporcionalmente grande em nossa infraestrutura; (2) interferir ou tentarinterferir no funcionamento adequado do Serviço ou em quaisquer atividadesconduzidas no Serviço; ou (3) contornar quaisquer medidas que possamosutilizar para impedir ou restringir o acesso ao Serviço",
+            "l10": "usar meios artificiais, incluindo a criação de múltiplas contas de usuário,para   inflar   sua   posição   e   posição   junto   aos   quadros   dirigentes   e   àcomunidade P2P Entertainment",
+            "l11": "usar   scripts   não   autorizados;   todos   os   scripts   autorizados   serãodisponibilizados através do Serviço antes da entrada no jogo",
+            "l12": "azer propaganda ou solicitar a qualquer usuário que compre ou vendaqualquer produto ou Serviço, ou utilizar qualquer informação obtida doServiço para contatar, anunciar, solicitar ou vender aos usuários sem seuprévio consentimento explícito",
+            "l13": "vender ou de outra forma transferir seu perfil",
+            "l14": "tentar influenciar o jogo em qualquer evento esportivo do qual os atletasestejam disponíveis para seleção nas competições da P2P Entertainment emque você esteja envolvido ou no qual tenha um interesse direto ou indireto",
+            "l15": "participar de competições, por qualquer meio, inclusive de contas múltiplas,para as quais você não é elegível (por exemplo, competições para iniciantesquando você não é um iniciante)",
+            "p1": "A violação de nossas regras pode resultar na remoção de seu Conteúdo doServiço, na perda de ganhos e/ou no cancelamento de sua conta. Vocêreconhece e concorda que a P2P Entertainment poderá remover qualquerConteúdo de Usuário (conforme definido abaixo) e encerrar qualquer contaP2P Entertainment a qualquer momento por qualquer motivo (incluindo, masnão se limitando a, ao receber reclamações ou alegações de terceiros ou deautoridades   relacionadas   a   tal   Conteúdo   de   Usuário).   Para   denunciarviolações dos Termos de Uso, favor entrar em contato conosco.",
+            "subTitle1": "6.1 Conteúdo de Usuário",
+            "p3": "Você entende que todo o Conteúdo disponibilizado no Serviço por um usuário('Conteúdo de Usuário'), incluindo, mas não limitado a, informações de perfil e comunicações com outros usuários, quer transmitidos privadamente ou disponibilizados publicamente, é de responsabilidade exclusiva da pessoa da qual tal Conteúdo de Usuário se originou. Isto significa que você, não a P2P Entertainment, é inteiramente responsável por todo o Conteúdo de Usuário que você carrega, publica, compartilha, envia por e-mail, transmite ou de outra forma torna disponível através do Serviço. Sob nenhuma circunstância a P2P Entertainment será responsável, de forma alguma, por qualquer Conteúdo de Usuário",
+            "p4": "Você reconhece que a P2P Entertainment pode ou não visualizar antecipadamente o Conteúdo de Usuário, mas que a P2P Entertainment e seus designados têm o direito (mas não a obrigação) a seu critério exclusivo de visualização antecipada, recusar, apagar permanentemente, cancelar, modificar e/ou mover qualquer Conteúdo de Usuário disponível através do Serviço. Sem limitar o precedente, a P2P Entertainment e seus designados terão o direito de remover qualquer Conteúdo de Usuário que viole estes Termos ou que de outra forma seja censurável a critério exclusivo da P2P Entertainment. Você entende que ao utilizar o Serviço, você poderá ser exposto a Conteúdo de Usuário que possa considerar ofensivo ou censurável. Você concorda que deve avaliar e suportar todos os riscos associados com o uso ou divulgação de qualquer Conteúdo de Usuário. Alémdisso, você reconhece e concorda que assume o único risco de confiar em qualquer Conteúdo disponível no Serviço ou através dele",
+            "p5": "Com relação ao Conteúdo de Usuário que você submeter ou de outra forma disponibilizar no ou através do Serviço, você concede à P2P Entertainment uma licença irrevogável, totalmente sub-licenciável, perpétua, mundial, livre de royalties e não exclusiva para usar, distribuir, reproduzir, modificar, adaptar, publicar, traduzir, executar publicamente e exibir publicamente tal Conteúdo de Usuário (no todo ou em parte), e incorporar tal Conteúdo de Usuário a outros trabalhos, em qualquer formato ou meio agora conhecido oudesenvolvido posteriormente",
+            "p6": "Você é o único responsável por suas interações com outros usuários do Serviço. P2P Entertainment se reserva o direito, mas não tem obrigação, de monitorar disputas entre você e outros usuários"
+        },
+        "sec7": {
+            "title": "7. Indenização",
+            "p": "Você   concorda   em   liberar   e   indenizar,   defender   e   isentar   a   P2PEntertainment e suas controladoras, subsidiárias, afiliadas e agências, bemcomo os diretores, diretores, funcionários, acionistas e representantes dequalquer uma das entidades acima mencionadas, de e contra todas equaisquer perdas, responsabilidades, despesas, danos, custos (incluindohonorários   advocatícios   e   custas   judiciais)   reivindicações   ou   ações   dequalquer tipo decorrentes ou resultantes de seu uso do Serviço, sua violaçãodestes Termos de Uso, seu recebimento, propriedade, uso ou uso indevidode qualquer prêmio, e quaisquer de seus atos ou omissões que impliquemem direitos de publicidade, difamação ou invasão de privacidade. P2PEntertainment se reserva o direito, às suas próprias custas, de assumir aexclusiva defesa e controle de qualquer assunto sujeito a indenização porvocê e, em tal caso; você concorda em cooperar com a P2P Entertainmentna defesa de tal assunto."
+        },
+        "sec8": {
+            "title": "8. Isenções de Garantias",
+            "p": "Você compreende e concorda expressamente que seu uso do Serviço é de seu exclusivo risco. O Serviço (incluindo o Serviço e o Conteúdo) é fornecido 'COMO ESTÁ' e 'onforme disponível', sem garantias de qualquer tipo, expressas ou implícitas, incluindo, sem limitação, garantias implícitas de comercialidade, adequação a uma finalidade específica ou não infração. Você reconhece que a P2P Entertainment não tem controle sobre, e não tem o dever de tomar qualquer ação relativa a: quais usuários obtêm acesso ou usam o Serviço; quais efeitos o Conteúdo pode ter sobre você; como você pode interpretar ou usar o Conteúdo; ou quais ações você pode tomar como resultado de ter sido exposto ao Conteúdo. Você isenta a P2P Entertainment de toda responsabilidade por ter adquirido ou não adquirido Conteúdo através do Serviço. O Serviço pode conter, ou direcioná-lo a outros websites contendo informações que algumas pessoas possam achar ofensivas ou inadequadas. A P2P Entertainment não faz declarações relativas a qualquer Conteúdo contido ou acessado através do Serviço, e a P2P Entertainmentnão será responsável pela exatidão, conformidade com os direitos autorais, legalidade ou decência do material contido ou acessado através do Serviço."
+        },
+        "sec9": {
+            "title": "9. Limitação da Responsabilidade",
+            "p": "VOCÊ RECONHECE E CONCORDA QUE ASSUME TOTAL RESPONSABILIDADE PELO SEU USO DO SITE E DO SERVIÇO. VOCÊ RECONHECE E CONCORDA QUE QUALQUER INFORMAÇÃO ENVIADA OU RECEBIDA DURANTE SEU USO DO SITE E DO SERVIÇO PODE NÃO SER SEGURA E PODE SER INTERCEPTADA OU POSTERIORMENTE ADQUIRIDA POR PARTES NÃO AUTORIZADAS. VOCÊ RECONHECE E CONCORDA QUE SEU USO DO SITE E DO SERVIÇO É DE SEU PRÓPRIO RISCO. RECONHECENDO ISSO, VOCÊ COMPREENDE E CONCORDA QUE, NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI APLICÁVEL, NEM A P2P ENTERTAINMENT NEM SEUS FORNECEDORESOU LICENCIADORES SERÃO RESPONSÁVEIS PERANTE VOCÊ POR QUAISQUER DANOS DIRETOS, INDIRETOS, INCIDENTAIS, ESPECIAIS, CONSEQÜENTES, PUNITIVOS, EXEMPLARES OU OUTROS DANOS DE QUALQUER TIPO, INCLUINDO, SEM LIMITAÇÃO, DANOS POR PERDA DE LUCROS, BOA VONTADE, USO, DADOS OU OUTRAS PERDAS TANGÍVEIS OU INTANGÍVEIS OU QUAISQUER OUTROS DANOS BASEADOS EM CONTRATO, ATO ILÍCITO, RESPONSABILIDADE ESTRITA OU QUALQUER OUTRA TEORIA (MESMO SE A P2P ENTERTAINMENT TIVESSE SIDO AVISADA DA POSSIBILIDADE DE TAIS DANOS), RESULTANTES DO SITE OU SERVIÇO; O USO OU A INCAPACIDADE DE USAR O SITE OU SERVIÇO; ACESSO NÃO AUTORIZADO OU ALTERAÇÃO DE SUAS TRANSMISSÕES OU DADOS; DECLARAÇÕES OU CONDUTA DE QUALQUER TERCEIRO NO SITE OU SERVIÇO; QUAISQUER AÇÕES QUE TOMEMOS OU DEIXEMOS DE TOMAR COMO RESULTADO DE COMUNICAÇÕES QUE VOCÊ NOS ENVIAR; QUAISQUER INFORMAÇÕES DE ENTRADA INCORRETAS, ILEGÍVEIS, MAL DIRECIONADAS, ROUBADAS, INVÁLIDAS OU INEXATAS;ERROS HUMANOS; MAU FUNCIONAMENTO TÉCNICO; FALHAS, INCLUINDO INTERRUPÇÕES DE SERVIÇOS PÚBLICOS OU TELEFÔNICAS; OMISSÕES, INTERRUPÇÕES, LATÊNCIA, EXCLUSÕES OU DEFEITOS DE QUALQUER DISPOSITIVO OU REDE, PROVEDORES OU SOFTWARE (INCLUINDO, MAS NÃO SE LIMITANDO ÀQUELES QUE NÃO PERMITEM QUE UM PARTICIPANTE PARTICIPE DO SERVIÇO); QUALQUER DANO OU DANO AO EQUIPAMENTO DE COMPUTADOR; INCAPACIDADE DE ACESSAR TOTALMENTE O SITE OU SERVIÇO OU QUALQUER OUTRO SITE; ROUBO, ADULTERAÇÃO, DESTRUIÇÃO OU ACESSO NÃO AUTORIZADO A, OU ALTERAÇÃO DE, ENTRADAS, IMAGENS OU OUTROS CONTEÚDOS DE QUALQUER TIPO; DADOS PROCESSADOS TARDIAMENTE OU INCORRETAMENTE OU INCOMPLETOS OU PERDIDOS; ERROS TIPOGRÁFICOS, DE IMPRESSÃO OU OUTROS ERROS, OU QUALQUER COMBINAÇÃO DOS MESMOS; OU QUALQUER OUTRO ASSUNTO RELACIONADO AO SITE OU SERVIÇO. NÃO OBSTANTE QUALQUER COISA EM CONTRÁRIO AQUI CONTIDA, A RESPONSABILIDADE DA P2P ENTERTAIMENT PERANTE VOCÊ POR QUALQUER CAUSA E INDEPENDENTEMENTE DA FORMA DA AÇÃO, SERÁ SEMPRE LIMITADA AO VALOR PAGO, SE HOUVER, POR VOCÊ À P2P ENTERTAINMENT PARA USO GERAL DO SITE OU SERVIÇO DURANTE O PRAZO DE SUA INSCRIÇÃO NO SITE, NÃO INCLUINDO QUAISQUER TAXAS DE INSCRIÇÃO PARA CONCURSOS CONCLUÍDOS ANTES DAS CIRCUNSTÂNCIAS QUE ORIGINARAM A RECLAMAÇÃO.",
+            "p1": "Algumas jurisdições não permitem a exclusão de certas garantias ou a limitação ou exclusão de responsabilidade por danos incidentais ou consequentes. Assim sendo, algumas das limitações acima podem não se aplicar a você."
+        },
+        "sec10": {
+            "title": "10. Nossos direitos de propriedade",
+            "p": "A P2P Entertainment ou seus licenciadores possuem todos os direitos de propriedade, propriedade e propriedade intelectual no e para o Serviço. Você reconhece e concorda que o Serviço contém informações proprietárias e confidenciais que são protegidas pelas leis de propriedade intelectual aplicáveis e outras leis. Exceto conforme expressamente autorizado pela P2PEntertainment, você concorda em não copiar, modificar, alugar, arrendar, emprestar, vender, distribuir, executar, exibir ou criar obras derivadas baseadas no Serviço, no todo ou em parte."
+        },
+        "sec11": {
+            "title": "11. Links",
+            "p": "O Serviço fornece, ou terceiros podem fornecer, links para outros sites, aplicações ou recursos da World Wide Web. Como a P2P Entertainment não tem controle sobre tais sites, aplicativos e recursos, você reconhece e concorda que a P2P Entertainment não é responsável pela disponibilidade detais sites, aplicativos ou recursos externos, e não endossa e não é responsável por qualquer conteúdo, publicidade, produtos ou outros materiaisem tais sites ou recursos ou disponíveis a partir deles. Você reconhece e concorda ainda que a P2P Entertainment não será responsável ou responsável, direta ou indiretamente, por qualquer dano ou perda causada ousupostamente causada por ou em conexão com o uso ou dependência de qualquer conteúdo, bens ou serviços disponíveis em ou através de qualquer desses sites ou recursos."
+        },
+        "sec12": {
+            "title": "12. Rescisão e suspensão",
+            "p": "P2P Entertainment poderá encerrar ou suspender todo ou parte do Serviço esua   conta   P2P   Entertainment   imediatamente,   sem   aviso   prévio   ouresponsabilidade, se você violar qualquer um dos termos ou condições dosTermos.   Ao   encerrar   sua   conta,   seu   direito   de   usar   o   Serviço   seráimediatamente   suspenso.   Caso   deseje   encerrar   sua   conta   P2PEntertainment, você poderá entrar em contato conosco através do formuláriode contato com uma nota para dizer que deseja encerrar sua conta.As seguintes disposições dos Termos sobrevivem a qualquer rescisão destesTermos: CONDIÇÕES DE PARTICIPAÇÃO (exceto para registro e senha esegurança da conta); REGRAS DO JOGO (somente Bônus e Promoções);CONDUTA (somente Conteúdo do Usuário); INDENIZAÇÃO; ISENÇÕES DEGARANTIA; LIMITAÇÃO DE RESPONSABILIDADE; NOSSOS DIREITOSDE   PROPRIEDADE;   LINKS;   RESCISÃO;   NENHUM   TERCEIROBENEFICIÁRIO; ARBITRAGEM OBRIGATÓRIA E RENÚNCIA DE AÇÃOCOLETIVA; INFORMAÇÕES GERAIS.",
+            "p1": "Se sua conta estiver sujeita a uma suspensão, você deve respeitar as restrições e limitações impostas à sua conta como parte da suspensão, e você deve se comunicar com a P2P Entertainment a respeito da restauração de sua conta somente através de nosso canal de suporte."
+        },
+        "sec13": {
+            "title": "13. Nenhum Beneficiário Terceiro",
+            "p": "Você concorda que, salvo disposição expressa em contrário nestes Termos, não haverá beneficiários de terceiros para os Termos."
+        },
+        "sec14": {
+            "title": "14. Notificação e procedimento para fazer alegações de violação de direitos autorais",
+            "p": "A P2P Entertainment pode, em circunstâncias apropriadas e a seu critério, desativar e/ou encerrar as contas de usuários que infrinjam a propriedade intelectual de terceiros. Se você acredita que seus direitos autorais ou os direitos autorais de uma pessoa em cujo nome você está autorizado a agir foram infringidos, favor fornecer ao Agente de Direitos Autorais da P2P Entertainment uma Notificação por escrito contendo as seguintes informações",
+            "l1": "uma assinatura eletrônica ou física da pessoa autorizada a agir em nome doproprietário   dos   direitos   autorais   ou   outros   interesses   de   propriedadeintelectual",
+            "l2": "uma   descrição   do   trabalho   protegido   por   direitos   autorais   ou   outrapropriedade intelectual que você alega ter sido infringida",
+            "l3": "uma descrição de onde o material que você alega ter sido infringido estálocalizado no Serviço",
+            "l4": "seu endereço, número de telefone e endereço de e-mail",
+            "l5": "uma declaração sua de que você acredita de boa fé que o uso contestadonão é autorizado pelo proprietário dos direitos autorais, seu agente, ou pelalei",
+            "l6": "uma declaração sua, feita sob pena de perjúrio, de que as informaçõesacima em sua Notificação são precisas e que você é o proprietário dosdireitos autorais ou da propriedade intelectual ou está autorizado a agir emnome do proprietário dos direitos autorais ou da propriedade intelectual"
+        },
+        "sec15": {
+            "title": "15. Arbitragem vinculante e renúncia a ações coletivas",
+            "p": "LEIA ATENTAMENTE ESTA SEÇÃO - ELA PODE AFETAR SIGNIFICATIVAMENTE SEUS DIREITOS LEGAIS, INCLUINDO SEU DIREITO DE ENTRAR COM UMA AÇÃO EM JUÍZO.",
+            "subTitle1": "15.1 Resolução Inicial de Disputas",
+            "p1": "Nosso Departamento de Suporte ao Cliente está disponível via web para resolver quaisquer preocupações que você possa ter com relação ao Serviço.Nosso Departamento de Atendimento ao Cliente é capaz de resolver a maioria das preocupações rapidamente para a satisfação de nossos jogadores. As partes devem usar seus melhores esforços através deste processo de Atendimento ao Cliente para resolver qualquer disputa, reclamação, questionamento ou desacordo e engajar-se em negociações de boa fé, que serão uma condição para qualquer uma das partes iniciar uma ação judicial ou arbitragem",
+            "subTitle2": "15.2 Arbitragem vinculante",
+            "p2": "Se as partes não chegarem a uma solução acordada dentro de um períodode 30 dias a partir da resolução informal de disputas sob a disposição deResolução Inicial de Disputas, então qualquer uma das partes pode iniciar aarbitragem obrigatória como o único meio de resolver reclamações, sujeitoaos termos estabelecidos abaixo. Especificamente, todas as reivindicaçõesdecorrentes   ou   relacionadas   a   estes   Termos   (incluindo   sua   formação,desempenho e violação), a relação das partes entre si e/ou seu uso doServiço deverão ser finalmente resolvidas por arbitragem vinculante.",
+            "p3": "O árbitro, e não qualquer tribunal ou agência federal, estadual ou local, teráautoridade exclusiva para resolver todas as disputas decorrentes de ourelacionadas à interpretação, aplicabilidade, execução ou formação destes Termos, incluindo, mas não limitado a qualquer reivindicação de que todos ouqualquer   parte   destes   Termos   são   nulos   ou   anuláveis,   ou   se   umareivindicação está sujeita a arbitragem. O árbitro terá o poder de concederqualquer medida que esteja disponível em um tribunal sob a lei ou emequidade. A sentença do árbitro deverá ser escrita e vinculativa para aspartes e poderá ser inscrita como sentença em qualquer tribunal de jurisdiçãocompetente.",
+            "subTitle3": "15.3 Localização",
+            "p4": "A arbitragem ocorrerá em qualquer local razoável conveniente para você, dentro da União Europeia.",
+            "subTitle4": "15.4 Ação de Classe Renúncia",
+            "p5": "As partes concordam ainda que qualquer arbitragem será conduzida somenteem suas capacidades individuais e não como uma ação coletiva ou outra ação representativa, e as partes renunciam expressamente a seu direito de apresentar uma ação coletiva ou buscar alívio em uma base de classe. VOCÊ E A P2P ENTERTAINMENT CONCORDAM QUE CADA UMA PODERÁ APRESENTAR RECLAMAÇÕES CONTRA A OUTRA SOMENTE EM SUA CAPACIDADE INDIVIDUAL, E NÃO COMO UM REQUERENTE OUMEMBRO DE CLASSE EM QUALQUER SUPOSTA AÇÃO DE CLASSE OU PROCESSO REPRESENTATIVO. Se qualquer tribunal ou árbitro determinar que a renúncia de ação de classe estabelecida neste parágrafo é nula ou inaplicável por qualquer razão, ou que uma arbitragem pode prosseguir com base na classe, então a disposição arbitral estabelecida acima será considerada nula e sem efeito em sua totalidade e as partes serão consideradas como não tendo concordado em arbitrar disputas.",
+            "subTitle5": "15.5 Exceção - Litígios de Propriedade Intelectual e Litígios de Pequenas Causas",
+            "p6": "Não obstante a decisão das partes de resolver todas as disputas através de arbitragem, qualquer uma das partes pode mover uma ação em um tribunal federal para proteger seus direitos de propriedade intelectual ('direitos de propriedade intelectual' significa patentes, direitos autorais, direitos morais,marcas registradas e segredos comerciais, mas não direitos de privacidade ou publicidade). Qualquer uma das partes pode também buscar alívio em um tribunal de pequenas causas para disputas ou reivindicações dentro do escopo da jurisdição daquele tribunal.",
+            "subTitle6": "15.6 Mudanças nesta seção",
+            "p7": "A   P2P   Entertainment   fornecerá   60   dias   de   aviso   prévio   de   quaisquermudanças nesta seção. As mudanças entrarão em vigor no 60º dia e serãoaplicadas prospectivamente apenas a quaisquer reclamações que surjamapós o 60º dia.",
+            "p8": "Para qualquer disputa não sujeita a arbitragem, você e a P2P Entertainmentconcordam em submeter-se à jurisdição pessoal e exclusiva dos tribunaisfederais localizados em Malta. Você também concorda em aceitar a citaçãoou notificação do processo pelo correio e, por meio deste, renuncia a toda equalquer defesa jurisdicional e de foro disponível de outra forma.",
+            "p9": "Os Termos e o relacionamento entre você e a P2P Entertainment serãoregidos pelas leis de Malta, sem consideração a conflitos de disposiçõeslegais."
+        },
+        "sec16": {
+            "title": "16. LICENÇA DE APLICAÇÃO",
+            "p": "Sujeito à sua conformidade com estes Termos, a P2P Entertainment lheconcede uma licença limitada não exclusiva e intransferível para baixar einstalar   uma   cópia   do   aplicativo   em   um   dispositivo   que   você   controlaexclusivamente e para executar tal cópia do aplicativo exclusivamente paraseu próprio uso pessoal. P2P Entertainment se reserva todos os direitos no epara o aplicativo não expressamente concedidos a você sob estes Termos.Você   não   executará   nenhuma   versão   do   aplicativo   em   um   dispositivoquebrado na prisão.",
+            "p1": "Se você tiver baixado nosso aplicativo, você concorda em baixar e instalarimediatamente qualquer nova versão que disponibilizarmos através da LojaiTunes App ou da Loja Google Play, conforme aplicável. Algumas novas versões podem conter Termos atualizados. Algumas novas versões podemconter correções de segurança e melhorias de serviço, quer divulguemos ounão que contenham; assim sendo, a não atualização imediata de sua versãodo aplicativo pode, em alguns casos, expô-lo a maiores riscos de segurançaou mau funcionamento do serviço."
+        },
+        "sec17": {
+            "title": "17. INFORMAÇÕES GERAIS",
+            "subTitle": "17.1 Acordo Completo",
+            "p": "Estes Termos (e quaisquer termos, regras e condições adicionais de participação em determinados concursos que a P2P Entertainment possa colocar no Serviço) constituem o acordo completo entre você e a P2P Entertainment com relação ao Serviço e substitui quaisquer acordos prévios, orais ou escritos, entre você e a P2P Entertainment. Em caso de conflito entre estes Termos e os termos, regras e condições adicionais de participação em determinados concursos, estes últimos prevalecerão sobre os Termos na medida do conflito.",
+            "subTitle1": "17.2 Renúncia e Divisibilidade dos Termos",
+            "p1": "A falha da P2P Entertainment em exercer ou aplicar qualquer direito ou disposição dos Termos não constituirá uma renúncia a tal direito ou disposição. Se qualquer disposição dos Termos for considerada inválida por um árbitro ou tribunal de jurisdição competente, as partes concordam, contudo, que o árbitro ou tribunal deve esforçar-se para dar efeito às intenções das partes conforme refletidas na disposição, e as outras disposições dos Termos permanecem em pleno vigor e efeito.",
+            "subTitle3": "17.3 Estatuto de Limitações",
+            "p2": "Você concorda que, independentemente de qualquer estatuto ou lei em contrário, qualquer reclamação ou causa de ação decorrente ou relacionada ao uso do Serviço ou dos Termos deve ser apresentada dentro de um (1) anoapós o surgimento de tal reclamação ou causa de ação ou ser impedida para sempre.",
+            "subTitle4": "17.4 Títulos das Seções",
+            "p3": "Os títulos das seções nos Termos são apenas por conveniência e não têm efeito legal ou contratual",
+            "subTitle5": "17.5 Comunicação",
+            "p4": "Os usuários com dúvidas, reclamações ou reclamações com relação aoServiço podem entrar em contato conosco utilizando as informações decontato relevantes acima",
+            "p5": "Obrigado por usar P2P Entertainment!",
+            "p6": "01 de Março de 2021"
+        }
+    },
+    "privacy": {
+        "mainHead": "Política de Privacidade",
+        "sec1": {
+            "title": "1. Introdução",
+            "p": "1.1 P2P   Entertainment   ('P2P   Entertainment,   nós,   nós')   reconhece   que   aspessoas   que   utilizam   o   Serviço   da   P2P   Entertainment   ('você'   ou'utilizadores')   valorizam   a   sua   privacidade.   Esta   Política   de   Privacidadedetalha informações importantes relativas à recolha, utilização e divulgaçãode   informações   do   Utilizador   recolhidas   no   website   da   P2P   Entertainmentlocalizado em www.hit-game.com (o 'Site'), a respectiva aplicação móvel, equaisquer   outras  características,   ferramentas,   materiais,   ou   outros   serviços(incluindo serviços de comarcas ou afiliados) oferecidos de tempos a tempospela P2P Entertainment ou pelas suas empresas afiliadas (o 'Serviço'). P2PEntertainment fornece esta Política de Privacidade para o ajudar a tomar umadecisão informada sobre se deve utilizar ou continuar a utilizar o Serviço",
+            "p1": "1.2 Esta  Política  de  Privacidade  deve  ser lida  em conjunto  com os nossosTermos de Utilização. Ao aceder ao Serviço, está a consentir a recolha deinformações   e   as   práticas   de   utilização   descritas   na   presente   Política   dePrivacidade.",
+            "p3": "1.3 A sua utilização do Serviço e qualquer informação fornecida através do Serviço permanece sujeita aos termos da presente Política de Privacidade e aos nossos Termos de Utilização, uma vez que cada um deles pode ser atualizado de tempos a tempos."
+        },
+        "sec2": {
+            "title": "2. Informações que coletamos",
+            "p": "Ao utilizar o nosso Serviço e ao enviar-nos informações através da sua utilização do nosso Serviço, então esta Política de Privacidade será aplicada. O utilizador fornece determinadas informações pessoais à P2P Entertainment quando escolhe participar nas várias atividades do Serviço, tais como registo para uma conta, participação em concursos, envio de mensagens, aproveitamento de promoções, resposta a inquéritos ou subscrição de newsletters ou outras listas de correio. As informações pessoais que recolhemos de si podem geralmente incluir",
+            "p1": "2.1.1 nome",
+            "p2": "2.1.2 email",
+            "p3": "2.1.3 data de nascimento",
+            "p4": "2.1.4 informações de pagamento",
+            "p5": "2.1.5 contatos que escolhe para submeter",
+            "p6": "2.1.6 foto de perfil",
+            "p7": "2.1.7 nome de usuário",
+            "p8": "2.1.8 localização",
+            "p9": "2.1.9 suas preferências",
+            "p10": "2.1.10 submissões a vários concursos e promoções",
+            "p11": "2.1.11 respostas às pesquisas",
+            "p12": "2.1.12 comunicações enviadas por nós para você",
+            "p13": "2.1.13 as suas subscrições de newsletters e serviços oferecidos por nós",
+            "p14": "2.1.14 qualquer outra informação que submeta à P2P Entertainment ao optarpor participar em várias atividades do Serviço",
+            "p15": "2.2 Para além do acima referido, poderemos ter de verificar a sua identidadepara   que   possa   utilizar   alguns   aspectos   do   Serviço.   Para   efeitos   deverificação, podemos também recolher as seguintes informações pessoais docliente   (por   razões   de   conformidade,   o   fornecimento   destas   informações,quando   solicitado,   é   uma   condição   obrigatória   para   a   utilização   do   nossoServiço",
+            "p17": "2.2.1 informações do passaporte",
+            "p18": "2.2.2 carteira de habilitação",
+            "p19": "2.2.3 outros documentos de identificação",
+            "p20": "2.2.4 endereço permanente e temporário",
+            "p21": "2.2.5 informações fiscais",
+            "p22": "2.2.6 outras informações que possam ser necessárias para o verificar, de acordo com as leis e regulamentos aplicáveis",
+            "p23": "2.3 Quando utiliza a nossa aplicação móvel, também podemos recolher informações sobre dispositivos móveis, como sistema operativo e tipo de hardware, números ou códigos que são exclusivos do seu dispositivo em particular (como IDFA ou um ID de anúncio do Android), informações sobre o dispositivo, linguagem padrão do dispositivo, a localização do seu dispositivo (a um nível de GPS), e informações sobre a utilização da aplicação. Estes dados também podem ser ligados a outras informações, incluindo os seus dados de localização.",
+            "p24": "2.4 Além disso, se optar por iniciar sessão, aceder ou ligar-se de outra forma à P2P Entertainment, ou contatar a P2P Entertainment, através de um serviço de rede social (como o Facebook), podemos recolher o seu ID de utilizador e nome de utilizador associado a esse serviço de rede social, bem como qualquer informação que torne pública utilizando esse serviço de rede social. Podemos também recolher informações que tenha autorizado o serviço de redes sociais a partilhar conosco (tais como o seu ID de utilizador,informações de perfil público, endereço de e-mail, aniversário, lista de amigos, e páginas de que 'gostou')",
+            "p25": "2.5 Informação sobre Cookies: Quando visita o website www.hit-game.com,podemos   enviar   um   ou   mais   cookies   -   pequenos   ficheiros   -   para   o   seucomputador   ou   outro   dispositivo,   o   que   pode   permitir-nos   ou   a   outrosidentificar   de   forma   única   o   seu   browser.   www.hit-game.com   utiliza   tantocookies   de   sessão   como   cookies   persistentes.   Um   cookie   persistentepermanece depois de ter fechado o seu navegador. Os cookies persistentespodem   ser   utilizados   pelo   seu   programa   de   navegação   em   visitassubsequentes   ao   sítio.   Os   cookies   persistentes   podem   ser   removidos,seguindo as instruções do seu navegador da web. Os cookies de sessão sãotemporários e normalmente desaparecem depois de fechar o seu programade navegação. Poderá ser capaz de reiniciar o seu navegador para recusartodos   os   cookies   ou   para   indicar   quando   um   cookie   está   a   ser   enviado.Contudo, algumas características do  Sítio ou  Serviço podem não funcionarcorretamente se a capacidade de aceitar cookies estiver desativada.",
+            "p26": "2.6 Informação do ficheiro de registo: Quando utiliza o nosso Serviço, os nossos servidores podem registar automaticamente certas informações que oseu dispositivo envia sempre que visita qualquer website e utilizar certas aplicações. Estes registos do servidor podem incluir informações tais como o seu pedido da web ou da aplicação, endereço do Protocolo Internet ('IP'), tipo de navegador, língua do navegador, páginas de referência/saída e URLs,tipo de plataforma, número de cliques, nomes de domínio, páginas de destino, páginas visualizadas e a ordem dessas páginas, a quantidade de tempo gasto em determinadas páginas, a data e hora do seu pedido, e um oumais cookies que podem identificar de forma única o seu navegador.",
+            "p27": "2.7 Limpar informações sobre os GIFs: Quando você utiliza nosso Serviço, podemos empregar tecnologia como 'clear GIFs' (também conhecidos como Web Beacons) que são usados para rastrear os padrões de uso on-line de nossos usuários. Além disso, também podemos usar GIFs claros em e-mails baseados em HTML enviados a nossos usuários para rastrear quais e-mails são abertos por usuários específicos.",
+            "p28": "2.8 A  P2P   Entertainment   também  pode   coletar  informações   sobre   você   deterceiros,   tais   como   parceiros   de   marketing,   serviços   de   verificação   deidentidade, serviços antifraude e outros prestadores de serviços"
+        },
+        "sec3": {
+            "title": "3. Como   a   P2P   Entertainment   utiliza   a   suainformação",
+            "p1": "3.1 Utilizamos suas informações pessoais para operar, manter e fornecer-lhe as características e funcionalidades do Serviço, incluindo, mas não se limitando ao seguinte",
+            "p2": "3.1.1 fornecendo a você nossos produtos e serviços, incluindo nossos jogos",
+            "p3": "3.1.2 processamento e resposta a consultas",
+            "p4": "3.1.3 personalizando seu uso do Serviço",
+            "p5": "3.1.4 alertando-o sobre novas características, eventos especiais, produtos e serviços, ou certos produtos ou serviços de terceiros nos quais pensamos que você estará interessado",
+            "p6": "3.1.5 fazer cumprir os termos legais que regem seu uso do Serviço",
+            "p7": "3.1.6 investigando e protegendo a integridade dos concursos da P2P Entertainment.",
+            "p8": "3.2 Podemos utilizar suas informações (tanto pessoais quanto não pessoais) para enviar-lhe conteúdo de marketing e publicidade, incluindo o envio de publicidade através de múltiplos canais, tais como mala direta, e-mail, notificações push e mídia de exibição. Podemos enviar-lhe publicidade ou conteúdo relativo a nossos produtos e serviços, ou produtos e serviços que comercializamos em nome de outra empresa, tais como uma equipe esportiva, um local esportivo, ou outra entidade.",
+            "p9": "3.3 Podemos   usar   suas   informações   para   nos   comunicarmos   com   vocêsobre",
+            "p10": "3.3.1 nossos produtos e serviços nos quais você possa estar interessado, desde que não tenha solicitado de outra forma",
+            "p11": "3.3.2 boletins informativos e informações para as quais você se inscreveu",
+            "p12": "3.3.3 fins não comerciais ou administrativos (tais como a notificação de grandes mudanças no Serviço ou para fins de atendimento ao cliente)",
+            "p13": "3.3 Utilizamos   suas   informações   para   melhorar   a   qualidade   e   o   design   denossos serviços e para criar novos recursos, promoções, funcionalidades eserviços, tais como armazenamento, rastreamento e análise das preferênciase tendências dos usuários",
+            "p14": "3.4 Também  usamos cookies,  clear gifs,  informações de   arquivos  de   log  einformações de aplicativos móveis, como identificadores de dispositivos, parafins como (a) lembrar informações para que você não tenha que reinseri-lasdurante sua visita ou na próxima vez que visitar nosso Serviço; (b) fornecerconteúdo   e   informações   personalizadas   e   personalizadas;   (c)   monitorar   aeficácia   de   nossas   campanhas   de   marketing;   (d)   monitorar   métricasagregadas como número total de visitantes, páginas visualizadas, etc.; e (e)rastrear   suas   entradas,   submissões   e   status   em   promoções,   sorteios   econcursos. Você pode saber mais sobre como estas tecnologias são usadasna seção abaixo, Publicidade e Analytics.",
+            "p15": "3.5 Podemos anonimizar, desidentificar ou agregar suas informações para quaisquer fins comerciais legítimos, inclusive para relatórios e pesquisas, ou para publicidade. Tais dados anonimizados e/ou agregados não o identificam pessoalmente. Algumas vezes, essas informações podem ser usadas para direcionar conteúdos ou ofertas mais relevantes a você através de diferentes dispositivos - por exemplo, podemos fornecer a você ofertas e conteúdos em seu dispositivo móvel, com base em sua atividade baseada na web",
+            "p16": "3.6 Conservaremos   as   informações   pessoais   pelo   tempo   necessário   paracumprir estes propósitos, a menos que a lei exija que as conservemos por umperíodo   de   tempo   maior.   Para   proporcionar   segurança   e   continuidade   denegócios   para   as   atividades   aqui   descritas,   fazemos   backups   de   certosdados, que podemos reter por mais tempo do que os dados originais."
+        },
+        "sec4": {
+            "title": "4. Quando     a     P2P     Entertainment     divulgainformações",
+            "p1": "4.1 Podemos divulgar as informações que coletamos ou recebemos de você para nossas subsidiárias, empresas afiliadas, agentes ou outros negócios ou prestadores de serviços que processam suas informações em nosso nome a fim de fornecer ou operar o Serviço. Por exemplo, essas entidades podem teracesso às suas informações para fins que incluem (mas não se limitam a) faturamento e contabilidade, hospedagem, marketing, serviços promocionais e de e-mail, suporte ao cliente e técnico, e com a finalidade de aceitar depósitos e pagar retiradas e processar tais informações em nosso nome, e em cada caso, podem usar as informações para fazer melhorias nos serviçosque nos prestam. Nossos acordos com esses prestadores de serviços limitamos tipos de informações que eles podem usar ou processar e exigem que eles façam esforços razoáveis para manter suas informações pessoais seguras.",
+            "p2": "4.2 Quando você optar por compartilhar informações com serviços de mídiasocial sobre suas atividades na P2P Entertainment, por exemplo, conectandosua   conta   de   mídia   social   ao   nosso   Serviço,   então   a   P2P   Entertainmentpoderá compartilhar suas informações pessoais e informações sobre seu usodo Serviço com tais sites de mídia social. Por favor, certifique-se de ler ostermos e declarações de privacidade de tais sites antes de conectar-se aonosso Serviço desta forma.",
+            "p3": "4.3 Caso você ganhe um prêmio, poderemos usar suas informações pessoais(como seu nome e foto) em conexão com fins publicitários",
+            "p4": "4.4 No caso de você ganhar uma promoção por nós realizada, poderemos ser obrigados a publicar ou disponibilizar, mediante solicitação, seu nome e município, de acordo com a legislação aplicável.",
+            "p5": "4.5 Podemos publicar uma página de perfil que inclua seu nome de usuário, adata   em   que   você   se   tornou   membro,   suas   estatísticas   de   concursosanteriores   e,   se   você   fez   upload   de   um,   sua   foto   de   perfil.   Quando   vocêpublica informações pessoais sobre você através de nosso Serviço em áreas públicas   de   nosso   Serviço,   você   reconhece   e   concorda   que   essasinformações pessoais estarão disponíveis ao público.",
+            "p6": "4.6 Quando você participa de um concurso, podemos publicar seu nome de usuário em uma lista dos participantes do concurso, juntamente com um link para sua página de perfil.",
+            "p7": "4.7 Quando você tiver fornecido seu consentimento, poderemos compartilhar suas informações pessoais com terceiros selecionados para seu uso comercial ou de marketing em conjunto com seu relacionamento com a P2P Entertainment ou como parte de um programa ou recurso específico.",
+            "p8": "4.8 Além disso, podemos divulgar a terceiros vários tipos de suas informações para publicidade online ou móvel direcionada, como descrito mais detalhadamente na Seção intitulada 'Publicidade e Analytics'",
+            "p9": "4.9 Também podemos compartilhar informações pessoais em outras situações com seu consentimento",
+            "p10": "4.10 A P2P Entertainment também se reserva o direito de divulgar informações pessoais que a P2P Entertainment acredita, de boa fé, ser apropriada ou necessária para fazer cumprir nossos Termos de Uso, tomar precauções contra responsabilidade ou danos, investigar e responder a reivindicações ou alegações de terceiros, responder a ordens judiciais ou solicitações oficiais, para cumprir com os regulamentos estaduais e federais, incluindo, mas não limitado ao compartilhamento com as autoridades fiscais apropriadas, para proteger a segurança ou integridade de nosso Serviço, para relatar violações das regras de elegibilidade da P2P Entertainment a terceiros, incluindo empregadores de indivíduos afiliados a outros sites de fantasia diários, e para proteger os direitos, propriedade ou segurança da P2P Entertainment, nossos usuários ou outros.",
+            "p11": "4.11 No   caso   da   P2P   Entertainment   estar   envolvida   em   uma   fusão,aquisição,  venda,  falência,  insolvência, reorganização, recuperação judicial,cessão   em   benefício   dos   credores,   ou   a   aplicação   de   leis   ou   princípioseqüitativos que afetem os direitos dos credores em geral, ou outra mudança de   controle,   poderá   haver   uma   divulgação   de   suas   informações   pessoaispara outra entidade relacionada a tal evento.",
+            "p12": "4.12 Os destinatários das divulgações de dados descritas nesta Política dePrivacidade   estão   localizados   na   União   Europeia   e   em   outros   lugares   domundo,   inclusive   onde   as   leis   de   privacidade   podem   não   oferecer   tantaproteção quanto seu país."
+        },
+        "sec5": {
+            "title": "5. Bases   legais   para   o   processamento   de   dadospessoais",
+            "p": "5.1 Algumas leis exigem que as empresas lhe informem sobre os fundamentos legais nos quais elas se baseiam para processar suas informações pessoais. Na medida em que essas leis se apliquem, nós processamos suas informações pessoais",
+            "p1": "5.1.1 Interesses legítimos: Em muitos casos, tratamos os dados pessoais com base no fato de que eles promovem nossos interesses legítimos em atividades comerciais, tais como as seguintes, de maneiras que não são anuladas pelos interesses ou direitos e liberdades fundamentais dos indivíduos afetados",
+            "l1": "Serviços ao consumidor",
+            "l2": "Marketing",
+            "l3": "Protegendo nossos jogadores, pessoal e propriedade",
+            "l4": "Analisar e melhorar nossos negócios",
+            "l5": "Processamento de pedidos de emprego",
+            "l6": "Gerenciamento de questões legais",
+            "p2": "5.1.2 Também podemos processar dados pessoais para os legítimos interesses de nossas afiliadas ou parceiros comerciais, tais como oferecer eventos especiais ou concursos ou auxiliar no marketing.",
+            "p3": "5.1.3 Processamento para o contrato: Alguns de nossos processamentos de dados pessoais são para cumprir nossas obrigações contratuais com nossos jogadores",
+            "p4": "5.1.4 Consentimento: Quando exigido por lei, e em alguns outros casos, tratamos dados pessoais com base em seu consentimento implícito ou expresso.",
+            "p5": "5.1.5 Conformidade legal: Precisamos usar e divulgar dados pessoais de determinadas maneiras para cumprir com nossas obrigações legais."
+        },
+        "sec6": {
+            "title": "6. Suas Opções",
+            "p": "6.1 A P2P Entertainment processará suas informações pessoais de acordo com esta Política de Privacidade e, como parte disso, a P2P Entertainment lhe oferece certas escolhas sobre como processamos suas informações pessoais. Essas escolhas são apresentadas abaixo.",
+            "p1": "6.2 Você pode acessar e atualizar certas informações pessoais que a P2P Entertainment detém sobre você a qualquer momento, acessando sua conta através do Serviço. Você pode atualizar suas preferências de marketing e se gostaria ou não que lhe enviássemos boletins informativos em sua conta. Você também pode cancelar sua assinatura de e-mails e newsletters de marketing usando o recurso 'cancelar assinatura' na comunicação.",
+            "p2": "6.3 Ocasionalmente, podemos enviar meios de exibição para você, de forma direcionada, seja através de navegadores web ou móveis ou aplicativos móveis. Você pode optar por não participar de muitos terceiros que apoiam e enviam este tipo de publicidade direcionada indo a www.aboutads.info, e você pode saber mais sobre este tipo de publicidade na seção abaixo intitulada 'Publicidade e Analytics'. Você pode optar por não rastrear a publicidade móvel através das configurações na maioria dos smartphones, e você pode aprender mais sobre essas configurações através dessas plataformas de dispositivos móveis, ou seja, Google (aqui) e Apple (aqui). (Observe que estas empresas podem mudar tanto a forma como estas configurações operam, o conteúdo ou a disponibilidade destas páginas).",
+            "p3": "6.4 Ocasionalmente, podemos enviar-lhe notificações push para seu dispositivo móvel. Você pode desativar certas notificações push nas configurações de conta de seu aplicativo móvel P2P Entertainment. Você também pode desativar notificações push específicas para nosso serviço nas configurações de seu dispositivo iOS, ou através do gerenciador de aplicativos em seu dispositivo Android.",
+            "p4": "6.5 Pode nos contatar conforme descrito abaixo com quaisquer outras preocupações, solicitações ou reclamações relativas à nossa coleta, uso ou transferência de dados. Você também tem o direito de apresentar uma reclamação de privacidade junto ao regulador de privacidade relevante, mas nós o convidamos respeitosamente a permitir-nos tentar resolver o assunto diretamente. Tentaremos responder às suas perguntas e satisfazer suas preocupações de forma oportuna e completa."
+        },
+        "sec7": {
+            "title": "7. Publicidade e Analytics",
+            "p": "7.1 Trabalhamos com diversas empresas que auxiliam na comercialização denossos serviços para você em sites de terceiros. Essas empresas podem coletar informações sobre atividades on-line conduzidas em um determinado computador, navegador ou dispositivo ao longo do tempo e em sites ou serviços on-line de terceiros com a finalidade de fornecer publicidade que provavelmente seja de maior interesse para você, inclusive sobre nossos Serviços, em sites e aplicativos de terceiros. Além disso, certos anúncios queaparecem em nossos Serviços são entregues por nossos parceiros publicitários. Nossos parceiros de publicidade podem usar cookies e outras tecnologias similares, muitas vezes em conjunto com identificadores de cookies únicos (anônimos), para coletar dados sobre suas atividades e interesses, incluindo as tecnologias descritas acima. Alguns desses parceirospodem usar identificadores de dispositivos móveis, tais como IDFAs da Applee IDs de Publicidade do Google/Android. Isto permite que as empresas de publicidade reconheçam seu computador ou dispositivo cada vez que lhe enviam um anúncio on-line ou móvel. Desta forma, as empresas de publicidade podem compilar informações sobre onde você, ou outros que estão usando seu computador ou dispositivo, viram seus anúncios e medir sua interação com cada anúncio. Estas informações permitem que as empresas de publicidade entreguem anúncios direcionados que podem ser de maior interesse para você, tanto em nosso serviço quanto em qualquer outro lugar online. Assim como estas tecnologias podem ser utilizadas para direcionar anúncios em nossos sites e aplicativos, nós, ou nossos parceiros de publicidade, podemos utilizar estas mesmas tecnologias e pontos de dados (por exemplo, identificadores móveis, identificadores de cookies, dados baseados em localização), através de nosso Serviço ou através de outros serviços, para direcionar anúncios (para nós mesmos ou para outras empresas) em outros sites ou aplicativos móveis. Algumas vezes, esses identificadores podem ser derivados de uma versão em hash ou criptografadade informações pessoais, tais como seu endereço de e-mail. Podemos usar essas informações para medir o desempenho de nossa publicidade também, por exemplo, para avaliar quais anúncios ou conteúdo nossos usuários preferem, ou quais são mais eficazes. Além disso, às vezes um parceiro publicitário ou podemos personalizar a publicidade para você através de diferentes dispositivos.",
+            "p1": "7.2 Para   saber   mais   e   optar   pela   não   coleta   de   dados   em   nosso   site   porterceiros (incluindo os descritos acima) para fins de publicidade baseada eminteresses, visite www.aboutads.info/choices ou www.youronlinechoices.com.Observe que, como este método de não participação pode ser baseado emcookies, você precisará optar por não participar novamente se atualizar oualterar seu navegador, ou excluir seus cookies. Você também pode controlara publicidade baseada em juros em aplicativos em seu dispositivo móvel como aplicativo AppChoices, disponível para iOS e Android. Observe que o opt-out   não   afetará   a   quantidade   de   anúncios   que   você   vê   on-line,   masprovavelmente fará com que os anúncios sejam menos relevantes para você.",
+            "p2": "7.3 Também trabalhamos com empresas analíticas terceirizadas para coletardados   sobre   nossos   serviços   através   de   cookies   e   outros   meiosautomatizados.   Em   alguns   casos,   os   terceiros   mencionados   nesta   seçãopodem   manter   as   informações   que   coletam   de   forma   pessoalmenteidentificável.   Esses   serviços   nos   permitem   visualizar   uma   variedade   derelatórios   sobre   como   os   visitantes   interagem   com   os   Serviços   para   quepossamos melhorar nosso site e entender como as pessoas o encontram enavegam."
+        },
+        "sec8": {
+            "title": "8. Segurança da Informação",
+            "p": "8.1 Estamos empenhados em proteger a segurança de suas informações pessoais. Utilizamos uma variedade de tecnologias e procedimentos de segurança para ajudar a proteger suas informações pessoais contra acesso, uso ou divulgação não autorizados.",
+            "p1": "8.2 Embora nem nós, nem qualquer outra organização, possamos garantir a segurança das informações processadas on-line, temos medidas de segurança apropriadas para proteger suas informações pessoais. Por exemplo, armazenamos as informações pessoais que você fornece em sistemas de computador com acesso limitado que estão localizados em instalações às quais o acesso é limitado.",
+            "p3": "8.3 Para proteger ainda mais sua privacidade e segurança, reservamo-nos o direito de tomar medidas razoáveis (como solicitar sua senha) para verificar sua identidade antes de conceder-lhe acesso ao perfil ou fazer correções.",
+            "p4": "8.4 Além disso, você deve garantir que sua senha seja mantida em sigilo o tempo todo. Você será responsável por manter o sigilo de sua senha e informações de conta."
+        },
+        "sec9": {
+            "title": "9. Mudanças e Atualizações",
+            "p": "Esta   Política   de   Privacidade   pode   ser   revisada   periodicamente   e   issoserá refletido na data da 'Última atualização publicada' acima. Favor revisitaresta página para ficar ciente de quaisquer mudanças. Se uma revisão destaPolítica   de   Privacidade,   a   nosso   exclusivo   critério,   for   material,   nós   onotificaremos entrando em contato com você através do endereço de e-mailassociado à sua conta.",
+            "p1": "Obrigado por usar a P2P Entertainment!",
+            "p2": "01 de Março de 2021 "
+        }
+    },
+    "help": {
+        "mainHead": "Ajuda e Suporte",
+        "sec1": {
+            "title": "O que é o Hit?",
+            "p": "Hit é uma rede social de apostas peer-to-peer criada para oferecerentretenimento para os fãs de esportes de uma forma vibrante esimples."
+        },
+        "sec2": {
+            "title": "Posso acessar o Hit do meu telefone ou tablet?",
+            "p": "Com certeza! Em países onde a Apple e o Google permitem quevocê encontre o aplicativo Hit na App Store ou no Google Play.Caso contrário, a maioria das páginas em nosso site são projetadaspara funcionar tanto em navegadores móveis quanto em desktop."
+        },
+        "sec3": {
+            "title": "Perdi meus detalhes de log in, o que posso fazer?",
+            "p": "Não se preocupe, nós podemos resolver isso para você. O maisimportante é que você não crie uma nova conta. Criar várias contasé   uma   violação   de   nossos   Termos,   e   pode   comprometer   suacapacidade de jogar Hit.",
+            "p1": "Se você esqueceu que e-mail usou para criar uma conta, entre emcontato com nossa equipe de suporte ao cliente na seção Contato.Eles podem ajudá-lo a rastrear seus dados de login e garantir quevocê não crie contas duplicadas.Se você simplesmente esqueceu sua senha, é fácil de redefini-la.Comece na página de Login e selecione o link 'Esqueceu minhasenha'."
+        },
+        "sec4": {
+            "title": "Como faço para criar uma conta?",
+            "p": "Novos usuários que querem criar uma conta pela primeira vez podem facilmente se juntar ao Hit. É extremamente simples. Basta digitar um endereço de e-mail válido, confirmar seu endereço de e-mail através da validação OTP, criar um nome de usuário e proteger sua conta com uma senha."
+        },
+        "sec5": {
+            "title": "Como fechar minha conta?",
+            "p": "Se você gostaria de fechar sua conta, entre em contato com nossa equipe de suporte ao cliente na seção Contato.",
+            "p1": "Entretanto, se você não estiver pronto para encerrar totalmente sua conta, Hit tem opções. Oferecemos a possibilidade de auto-excluir sua conta por um período de três, seis, nove, ou doze meses. Basta enviar suas informações na seção Contato."
+        },
+        "sec6": {
+            "title": "E se eu não me lembrar de minha senha ou tiver um novoendereço de e-mail?",
+            "p": "Não crie uma nova conta. Em vez disso, você pode redefinir sua senha, mudar seu endereço de e-mail em sua conta existente, ou entrar em contato com o Suporte ao Cliente.",
+            "p1": "Se você esqueceu sua senha, você pode sempre usar a opção Esqueci Minha Senha na página Log In para redefinir sua senha. Um e-mail para redefinir sua senha será enviado para seu endereçode e-mail registrado. Se você não receber esse e-mail dentro de alguns minutos, recomendamos verificar sua pasta de Spam ou entrar em contato com o Suporte ao Cliente para obter um link personalizado de redefinição.",
+            "p2": "Se você precisar alterar seu endereço de e-mail em sua conta Hit, você pode entrar em sua conta e alterar seu endereço de e-mail na seção 'Configurações de conta' de sua página Minha conta. ",
+            "p3": "A partir do aplicativo, você poderá atualizar seu endereço de e-mailem 'Configurações de conta'. Uma vez lá, basta clicar no botão'Alterar e-mail' e atualizar seu endereço de e-mail."
+        },
+        "sec7": {
+            "title": "Como eu conecto minha conta do Facebook no Hit?",
+            "p": "Se   você   gostaria   de   conectar   sua   conta   Hit   à   sua   conta   doFacebook, você pode fazê-lo a partir da página de Login. Uma veznesta página, clique em 'Continuar com o Facebook'. Em seguida,você digitará seu endereço de e-mail e senha do Facebook e cliqueem 'Continuar como...'. Uma vez que você tenha feito isso, suascontas do Hit e do Facebook serão vinculadas!"
+        },
+        "sec8": {
+            "title": "Como faço para conectar minhas contas Google e Hit?",
+            "p": "Se você gostaria de conectar sua conta Hit à sua conta Google,você pode fazê-lo a partir da página de Login. Uma vez nestapágina, clique em 'Continuar com Google'. Em seguida, digite seuendereço de e-mail e senha do Google e clique em 'Continuarcomo...'. Uma vez que você tenha feito isso, suas contas Hit eGoogle serão vinculadas!"
+        },
+        "sec9": {
+            "title": "Posso criar outra conta?",
+            "p": "Criar uma conta duplicada é uma violação dos termos do Hit, portanto, você não deve criar uma segunda conta. Fazer isso pode comprometer sua capacidade de jogar no Hit.",
+            "p1": "Se você mudou ou perdeu o acesso ao endereço de e-mail associadoà sua conta, sugerimos que você faça o login com seu e-mail e senha existentes. Você pode então atualizar seu endereço de e-mailna página Minha Conta.",
+            "p2": "Se você gostaria de criar uma nova conta porque não gosta de seu nome de usuário, entre em contato com nossa Equipe de Suporte ao Cliente. Embora normalmente não concedamos mudanças de nome de usuário, analisaremos as solicitações caso a caso, portanto, sinta-se à vontade para entrar em contato."
+        },
+        "sec10": {
+            "title": "Atraso na Pontuação ao Vivo",
+            "p": "Nosso principal fornecedor de estatísticas ainda é incapaz de nos fornecer dados em tempo real para todos os jogos que queremos disponibilizar para que você possa apostar. Embora tenhamos em vigor feeds secundários e opções de backup, a liquidação pode ser atrasada, pois revisamos manualmente todas as competições para verificar os resultados e a liquidação apropriada."
+        },
+        "sec11": {
+            "title": "Como posso adicionar uma foto de perfil?",
+            "p": "A adição de uma foto do perfil está disponível na área de trabalho ou no aplicativo.",
+            "p1": "Se você estiver em sua área de trabalho, vá para sua página de perfil. Diretamente em seu espaço de foto no centro, há um ícone que representa sua foto de perfil. Passe o mouse sobre o círculo e clique na opção 'Editar'. Isto o levará a uma página onde você podealterar ou carregar sua foto de perfil.",
+            "p2": "Para carregar uma nova foto de perfil:",
+            "p3": "Clique no botão 'Escolher arquivo'.Selecione a imagem que você gostaria de usar no navegador de arquivos e clique em 'Abrir'. Certifique-se de que você é o detentor dos direitos autorais da imagem e que o arquivo não exceda 2MB"
+        },
+        "sec12": {
+            "title": "Por que estou sendo solicitado a verificar minha identidade?",
+            "p": "Os regulamentos de jurisdição exigem que verifiquemos sua identidade. Nosso formulário de verificação on-line confirma sua identidade e informações de conta para que possamos evitar fraudes, cumprir com os regulamentos e manter Hit um lugar divertido e seguro para todos.",
+            "p1": "Quanto mais detalhes você nos fornecer, mais perfeito será seu processo de retirada. Todos os usuários que solicitarem um saque de qualquer quantia serão solicitados a verificar sua conta. Se vocênunca confirmou sua identidade, mesmo que tenha fornecido detalhes fiscais no passado, você precisará verificar sua conta."
+        },
+        "sec13": {
+            "title": "Quais são as formas de verificar minha identificação?",
+            "p": "Os usuários podem fazer sua identificação para sua conta Hit no aplicativo, ou nos navegadores móveis/web.",
+            "p1": "Para fazer sua identificação através do recurso de upload automático, vá para a seção KYC e selecione 'Do KYC'. De lá, você completará os passos para carregar sua identificação ou passaportepara verificar sua conta.",
+            "p2": "Se você estiver tendo problemas para carregar sua ID através do Upload Automático, não se preocupe - temos uma Equipe de Verificação dedicada pronta para ajudá-lo. Entre em contato conosco na seção Contato."
+        },
+        "sec14": {
+            "title": "Por que estou tendo problemas para verificar minha identidade?",
+            "p1": "Há muitas razões pelas quais você poderia estar se deparando comproblemas. A melhor maneira de resolver isto é criar um ticket desuporte e nossa Equipe de Suporte ao Cliente estará em contato.Nosso tempo de retorno atual para o suporte de verificação é entre12 e 24 horas.",
+            "p2": "Por favor, não envie vários tíquetes de suporte. Isto só retardanosso tempo de resposta para todos, inclusive você mesmo. Se vocêjá enviou um ticket de suporte, saiba que recebemos seu pedido e oacompanharemos o mais rápido possível."
+        },
+        "sec15": {
+            "title": "Quanto tempo leva para verificar meus documentos?",
+            "p": "Ao entrar em sua conta, você pode enviar seus documentos usando o recurso de upload na seção Conheça seu cliente do site.",
+            "p1": "Ocasionalmente, devido a grandes volumes, pode haver um atraso na revisão de quaisquer documentos enviados por e-mail. Tenha certeza de que revisaremos seus documentos o mais rápido possível.",
+            "p2": "Você também pode ver seu status atual de verificação visitando a área Conheça seu cliente."
+        },
+        "sec16": {
+            "title": "Fazendo uma retirada",
+            "p": "Você pode fazer uma retirada da wallet. Sempre que possível, somos obrigados a enviar os fundos de volta ao método de pagamento que foi usado para depositar os fundos originais."
+        },
+        "sec17": {
+            "title": "Processo de saques",
+            "p": "Você pode fazer um saque da wallet, onde todos os saques são processados usando o método de pagamento do qual os fundos foram inicialmente depositados. Aconselhamos que você certifique-se de que seu método de pagamento registrado é o método para o qual você deseja fazer a retirada.",
+            "p1": "Se não for possível retirar fundos usando seu método de depósito, então processaremos sua retirada para sua conta bancária usando Transferência Bancária. Você pode processar um saque via Transferência Bancária on-line selecionando Saque e inserindo os dados bancários necessários. Para mais informações sobre os métodos de saque disponíveis, consulte a seção Saques em nossos Métodos de Pagamento."
+        },
+        "sec18": {
+            "title": "Eu não recebi minha retirada",
+            "p": "O tempo de processamento de seu saque variará de acordo com seumétodo de pagamento.Você pode ver mais informações sobre os tempos de liberação desaque visitando nossa página Método de Pagamento. Se você nãoconseguir   localizar   seu   saque   após   o   término   do   tempo   deprocessamento, favor entrar em contato conosco."
+        }
+    },
+    "aboutUs": {
+        "mainHead": "Sobre Nós",
+        "orderlist": {
+            "list1": "O que é a Hit?",
+            "list2": "Como surgiu a Hit?"
+        },
+        "subHead1": "O que é a Hit?",
+        "subHead1-sec1": {
+            "p1": "A Hit é uma plataforma social que conecta fãs de esportes para disputas e apostas recreativas. Nela você pode criar e participar de ligas esportivas, dando seu palpite de resultados das partidas escolhidas e os participantes que mais entendem recebem prêmios.",
+            "p2": "Contamos com a regulamentação e licença da Malting Gaming Authority (MGA) para garantir segurança para todos nossos usuários.",
+            "p3": "Somos apaixonados por esportes e queremos expandir isso para o máximo de pessoas possíveis e por isso temos uma enorme variação de ligas disponíveis na plataforma, além de trabalharmos para incluir cada vez mais."
+        },
+        "subHead2": "Como a Hit surgiu?",
+        "subHead2-sec2": {
+            "p1": "A Hit nasceu entre pessoas. Nasceu da paixão delas por esporte, da conexão humana e da troca de experiências que só o esporte pode oferecer. Começou como uma brincadeira sobre quem entendia mais de futebol e foi só crescendo. De repente, através da vontade de compartilhar a emoção sentida por um pequeno grupo de amigos com o resto do mundo, a brincadeira se profissionalizou.",
+            "p2": "Fizeram parte do nosso crescimento as mais diversas pessoas, dos mais variados países: Brasil, Argentina, Suíça, Itália, Portugal, Malta, Holanda, China e Índia. ",
+            "p3": "E agora o Hit chega até você. Para que você possa sentir o desafio e a realização, a raiva e a alegria, a fusão de sensações que só o esporte proporciona. Chegou a sua vez de fazer parte da Hit!"
+        }
+    },
+    "yourAccount": {
+        "mainHead": "Sua Conta",
+        "orderlist": {
+            "list1": "Como criar uma conta?",
+            "list2": "Como editar ou alterar informações do perfil?",
+            "list3": "Como redefinir ou alterar sua senha?",
+            "list4": "Como configurar limites de depósito e aposta?",
+            "list5": "Como desativar ou excluir a conta?",
+            "list6": "Como adicionar amigos?"
+        },
+        "subHead1": "Como criar uma conta?",
+        "subHead2": "Como editar ou alterar informações do perfil?",
+        "subHead3": "Como redefinir ou alterar sua senha?",
+        "subHead4": "Como configurar limites de depósito e aposta?",
+        "subHead5": "Como desativar ou excluir a conta?",
+        "subHead6": "Como adicionar amigos?",
+        "subHead1-sec1": {
+            "p1": "Se você ainda não tem uma conta Hit, basta acessar a página de login (hit-game.com/user/sign-up) para cadastrar-se facilmente.",
+            "p2": "Você pode se cadastrar usando seu endereço de e-mail, ou conectar-se com uma conta do Google ou Facebook.",
+            "p3": "Você deverá concordar com os termos e políticas e ter idade acima de 18 anos para criar sua conta.",
+            "paragraph-sub": {
+                "paragraph-sub-header1": "-Endereço de E-mail:",
+                "paragraph-sub-header2": "-Conectando-se com uma conta do Google:",
+                "paragraph-sub-header3": "-Conectando-se com uma conta do Facebook:",
+                "paragraph-sub-header1-list": {
+                    "order-list1": {
+                        "list1": "Acesse a página de login (hit-game.com/user);",
+                        "list2": "Digite um endereço de e-mail válido;",
+                        "list3": "Você receberá um código de validação no e-mail inserido."
+                    },
+                    "pargraph1": "Caso não encontre o e-mail enviado, certifique-se que não está na caixa de spam. Você também pode pedir para reenviar o código no seu e-mail.",
+                    "order-list2": {
+                        "list1": " Insira o código recebido;",
+                        "list2": "Escolha um nome de usuário para seu perfil;",
+                        "list3": "Preencha as demais informações pessoais (Nome, Telefone, Data de Nascimento e Endereço);",
+                        "list4": "Escolha uma senha segura para seu acesso;",
+                        "list5": "Pronto! Você estará logado e para voltar a fazer o login pode utilizar seu email ou nome de usuário e sua senha escolhida."
+                    }
+                },
+                "paragraph-sub-header2-list": {
+                    "order-list1": {
+                        "list1": "Acesse a página de login (hit-game.com/user);",
+                        "list2": "Selecione Continuar com o Google;",
+                        "list3": "Escolha uma conta do Google logada ou então digite seu endereço de e-mail e senha do Google;",
+                        "list4": "Escolha um nome de usuário para seu perfil;",
+                        "list5": "Preencha as demais informações pessoais (Nome, Telefone, Data de Nascimento e Endereço);",
+                        "list6": "Pronto! Você estará logado e para voltar a fazer o login selecione a opção de conectar-se com o Google."
+                    }
+                },
+                "paragraph-sub-header3-list": {
+                    "order-list1": {
+                        "list1": "Acesse a página de login (hit-game.com/user);",
+                        "list2": "Selecione Continuar com o Facebook;",
+                        "list3": "Escolha uma conta do Facebook logada ou então digite seu endereço de e-mail e senha do Facebook;",
+                        "list4": "Escolha um nome de usuário para seu perfil;",
+                        "list5": "Preencha as demais informações pessoais (Nome, Telefone, Data de Nascimento e Endereço);",
+                        "list6": "Pronto! Você estará logado e para voltar a fazer o login selecione a opção de conectar-se com o Facebook."
+                    }
+                }
+            }
+        },
+        "subHead2-sec1": {
+            "p1": "A qualquer momento você pode editar ou alterar informações do seu perfil. Para isso, basta acessar sua página de perfil (hit-game.com/feed/profile ou clicar em seu nome/foto no canto superior direito da página).",
+            "subHead2-sec1-headings": {
+                "h1": "-Alterar Foto de Perfil:",
+                "h2": "-Alterar Foto de Capa:",
+                "h3": "-Adicionar sua conta do Instagram ao seu Perfil:",
+                "h4": "-Alterar telefone:"
+            },
+            "subHead2-sec1-headings-h1": {
+                "p1": "Na página de seu perfil, ao lado de seu nome de usuário há sua foto de perfil com um ícone clicável para você adicionar a foto desejada.",
+                "p2": "Certifique-se de que você é o detentor dos direitos autorais das imagens e que os arquivos não excedam 2MB."
+            },
+            "subHead2-sec1-headings-h2": {
+                "p1": "Acima do seu nome de usuário e foto de perfil, há um espaço para uma Foto de Capa. Para adicionar ou alterar uma foto, clique em Change Cover no canto superior direito.",
+                "p2": "Certifique-se de que você é o detentor dos direitos autorais das imagens e que os arquivos não excedam 2MB."
+            },
+            "subHead2-sec1-headings-h3": {
+                "p1": "Dentro de seu perfil, na seção About ,clique em Adicionar sua conta do Instagram ao seu Perfil e faça login na sua conta."
+            },
+            "subHead2-sec1-headings-h4": {
+                "p1": "Dentro de seu perfil, na seção About, clique no elemento de edição ao lado de Phone Number."
+            }
+        },
+        "subHead3-sec1": {
+            "p1": "Caso tenha esquecido sua senha, não crie uma segunda conta porque é uma violação dos termos da Hit. Fazer isso pode comprometer sua capacidade de jogar. Ao invés disso, altere sua senha.",
+            "p2": "Para alterar sua senha:",
+            "orderlist": {
+                "list1": "Acesse a página de login (https://hit-game.com/user);",
+                "list2": " Clique em Esqueci Minha Senha;",
+                "list3": " Insira seu e-mail cadastrado;",
+                "list4": "Um e-mail para redefinir sua senha será enviado para este endereço de e-mail."
+            },
+            "p3": "Caso não encontre o e-mail enviado, certifique-se que não está na caixa de spam."
+        },
+        "subHead4-sec1": {
+            "p1": "A qualquer momento você pode adicionar ou editar limites de depósito e de aposta. ",
+            "p2": "Para isso, basta acessar sua página de perfil (hit-game.com/feed/profile ou clicar em seu nome/foto no canto superior direito da página) e ir na seção Settings.",
+            "subHead4-sec1-step": {
+                "step1": "-Limite de Depósito:",
+                "step2": "-Limite de Aposta:"
+            },
+            "order-list1": {
+                "list1": "Habilite a caixa de seleção Deposite Limit e clique no ícone de edição caso deseja alterar os valores;",
+                "list2": "Escolha o valor limite de depósito;",
+                "list3": "Escolha o valor limite de depósito;",
+                "list4": "Você pode reduzir esse limite quando quiser, mas só poderá aumentar o desativar esse limite com no mínimo 24h de intervalo."
+            },
+            "order-list2": {
+                "list1": " Habilite a caixa de seleção Bet Limit e clique no ícone de edição caso deseja alterar os valores;",
+                "list2": ") Habilite a caixa de seleção Bet Limit e clique no ícone de edição caso deseja alterar os valores;",
+                "list3": "Escolha a data final do período que esse limite ficará válido;",
+                "list4": "Você pode reduzir esse limite quando quiser, mas só poderá aumentar o desativar esse limite com no mínimo 24h de intervalo."
+            }
+        },
+        "subHead5-sec1": {
+            "p1": "A qualquer momento você pode desativar a sua conta temporariamente. ",
+            "order-list1": {
+                "list1": "Acessar sua página de perfil (hit-game.com/feed/profile ou clicar em seu nome/foto no canto superior direito da página) ",
+                "list2": "Vá até a seção Settings.",
+                "list3": "Habilite a caixa de seleção SelfExclude e clique no ícone de edição caso deseja alterar os valores;",
+                "list4": " Escolha o período que deseja ficar com sua conta desativada;",
+                "list5": "Você pode aumentar esse período, mas só poderá reduzir esse período após um intervalo de pelo menos 7 dias."
+            },
+            "p2": "Caso deseje excluir sua conta permanentemente, entre em contato conosco através da seção Contato."
+        },
+        "subHead6-sec1": {
+            "p1": "Você pode encontrar demais usuários através das ligas ou então da pesquisa do site, clicando na lupa no canto superior direito."
+        }
+    },
+    "withdraw": {
+        "mainHead": "Retiradas",
+        "orderlist": {
+            "list1": "Como fazer uma retirada?",
+            "list2": "Como verificar minha identidade?",
+            "list3": "Como visualizo minhas retiradas?"
+        },
+        "subheader1": {
+            "p1": "Você pode retirar seu saldo a qualquer momento em sua carteira (hit-game.com/wallet) e selecionando Resgatar.",
+            "p2": "Por questões de segurança e jurisdição:",
+            "p3": "Sempre que possível, enviaremos os fundos de volta ao método de pagamento utilizado para depositar os fundos originais.",
+            "p4": "Aconselhamos que você certifique-se de que seu método de pagamento registrado é o método para o qual você deseja fazer a retirada. ",
+            "p5": "Se não for possível retirar fundos usando seu método de depósito, então processaremos sua retirada para sua conta bancária usando Transferência Bancária Online, através dos dados inseridos.",
+            "p6": "Para realizar uma retirada pela primeira vez, temos que verificar sua identidade. Nosso formulário de verificação online confirma sua identidade e informações de conta para que possamos evitar fraudes, cumprir com os regulamentos e manter a Hit um lugar divertido e seguro para todos.",
+            "p7": "Quanto mais detalhes você nos fornecer, mais perfeito será seu processo de retirada. Se você nunca confirmou sua identidade, mesmo que tenha fornecido detalhes fiscais no passado, você precisará verificar sua conta.",
+            "p8": "O tempo de processamento de seu saque variará de acordo com seu método de pagamento. Você pode ver mais informações sobre os tempos de liberação na página Método de Pagamento."
+        },
+        "subheader2": {
+            "p1": "Ao solicitar um resgate pela primeira vez na sua carteira (hit-game.com/wallet) uma pop-up será aberta solicitando que você faça sua verificação de identidade (KYC).",
+            "p2": "Você poderá verificar sua identidade enviando uma foto de algum dos seguintes documentos:",
+            "p3": "Ocasionalmente, devido a grandes volumes, pode haver um atraso na revisão de quaisquer documentos. Tenha certeza de que revisaremos seus documentos o mais rápido possível. Mas se tiver qualquer dúvida você pode nos contatar através do Contato.",
+            "orderlist": {
+                "list1": "Passaporte",
+                "list2": "Carteira de motorista",
+                "list3": "Cartão de identidade (RG)"
+            }
+        },
+        "subheader3": {
+            "p1": "Em sua carteira (hit-game.com/wallet) você terá o histórico de todas suas transações: seus depósitos, disputas e saques."
+        }
+    },
+    "deposits": {
+        "mainHead": "Depósitos",
+        "orderlist": {
+            "list1": "Como depositar?",
+            "list2": "Quais são as formas de depósito?",
+            "list3": "Como visualizo meus depósitos?"
+        },
+        "subheader1": {
+            "p1": "Você pode depositar a qualquer momento entrando em sua carteira (hit-game.com/wallet).",
+            "p2": "Selecione algum valor pré-definido (U$50, U$100, U$200, U$500, U$1000) ou insira o valor que deseja (a partir de $2). ",
+            "p3": "Os depósitos são feitos em dólar e convertidos para a moeda local na hora do pagamento."
+        },
+        "subheader2": {
+            "p1": "Transferência Bancária (Banco do Brasil, Bradesco, Caixa, Santander, Itaú, BS2, Safra, Sicredi, Original, Banrisul, Loterias Caixa)"
+        },
+        "subheader3": {
+            "p1": "Em sua carteira (hit-game.com/wallet) você terá o histórico de todas suas transações: seus depósitos, disputas e saques."
+        }
+    },
+    "Creating-Competitions": {
+        "mainHead": "Criando Ligas",
+        "orderlist": {
+            "list1": "Como criar uma liga?",
+            "list2": "Qual a diferença entre Liga Tiro Curto e Liga Campeonato?",
+            "list3": "Qual a diferença entre Liga Privada e Liga Pública?",
+            "list4": "Existe algum custo para criar uma liga?",
+            "list5": "Como convidar amigos para uma liga?"
+        },
+        "subheader1": {
+            "orderlist": {
+                "list1": "Clique em Criar Liga na parte superior da página (ou acesse hit-game.com/choose-competition);",
+                "list2": "Escolha o modo da competição (Tiro Curto ou Campeonato);",
+                "list3": "Escolha a privacidade da competição (Pública ou Privada);",
+                "list4": "Escolha um nome exclusivo para a liga;",
+                "list5": "Convide seus amigos (opcional);"
+            },
+            "p": "-Liga Tiro Curto",
+            "orderlist2": {
+                "list1": "Escolha o período para filtrar a visualização de partidas (opcional);",
+                "list2": "Escolha as ligas para filtrar a visualização de partidas (opcional)",
+                "list3": " Selecione as partidas (de 1 a 20) que deseja incluir na liga e clique em Continuar;",
+                "list4": "Determine um valor por partida (o preço por entrada será igual ao valor por partida multiplicado pelo número total de jogos);",
+                "list5": "Revise os dados e crie sua liga!"
+            },
+            "p2": "Revise os dados e crie sua liga!",
+            "p3": "Se a liga fechar com menos de 3 participantes, ela é cancelada e o valor de entrada estornado.",
+            "p4": "-Liga Campeonato",
+            "orderlist3": {
+                "list1": " Escolha o período para filtrar a visualização de campeonatos (opcional);",
+                "list2": "Escolha as ligas para filtrar a visualização de campeonatos (opcional)",
+                "list3": "Selecione as competições que deseja incluir na liga e clique em Continuar;",
+                "list4": "Determine um valor por partida (o preço por entrada será igual ao valor por partida multiplicado pelo número total de jogos);",
+                "list5": "Revise os dados e crie sua liga!"
+            }
+        },
+        "subheader2": {
+            "p1": "No modo Tiro Curto o criador da liga escolhe quais serão as partidas que farão parte da liga. É possível misturar partidas de campeonatos diferentes.",
+            "p2": "Já no modo Campeonato não é possível filtrar as partidas, apenas as competições, em que todas as partidas remanescentes da competição farão parte da liga. Nesse modo há também premiações rodada a rodada."
+        },
+        "subheader3": {
+            "p1": "Na Liga Privada os usuários que não estão na sua lista de seguidores não poderão acessar a disputa.",
+            "p2": "As Ligas Públicas são abertas para todos os usuários da Hit."
+        },
+        "subheader4": {
+            "p1": "Não existe um custo para criação de ligas. Mas é importante lembrar que ao criar uma liga, o  valor de entrada será automaticamente cobrado por participar da disputa.",
+            "p2": "A Hit recebe uma pequena taxa de administração (a partir de 5%) por liga, que é cobrado automaticamente "
+        },
+        "subheader5": {
+            "p1": "No processo de criação de liga, é possível selecionar amigos para convidar para sua liga.",
+            "p2": "Você pode também compartilhar ligas em seu feed, clicando na setinha de compartilhar na página de sua liga."
+        }
+    },
+    "Joining-Competitions": {
+        "mainHead": "Joining Competitions",
+        "orderlist": {
+            "list1": "Como participar de uma liga?",
+            "list2": "Existe algum custo para participar de uma liga?",
+            "list3": "O que é o Entry Fee?",
+            "list4": "O que é o Winning Prize?",
+            "list5": "Qual a diferença entre Liga Tiro Curto e Liga Campeonato?",
+            "list6": "Qual a diferença entre Liga Privada e Liga Pública?",
+            "list7": "Como convidar amigos para uma liga?",
+            "list8": "Como ver quais ligas estou participando?",
+            "list9": "Como ver a pontuação de uma liga?",
+            "list10": "Como ver a premiação de uma liga?",
+            "list11": "Consigo ver o palpite dos demais participantes?",
+            "list12": "Até que horas posso fazer minhas apostas?",
+            "list13": "Como funciona a pontuação e premiação?"
+        },
+        "subheader1": {
+            "p1": "Na página inicial da Hit (hit-game.com/) você tem acesso as ligas populares do momento e também pode ver todas as ligas na página de ligas (hit-game.com/competition).",
+            "p2": "Você pode visualizar cada uma delas para ver mais detalhes, e basta clicar no botão de Participar para entrar na disputa.",
+            "p3": "É importante que você veja o valor de entrada (Entry Fee) da competição e garanta que tenha saldo suficiente na sua carteira para participar. Caso contrário, você precisará fazer um depósito.",
+            "p4": "Para mais informações de depósitos, acesse a seção de Depósitos do nosso suporte."
+        },
+        "subheader2": {
+            "p1": "Cada liga tem um valor de entrada (Entry Fee) e cada usuário será cobrado esse valor de sua carteira para poder participar da liga."
+        },
+        "subheader3": {
+            "p1": "Entry Fee é o valor cobrado de cada usuário para entrar em uma determinada liga.",
+            "p2": "Ao criar uma liga, o usuário determina um valor cobrado por partida e o Entry Fee será igual ao valor por partida multiplicado pelo número total de jogos da liga."
+        },
+        "subheader4": {
+            "p1": "Winning Prize é o valor total de prêmio disponível para determinada liga. Esse valor vai aumentando conforme novos usuários entram na liga.",
+            "p2": "Esse Winning Prize é igual ao total apostado menos uma pequena taxa de administração (a partir de 5%) da Hit, que é cobrado automaticamente."
+        },
+        "subheader5": {
+            "p1": "No modo Tiro Curto o criador da liga escolhe quais serão as partidas que farão parte da liga. É possível misturar partidas de campeonatos diferentes.",
+            "p2": "Já no modo Campeonato não é possível filtrar as partidas, apenas as competições, em que todas as partidas remanescentes da competição farão parte da liga. Nesse modo há também premiações rodada a rodada"
+        },
+        "subheader6": {
+            "p1": "Na Liga Privada os usuários que não estão na sua lista de seguidores não poderão acessar a disputa. ",
+            "p2": "As Ligas Públicas são abertas para todos os usuários da Hit."
+        },
+        "subheader7": {
+            "p1": "Você pode compartilhar ligas em seu feed, clicando na setinha de compartilhar na página de sua liga."
+        },
+        "subheader8": {
+            "p1": "Na página de ligas (hit-game.com/competition/landing) você pode filtrar as ligas que gerencia, que participa, e todas do seu histórico."
+        },
+        "subheader9": {
+            "p1": "Entre na liga desejada, e selecione Leaderboard. Você pode ver o ranking total e nas ligas campeonato também pode ver o ranking por rodada."
+        },
+        "subheader10": {
+            "p1": "Na página de cada liga você verá o Winning Prize que é o valor total de prêmio disponível para a liga. Esse prêmio é dividido entre os melhores participantes e para mais detalhes você pode acessar a seção de Premiação do nosso suporte."
+        },
+        "subheader11": {
+            "p1": "Você só pode ver o palpite dos demais participantes depois de fechadas as apostas de cada partida. Para isso, basta acessar a seção de Resultados dentro da Liga e filtrar pelo participante desejado. "
+        },
+        "subheader12": {
+            "p1": "Você pode fazer suas apostas até X horas/minutos antes da partida acontecer. Também é possível editar quantas vezes quiser as suas apostas."
+        },
+        "subheader13": {
+            "p1": "Para ver mais detalhes de pontuação e premiação, acesse a seção de sPontuação e Premiação do nosso suporte."
+        }
+    },
+    "game-rule": {
+        "mainHead": "Regras dos Jogos",
+        "orderlist": {
+            "list1": "Como funciona a pontuação?",
+            "list2": "O que é o Champion Player?",
+            "list3": "O que é o Point Boost?",
+            "list4": "Há critério de desempate?",
+            "list5": "Como vejo o ranking dos jogadores?",
+            "list6": "O que é o Entry Fee?",
+
+            "list7": "O que é o Winning Prize?",
+            "list8": "Como funciona a premiação dos campeonatos?",
+            "list9": "Como retirar minha premiação?"
+        },
+        "subheader1": {
+            "p1": "Você insere seus palpites em cada um dos jogos da liga, com os gols de cada equipe e recebe a seguinte pontuação dependendo do resultado:",
+            "h1": "Regras e pontuação",
+            "table": {
+                "tableheder1": "Descrição",
+                "tableheder2": "Pontos"
+            },
+            "table-header1-column": {
+                "col1": "Acertar o resultado exato da partida",
+                "col2": "Acertar o empate sem o número de gols correto",
+                "col3": "Acertar o vencedor",
+                "col4": "Acertar a quantidade exata de gols do vencedor ou perdedor, mas não o placar final exato",
+                "col5": "Não acertar nada"
+            },
+            "table-header2-column": {
+                "col1": "6",
+                "col2": "3",
+                "col3": "2",
+                "col4": "1",
+                "col5": "0"
+            },
+            "count": "COUNT 5",
+            "P": "Você também receberá pontos pelo Champion Player e Point Boost."
+        },
+        "subheader2": {
+            "P1": "Não acertar nada",
+            "subHeader": "Champion player",
+            "table": {
+                "tableheder1": "Description",
+                "tableheder2": "Points"
+            },
+            "table-header1-column": {
+                "col1": "Champion Player marca gol",
+                "col2": "Champion Player marca gol contra"
+            },
+            "table-header2-column": {
+                "col1": "1 por gol",
+                "col2": "-1"
+            }
+        },
+        "subheader3": {
+            "p1": "É um multiplicador de pontos em que o participante poderá selecionar a(s) partida(s) que deseja ter seus pontos conquistados multiplicados.",
+            "orderlist": {
+                "list1": "Competições com 5 ou mais partidas, o usuário pode selecionar em uma partida um multiplicador de pontos de 2x.",
+                "list2": "Competições com 10 ou mais partidas, o usuário pode selecionar em uma partida um multiplicador de pontos de 2x e em outra partida um multiplicador de 1.5x.",
+                "list3": "Competitions with 10 or more matches, the user can select in one match a 2x point multiplier and in another match a 1.5x multiplier."
+            }
+        },
+        "subheader4": {
+            "p1": "Não há critério de desempate. o prêmio é dividido igualmente entre as pessoas que estão na mesma posição."
+        },
+        "subheader5": {
+            "p1": "Entre na liga desejada, e selecione Leaderboard. Você pode ver o ranking total e nas ligas campeonato também pode ver o ranking por rodada."
+        },
+        "subheader6": {
+            "p1": "Entry Fee é o valor cobrado de cada usuário para entrar em uma determinada liga. Ao criar uma liga, o usuário determina um valor cobrado por partida e o Entry Fee será igual ao valor por partida multiplicado pelo número total de jogos da liga."
+        },
+        "subheader7": {
+            "p1": "Winning Prize é o valor total de prêmio disponível para determinada liga. Esse valor vai aumentando conforme novos usuários entram na liga.",
+            "p2": "Esse Winning Prize é igual ao total apostado menos uma pequena taxa de administração (a partir de 5%) da Hit, que é cobrado automaticamente."
+        },
+        "subheader8": {
+            "p1": "Esse Winning Prize é igual ao total apostado menos uma pequena taxa de administração (a partir de 5%) da Hit, que é cobrado automaticamente.",
+            "p2": "Esse Winning Prize será dividido entre os 25% participantes mais bem colocados no ranking final do campeonato, de forma proporcional a cada colocação (de modo que o 1º seja o mais bem recompensado e assim por diante). ",
+            "p3": "Em Ligas de Campeonato, também terá uma premiação similar para cada rodada."
+        },
+        "subheader9": {
+            "p1": "Para ver mais detalhes de retirada, acesse a seção de "
+        }
+    },
+    "howTo": {
+        "typeOne": "Tiro Curto",
+        "typeChamp": "Campeonato",
+        "step1Head": "Selecione a privacidade e o nome da liga",
+        "step1": "Selecione a privacidade da competição (em competições privadas, usuários que não estão na sua lista de amigos não podem acessar a disputa) e escolha um nome exclusivo para a sua liga.",
+        "step2Head": "Escolha os jogos da liga que você quer criar",
+        "step2": "Defina o período de duração desejado para a disputa. Escolha de 1 a 20 partidas de qualquer campeonato disponível no Hit dentro do período de tempo previamente definido, e desafie seus amigos a mostrar quem entende mais de futebol. É possível misturar partidas de diferentes campeonatos.",
+        "step3Head": "Defina o preço de entrada",
+        "step3": "Escolha um preço para os jogos para definir o entry fee da competição",
+        "step4Head": "Revisar liga",
+        "step4": "Por fim, revise os detalhes da sua liga e é só clicar em 'Criar Liga', pagar o entry fee e curtir com seus amigos.",
+        "step4Imp": "*Se a competição fechar com menos de 3 participantes, ela é cancelada e o entry fee estornado.",
+        "step1HeadChamp": "Selecione a privacidade e o nome da liga",
+        "step1Champ": "Selecione a privacidade da competição (em competições privadas, usuários que não estão na sua lista de amigos não podem acessar a disputa).",
+        "step2HeadChamp": "Escolha um campeonato disponível",
+        "step2Champ": "Escolha o campeonato que você quer que sua disputa siga. Definindo o campeonato, sua competição vai durar do presente momento até a última partida do torneio. Esse modo é disputado rodada a rodada, acumulando pontos até que a última partida aconteça (por exemplo, o Brasileirão tem 38 rodadas com 10 partidas em cada, então o bolão vai conter 380 jogos. Mas não se preocupe! Você não vai precisar prever todas as partidas de uma vez! Seus palpites acompanham as rodadas e nós vamos te lembrar quando a próxima rodada estiver para fechar)",
+        "step3HeadChamp": "Defina o preço de entrada",
+        "step3Champ": "Escolha um preço por jogo. Repare que nesse modo, se o preço do jogo estiver muito alto o entry fee da competição vai ficar muito caro",
+        "step4HeadChamp": "Revisar liga",
+        "step4Champ": "Por fim, revise os detalhes da sua liga e é só clicar em 'Criar Liga', pagar o entry fee e curtir com seus amigos.",
+        "step4ImpChamp": "*Se a competição fechar com menos de 3 participantes, ela é cancelada e o entry fee estornado."
+    },
+    "rules": {
+        "mainHead": "Regras do bolão Hit",
+        "sec1": {
+            "p": "Acertando o resultado exato da partida = 6 pontos",
+            "p1": "Acertar o vencedor = 2 pontos",
+            "p2": "Acertar a quantidade exata de gols do vencedor ou perdedor, mas não o placar final exato = 1 ponto",
+            "p3": "Acertar o empate sem o número de gols correto = 3 points",
+            "p4": "Acertar quem faz o gol = 1 ponto por gol marcado",
+            "p5": "Não acertar nada = 0 pontos",
+            "p6": "Selecionar jogador que marca gol contra = -1 ponto",
+            "p7": "Competições com 5 ou mais partidas, usuário pode selecionar um multiplicador de 2x para uma partida",
+            "p8": "Competições com 10 ou mais partidas, usuário pode selecionar um multiplicador de 2x para uma partida e outro de 1.5x para outra partida"
+        },
+        "faq": {
+            "mainHead": "FAQ (Dúvidas Frequentes)"
+        },
+        "contactus": {
+            "mainHead": "Contato"
+        }
+    },
+    "deposit": {
+        "mainHead": "Envie seus dados para prosseguir",
+        "firstName": "Primeiro Nome",
+        "lastName": "Sobrenome",
+        "phoneNumber": "Número de Celular",
+        "address": "Endereço",
+        "state": "Estado",
+        "city": "Cidade",
+        "amount": "Valor a Depositar",
+        "currency": "Moeda Local",
+        "paymentMethods": "Métodos de Pagamento",
+        "chooseapaymentmethods": "Escolha um método de pagamento",
+        "chooseadocumenttype": "Selecionar Tipo de Documento",
+        "documentType": "Documento",
+        "documentID": "Nº do documento",
+        "zipCode": "CEP"
+    }
+}

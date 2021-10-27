@@ -1,0 +1,117 @@
+<ng-container>
+    <div class="single-timeline">
+        <div class="dot-container" (appClickOutside)="closeTypeDropdown($event)" (click)="showPostOptions()" *ngIf="timelineData.isProfile && timelineData.isPostOwner">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <section *ngIf="showOption">
+                <div (click)="deletePost(timelineData,index)">Delete</div>
+            </section>
+        </div>
+        <div class="single-head ">
+            <div class="head-icon" (click)="viewUserProfile(timelineData.user)" [ngStyle]="{'background-image': timelineData.user.image?'url(' + timelineData.user.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+            <div class="head-txt ">
+                <div class="h-txt" (click)="viewUserProfile(timelineData.user)">{{timelineData?.user?.username}} </div>
+                <p>{{timelineData?.createdAt | date:'dd MMM, y'}} {{'feeds.at' | translate}} {{timelineData?.createdAt | date:'h:mm a'}} <img src="../../../../assets/images/glob.png"></p>
+            </div>
+        </div>
+        <div class="mt_0">{{timelineData?.text}}
+            <a *ngIf="timelineData.url" [href]="timelineData.url" target="_blank">Watch Video</a>
+        </div>
+
+        <p></p>
+        <div class="timeline-post" *ngIf="timelineData?.competition">
+            <div class="post-logo" *ngIf="timelineData?.competition?.type==2" [ngStyle]="{'background-image': envurl +'/v1/image?url=' + timelineData?.competition?.season?.league?.logo?'url('+ envurl +'/v1/image?url=' + timelineData?.competition?.season?.league?.logo +')' : 'url(/assets/images/logo.png)'}">
+            </div>
+            <div class="post-logo noCompIco" *ngIf="timelineData?.competition?.type==1">
+            </div>
+            <div class="post-h1">{{timelineData?.competition?.name}}</div>
+            <div class="post-users">
+                <div class="user-pics" *ngIf="timelineData?.competition?.players">
+                    <div class="pic" *ngFor="let item of timelineData?.competition?.competitionPlayers | slice:0:3; let i=index" [ngStyle]="{'background-image': item?.image?'url('+ item?.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+                </div>
+                <span>{{timelineData?.competition?.fullPlayers}} {{'timelineData.PeopleJoined' | translate}}</span>
+            </div>
+            <div class="post-content">
+                <div class="post-contxt"><span>{{timelineData.numberOfDays?.length}}</span>{{'competitionTag.days' | translate}}</div>
+                <div class="post-contxt" *ngIf="timelineData?.competition?.type==1"><img src="/assets/images/g-trophy.png">{{'filter.onetime' | translate}}</div>
+                <div class="post-contxt" *ngIf="timelineData?.competition?.type==2"><img src="/assets/images/g-trophy.png">{{'filter.championship' | translate}}</div>
+
+                <div class="post-contxt"><img src="/assets/images/g-bst.png">{{timelineData?.competition?.totalPrizeInUSD * timelineData?.competition?.conversionRate | number:'1.2-2'}} {{timelineData?.competition?.conversionCurrency}}</div>
+            </div>
+            <div class="button_wrap">
+                <button class="btn btn_transparent" *ngIf='timelineData.competition.type === 1' (click)="viewGame(timelineData)">{{'filter.view' | translate}}</button>
+                <button class="btn btn_transparent" *ngIf='timelineData.competition.type === 2' (click)="viewGameChamp(timelineData)">{{'filter.view' | translate}}</button>
+                <button class="btn " *ngIf='timelineData.competition.isStarted === 0 && timelineData.competition.isPlayer === 0 ' (click)='onNavigate()'>{{'competitionTag.join' | translate}}</button>
+                <!-- <button class="btn "  *ngIf='timelineData.competition.isStarted === 1 && timelineData.competition.isPlayer === 0 && timelineData.competition.type === 2' (click)='onNavigate()' >Join</button> -->
+            </div>
+        </div>
+        <div class="timeline-response">
+            <div class="t-res" [ngClass]="{'actLike': timelineData.isLiked!=0}" (click)="likePost(timelineData,index)"><span>{{timelineData.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span></div>
+            <div class="t-res" (click)="toggleComment(timelineData)"><span>{{timelineData.totalComment | shortNumber}} {{'feeds.comments' | translate}}</span></div>
+            <!-- <div class="t-res"><span>Share</span></div> -->
+        </div>
+
+        <div class="comment_section" *ngIf="showComment">
+            <!-- (scroll)="onScroll($event,timelineData)" -->
+            <section class="list_comment">
+                <div class="comment_block" *ngFor="let item of listComment;let i=index">
+                    <div class="comment_user_pic" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                    </div>
+                    <div class="comment_text">
+                        <p><span>{{item.user.username}}</span><br/> {{item.text}}</p>
+                        <p>
+                            <span> {{item?.createdAt | date:'dd MMM, y'}} at {{item?.createdAt | date:'h:mm a'}} </span>
+                            <!-- Like{{item?.totalLike>1?'s':''}} -->
+                            <span>{{item?.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span>
+                            <span (click)="addReply(i)">Reply</span>
+                            <span [ngClass]="{'actLikeComment': item.isLiked!=0}" (click)="addCommentLike(item,i)"></span>
+                        </p>
+                        <section class="add_comment reply_comment_box" *ngIf="item?.addReply">
+                            <div class="reply_label">Reply to {{item.user.username}}</div>
+                            <div class="comment_profile_pic" [ngStyle]="{'background-image': userProfile.image?'url(' + userProfile.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                            <div class="comment_text">
+                                <input type="text" placeholder="{{'feeds.AddComment' | translate}}" [(ngModel)]="replyContent" (input)='onChangeReply()' (keyup.enter)="addReplyContent(timelineData,item.id,i)">
+                                <div class="send_button" *ngIf="showReplyButton">
+                                    <span (click)="addReplyContent(timelineData,item.id,i)">Reply</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div *ngIf="item.reply.length>0" class="replys_count" (click)="showReply(i)">{{item.reply.length}} Replie{{item.reply.length>1?'s':''}}</div>
+                        <ng-container *ngIf="item?.showReply">
+                            <div class="comment_reply_block" *ngFor="let item of item.reply;let ix=index">
+                                <div class="comment_user_pic" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                                </div>
+                                <div class="comment_text">
+                                    <p><span>{{item.user.username}}</span><br/>{{item.text}}</p>
+                                    <p>
+                                        <span> {{item?.createdAt | date:'dd MMM, y'}} at {{item?.createdAt | date:'h:mm a'}} </span>
+                                        <span>{{item?.totalLike | shortNumber}} {{'feeds.likes' | translate}}</span>
+                                        <span></span>
+                                        <span [ngClass]="{'actLikeComment': item.isLiked!=0}" (click)="addReplyLike(item,i,ix)"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="add_comment">
+                <div class="comment_profile_pic" [ngStyle]="{'background-image': userProfile.image?'url(' + userProfile.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                <div class="comment_text">
+                    <input type="text" placeholder="{{'feeds.AddComment' | translate}}" [(ngModel)]="shareContent" (input)='onChange()' (keyup.enter)="addComment(timelineData,index)">
+                    <div class="send_button" *ngIf="show_post">
+                        <span (click)="addComment(timelineData,index)">Post</span>
+                    </div>
+                </div>
+                <div class="comment_close" (click)="closeComment()"></div>
+            </section>
+        </div>
+
+    </div>
+</ng-container>
+
+<app-competition-betting-popup *ngIf='betting_popup' (onClose)="onClose($event)" [competition_detail]='timelineData.competition'></app-competition-betting-popup>

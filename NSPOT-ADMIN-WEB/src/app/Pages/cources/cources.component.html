@@ -1,0 +1,51 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor">Course Management</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row text-center mt-5">
+        <div class="alert alert-warning" *ngIf="courses?.length==0">No Courses available.</div>
+
+        <!-- <pre>{{bankItems|json}}</pre> -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Course Code</th>
+                    <th>Institue
+                        <!-- <i class="fas fa-filter" [ngClass]="{'sort_filter_active':instituteFilterSelected.length !==0}"  (click)='onFilterClick(2)'></i>
+                        <app-filter [filterArrayDetail]='instituteFilter' 
+                        (onSubmitFIlter)='oninstituteFilter($event)' (onCancel)="oninstituteFiltercancel($event)"
+                        *ngIf='onFilter === 2'></app-filter> -->
+
+                    </th>
+                    <th>University Name</th>
+                    <th>Principal Name</th>
+                    <!-- <th>Edit</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of courses; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.courseCode}}</td>
+                    <td>{{item.Institute.name}}</td>
+                    <td>{{item.universityName}}</td>
+                    <td>{{item.Institute.principalName}}</td>
+                    <!-- <td><i class="mdi mdi-table-edit" (click)="edit(item)"></i></td> -->
+
+                </tr>
+            </tbody>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,76 @@
+.admin_table_layout{
+    height: 65vh;
+}
+.date-form{
+    width: 200px !important;
+}
+.date-form::ng-deep{
+    .mat-icon-button{
+        display: none;
+    }
+}
+.actives{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    display: inline-block;
+}
+.expire{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: orange;
+    display: inline-block;
+}
+.inactives{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+}
+.form-group{
+    &:nth-child(3){
+        input{
+            padding: 12px 25px !important;
+            border-left: 1px solid rgb(255 255 255 / 0.25) !important;
+            border-right: 1px solid rgb(255 255 255 / 0.25) !important;
+        }
+    }
+}
+.form-group {
+    margin-bottom: 0px !important;
+}
+.mt_30{
+    margin-top: 30px;
+    justify-content: end !important;
+}
+.search_button{
+    width: 40px;
+    background-image: url(/assets/images/search.svg);
+    background-size: 40%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.date-form {
+    width: 259px !important;
+}
+.search_box{
+    float: right;
+    position: absolute;
+    right: 42px;
+}
+.revenue{
+    font-size: 2.8rem;
+    margin-top: 6px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.form-control{
+    cursor: pointer;
+}
+.pd_16{
+    padding:16px
+}

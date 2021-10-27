@@ -1,0 +1,15 @@
+.dropdown_wrap{
+    padding: 0;
+    padding: 0;
+    max-height: 20rem;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 0;
+    min-width: 166px !important;
+    li{
+        list-style: none;
+        padding: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}

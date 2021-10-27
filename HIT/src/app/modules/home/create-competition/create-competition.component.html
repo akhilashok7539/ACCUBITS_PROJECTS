@@ -1,0 +1,109 @@
+<section class="create_competition_out common_wrap">
+    <div class="competition_breadcrumb">
+        <div class="sec">
+            <!-- <section [routerLink]="['/choose-competition']" class="home_leg">{{'header.home' | translate}}</section> -->
+            <section [routerLink]="['/']" class="home_leg">{{'header.home' | translate}}</section>
+            <section>{{'header.createCompetition' | translate}}</section>
+        </div>
+    </div>
+
+    <div class="create_competition_outer">
+        <div class="gradient_loader"></div>
+        <div class="go_to_previous" [routerLink]="['/choose-competition']"><img src="/assets/images/back.svg" /> Back</div>
+        <div class="competition_block_header">
+            <p>{{'createCompetition.createYourComp' | translate}}</p>
+            <span>{{'createCompetition.createCompSubHead' | translate}}</span>
+        </div>
+        <div class="create_competition_form_wrap">
+            <div class="formOut">
+                <section class="input_wrap split_input">
+                    <div class="form-group">
+                        <label class="form-label">{{'createCompetition.compMode' | translate}}</label>
+                        <div class="type_desc form-control">
+                            <!-- <span [ngClass]="{'championship':competitionType==2}">{{competitionType==1?'One Time':'Championship'}}</span> -->
+                      
+                            <span *ngIf="competitionType==1">{{'filter.onetime' | translate}}</span>
+                            <span *ngIf="competitionType==2">{{'filter.championship' | translate}}</span>
+                      
+                        </div>
+                    </div>
+                    <div class="form-group privacyDrop" (appClickOutside)="closePrivacyDropdown($event)"> 
+                        <label class="form-label">{{'createCompetition.privacy' | translate}}</label>
+                        <input type="text" (click)="privacyDropdown()" [value]="privacySelected" readonly class="form-control dropdownInput"
+                            placeholder="{{'createCompetition.selCompPrivacy' | translate}}"  />
+                        <app-dropdown *ngIf="showPrivacy" 
+                            [dropdownData]=privacyArray (selectedId)="selectedPrivacy($event)"></app-dropdown>
+                    </div>
+                </section>
+                <!-- *ngIf="competitionType==1" -->
+                <section class="input_wrap user_name_attached" >
+                    <div class="form-group" [ngClass]="{'dark': userNameDarkened}">
+                        <label class="form-label">{{'createCompetition.competitionName' | translate}}</label>
+                        <input class="compName" (keypress)="omit_special_char($event)" (blur)="revertName($event)" (focus)="darken($event)"  type="text" [(ngModel)]="competitionName" (ngModelChange)="addCompetitionName($event)" placeholder="{{'createCompetition.enterCompName' | translate}}" maxlength="50" class="form-control" />
+                        <span class="compSpan">@{{userName}}</span>
+                    </div>
+                    <p *ngIf="!userNameVerified" class="paragraph">Competition name already taken</p>
+                </section>
+                <section class="input_wrap">
+                    <div class="form-group" (appClickOutside)="closeInviteDropdown($event)">
+                        <section class="copy_label">
+                            <label class="form-label">{{'createCompetition.inviteFriends' | translate}}</label>
+                            <div>
+                                <label class="form-label">code : {{competitionId?.inviteCode}}</label>
+                            </div>
+                        </section>
+                        <input type="text" appDebounce
+                        [delay]='700' (click)="showFriendsList()" 
+                        [(ngModel)]="searchValue" placeholder="{{'createCompetition.SearchFriends'| translate}}" 
+                        (input)="getUsers($event.target.value)" class="form-control" />
+
+                        <div class="invitees_clear">
+                            <section (click)="showInvitedList()">
+                                <ng-container *ngIf="selectedUsersObject.length!==0; else elseBlock">
+                                    <div *ngFor="let item of selectedUsersObject | slice:0:2; let i=index" [ngStyle]="{'background-image': item.image?'url(' + item.image + ')' : 'url(/assets/images/user.jpg)'}" class="invitees_icon"></div>
+                                    <div class="invitees_count" *ngIf="selectedUsersObject.length>2">+ {{selectedUsersObject.length - 2}}</div>
+                                </ng-container>
+                                <ng-template #elseBlock><span class="selected_empty">{{'createCompetition.noFriendsInvited' | translate}}</span></ng-template>
+                            </section>
+                            <div class="clear_all" (click)="clearInvites()" *ngIf="selectedUsersObject.length!==0;">{{'createCompetition.clear' | translate}}</div>
+                        </div>
+
+                        <div class="search_drop" *ngIf="showInviteDropdown">
+                            <ng-container *ngIf="usersList?.length>0; else elseTemplate">
+                                <section [ngClass]="{'active': selectedAll}" (click)="selectAllUsers()">
+                                    <div class="search_info">
+                                        <span>Select All Friends</span>
+                                    </div>
+                                    <div class="selected_block"></div>
+                                </section>
+                                <section [ngClass]="{'active': item.isSelected}" *ngFor="let item of usersList" (click)="selectUsers(item)">
+                                    <div class="search_info">
+                                        <div class="invitees_icon"  [ngStyle]="{'background-image': item.image?'url(' + item.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+                                        <span>{{item.username}}</span>
+                                    </div>
+                                    <div class="selected_block"></div>
+                                </section>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <p>{{'wallet.nodatafound' | translate}}</p>
+                            </ng-template>        
+                        </div>
+                    </div>
+                    
+                </section>
+                
+                <div class="button_wrap">
+                    <button class="btn btn_transparent" [routerLink]="['/choose-competition']">{{'feeds.cancel' | translate}}
+                    </button>
+                    <button class="btn" (click)="chooseGame()">{{'createCompetition.doItNow' | translate}}
+                        <span>>>></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-invited-friends *ngIf="slectedFriendsPop" [listedFriendsData]=selectedUsersObject (selectedId)="selectedUser($event)" (closePop)="closeSelectedUser()"></app-invited-friends>
+
+<app-footer></app-footer>

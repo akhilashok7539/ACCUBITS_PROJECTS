@@ -1,0 +1,73 @@
+<section class="competition_layout">
+
+    <table class="table_spacing" *ngIf='board_list.length >0'>
+        <tr class="ht">
+            <th width='10%' class="font_style">Sl.No</th>
+            <th width='18%'  class="font_style">Participants</th>
+            <th width='56%'></th>
+            <th width='11%'></th>
+            <th width='5%'></th>
+        </tr>
+        <ng-container *ngFor='let data of board_list | paginate: { itemsPerPage: limit, currentPage:p,totalItems: total };let i = index'>
+        <tr *ngIf="data.user.guid !== active_user">
+            <td class='td_first' width='10%'>{{ limit*(p-1)+i+1 | number:'2.0'}}</td>
+            <td width='18%'>
+                <div class="player_detail" (click)="onClick(data)">
+                    <div class="competition_card_image">
+                        <div class="client_avatar" *ngIf='data.user.image === null'>
+                        </div>
+                        <img class="client_avatar" *ngIf='data.user.image !== null' [src]=" data.user.image" />
+                    </div>
+                    <p class="name">{{data.user.username}}</p>
+                </div>
+            </td>
+            <td width='56%'>
+                <div class="player_detail">
+                    <p class="earned_coin">Earned : {{data.user.earnedPoints}} points</p>
+                </div>
+            </td>
+            <td width='11%'>
+                <div class="competition_option_view_btn" (click)="onClick(data)">
+                    <p>{{'feeds.viewProfile' | translate}}</p>
+                </div>
+            </td>
+            <td width='5%'  class="pa_0 td_last">
+                <div class="competition_option_view_add">
+                    <div class="follow_add" *ngIf="data.user.isFriend==0 && data.user.isRequested==0" (click)="sendFriendRequest(data.user.guid,i)"></div>
+                    <div class="request_icon" *ngIf="data.user.isFriend==0 && data.user.isRequested==1" (click)="sendRequests(1)"></div>
+                    <div class="follow_icon" *ngIf="data.user.isFriend==1"(click)="sendRequests(2)"></div> 
+                </div>
+            </td>
+        </tr>
+        <tr class="active_user" *ngIf="data.user.guid === active_user">
+            <td width='10% ' class="active_user_background td_first">{{ limit*(p-1)+i+1 | number:'2.0'}}</td>
+            <td width='18%' class="active_user_background">
+                <div class="player_detail">
+                    <div class="competition_card_image">
+                        <div class="client_avatar" *ngIf='data.user.image === null'>
+                        </div>
+                        <img class="client_avatar" *ngIf='data.user.image !== null' [src]=" data.user.image" />
+                    </div>
+                    <p>You</p>
+                </div>
+            </td>
+            <td width='56%' class="active_user_background">
+                <div class="player_detail">
+                    <p class="earned_coin active_user">Earned : {{data.user.earnedPoints}} points</p>
+                </div>
+            </td>
+            <td width='11%' class="active_user_background">
+            </td>
+            <td width='5% ' class="active_user_background td_last">
+            </td>
+        </tr>
+        </ng-container>
+        
+    </table>
+      <p class="no_data"  *ngIf='board_list.length === 0'>
+        No Players Added
+      </p>
+    <section class="paginator" *ngIf="total>10">
+        <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+   </section>
+</section>

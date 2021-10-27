@@ -1,0 +1,14 @@
+<section>
+    <div class="admin_block_header">
+        <section>
+            <p>Suspicious {{selectedTransaction}}</p>
+        </section>
+    </div>
+    <div class="susp_tabs">
+        <div [ngClass]="{'active':item==selectedTransaction}" *ngFor="let item of transactionsList" (click)="selectType(item)">{{item}}</div>
+    </div>
+</section>
+
+<app-suspicious-transactions *ngIf="selectedTransaction == 'Transactions'"></app-suspicious-transactions>
+<app-suspecious-users *ngIf="selectedTransaction == 'Users'"></app-suspecious-users>
+<app-suspecious-competition *ngIf="selectedTransaction == 'Competitions'"></app-suspecious-competition>

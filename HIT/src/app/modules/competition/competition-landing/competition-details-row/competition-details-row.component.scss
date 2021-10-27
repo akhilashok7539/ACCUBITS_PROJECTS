@@ -1,0 +1,736 @@
+.competition_card_layout{
+    display: flex;
+    margin-top: 25px;
+    position: relative;
+    padding: 1.5vh 4vh;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #272b35;
+    height: 142px;
+    justify-content: space-between;
+    align-items: center;
+    .competition_detail_layout{
+        display: block;
+        .card-title{
+            font-family: Poppins-Light-Italic;
+            margin: auto;
+            font-size: 1.8rem;
+            position: relative;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            // word-break: break-word;
+            span{
+                    margin-left: 7px;
+                    font-family: Poppins-Light;
+                    font-weight: 100;
+                    color: hsla(0,0%,100%,.5);
+            }
+        }
+        .card-tag{
+            background-color: #FEBB2E12;
+            color: #FEBB2E;
+            position: relative;
+            padding: 3px 25px;
+            display: inline-block;
+            margin: 15px 0px;
+            border-radius: 20px;
+            &::before{
+                width: 10px;
+                height: 10px;
+                background-color: #FEBB2E;
+                border-radius: 50%;
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 10px;
+            }
+        }
+        .card-tag.championship{
+            color: #FE6E2E;
+            background-color: rgb(254 110 46 / 7%);
+        }
+        .card-tag.championship::before{
+            background-color: #FE6E2E;
+        }
+        .details{
+            font-family: Poppins-Light;
+            font-weight: 100;
+            font-size: 1.5rem;
+            color: hsla(0,0%,100%,.5);
+        }
+    }
+    .time_layout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .viewers{
+        display: flex;
+        justify-content: center;
+        .card-view{
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 50%;
+            border: 1px solid white;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(/assets/images/user.jpg);
+        }
+        .card-nbr{
+            border-radius: 20px;
+            border: 1px solid white;
+            height: 25px;
+            padding: 4px 10px;
+            margin-top: 13px;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+    .block_cont:nth-child(1){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 33%;
+    }
+    .block_cont:nth-child(2){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 10%;
+    }
+    .block_cont:nth-child(3){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 15%;
+    }
+    .block_cont:nth-child(4){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 13%;
+    }
+    .block_cont:nth-child(5){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        // width: 20%;
+        width: 10%;
+
+    }
+    .block_cont:nth-child(6){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        // width: 35%;
+        width: 20%;
+
+    }
+    .competition_option_view_btn{
+        padding: 10px 8px;
+        cursor: pointer;
+        min-width: 85px !important;
+        margin: 0vh 4vh;
+        border-radius: 6px;
+        background-color: #343741;
+        display: table;
+        text-align: center;
+        p{
+            display: table-cell;
+            vertical-align: middle;
+            font-family: Poppins-Light;
+            font-size: 1.6rem;
+        }
+        }
+        .view_btn{
+            background-color: #3eb983 !important;
+        }
+        .align_center{
+            justify-content: center !important;
+        }
+        .time_layout{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .competition_card_layout{
+            display: flex;
+            margin-top: 25px;
+            position: relative;
+            padding: 2vh 4vh;
+            overflow: hidden;
+            border-radius: 10px;
+            width: 100%;
+            background-color: rgba(25, 31, 43, 0.61);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .outer_flex {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .earned_point p{
+            color: #0db983 !important;
+            font-weight: bold;
+        }
+}
+.btn_name{
+  font-size: 1.4rem !important;
+}
+.ml_10{
+  margin: 0px 10px !important;
+}
+.pl-16{
+  padding: 0px 16px !important;
+}
+.dot{
+  margin-bottom: 10px;
+  width: 27px;
+  height: 10px;
+  background-image: url(/assets/images/dots.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -12px;
+}
+.view_btns{
+  background-color: #434851 !important;
+}
+@media only screen and (max-width: 1700px) {
+  .dot{
+    margin-bottom: 10px;
+    width: 27px;
+    height: 10px;
+    background-image: url(/assets/images/dots.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -12px;
+  }
+  .competition_card_layout{
+    display: flex;
+    margin-top: 25px;
+    position: relative;
+    padding: 1.5vh 4vh;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #272a35;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .competition_detail_layout{
+        display: block;
+        .card-title{
+            font-family: Poppins-Light-Italic;
+            margin: auto;
+            font-size: 1.4rem;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            span{
+                    margin-left: 7px;
+                    font-family: Poppins-Light;
+                    font-weight: 100;
+                    color: hsla(0,0%,100%,.5);
+            }
+        }
+        .card-tag{
+            background-color: #FEBB2E12;
+            color: #FEBB2E;
+            position: relative;
+            padding: 3px 25px;
+            display: inline-block;
+            margin: 15px 0px;
+            border-radius: 20px;
+            font-size: 1.6rem;
+            &::before{
+                width: 10px;
+                height: 10px;
+                background-color: #FEBB2E;
+                border-radius: 50%;
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 10px;
+            }
+        }
+        .card-tag.championship{
+            color: #FE6E2E;
+            background-color: rgb(254 110 46 / 7%);
+        }
+        .card-tag.championship::before{
+            background-color: #FE6E2E;
+        }
+        .details{
+            font-family: Poppins-Light;
+            font-weight: 100;
+            font-size: 1.5rem;
+            color: hsla(0,0%,100%,.5);
+        }
+    }
+    .time_layout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .viewers{
+        display: flex;
+        justify-content: center;
+        .card-view{
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 50%;
+            border: 1px solid white;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(/assets/images/user.jpg);
+        }
+        .card-nbr{
+            border-radius: 20px;
+            border: 1px solid white;
+            height: 25px;
+            margin-top: 13px;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+    .block_cont:nth-child(1){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 15% ;
+    }
+    .block_cont:nth-child(2){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 15% ;
+    }
+    .block_cont:nth-child(3){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 20% ;
+    }
+    .block_cont:nth-child(4){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 15% ;
+    }
+    .block_cont:nth-child(5){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 14% ;
+    }
+    .block_cont:nth-child(6){
+       white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        width: 22% ;
+    }
+    .competition_option_view_btn{
+        padding: 10px 8px;
+        cursor: pointer;
+        margin: 0vh 3vh;
+        border-radius: 6px;
+        background-color: #343741;
+        display: table;
+        text-align: center;
+        p{
+            display: table-cell;
+            vertical-align: middle;
+            font-family: Poppins-Light;
+            font-size: 1.3rem;
+        }
+        }
+        .view_btn{
+            background-color: #3eb983 ;
+        }
+        .view_btns{
+          background-color: #434851 ;
+        }
+        .align_center{
+            justify-content: center !important;
+        }
+        .time_layout{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .competition_card_layout{
+            display: flex;
+            margin-top: 25px;
+            position: relative;
+            padding: 2vh 4vh;
+            overflow: hidden;
+            border-radius: 10px;
+            width: 100%;
+            background-color: rgba(25, 31, 43, 0.61);
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .outer_flex {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .earned_point p{
+            color: #0db983 !important;
+            font-weight: bold;
+        }
+}
+.btn_name{
+  font-size: 1.2rem !important;
+}
+.ml_10{
+  margin: 0px 10px !important;
+}
+.pl-16{
+  padding: 0px 16px !important;
+}
+
+}
+
+
+@media only screen and (max-width: 1500px) {
+    .dot{
+      margin-bottom: 10px;
+      width: 27px;
+      height: 10px;
+      background-image: url(/assets/images/dots.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: -12px;
+    }
+    .competition_card_layout{
+      display: flex;
+      margin-top: 25px;
+      position: relative;
+      padding: 1.5vh 4vh;
+      overflow: hidden;
+      border-radius: 10px;
+      width: 100%;
+      background-color: #272a35;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+      .competition_detail_layout{
+          display: block;
+          .card-title{
+              font-family: Poppins-Light-Italic;
+              margin: auto;
+              font-size: 1.2rem;
+              position: relative;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              span{
+                      margin-left: 7px;
+                      font-family: Poppins-Light;
+                      font-weight: 100;
+                      color: hsla(0,0%,100%,.5);
+              }
+          }
+          .card-tag{
+              background-color: #FEBB2E12;
+              color: #FEBB2E;
+              position: relative;
+              padding: 3px 25px;
+              display: inline-block;
+              margin: 15px 0px;
+              border-radius: 20px;
+              font-size: 1.3rem;
+              &::before{
+                  width: 10px;
+                  height: 10px;
+                  background-color: #FEBB2E;
+                  border-radius: 50%;
+                  content: "";
+                  position: absolute;
+                  top: 6px;
+                  left: 10px;
+              }
+          }
+          .card-tag.championship{
+              color: #FE6E2E;
+              background-color: rgb(254 110 46 / 7%);
+          }
+          .card-tag.championship::before{
+              background-color: #FE6E2E;
+          }
+          .details{
+              font-family: Poppins-Light;
+              font-weight: 100;
+              font-size: 1.3rem;
+              color: hsla(0,0%,100%,.5);
+          }
+      }
+      .time_layout{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .viewers{
+          display: flex;
+          justify-content: center;
+          .card-view{
+              width: 30px;
+              height: 30px;
+              margin: 10px;
+              border-radius: 50%;
+              border: 1px solid white;
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-image: url(/assets/images/user.jpg);
+          }
+          .card-nbr{
+              border-radius: 20px;
+              border: 1px solid white;
+              height: 25px;
+              margin-top: 13px;
+              text-align: center;
+              font-size: 12px;
+          }
+      }
+      .block_cont:nth-child(1){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              width: 11% ;
+      }
+      .block_cont:nth-child(2){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          width: 11% ;
+      }
+      .block_cont:nth-child(3){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          width: 14% ;
+      }
+      .block_cont:nth-child(4){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          width: 15% ;
+      }
+      .block_cont:nth-child(5){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          width: 8% ;
+      }
+      .block_cont:nth-child(6){
+         white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          width: 25% ;
+      }
+      .competition_option_view_btn{
+          padding: 10px 8px;
+          cursor: pointer;
+          margin: 0vh 3vh;
+          border-radius: 6px;
+          background-color: #343741;
+          display: table;
+          text-align: center;
+          p{
+              display: table-cell;
+              vertical-align: middle;
+              font-family: Poppins-Light;
+              font-size: 1.2rem;
+          }
+          }
+          .view_btn{
+              background-color: #3eb983 !important;
+          }
+          .view_btns{
+            background-color: #434851 !important;
+          }
+          .align_center{
+              justify-content: center !important;
+          }
+          .time_layout{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .competition_card_layout{
+              display: flex;
+              margin-top: 25px;
+              position: relative;
+              padding: 2vh 4vh;
+              overflow: hidden;
+              border-radius: 10px;
+              width: 100%;
+              background-color: rgba(25, 31, 43, 0.61);
+              -webkit-backdrop-filter: blur(4px);
+              backdrop-filter: blur(4px);
+              height: 100%;
+              justify-content: space-between;
+              align-items: center;
+          }
+          .outer_flex {
+              display: flex;
+              justify-content: flex-end;
+          }
+          .earned_point p{
+              color: #0db983 !important;
+              font-weight: bold;
+          }
+  }
+  .btn_name{
+    font-size: 1.2rem !important;
+  }
+  .ml_10{
+    margin: 0px 10px !important;
+  }
+  .pl-16{
+    padding: 0px 16px !important;
+  }
+
+  }
+
+  @media only screen and (max-width: 1300px) {
+    .block_cont:nth-child(1){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+             width: 13% ;
+     }
+     .block_cont:nth-child(2){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         width: 9% ;
+     }
+     .block_cont:nth-child(3){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         width: 0% ;
+     }
+     .block_cont:nth-child(4){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         width: 15% ;
+     }
+     .block_cont:nth-child(5){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         width: 8% ;
+     }
+     .block_cont:nth-child(6){
+        white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         width: 20% ;
+     }
+     .competition_option_view_btn {
+        padding: 10px 8px;
+        cursor: pointer;
+        margin: 0vh 1vh !important;
+        border-radius: 6px;
+        background-color: #343741;
+        display: table;
+        text-align: center;
+    }
+    .card-view {
+        width: 25px !important;
+        height: 25px !important;
+        margin: 10px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(/assets/images/user.jpg);
+    }
+    .card-nbr {
+        border-radius: 20px;
+        border: 1px solid white;
+        height: 21px !important;
+        margin-top: 13px;
+        text-align: center;
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+.competition_card_layout{
+    display: block;
+}
+.border_none{
+    border-radius: 0px !important;
+}
+.dot{
+    margin-bottom: 10px;
+     width: auto !important;
+    height: 8px !important;
+}
+.block_cont:nth-child(1){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 100% !important;
+         text-align: center !important;
+         margin-bottom: 8px !important
+        }
+ .block_cont:nth-child(2){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 100% !important;
+        }
+ .block_cont:nth-child(3){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 100% !important;
+        }
+ .block_cont:nth-child(4){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 100% !important;
+         margin-bottom: 17px !important;
+        }
+ .block_cont:nth-child(5){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 100% !important;
+        }
+ .block_cont:nth-child(6){
+    white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+     width: 100% !important;
+     display: flex !important;
+     justify-content: center !important;
+ }
+}

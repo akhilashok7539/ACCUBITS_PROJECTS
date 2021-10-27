@@ -1,0 +1,48 @@
+<div  id="section" (scroll)="onScroll($event)">
+    <section class="layout_outer" >
+            <app-header *ngIf="isWeb" [fixed]='fixed'></app-header>
+            <section class="rules_outer">
+                <div class="rules_head">{{'withdraw.mainHead' | translate}}</div>
+                <ul>
+                    <li class="rule-unorder-list">{{'withdraw.orderlist.list1' | translate}}</li>
+                    <li class="rule-unorder-list">{{'withdraw.orderlist.list2' | translate}}</li>
+                </ul>
+
+                <div class="rule-subHead">{{'withdraw.orderlist.list1' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'withdraw.subheader1.p1' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p2' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p3' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p4' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p5' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p6' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p7' | translate}}</p>
+                    <p>{{'withdraw.subheader1.p8' | translate}}</p>
+
+
+
+                </div>
+                <div class="rule-subHead">{{'withdraw.orderlist.list2' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'withdraw.subheader2.p1' | translate}}</p>
+                    <p>{{'withdraw.subheader2.p2' | translate}}</p>
+                    <ul>
+                        <li>{{'withdraw.subheader2.orderlist.list1' | translate}}</li>
+                        <li>{{'withdraw.subheader2.orderlist.list2' | translate}}</li>
+                        <li>{{'withdraw.subheader2.orderlist.list3' | translate}}</li>
+
+
+                    </ul>
+                    <p>{{'withdraw.subheader2.p3' | translate}}</p>
+
+                </div>
+                <div class="rule-subHead">{{'withdraw.orderlist.list3' | translate}}</div>
+                <div class="rules_wrap">
+                    <p>{{'withdraw.subheader3.p1' | translate}}</p>
+         
+
+                </div>
+            </section>
+    </section> 
+</div>
+<app-footer *ngIf="isWeb"></app-footer>

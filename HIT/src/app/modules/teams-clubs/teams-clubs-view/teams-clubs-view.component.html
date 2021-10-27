@@ -1,0 +1,82 @@
+<div class="competion-head">
+    <div class="c-left">
+        <div class="c-title mobile_hidden">{{'teams.head' | translate}}</div>
+        <div class="c-lbl mobile_hidden">{{'teams.subHead' | translate}}</div> 
+        <div class="c-title display_hidden">{{'teams.head' | translate}}</div>
+    </div>
+    <div class="c-right">
+        <div class="c-btn" (click)="popTeams=!popTeams"  (appClickOutside)="closeDropdownTeams($event)">{{popular}} <div class="down-ic ml_11"></div></div>
+        <div class="custm-drop pop-drop" *ngIf="popTeams">
+            <ul>
+                <li (click)="listTeamsClubs()">Popular Teams</li>
+                <li *ngFor="let item of leagueList" (click)="listTeamsClubs(item)">{{item.name}}</li>
+            </ul>
+        </div> 
+    </div>
+</div>
+<div class="competion competion-club">
+            <div *ngFor="let item of teamsClubs ;let i = index" class="slide">
+                    <div class="card">                                    
+                            <div class="card-play club-card hover_active" (click)="onSelectCompetitionTeam(item)">
+                                <div class="teams"> 
+                                    <div class="c-team">
+                                        <div class="t-icon">
+                                            <img *ngIf="item.logo1" [src]="(envurl +'/v1/image?url=' + item.logo1)">
+                                            <div *ngIf="!item.logo1" class="avatar">{{item.name1.substring(0,2)}}</div>
+                                        </div>
+                                        <div class="card-title card-tle">{{item.name1}}</div>
+                                        <!-- <div class="team-name">manchester</div> -->
+                                    </div>
+                                    <!-- <div class="cors">X</div>
+                                    <div class="c-team">
+                                            <div class="t-icon"></div>
+                                        <div class="team-name">auston villa</div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="new-gam display_hidden">
+                                <div class="g-icon">
+                                    <img [src]="( envurl +'/v1/image?url=' + item.logo1)" />
+                                </div>
+                                {{item.name1}}</div>
+                            <div class="mid-card hover_active" *ngIf="!item.upcomingMatch.message" (click)="onSelectCompetitionTeam(item)">
+                                <div class="sml-txt">{{'teams.upcomingMathch' | translate}}</div>
+                                <div class="sml-txt">X</div>
+                                <div class="new-gam">
+                                    <div class="g-icon">
+                                        <img *ngIf="item.logo2" [src]="(envurl +'/v1/image?url=' + item.logo2)">
+                                    </div>
+                                    {{item.name2}}</div>
+                                <div class="sml-txt">{{item.upcomingMatch?.matchTime | date:'d MMMM y'}}</div>
+                            </div>
+                            <div class="no-up" *ngIf="item.upcomingMatch.message">{{item.upcomingMatch.message}}</div>
+                            <!-- <div class="coast">Start Within</div>
+                            <div class="date-box">
+                                    <div class="d-box d-bg">20</div>
+                                    <div class="d-dot">:</div>
+                                    <div class="d-box d-bg">45</div>
+                                    <div class="d-dot">:</div>
+                                    <div class="d-box d-bg">33</div>
+                                </div> -->
+                            <div class="viewers club-viewrs">
+                                <div>
+                                    <div class="like" *ngIf='!item.isLikedPage' (click)="pageLikeUnlike(item.teamId,i)"><div class="like-icon"></div>Like</div>  
+                                    <div class="like like_div" *ngIf='item.isLikedPage' ><span class="like_main material-icons">
+                                        favorite_border
+                                        </span>Liked</div>  
+                                </div>
+                                <div class="like-view" *ngIf="item.totalLike!=0">
+                                    <!-- <div class="card-view"></div> -->
+                                    <div class="card-nbr">{{item.totalLike}}</div>
+                                    <div class="lik-lbl">Like{{item.totalLike>1?'s':''}}</div> 
+                                </div>
+                            </div>
+                           
+                        </div>
+            </div>
+        <!-- <ng-container *ngIf="dataCount>dataLimit">
+            <div class="loadMoreButton" (click)="loadMoreData()">
+                {{'feeds.LoadMore' | translate}}
+            </div>
+        </ng-container> -->
+    </div>

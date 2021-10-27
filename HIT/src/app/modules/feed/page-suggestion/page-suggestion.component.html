@@ -1,0 +1,29 @@
+<ng-container>
+    <div class="single-timeline">
+        <div class="single-head ">
+            <div class="head-icon" [ngStyle]="{'background-image': suggestionData.image?'url(' +envurl +'/v1/image?url='+suggestionData.image + ')' : 'url(/assets/images/user.jpg)'}"></div>
+            <div class="head-txt">
+                <div class="h-txt">{{suggestionData?.name}}</div>
+                <p>{{'feeds.clubpage' | translate}} <span >{{suggestionData?.totalLike | shortNumber}} Like{{suggestionData?.totalLike>1?'s':''}}</span></p>
+            </div>
+        </div>
+
+        <div class="like_wrap">
+            <section class="mutual_wrap">
+                <div class="mutual_ico">
+                    <div class="ico" *ngFor="let item of suggestionData?.friends | slice:0:3; let i=index"
+                    [ngStyle]="{'background-image': item.user.image?'url('+ item.user.image +')' : 'url(/assets/images/user.jpg)'}"></div>
+                </div>
+                <span>{{suggestionData?.friends[0].user.username}} {{suggestionData?.friends.length>1?'&':''}} {{suggestionData?.friends.length>1?suggestionData?.friends.length-1 :''}} {{suggestionData?.friends.length>1?' of your friends like this page':''}}</span>
+            </section>
+            <section class="like_btn_wrap">
+                <!-- <div>
+                    Share
+                </div> -->
+                <div (click)="likeClub(suggestionData)">
+                    Like
+                </div>
+            </section>
+        </div>
+    </div>
+</ng-container>

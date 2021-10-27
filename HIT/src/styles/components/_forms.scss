@@ -1,0 +1,108 @@
+.form-group {
+    margin-bottom: 2.5rem;
+    position: relative;
+    .form-error-message{
+        left: 0;
+        margin-top: 10px;
+    }
+}
+.reg_form_group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    section{
+        width: 48%;
+    }
+}
+
+.form-label {
+    @extend .mb-1;
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 1rem !important;
+    font-family: Poppins-Light;
+    font-style: italic;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    border: 0px solid;
+    position: relative;
+    border-radius: .6rem;
+    padding: .8rem .75rem;
+    background-color: rgb(255 255 255 / 0.15) !important;
+    outline: none;
+    color:var(--primary_color);
+    height: 4.5rem;
+    &--inline {
+        display: inline-block;
+    }
+}
+.text_area{
+    height: 100px !important;
+    resize: none;
+}
+.form-control:focus{
+    background-color: white !important;
+    color: black;
+}
+.form-control:focus::placeholder{
+    color: black;
+}
+::placeholder { 
+    color: white;
+    font-family: Poppins-Light;
+    font-style: italic;
+    opacity: 0.5;
+    font-size: 1.4rem;
+  }
+
+.form-error-message {
+    @extend .mt-1;
+    color: var(--color-error);
+    font-size: 1.4rem;
+}
+.focusInputImage{
+    position: relative;
+    input{
+        padding-right: 15%;
+        background-size: 2rem;
+        background-position: 97% 50%;
+        background-repeat: no-repeat;
+    }
+    .showHideClick{
+        width:10%;
+        height: 100%;
+        position: absolute;
+        right: 0px;
+        top: 0;
+        cursor: pointer;
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .form-label {
+        font-size: 1.2rem;
+    }
+    .form-control{
+        font-size: 1.4rem;
+        height: 4rem;
+    }
+    .form-group {
+        margin-bottom: 1.5rem;
+        .form-error-message{
+            font-size: 1.2rem;
+        }
+    }
+}
+.dropdownInput{
+    background-image: url(/assets/images/down-arrow.svg);
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position-x: 93%;
+    background-position-y: 55%;
+    cursor: pointer;
+}
+.dropdownInput:focus{
+   background-image: url(../../assets/images/caret-down.svg); 
+}

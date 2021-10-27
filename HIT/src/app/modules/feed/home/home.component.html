@@ -1,0 +1,254 @@
+<div class="feed-outer">
+    <div class="feed-side">
+        <div class="side-contain">
+            <div class="profile-detail">
+                <div class="profile-icon" [ngStyle]="{'background-image': userProfile?.image?'url('+ userProfile?.image +')' : 'url(/assets/images/user.jpg)'}">
+                </div>
+                <div class="profile-name">
+                    <div class="profile-nam">{{userProfile?.username}}
+                        <div class="icn"></div>
+                    </div>
+                    <div class="profile-lbl" (click)="viewProfile()">{{'feeds.viewProfile' | translate}}</div>
+                </div>
+            </div>
+        </div>
+        <ul class="profile-menu">
+            <li (click)="goToFriends()"><img src="/assets/images/users.png">{{'feeds.followers' | translate}}</li>
+            <li (click)="goToCompetition()"><img src="/assets/images/hosted.png">{{'feeds.hostedComp' | translate}}</li>
+            <li (click)="goToJoined()"><img src="/assets/images/hosted.png">{{'competition.JoinedCompetitions' | translate}} </li>
+            <li (click)="goToHistory()"><img src="/assets/images/hosted.png">{{'competition.CompetitionHistory' | translate}}</li>
+            <li (click)="goresponsiblegaming()"><img src="/assets/images/hosted.png">{{'responsibleGame.mainHead' | translate}}</li>
+            <li (click)="goToSettings()"><img src="/assets/images/hosted.png">{{'profileMenu.Settings' | translate}}</li>
+
+
+        </ul>
+    </div>
+    <div class="feed-timeline">
+        <div class="single-timeline new-timeline" [ngClass]="{'bg-timeline':timelineStage==3}">
+            <div class="single-head" *ngIf="timelineStage!=3">
+                <div class="head-icon" (click)='onView()' [ngStyle]="{'background-image': userProfile?.image?'url('+ userProfile?.image +')' : 'url(/assets/images/user.jpg)'}">
+                </div>
+                <div class="head-txt">
+                    <input type="text" myAutofocus [(ngModel)]="shareContent" (click)="nextSection(2)" (ngModelChange)="getUrl($event)" class="form-control" placeholder="{{'feeds.shareSomething' | translate}}">
+                </div>
+            </div>
+            <div class="timeline-post" *ngIf="timelineStage==2">
+                <div class="add-competition">
+                    <div class="comp-txt">{{'feeds.addcomptoshare' | translate}}</div>
+                    <div class="comp-add-icon" (click)="displayList()"></div>
+                </div>
+            </div>
+            <div class="timeline-post" *ngIf="timelineStage==4">
+                <div class="post-logo" *ngIf="selectedCompetition?.type==2" [ngStyle]="{'background-image': selectedCompetition['season.league.logo']?'url(' +envurl +'/v1/image?url='+ selectedCompetition['season.league.logo'] + ')' : 'url(/assets/images/user.jpg)'}">
+                </div>
+                <div class="post-logo noCompIco" *ngIf="selectedCompetition?.type==1">
+                </div>
+                <div class="post-h1">{{selectedCompetition.name}}</div>
+                <div class="post-users">
+                    <div class="user-pics" *ngIf="selectedCompetition.players.length>0">
+                        <ng-container *ngFor="let item of selectedCompetition?.players | slice:0:3">
+                            <div class="pic" [ngStyle]="{'background-image': item.user?.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                            </div>
+                        </ng-container>
+
+                    </div>
+                    <span>{{selectedCompetition.fullPlayers}} People Joined</span>
+                </div>
+                <div class="post-content small-post">
+                    <div class="post-contxt">{{selectedCompetition.numberOfDays.length}} Days</div>
+                    <div class="post-contxt" *ngIf="selectedCompetition.type==2">
+                        <img src="../../../../assets/images/history.png"> Championship
+                    </div>
+                    <div class="post-contxt" *ngIf="selectedCompetition.type==1">
+                        <img src="../../../../assets/images/history.png"> One time
+                    </div>
+                </div>
+                <div class="post-h1">
+                    <div class="img"></div> Win {{selectedCompetition.totalPrizeInUSD * selectedCompetition.conversionRate | number:'1.2-2'}} {{selectedCompetition.conversionCurrency}}!!!
+                </div>
+            </div>
+            <div class="youtubeLinkPreview" *ngIf="timelineStage==5">
+                <div class="yt_thumbnail_image">
+                    <img [src]="(thumbnailData?.thumbnailUrl)" />
+                </div>
+                <div class="yt_tdescription">
+                    <p>{{thumbnailData?.providerName}}</p>
+                    <p>{{thumbnailData?.title}}</p>
+                </div>
+            </div>
+            <div class="newtimeline-foot" *ngIf="timelineStage==2 || timelineStage==4 || timelineStage==5">
+                <div class="drop-list">
+                    <!-- <img src="../../../../assets/images/glob.png">
+                    <select>
+                        <option>Private</option>
+                        <option>Public</option>
+                    </select> -->
+                </div>
+                <div class="button_wrap">
+                    <button class="btn btn_transparent" (click)="nextSection(1)">{{'feeds.cancel' | translate}}</button>
+                    <button class="btn" [disabled]="!linkActive" (click)="createPost()">{{'feeds.publish' |
+                        translate}}</button>
+                </div>
+            </div>
+            <div class="timeline-third-stage" *ngIf="timelineStage==3">
+                <div class="third-head">
+                    <div class="stage-tlt">
+                        <div class="back" (click)="nextSection(1)"></div>
+                        {{'feeds.addcomptoshare'| translate }}
+                    </div>
+                    <div class="stage-search" [ngClass]="{'open-search':thirdSearch}">
+                        <input type="text" class="form-control" placeholder="Search Competition" (input)="getCompetition($event.target.value)" [(ngModel)]="searchValue">
+                        <div class="search-icon" (click)="toggleSearch()"></div>
+                    </div>
+                </div>
+                <div class="championship-list" (scroll)="onScroll($event)">
+                    <div class="champ-row" *ngFor="let item of competition" (click)="selectCompetition(item)">
+                        <div class="row-dot" [ngClass]="{'row-yellow':item.type==1}"></div>
+                        <div class="column new-column">
+                            <div class="h-txt">{{item.name}}</div>
+                            <div class="s-txt">By {{item.userName['1']}}</div>
+                        </div>
+                        <div class="column-small">{{item.startDate | date:"d MMM y"}} - {{item.endDate | date:"d MMM y"}}
+                        </div>
+                        <div class="column">
+                            <div class="h-txt">{{item.totalPrizeInUSD * item.conversionRate | number:'1.2-2'}} {{item.conversionCurrency}}
+                            </div>
+                            <div class="s-txt">Win</div>
+                        </div>
+                    </div>
+                    <div class="no_data_found" *ngIf='competition.length === 0'>
+                        <img src="/assets/images/noData.svg">
+                        <p>{{'filter.nocompetionavailable' | translate}} !!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <ng-container *ngIf="timeLineData.length!=0; else elseTemplate">
+            <ng-container *ngFor="let item of timeLineData;let i=index">
+                <ng-container *ngIf="item?.feedType=='post'">
+                    <app-timeline (reload)=updateLike($event) (addCommentCount)=updateComment($event) (updateCommentCount)=updateCommentCountIn($event) [timelineData]=item [index]=i></app-timeline>
+                </ng-container>
+                <ng-container *ngIf="item?.feedType=='page-suggestion'">
+                    <app-page-suggestion (pageLiked)=likedSuggestion($event) [suggestionData]=item [index]=i>
+                    </app-page-suggestion>
+                </ng-container>
+                <ng-container *ngIf="item?.feedType=='url-shared-post' || item?.feedType=='text-post'">
+                    <app-timeline2 (reload)=updateLike($event) (addCommentCount)=updateComment($event) (updateCommentCount)=updateCommentCountIn($event) [timelineData]=item [index]=i></app-timeline2>
+                </ng-container>
+                <!-- <ng-container *ngIf="item?.feedType=='url-shared-post' || item?.feedType=='text-post'">
+                    <app-timeline2 (reload)=updateLike($event) (addCommentCount)=updateComment($event) (updateCommentCount)=updateCommentCountIn($event) [timelineData]=item [index]=i></app-timeline2>
+                </ng-container>   -->
+
+            </ng-container>
+        </ng-container>
+        <ng-container>
+            <div class="loadMoreButton" (click)="loadMoreData()">
+                {{'feeds.LoadMore' | translate}}
+            </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="no_data_found">
+                <img src="/assets/images/noData.svg">
+                <p>{{'feeds.nothing' | translate}}</p>
+            </div>
+        </ng-template>
+
+
+    </div>
+    <div class="feed-side re-side">
+        <div class="side-title" *ngIf="requests.length">{{'feeds.followRequests' | translate}}</div>
+        <div class="side-contain rqest-cont" *ngIf="requests.length">
+            <div class='request-div' *ngFor="let item of requests | slice:0:1">
+                <div class="profile-detail request-detail">
+                    <div class="profile-icon" [ngStyle]="{'background-image': item.user.image?'url(' + item.user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                    </div>
+                    <div class="profile-name">
+                        <div class="profile-nam" (click)="onViewProfile(item)" [ngClass]="{'show-nam':item.user?.mutalFriends?.count==0}">{{item.user.username}}</div>
+                        <div class="profile-lbl" *ngIf="item.user?.mutalFriends?.count">
+                            <div class="user-pics">
+                                <ng-container *ngFor="let user of item.user?.mutalFriends?.friends | slice:0:3">
+                                    <div class="pic" [ngStyle]="{'background-image': user.image?'url(' + user.image + ')' : 'url(/assets/images/user.jpg)'}">
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <span>{{item.user?.mutalFriends?.count}} Mutual Friends</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <input type="button" (click)="submitRequest(item.user.guid,2)" class="cancel-btn" value="{{'feeds.reject' | translate}}">
+                    <input type="button" (click)="submitRequest(item.user.guid,1)" class="submit-btn" value="{{'feeds.accept' | translate}}">
+                </div>
+            </div>
+        </div>
+        <div class="see-btn" *ngIf="requests.length>1" (click)="goToFollowFriends()">{{'feeds.seeAll' | translate}}
+        </div>
+        <!-- <div class="side-title" *ngIf="clubs.length">Clubs</div> -->
+        <!-- <div class="side-contain club-cont" *ngIf="clubs.length">
+            <div class="profile-detail club-detail" *ngFor="let item of clubs | slice:0:3">
+                <div class="before" (click)="pageLikeUnlike(item.teamId,item.isLiked)"
+                    [ngClass]="{'like':item.isLiked}"></div>
+                <div *ngIf="!item.image" class="profile-icon"></div>
+                <img *ngIf="item.image" [src]="( envurl +'/v1/image?url=' + item.image)" />
+                <div class="profile-icon"
+                    [ngStyle]="{'background-image': item.image?'url(' +envurl +'/v1/image?url='+item.image + ')' : 'url(/assets/images/user.jpg)'}">
+                </div>
+                <div class="profile-name">
+                    <div class="profile-nam">{{item.name}}</div>
+                    <div class="profile-lbl">{{'feeds.clubpage' | translate}} <div class="l-tag">{{item.totalLike |
+                            shortNumber}} Like{{item.totalLike>1?'s':''}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="see-btn" *ngIf="clubs.length>3" [routerLink]="['/teams']">{{'feeds.seeAll' | translate}}</div> -->
+    </div>
+    <!-- <footer>
+        <app-footer></app-footer>
+    </footer> -->
+
+    <!-- <div class="feed-bottom">
+        <app-footer></app-footer>
+    </div> -->
+</div>
+<!-- <div class="footer">
+    <app-footer></app-footer>
+</div> -->
+
+<!-- <app-footer></app-footer> -->
+
+<!-- <div class="row">
+    <div class="col-sm-12">
+        <app-footer></app-footer>
+    </div>
+
+.feed-outer[_ngcontent-snx-c203] .feed-side[_ngcontent-snx-c203] {
+    width: 350px;
+    height: 100%;
+    background-color: #151b27;
+    border-radius: 7px;
+    padding: 30px;
+    position: absolute;
+    /* top: 170px; */
+    /* left: 7%; */
+    overflow: hidden;
+}.feed-outer[_ngcontent-snx-c203] .feed-side[_ngcontent-snx-c203] {
+    width: 350px;
+    height: 100%;
+    background-color: #151b27;
+    border-radius: 7px;
+    padding: 30px;
+    position: absolute;
+    /* top: 170px; */
+    /* left: 7%; */
+    overflow: hidden;
+}.feed-outer[_ngcontent-snx-c203] .re-side[_ngcontent-snx-c203] {
+    /* left: auto; */
+    right: 0%;
+    top: 0px;
+    padding: 30px 0px;
+}
+
+</div> -->

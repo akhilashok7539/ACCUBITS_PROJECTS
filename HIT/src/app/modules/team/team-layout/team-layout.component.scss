@@ -1,0 +1,49 @@
+.isactives{
+    border-bottom: 4px solid #0DB983 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 1px;
+  }
+  section{
+    margin-top: 86px;
+  }
+  .com_badge{
+    background-color: #FE6140 !important;
+  }
+  .competition_detail{
+    margin-top: 35px;
+    display: flex;
+    .competition_detail_card{
+        padding: 1vh 5vh;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+    .competition_detail_badge{
+        width: 31px;
+        margin-left: 20px;
+        height: 31px;
+        background-color:#FEBB2E;
+        border-radius: 5px;
+        display: table;
+        text-align: center;
+        p {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 1.4rem;
+        }
+    }
+    .com_badge{
+        background-color: #FE6140 !important;
+    }
+  }
+
+  @media only screen and (max-width: 500px){
+    section{
+    margin-top: 37px;
+    }
+  }
+  

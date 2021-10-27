@@ -1,0 +1,65 @@
+<section class="competition_layout">
+
+    <table class="table_spacing" *ngIf='fixture_detail.length >0'> 
+        <tr class="ht mobile_hiddens">
+            <th width='25%' class="font_style">Team</th>
+            <th width='25%'  class="font_style">Competition</th>
+            <th width='25%'>Date</th>
+            <th width='25%'>Ground</th>
+        </tr>
+        <ng-container *ngFor='let data of fixture_detail '>
+        <tr class="active_user">
+            <td width='25%' class='td_first' *ngIf='team_id.toString() !== data.awayTeam.id.toString()'>
+                <div class="player_detail">
+                    <ng-container *ngIf="data.awayTeam.logo; else elseTemplate">
+                        <div class="competition_card_image">
+                            <img class="team_1" [src]="(envurl +'/v1/image?url=' + data.awayTeam.logo)">
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="competition_card_image client-name">
+                            {{data.awayTeam.name | slice:0:1}}
+                        </div>
+                    </ng-template>
+                    <p class="name">{{data.awayTeam.name}}</p>
+                </div>
+            </td>
+            <td width='25%' class='td_first' *ngIf='team_id.toString() !== data.homeTeam.id.toString()'>
+                <div class="player_detail">
+                    <ng-container *ngIf="data.homeTeam.logo; else elseTemplate">
+                        <div class="competition_card_image">
+                            <img class="team_1" [src]="(envurl +'/v1/image?url=' + data.homeTeam.logo)">
+                        </div>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="competition_card_image client-name">
+                            {{data.homeTeam.name | slice:0:1}}
+                        </div>
+                    </ng-template>
+                    <p class="name">{{data.homeTeam.name}}</p>
+                </div>
+            </td>
+            <!-- <td width='25%'>
+                <div class="h-txt">{{data.leagueName}} </div>
+                <p>Football League </p>
+            </td> -->
+            <td width='25%'>
+                <div class="h-txt">{{data.matchTime | date:'EEEE, MMMM d' }} </div>
+                <p>Date </p>
+            </td> 
+            <td width='45%'>
+                <div class="h-txt last" *ngIf="data.location ===''">Will Update Soon</div>
+                <div class="h-txt last" *ngIf="data.location !==''">{{data.location}}</div>
+                
+            </td>
+        </tr>
+        </ng-container>
+        
+    </table>
+      <p class="no_data"  *ngIf='fixture_detail.length === 0'>
+        No Players Added
+      </p>
+    <!-- <section class="paginator" *ngIf='board_list.length > 5'>
+        <pagination-controls (pageChange)="paginateGames($event)"></pagination-controls>
+   </section> -->
+</section>

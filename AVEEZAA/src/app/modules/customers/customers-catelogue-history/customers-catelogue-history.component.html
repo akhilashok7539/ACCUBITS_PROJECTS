@@ -1,0 +1,50 @@
+<div class="container" *ngIf="!viewHistoryVersion">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="inner-addon left-addon">
+                <!-- <i class="fa fa-search"></i> -->
+                <!-- <input type="text" class="form-control" placeholder="Search Products" /> -->
+            </div>
+        </div>
+        <div class="col-sm-3 ">
+          <select name="" id="" class="form-control">
+              <option value="">Jan 2020</option>
+          </select>
+
+
+
+        </div>
+    </div>
+    <table class="sortable">
+        <thead>
+            <tr>
+                <th class="text-center" width='25%'>
+                 Version
+                </th>
+                <th width='75%'>Date & Time
+                    <span class="sort"></span>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let test of test_data">
+              <td class="text-center" width='25%' >
+                {{test.version}}
+              </td>
+              <td  width='75%'>
+
+              {{test.Date}}
+            </td>
+
+              </tr>
+        </tbody>
+
+    </table>
+    <app-table-pagination-footer></app-table-pagination-footer>
+
+</div>
+<div *ngIf="!viewHistoryVersion">
+    <app-customers-view-catelogue-history-version></app-customers-view-catelogue-history-version>
+</div>

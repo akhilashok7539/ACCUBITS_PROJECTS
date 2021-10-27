@@ -1,0 +1,134 @@
+<div class="tab_date_selection" *ngIf="competition_detail.type === 2">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigDate" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem class="competition_match_selection_btn" [ngClass]="{'is_active_date': date_index === i }" *ngFor='let item of rounds ;let i =index' (click)='onSelectDate(item,i)'>
+            <div class="competition_date">
+                <p> Round {{item.name}} </p>
+                <p>{{item.startDate | date:'dd MMM'}} - {{item.endDate | date:'dd MMM y'}}</p>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+    <div #myDiv (click)="slickModal.slickGoTo(date_index)">
+    </div>
+</div>
+<div class="no-records" *ngIf="!predictions.length && !loading">{{'leaderboard.noreasults' | translate}}</div>
+<section class="competition_club_layout" *ngIf="!error && !loading && predictions.length > 0">
+    <div class="match_detail_layout">
+        <div class="match_Detail_1">
+            <p class="title1">{{'result.resultGen' | translate}}</p>
+            <div class="time_layout">
+                <div class="competition_option_view_btn ml_0 timer_layout_color date">
+                    <p class="detail">{{results?.count || 00 | number:'2.0'}}/{{results?.count || 00 | number:'2.0'}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="match_Detail_1">
+            <p class="title1">{{'filter.ChoosePlayer' | translate}}</p>
+            <div class="time_layout">
+                <div class="competition_option_view_btn drop_players ml_0 timer_layout_color date" (click)="showPlayersList()">
+                    <p class="detail">{{selectedUserName}}</p>
+                    <div class="drop_players_list" *ngIf="showLeaderBoardPlayers">
+                        <ng-container *ngIf="playersList.length>0; else elseTemplate">
+                            <p (click)="selectPlayerResult('all')">{{'filter.AllPlayers' | translate}}</p>
+                            <p (click)="selectPlayerResult(item)" *ngFor="let item of playersList">{{item.user?.username}}</p>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <p>No players to show</p>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="beting_layout_" *ngFor='let item of predictions;let j=index'>
+        <div class="match_overview_layout">
+            <div class="competition_option_view_btn date week">
+                <p>{{item.newdate | date:'EEEE, MMMM dd, y'}}</p>
+            </div>
+            <div class="competition_option_view_btn match">
+                <p>{{item.array.length | number:'2.0'}} Matches</p>
+            </div>
+        </div>
+        <table class="table_spacing">
+            <tr class="mobile_hiddens">
+                <th width='15%'>{{'competitionTag.matches' | translate}}</th>
+                <th width='5%' class="title_add">{{'result.actScore' | translate}}</th>
+                <th width='5%'></th>
+                <th width='5%' class="title_add">{{'result.yourPrediction' | translate}}</th>
+                <th width='5%'></th>
+                <th width='12%'></th>
+                <th width='20%' class="title_add">{{'createCompetition.pointBoost' | translate}} <span class="info_span" #tooltip="matTooltip" matTooltip="{{'tooltip.text' | translate}}"><img src="/assets/images/information.svg"></span></th>
+                <th width='15%' class="point_earned">{{'result.pointEarn' | translate}}</th>
+                <th width='13%'>{{'result.totalPoint' | translate}}</th>
+
+            </tr>
+            <tr *ngFor="let data of item.array; let z=index">
+                <td width='15%' class="td_first-child">
+                    <div class="player_detail">
+                        <div class="competition_card_image">
+                            <div class="club_avatar" #tooltip="matTooltip" [matTooltip]="data.match.homeTeam.name">
+                                <img [src]="( data.match.homeTeam.logo?envurl +'/v1/image?url=' + data.match.homeTeam.logo:'/assets/images/club.png')" />
+                            </div>
+                        </div>
+                        <div class="home_avatar_layout">
+                            <div class="home_avatar">
+                            </div>
+                        </div>
+                        <div class="verses">
+                            x
+                        </div>
+                        <div class="competition_card_image">
+                            <div class="club_avatar" #tooltip="matTooltip" [matTooltip]="data.match.awayTeam.name">
+                                <img [src]="( data.match.awayTeam.logo?envurl +'/v1/image?url=' + data.match.awayTeam.logo:'/assets/images/club.png')" />
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td width='5%' class="td_space1 chage">
+                    <div class="disabled_box flt_left" *ngIf='data.match.homeTotalScore !== null'> {{data.match.homeTotalScore | number:'2.0' }}</div>
+                    <div class="disabled_box flt_left" *ngIf='data.match.homeTotalScore === null'> --</div>
+                </td>
+                <td width='5%' class="td_space chage">
+                    <div class="disabled_box" *ngIf='data.match.awayTotalScore !== null'> {{data.match.awayTotalScore | number:'2.0' }}</div>
+                    <div class="disabled_box" *ngIf='data.match.awayTotalScore === null'> --</div>
+                </td>
+                <td width='5%' class="td_space1 chage">
+                    <div class="enable_box enable_box_btn flt_left lose" *ngIf='data.homeScore !== null' [ngClass]="{'enable_box_green': data.homePoint === 1 }"> {{data.homeScore | number:'2.0' }} </div>
+                    <div class="enable_box enable_box_btn flt_left" *ngIf='data.homeScore === null' [ngClass]="{'lose':data.homeScore !== data.match.homeTotalScore, 'enable_box_green':data.homeScore === data.match.homeTotalScore && data.homeScore !== null}">-- </div>
+
+                </td>
+                <td width='5%' class="td_space chage">
+                    <div class="enable_box enable_box_btn lose" *ngIf='data.awayScore !== null' [ngClass]="{'enable_box_green':data.awayPoint === 1 }"> {{data.awayScore | number:'2.0' }}</div>
+                    <div class="enable_box enable_box_btn" *ngIf='data.awayScore === null' [ngClass]="{'lose':data.awayScore !== data.match.awayTotalScore, 'enable_box_green':data.awayScore === data.match.awayTotalScore && data.awayScore !== null}"> --</div>
+                </td>
+                <td width='12%' (click)='onSelectBestplayer(i)' class="pad_name">
+                    <div class="enable_box player_detail_btn lose" [ngClass]="{'enable_box_green': data.playerPoint === 1 }">
+                        <p *ngIf="data.awayPlayerInfo !== null">{{data.awayPlayerInfo.name}}</p>
+                        <p *ngIf="data.homePlayerInfo !== null">{{data.homePlayerInfo.name}}</p>
+                        <p *ngIf="data.awayPlayerInfo === null && data.homePlayerInfo === null"> -- </p>
+                        <div class="star_avatar" [ngClass]="{'star_avatar_champ':competition_detail.type === 2}">
+                        </div>
+                    </div>
+                </td>
+                <td class="point_layout_view chage pl_0" width='20%'>
+                    <div *ngIf="competition_detail.type === 1 ">
+                        <div class="point_layout" *ngIf='match_count > 9' [ngClass]="{'point_layout_active':data.multiple === '1.5'}">1.5 X</div>
+                        <div class="point_layout point_layout_active" *ngIf='match_count > 4' [ngClass]="{'point_layout_active':data.multiple === '2.0'}">2 X</div>
+                    </div>
+                    <div *ngIf="competition_detail.type === 2 ">
+                        <div class="point_layout" *ngIf='match_count > 9' [ngClass]="{'point_layout_active_champ':data.multiple === '1.5'}">1.5 X</div>
+                        <div class="point_layout" *ngIf='match_count > 4' [ngClass]="{'point_layout_active_champ':data.multiple === '2.0'}">2 X</div>
+                    </div>
+                </td>
+                <td width='15%' class="text-right width_td chage pl_0">
+                    <p class="total_coin" *ngIf='data.total !== null'> {{data.total}} points +</p>
+                    <p class="total_coin" *ngIf='data.total === null'> 0 points +</p>
+                </td>
+                <td width='13%' class="td_last-child width_td">
+                    <p class="earned_coin" *ngIf='data.total !== null'> {{data.finalPoints}} points</p>
+                    <p class="earned_coin" *ngIf='data.total === null'> 0 points</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>

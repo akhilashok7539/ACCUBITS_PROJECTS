@@ -1,0 +1,72 @@
+.icon{
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 11px; 
+}
+a:hover .dashboard {
+    background-image: url(/assets/images/sidebar/dash_active.svg) ;
+  }
+a:active .dashboard{
+    background-image: url(/assets/images/sidebar/dash_active.svg) !important;
+  }
+  a:hover .customer {
+    background-image: url(/assets/images/sidebar/customer_active.svg) !important;
+  }
+  a:active .customer {
+    background-image: url(/assets/images/sidebar/customer_active.svg) !important;
+  }
+  a:hover .product {
+    background-image: url(/assets/images/sidebar/product_active.svg) ;
+  }
+a:active .product{
+    background-image: url(/assets/images/sidebar/product_active.svg) !important;
+  }
+  a:hover .product_list {
+    background-image: url(/assets/images/sidebar/product_list_active.svg) !important;
+  }
+  a:active .product_list {
+    background-image: url(/assets/images/sidebar/product_list_active.svg) !important;
+  }
+  a:hover .branch {
+    background-image: url(/assets/images/sidebar/branch_active.svg) !important;
+  }
+  a:active .branch {
+    background-image: url(/assets/images/sidebar/branch_active.svg) !important;
+  }
+  a:hover .setting {
+    background-image: url(/assets/images/sidebar/setting_active.svg) !important;
+  }
+  a:active .setting {
+    background-image: url(/assets/images/sidebar/setting_active.svg) !important;
+  }
+  a:hover .user {
+    background-image: url(/assets/images/sidebar/user_active.svg) !important;
+  }
+  a:active .user {
+    background-image: url(/assets/images/sidebar/user_active.svg) !important;
+  }
+.dashboard{
+    background-image: url(/assets/images/sidebar/dash.svg);
+}
+.customer{
+    background-image: url(/assets/images/sidebar/customer.svg);
+}
+.product{
+  background-image: url(/assets/images/sidebar/product.svg);
+}
+.product_list{
+  background-image: url(/assets/images/sidebar/product_list.svg);
+}
+.branch{
+  background-image: url(/assets/images/sidebar/branch.svg);
+}
+.user{
+  background-image: url(/assets/images/sidebar/user.svg);
+}
+.setting{
+  background-image: url(/assets/images/sidebar/setting.svg);
+}
+

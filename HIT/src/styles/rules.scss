@@ -1,0 +1,51 @@
+.rules_outer{
+    padding: 3rem 8rem 3rem 8rem;
+    width: 80%;
+    margin: 0 auto;
+    .rules_head{
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 6rem;
+        color: white;
+        position: relative;
+    }
+    .rules_head::after{
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100px;
+        left: calc(50% - 50px);
+        bottom: -2rem;
+        background-color: #33b882;
+    }
+    .rules_wrap{
+        margin-bottom: 6rem;
+        font-family: Poppins-Light;
+        h1{
+            font-size: 1.6rem;
+        }
+        h3{
+            font-size: 1.4rem;
+        }
+        p{
+            line-height: 18px;
+            color: #bbbbbb;
+            text-align: justify;
+        }
+        ul{
+            padding-left: 1rem;
+            color: #bbbbbb;
+            li{
+                padding-bottom: 5px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .rules_outer {
+        padding: 3rem 0rem 3rem 0rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+  
+  }

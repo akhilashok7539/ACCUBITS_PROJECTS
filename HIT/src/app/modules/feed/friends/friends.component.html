@@ -1,0 +1,41 @@
+<div class="friends_wrap">
+    <ul class="friends_nav dis_hid">
+        <li [ngClass]="{'active': selectedTab === 1}" (click)="changeTab(1)">{{'feeds.followers' | translate}} ({{allFriendsData?.totalCount}})</li>
+        <ng-container *ngIf="ownProfile">
+            <li [ngClass]="{'active': selectedTab === 2}" (click)="changeTab(2)">{{'feeds.followRequests' | translate}} ({{requestedList?.totalCount}})</li>
+        <li [ngClass]="{'active': selectedTab === 3}" (click)="changeTab(3)">{{'feeds.blockedUsers' | translate}} ({{blockedList?.totalCount}})</li>
+        <li [ngClass]="{'active': selectedTab === 4}" (click)="changeTab(4)">{{'walletwidraw.friends' | translate}} ({{totalCountSuggetList}})</li>
+
+        </ng-container>  
+    </ul>
+    <ul class="friends_nav mob_hid">
+        <li [ngClass]="{'active': selectedTab === 1}" (click)="changeTab(1)">Friends ({{allFriendsData?.totalCount}})</li>
+        <ng-container *ngIf="ownProfile">
+            <li [ngClass]="{'active': selectedTab === 2}" (click)="changeTab(2)">Requests ({{requestedList?.totalCount}})</li>
+        <li [ngClass]="{'active': selectedTab === 3}" (click)="changeTab(3)">Blocked ({{blockedList?.totalCount}})</li>
+        <!-- <li [ngClass]="{'active': selectedTab === 4}" (click)="changeTab(4)">Friends Suggestions ({{totalCountSuggetList}})</li> -->
+
+        </ng-container>  
+    </ul>
+    <ul class="friends_nav mob_hid">
+        <!-- <li [ngClass]="{'active': selectedTab === 1}" (click)="changeTab(1)">Friends ({{allFriendsData?.totalCount}})</li> -->
+        <ng-container *ngIf="ownProfile">
+            <!-- <li [ngClass]="{'active': selectedTab === 2}" (click)="changeTab(2)">Requests ({{requestedList?.totalCount}})</li> -->
+        <!-- <li [ngClass]="{'active': selectedTab === 3}" (click)="changeTab(3)">Blocked ({{blockedList?.totalCount}})</li> -->
+        <li [ngClass]="{'active': selectedTab === 4}" (click)="changeTab(4)">{{'walletwidraw.friends' | translate}} ({{totalCountSuggetList}})</li>
+
+        </ng-container>  
+    </ul>
+    <ng-container *ngIf="selectedTab===1"> 
+        <app-all-friends (requestAction)=requestActionCall() (seeAllAction)=seeAllAction() [allFriendsList]=allFriendsData></app-all-friends>
+    </ng-container>
+    <ng-container *ngIf="selectedTab===2">
+        <app-follow-requests (requestAction)=requestActionCall() [followFriendsList]=requestedList></app-follow-requests>
+    </ng-container>
+    <ng-container *ngIf="selectedTab===3">
+        <app-blocked-users (requestAction)=requestActionCall() [blockedUserList]=blockedList></app-blocked-users>
+    </ng-container>
+    <ng-container *ngIf="selectedTab===4"> 
+        <app-friends-suggestion (requestAction)=requestActionCall() [suggestionList]=allsuggetionList></app-friends-suggestion>
+    </ng-container>
+</div>

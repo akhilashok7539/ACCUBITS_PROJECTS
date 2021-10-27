@@ -1,0 +1,56 @@
+<div *ngIf="!loading && competition_detail" >
+    <app-competition-overview [competition_detail]='competition_detail' [competition_days]='competition_days'></app-competition-overview>
+<app-competition-club-card (onOptionSelect)="onOptionSelect($event)" [competition_detail]='competition_detail'></app-competition-club-card>
+<section  class="common_wraps">
+    <div class="competition_detail " #input1>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Matches'}"  (click)="onClick('Matches')">
+            <div class="heading">
+                {{'competition.matches' | translate}}
+            </div>
+            <span class="competition_detail_badge mobile_hiddens " [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'Matches'">
+              <p>{{ competition_detail.numberOfMatches || 0 | number:'2.0'}}</p>
+           </span>
+        </div>
+      <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'Clubs'}"  (click)="onClick('Clubs')">
+            <div class="heading">
+                {{'competitionTag.clubs' | translate}}
+            </div>
+            <span class="competition_detail_badge mobile_hiddens" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'Clubs'">
+              <p>{{competition_club_view || 0 | number:'2.0'}}</p>
+           </span>
+        </div>
+      <!-- HIDE FOR SOFT LAUNCH ON 08/07/2021 -->
+
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'leader'}" (click)="onClick('leader')">
+            <div class="heading">
+                {{'competition.Leaderboard' | translate}} 
+            </div>
+            <!-- <span class="competition_detail_badge mobile_hiddens" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'player'" >
+               <p>{{acive_player_value || 0 | number:'2.0'}}</p>
+            </span> -->
+        </div>
+        <div class="competition_detail_card" [ngClass]="{'isactives': isactive === 'result'}" (click)="onClick('result')" *ngIf="loggedIn">
+            <div class="heading">
+                {{'competition.Results' | translate}} 
+                
+            </div>
+            <!-- <span class="competition_detail_badge mobile_hiddens" [ngClass]="{'com_badge': competition_detail.type === 2}" *ngIf="isactive === 'player'" >
+               <p>{{acive_player_value || 0 | number:'2.0'}}</p>
+            </span> -->
+        </div>
+   
+         
+
+    </div>
+    <!-- <app-competition-active-players [gu_id]='gu_id' (acive_player_value)="get_acive_player_value($event)" *ngIf="isactive === 'player'"></app-competition-active-players> -->
+    <app-competition-club-view [gu_id]='gu_id'  (competition_club_view)="get_competition_club_view($event)"  *ngIf="isactive === 'Clubs'"></app-competition-club-view>
+    <app-competition-leaderboard [competition_detail]='competition_detail' *ngIf="isactive === 'leader'"></app-competition-leaderboard>
+    <app-competition-result [competition_detail]='competition_detail'  *ngIf="isactive === 'result'"></app-competition-result>
+    <app-competition-matches-view [competition_detail]='competition_detail' (competition_matches_view)="get_competition_matches_view($event)" [gu_id]='gu_id' *ngIf="isactive === 'Matches'"></app-competition-matches-view>
+</section>
+<!-- <app-competition-footer></app-competition-footer> -->
+
+</div>
+<app-footer></app-footer>

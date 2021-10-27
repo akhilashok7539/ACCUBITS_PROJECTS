@@ -1,0 +1,85 @@
+<section  class="common_wraps" >
+    <div class="competition_card_layout">
+        <div class="competition_card">
+            <div class="competition_card_background_sm_bubble">
+
+            </div>
+            <div class="competition_card_background_lg_bubble">
+
+            </div>
+            <section class="competition_card_image">
+                <div class="user_avatar" *ngIf='competition_detail.type === 1'>
+                </div>
+                <ng-container *ngIf="competition_detail.type === 2">
+                    <ng-container *ngIf="expression; else elseTemplate">
+                        <img class="user_avatar" *ngIf='competition_detail.season.league.logo' [src]="(envurl +'/v1/image?url=' + competition_detail.season.league.logo)" />
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="user_avatar"></div>
+                    </ng-template>
+                    
+                </ng-container>
+            </section>
+            <section class="competition_card_detail">
+                <p  class="heading_p" *ngIf='competition_detail.type === 1'> {{competition_detail?.name}}</p>
+                <p  class="heading_p" *ngIf='competition_detail.type === 2'>{{competition_detail.season.league.name}} @ {{competition_detail?.name}}</p>
+                <div class="tag"  *ngIf='competition_detail.type === 1'>{{'mode.onetime' | translate}}</div>
+                <div class="championshipCrumb" *ngIf='competition_detail.type === 2'>{{'mode.champion' | translate}}</div>
+                <p class="mt_17">{{formatDate(competition_detail?.startDate)}} - {{formatDate(competition_detail?.endDate)}} </p>
+                <div class="competition_option_layout">
+                    <div class="competition_option_view_btn ml_0" (click)="onSelectOption('Matches')">
+                        <p>{{'competitionTag.viewMatch' | translate}}</p>
+                    </div>
+                    <div class="competition_option_view_btn ml_0" (click)="onSelectOption('Clubs')">
+                        <p>{{'competitionTag.viewClub' | translate}}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="competition_card">
+            <div class="competition_card_background_sm_bubble">
+
+            </div>
+            <div class="competition_card_background_lg_bubble">
+
+            </div>
+            <section class="competition_card_image">
+                <div class="client_avatar" *ngIf='competition_detail.user.image === null'>
+                </div>
+                <img class="user_avatar1" *ngIf='competition_detail.user.image !== null' [src]="(competition_detail.user.image)" />
+            </section>
+            <section class="competition_card_detail">
+                <p class="heading_p u_name" (click)="viewProfile(competition_detail.user)">{{competition_detail.user.username}}</p>
+                <div class="competition_card_follow_up">
+                    <div class="competition_card_follow_up_card first_card">
+                        <div>{{competition_detail?.user.hostedCompetitions || '0'}}</div>
+                        <p class="mt_17">{{'mode.hosted' | translate}}</p>
+                    </div>
+                    <!-- <div class="competition_card_follow_up_card">
+                        <div>{{competition_detail?.user.following || '0'}}</div>
+                        <p class="mt_17">Following</p>
+                    </div>
+                    <div class="competition_card_follow_up_card last_card">
+                        <div>{{competition_detail?.user.hostedCompetitions || '0'}}</div>
+                        <p class="mt_17">Hosted Games</p>
+                    </div> -->
+                </div>
+                <div class="competition_option_layout" *ngIf='username'>
+                    <div class="competition_option_views_btn ml_0" (click)="viewProfile(competition_detail.user)">
+                        <p>{{'competitionTag.viewProfile' | translate}}</p>
+                    </div>
+                    <div class="icon_background mg_l" *ngIf="getUser()"> 
+                        <!-- <div class="follow_icon"></div> -->
+                        <div class="follow_add" *ngIf="competition_detail?.user.isFriend==0 && competition_detail?.user.isRequested==0" (click)="sendFriendRequest(competition_detail?.user.guid)"></div>
+                        <div class="request_icon" *ngIf="competition_detail?.user.isFriend==0 && competition_detail?.user.isRequested==1"></div>
+                        <div class="follow_icon" *ngIf="competition_detail?.user.isFriend==1"></div>
+                    </div>
+                    <div class="icon_background ml_2" *ngIf="getUser() && competition_detail?.user.isFriend==1"> 
+                        <div class="messages" (click)="onMessage(competition_detail.user)">
+                        </div>
+                    </div> 
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
