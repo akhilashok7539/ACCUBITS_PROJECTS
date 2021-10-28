@@ -1,0 +1,47 @@
+<ion-app>
+
+    <ion-menu contentId="main">
+        <ion-header>
+            <ion-toolbar color="primary" style=" --ion-color-base: #028490 !important;
+          padding-top: 47px;
+    padding-bottom: 47px;">
+
+                <img src="./assets/img/NSpot_Logo Png-03.svg" alt="">
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <ion-icon name="home-sharp"></ion-icon>
+                    <p style="color: black;">Home</p>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="pulse-sharp"></ion-icon>
+                    <p style="color: black;">Live Addmission Desk</p>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="person-circle-sharp"></ion-icon>
+                    <p style="color: black;">Profile</p>
+                </ion-item>
+                <ion-item routerLink="/contact-us">
+                    <ion-icon name="mail-open-sharp"></ion-icon>
+                    <p style="color: black;">Contact Us</p>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="arrow-up-circle-sharp"></ion-icon>
+                    <p style="color: black;">Upgrade</p>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="pricetag-sharp"></ion-icon>
+                    <p style="color: black;">Payment History</p>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="power-sharp"></ion-icon>
+                    <p style="color: black;">Logout</p>
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

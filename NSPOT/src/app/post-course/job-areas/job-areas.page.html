@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>NSPOT</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row style="    color: #0000007d;
+background: #f4f4f4;
+">
+        <ion-col size="12">
+            <h4 style="text-align: center;">Job Oppotunities </h4>
+
+        </ion-col>
+    </ion-row>
+
+    <ion-item>
+        <ion-label position="floating">Job Areas </ion-label>
+        <ion-input [(ngModel)]="postaCource.jobAreas"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Job Positions </ion-label>
+        <ion-input [(ngModel)]="postaCource.jobPositions"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Salary Range </ion-label>
+        <ion-input [(ngModel)]="postaCource.salaryRange"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Recruiters </ion-label>
+        <ion-input [(ngModel)]="postaCource.recruiters"></ion-input>
+    </ion-item>
+    <button class="ion-button" style="width: 80%;" (click)="submit()">Submit</button>
+
+
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>NSPOT</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row style="    color: #0000007d;
+background: #f4f4f4;
+">
+        <ion-col size="12">
+            <h4 style="text-align: center;">Eligibility Required</h4>
+
+        </ion-col>
+    </ion-row>
+
+    <ion-item>
+        <ion-label position="floating">Brief Description </ion-label>
+        <ion-textarea [(ngModel)]="postaCource.eligibiliyInString"></ion-textarea>
+    </ion-item>
+    <button class="ion-button" style="width: 80%;" (click)="submit()">Submit</button>
+
+
+</ion-content>

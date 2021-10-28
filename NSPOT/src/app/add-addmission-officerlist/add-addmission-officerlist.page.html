@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <!-- <button routerLink="/navigaiondrawer">s</button> -->
+            <!-- <IonMenuButton> </IonMenuButton> -->
+            <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+            <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>NSPOT</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row style="    color: #0000007d;
+  background: #f4f4f4;
+  ">
+        <ion-col size="12">
+            <h4 style="text-align: center;">Add Admission Officers</h4>
+        </ion-col>
+    </ion-row>
+    <div class="container">
+
+
+        <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input [(ngModel)]="addmisionOfficer.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Designation</ion-label>
+            <ion-input [(ngModel)]="addmisionOfficer.designation"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Email Id</ion-label>
+            <ion-input [(ngModel)]="addmisionOfficer.email"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Phone Number 1</ion-label>
+            <ion-input [(ngModel)]="addmisionOfficer.phone1"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Phone Number 2</ion-label>
+
+            <ion-input [(ngModel)]="addmisionOfficer.phone2"></ion-input>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Admission Department</ion-label>
+            <ion-input [(ngModel)]="addmisionOfficer.admissionDepartment"></ion-input>
+
+        </ion-item>
+
+
+
+
+        <ion-button expand="block" (click)="submit()">SUBMIT</ion-button>
+    </div>
+
+</ion-content>

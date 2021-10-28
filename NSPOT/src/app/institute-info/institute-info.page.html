@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <!-- <button routerLink="/navigaiondrawer">s</button> -->
+          <!-- <IonMenuButton> </IonMenuButton> -->
+          <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+          <!-- <ion-icon name="arrow-back-sharp"></ion-icon> -->
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+
+      </ion-buttons>
+      <ion-buttons slot="end">
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>NSPOT</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="    color: #0000007d;
+background: #f4f4f4;
+">
+      <ion-col size="12">
+          <h4 style="text-align: center;
+        color: #00000096;
+        font-family: 'Poppins';
+        font-weight: bold;">Institute Info</h4>
+
+      </ion-col>
+  </ion-row>
+
+  <!-- <ion-row >
+    <ion-col size="6">Name :</ion-col>
+    <ion-col size="6">{{instituteDetails.name}}</ion-col>
+    <ion-col size="6">Email :</ion-col>
+    <ion-col size="6">{{instituteDetails.email}}</ion-col>
+    <ion-col size="6">Name of Principal :</ion-col>
+    <ion-col size="6">{{instituteDetails.principalName}}</ion-col>
+    <ion-col size="6">Number of the contact person :</ion-col>
+    <ion-col size="6">{{instituteDetails.officialMobile}}</ion-col>
+  
+  </ion-row> -->
+  <ion-card>
+    <h6>Basic Info</h6>
+    <hr>
+    <p style="text-align: left;"> Name : {{instituteDetails.name}}</p>
+    <p style="text-align: left;"> Email ID : {{instituteDetails.email}}</p>
+    <p style="text-align: left;"> Name of Principal : {{instituteDetails.principalName}}</p>
+    <p style="text-align: left;"> contact person Number : {{instituteDetails.officialMobile}}</p>
+
+</ion-card>
+<ion-card>
+  <h6>Institute Type Info</h6>
+  <hr>
+
+  <p style="text-align: left;"> Name : {{InstituteType.title}}</p>
+  <h6>Licence Issue Authority</h6>
+  <hr>
+  
+  <p style="text-align: left;"> Name : {{LicenceIssueAuthority.title}}</p>
+
+</ion-card>
+<ion-card>
+  <h6>Address</h6>
+  <hr>
+
+  <p style="text-align: left;"> Address  : {{instituteDetails.addressLine1}}, {{instituteDetails.addressLine2}} ,{{instituteDetails.addressLine3}}</p>
+
+  <p style="text-align: left;"> Town {{instituteDetails.town}}</p>
+  <p style="text-align: left;"> District {{instituteDetails.district}}</p>
+
+  
+  <p style="text-align: left;"> Country {{instituteDetails.country}}</p>
+
+
+</ion-card>
+</ion-content>

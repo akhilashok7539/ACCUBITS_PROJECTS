@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <!-- <button routerLink="/navigaiondrawer">s</button> -->
+          <!-- <IonMenuButton> </IonMenuButton> -->
+          <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+          <!-- <ion-icon name="arrow-back-sharp"></ion-icon> -->
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+
+      </ion-buttons>
+      <ion-buttons slot="end">
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>NSPOT</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row style="    color: #0000007d;
+background: #f4f4f4;
+">
+      <ion-col size="12">
+          <h4 style="text-align: center;">Edit Apptitude Test</h4>
+        
+      </ion-col>
+  </ion-row>
+
+
+  
+  <ion-row>
+      <ion-col size="12">
+          <ion-card>
+              <p>Add New Apptitude Test</p>
+              <hr>
+              <ion-item>
+                  <ion-label position="floating">Test Name</ion-label>
+                  <ion-input [(ngModel)]="testName"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Test Duration</ion-label>
+                  <ion-input [(ngModel)]="duration"> </ion-input>
+              </ion-item>
+              <button class="btn btn-primary" (click)="submit()">
+                <!-- <ion-icon name="plus-outline"></ion-icon> -->
+                Update 
+              </button>
+          </ion-card>
+      </ion-col>
+
+
+  </ion-row>
+</ion-content>

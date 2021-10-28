@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <button routerLink="/navigaiondrawer">s</button> -->
+      <!-- <IonMenuButton> </IonMenuButton> -->
+      <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+      <!-- <ion-icon name="arrow-back-sharp"></ion-icon> -->
+      <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>NSPOT</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="    color: #0000007d;
+background: #f4f4f4;
+">
+    <ion-col size="12">
+      <h4 style="text-align: center;
+        color: #00000096;
+        font-family: 'Poppins';
+        font-weight: bold;">BOARD OF COUNCIL AWARDED</h4>
+
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-row >
+    <ion-col size="6">Name :</ion-col>
+    <ion-col size="6">{{instituteDetails.name}}</ion-col>
+    <ion-col size="6">Email :</ion-col>
+    <ion-col size="6">{{instituteDetails.email}}</ion-col>
+    <ion-col size="6">Name of Principal :</ion-col>
+    <ion-col size="6">{{instituteDetails.principalName}}</ion-col>
+    <ion-col size="6">Number of the contact person :</ion-col>
+    <ion-col size="6">{{instituteDetails.officialMobile}}</ion-col>
+  
+  </ion-row> -->
+  <ion-card>
+    <p style="text-align: left;"> Unit of : {{instituteDetails.unitOfLabel}}</p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Affiliated To : {{instituteDetails.affiliatedToLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Recongnized By: {{instituteDetails.recongnizedByLabel}} <ion-icon style="
+        font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Registered To : {{instituteDetails.registeredToLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Approved By : {{instituteDetails.approvedByLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Accredited By : {{instituteDetails.accreditedByLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+  </ion-card>
+  <ion-card>
+    <p style="text-align: left;"> Certified By : {{instituteDetails.certifiedByLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+    </p>
+    </ion-card>
+    <ion-card>
+      <p style="text-align: left;"> Member Of : {{instituteDetails.memberOfLabel}} <ion-icon style="
+      font-size: 20px;" name="document-sharp"></ion-icon>
+      </p>
+
+
+    </ion-card>
+
+</ion-content>

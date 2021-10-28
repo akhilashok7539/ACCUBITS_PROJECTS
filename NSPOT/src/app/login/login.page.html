@@ -1,0 +1,74 @@
+<!-- <ion-content padding class="background"> -->
+<!-- <div style="background: url('./assets/images/register.jpg');">
+  </div> -->
+<!-- <p routerLink="/folder/Inbox">Guest Login?</p>  -->
+
+<!-- <div class="row">
+        <div class="container">
+            <input type="number" [(ngModel)]="mobnumber" class="form-control" placeholder="Phone Number">
+            <button class="btn btn-danger" (click)="sendOtp()">Send OTP</button>
+        </div>
+    </div> -->
+
+
+<ion-content padding>
+
+
+    <!-- <ion-row class="rowclass">
+        <ion-col>
+
+
+        </ion-col>
+    </ion-row> -->
+
+    <div class="center">
+        <img src="./assets/img/nspot-logo.jpg" alt="">
+        <div heading-column-ln>
+            <h1 big-heading> Welcome to NSPOT!</h1>
+
+
+        </div>
+        <ion-label>
+            <h1 big-heading> Login!</h1>
+
+        </ion-label>
+        <div linespace>
+
+
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input type="text" placeholder="User Name" [(ngModel)]="username">
+
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input [type]="passwordType" placeholder="Password" [(ngModel)]="password">
+            <ion-icon [name]="passwordIcon" item-right (click)="hideShowPassword()" style="    margin-top: -28px;
+            float: right;
+            margin-right: 9px;
+            color: #3c3c3ca6;"></ion-icon>
+        </div>
+        <!-- <ion-item transparent> -->
+
+
+
+
+
+        <!-- <ion-icon name="person-circle-outline"></ion-icon>
+            &nbsp; -->
+        <!-- <ion-input placeholder="User Name" type="text" [(ngModel)]="mobnumber">
+            </ion-input> -->
+
+        <!-- </ion-item>
+        <ion-item transparent> -->
+        <!-- <ion-icon name="eye"></ion-icon>
+            &nbsp;
+            <ion-input placeholder="Password" type="text" [(ngModel)]="password">
+            </ion-input> -->
+
+        <!-- </ion-item> -->
+        <div linespace></div>
+        <!-- <ion-button (click)="sendOtp()" class="ion-button-class" shape="round" fill="solid" size="large" expand="block">
+              Send OTP</ion-button> -->
+        <button (click)="submit()" class="ion-button-class">Login</button>
+    </div>
+</ion-content>

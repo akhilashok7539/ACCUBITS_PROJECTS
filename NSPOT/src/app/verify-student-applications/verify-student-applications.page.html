@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <!-- <button routerLink="/navigaiondrawer">s</button> -->
+            <!-- <IonMenuButton> </IonMenuButton> -->
+            <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+            <!-- <ion-icon name="arrow-back-sharp"></ion-icon> -->
+            <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>NSPOT</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row style="    color: #0000007d;
+  background: #f4f4f4;
+  ">
+        <ion-col size="12">
+            <h4 style="text-align: center;
+          color: #00000096;
+          font-family: 'Poppins';
+          font-weight: bold;">Verify Student Applications</h4>
+
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label>Choose Course</ion-label>
+                <ion-select placeholder="Select One">
+                    <ion-select-option value="f">c1</ion-select-option>
+                    <ion-select-option value="m">c2</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+
+
+    <ion-segment [(ngModel)]="applicationtype" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="PreApplications">
+            <ion-label>Pre Applications</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Paymentawaiting">
+            <ion-label>Payment awaiting Applications</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-row *ngIf="applicationtype == 'PreApplications'">
+        <ion-col>
+            <ion-card>
+                <p style="text-align: left;">NAME OF APPLICANT</p>
+                <p style="text-align: left;">DATE OF REPORTING</p>
+                <p style="text-align: left;">DATE OF APTITUDE TEST</p>
+                <p style="text-align: left;">DATE OF ONLINE INTERVIEW</p>
+                <p style="text-align: left;">ADMISSION APPROVAL</p>
+                <button class="viewmore">View More</button>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="applicationtype == 'Paymentawaiting'">
+        <ion-col>
+            <ion-card>
+                <p style="text-align: left;">NAME OF APPLICANT</p>
+                <p style="text-align: left;">DATE OF REPORTING</p>
+                <p style="text-align: left;">DETAILS</p>
+                <p style="text-align: left;">REMARKS</p>
+                <p style="text-align: left;">ADMISSION APPROVAL</p>
+                <button class="viewmore">View More</button>
+
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>

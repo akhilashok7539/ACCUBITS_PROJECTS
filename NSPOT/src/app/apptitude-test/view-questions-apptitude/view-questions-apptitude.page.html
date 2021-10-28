@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>view Questions</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row style="    color: #0000007d;
+  background: #f4f4f4;
+  ">
+        <ion-col size="12">
+            <h4 style="text-align: center;">Apptitude Test Questions</h4>
+
+        </ion-col>
+    </ion-row>
+
+
+    <ion-card *ngFor="let question of questionsList;let i=index;">
+
+        <p>{{i+1}}) {{question.question}}</p>
+        <p *ngFor="let questions of question.Aptitude_Question_Options" class="options">
+            <input type="checkbox" [checked]="questions.isCorrectOption == true" disabled> {{questions.option}}
+        </p>
+        <!-- <input type="checkbox" *ngFor="let questions of question.Aptitude_Question_Options" />.{{questions.isCorrectOption}} -->
+        <!-- <input *ngFor="let questions of question.Aptitude_Question_Options" type="checkbox"> {{questions.isCorrectOption}} -->
+    </ion-card>
+    <ion-row>
+        <ion-col size="12">
+            <ion-card>
+                <p>Add New Questions</p>
+                <hr>
+                <ion-item>
+                    <ion-label position="floating"> Enter Your Question?</ion-label>
+                    <ion-input [(ngModel)]="questionName"></ion-input>
+                </ion-item>
+                <ion-list>
+                    <ion-list-header>
+                        <ion-label>Options</ion-label>
+                    </ion-list-header>
+                    <!-- <ion-radio-group>
+                        <ion-list-header>
+                            <ion-label>Options</ion-label>
+                        </ion-list-header>
+
+                        <ion-item>
+
+                            <ion-radio slot="start" value="1"></ion-radio>
+                            <input type="text">
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-radio slot="start" value="2"></ion-radio>
+                            <input type="text">
+                        </ion-item>
+
+
+                    </ion-radio-group> -->
+                    <input type="radio" [(ngModel)]="correctanswser" value="1">
+                    <input type="text" [(ngModel)]="option1" placeholder="option 1">
+
+                    <input type="radio" [(ngModel)]="correctanswser" value="2">
+                    <input type="text" [(ngModel)]="option2" placeholder="option 2">
+
+                    <input type="radio" [(ngModel)]="correctanswser" value="3">
+                    <input type="text" [(ngModel)]="option3" placeholder="option 3">
+
+
+                    <input type="radio" [(ngModel)]="correctanswser" value="4">
+                    <input type="text" [(ngModel)]="option4" placeholder="option 3">
+                </ion-list>
+                <button class="btn btn-primary" (click)="submit()">
+                <!-- <ion-icon name="plus-outline"></ion-icon> -->
+                Add 
+              </button>
+            </ion-card>
+        </ion-col>
+
+
+    </ion-row>
+
+</ion-content>

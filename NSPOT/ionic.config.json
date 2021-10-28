@@ -1,0 +1,7 @@
+{
+  "name": "Nspot",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

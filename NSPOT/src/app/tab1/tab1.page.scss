@@ -1,0 +1,81 @@
+ion-toolbar {
+    // --background: #0c2f6c !important;
+    --background: #028490 !important;
+    margin-bottom: -8px;
+}
+
+ion-card {
+    width: 143px;
+    height: 143px;
+    padding: 15px !important;
+    background: #F8F8F8;
+}
+
+ion-title {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+ion-menu-button {
+    color: white;
+}
+
+.toolbar-background {
+    --border-width: 0px !important;
+    border: 0 !important;
+}
+
+.toolbar-container {
+    --padding-top: 0px !important;
+    --padding-left: 0px !important;
+    --padding-right: 0px !important;
+    --padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.ToolbarVerde {
+    --padding-top: 0px !important;
+    --padding-left: 0px !important;
+    --padding-right: 0px !important;
+    --padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+img {
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+}
+
+h5 {
+    // text-transform: lowercase;
+    // font-size: 16px;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.instiutenamerow {
+    // padding: 15px;
+    color: white;
+    // background: #0c2f6c;
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+svg {
+    margin: 0 auto;
+    display: block;
+}

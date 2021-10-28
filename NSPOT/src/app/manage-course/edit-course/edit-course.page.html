@@ -1,0 +1,403 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <!-- <button routerLink="/navigaiondrawer">s</button> -->
+          <!-- <IonMenuButton> </IonMenuButton> -->
+          <!-- <ion-menu-button auto-hide="false"></ion-menu-button> -->
+
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+          <ion-menu-button auto-hide="false" style="    color: #028490;"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>NSPOT</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+      <h5>Post a New Course</h5>
+      <ion-item>
+          <ion-label>Main Category</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.maincategory" (ionChange)="maincategorychange($event)">
+              <ion-select-option *ngFor="let s of mainCategories" [value]="s.id" >{{s.title}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Sub Category 1</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.subcategory1" (ionChange)="subcategory1change($event)">
+              <ion-select-option *ngFor="let s of subCategories1" [value]="s.id">{{s.title}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Sub Category 2</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.subcategory2" (ionChange)="subcategory2change($event)">
+              <ion-select-option *ngFor="let s of subCategories2" [value]="s.id">{{s.title}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Sub Category 3</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.subcategory3" (ionChange)="subcategory3change($event)">
+
+              <ion-select-option *ngFor="let s of subCategories3" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Sub Category 4</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.subcategory4" (ionChange)="subcategory4change($event)">
+              <ion-select-option *ngFor="let s of subCategories4" [value]="s.id">{{s.title}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label>Sub Category 5</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.subcategory5">
+              <ion-select-option *ngFor="let s of subCategories5" [value]="s.id">{{s.title}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Academic Levels</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.academiclevels" (ionChange)="accademicLevelCoursechange($event)">
+
+              <ion-select-option *ngFor="let s of accademiclevesl" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Course Name</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.accademicLevelCourseId">
+
+              <ion-select-option *ngFor="let s of accademicLevelCourse" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Course Code</ion-label>
+          <ion-input [(ngModel)]="postaCource.courseCode"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Course Type</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.courseTypeId">
+
+              <ion-select-option *ngFor="let s of coursetype" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>University Type</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.universityTypeId">
+
+              <ion-select-option *ngFor="let s of universityTypes" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">University Name</ion-label>
+          <ion-input [(ngModel)]="postaCource.universityName"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Course Stream</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.courseStreamId" (ionChange)="substreamcourse($event)">
+
+              <ion-select-option *ngFor="let s of courseStream" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Course Stream Specialization</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.courseStreamSpecializationId">
+
+              <ion-select-option *ngFor="let s of courseSubStream" [value]="s.id">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Available Seats</ion-label>
+          <ion-input [(ngModel)]="postaCource.availableSeats"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Academic Year</ion-label>
+          <ion-input [(ngModel)]="postaCource.accademicYear"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Academic Year Month</ion-label>
+          <ion-input [(ngModel)]="postaCource.accademicYearMonth"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Course Duration</ion-label>
+          <ion-input [(ngModel)]="postaCource.courseDuration"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Exam Conducted</ion-label>
+          <ion-input [(ngModel)]="postaCource.examConducted"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-row>
+              <ion-col>
+                  <ion-label>Course Syllabus</ion-label>
+
+              </ion-col>
+              <ion-col>
+                  <input type="file" (change)="syllubus($event.target.files)">
+
+              </ion-col>
+          </ion-row>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-label>Addmission Start Date</ion-label>
+          <ion-datetime [(ngModel)]="postaCource.admissionStartDate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>Addmission End Date</ion-label>
+          <ion-datetime [(ngModel)]="postaCource.admissionCloseDate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>Class Start Date</ion-label>
+          <ion-datetime [(ngModel)]="postaCource.classStartDate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.maleAllowed" value="true">
+              <ion-list-header>
+                  <ion-label>Male Allowed</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.femaleAllowed" value="true">
+              <ion-list-header>
+                  <ion-label>Female Allowed</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.otherGenderAllowed" value="true">
+              <ion-list-header>
+                  <ion-label>Other Gender Allowed</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+      <ion-item>
+          <ion-label position="floating">Campus Name </ion-label>
+          <ion-input [(ngModel)]="postaCource.campusName"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Campus Address Line 1 </ion-label>
+          <ion-input [(ngModel)]="postaCource.campusAddressLine1"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Campus Address Line 2</ion-label>
+          <ion-input [(ngModel)]="postaCource.campusAddressLine2"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Campus Address Line 3 </ion-label>
+          <ion-input [(ngModel)]="postaCource.campusAddressLine3"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Locality </ion-label>
+          <ion-input [(ngModel)]="postaCource.locality"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Block </ion-label>
+          <ion-input [(ngModel)]="postaCource.block"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Country </ion-label>
+          <ion-input [(ngModel)]="postaCource.country"></ion-input>
+      </ion-item>
+
+
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.onlineClassAvailability" value="true">
+              <ion-list-header>
+                  <ion-label>Online Class Availability</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.refundPolicy" value="true">
+              <ion-list-header>
+                  <ion-label>Refund Policy</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.aptituteTestRequired" value="true">
+              <ion-list-header>
+                  <ion-label>Apptitude Test Required</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+      <ion-item *ngIf="postaCource.aptituteTestRequired == 'true'">
+          <ion-label>Choose Apptitude Test</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="postaCource.aptituteTestId">
+
+              <ion-select-option *ngFor="let s of apptututestestlist" value="{{s.id}}">{{s.title}}</ion-select-option>
+
+          </ion-select>
+      </ion-item>
+
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.onlineInterviewRequired" value="true">
+              <ion-list-header>
+                  <ion-label>Online Interview</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+
+      <!-- <ion-item>
+          <ion-label position="floating">Job Positions </ion-label>
+          <ion-input [(ngModel)]="postaCource.jobAreas"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Job Positions </ion-label>
+          <ion-input [(ngModel)]="postaCource.jobPositions"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Salary Range </ion-label>
+          <ion-input [(ngModel)]="postaCource.salaryRange"></ion-input>
+      </ion-item> -->
+      <!-- <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.hasPlacementAssistant" value="true">
+              <ion-list-header>
+                  <ion-label>Placement Assistance</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list> -->
+      <!-- <ion-item>
+          <ion-label position="floating">Recuriters </ion-label>
+          <ion-input></ion-input>
+      </ion-item> -->
+      <ion-list>
+          <ion-radio-group [(ngModel)]="postaCource.isActive" value="true">
+              <ion-list-header>
+                  <ion-label>Active</ion-label>
+              </ion-list-header>
+
+              <ion-item>
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="true"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="false"></ion-radio>
+              </ion-item>
+
+
+          </ion-radio-group>
+      </ion-list>
+
+
+
+      <ion-button expand="block" (click)="submit()">SUBMIT</ion-button>
+  </div>
+
+</ion-content>
